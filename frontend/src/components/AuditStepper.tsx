@@ -63,13 +63,13 @@ export function AuditStepper({
   const statusBadgeClass = (status: AuditStep["status"]) => {
     switch (status) {
       case "ok":
-        return "rounded-full bg-[#4ecdc4]/20 text-[#1a7871] dark:rounded-md dark:border dark:border-[var(--border-hairline)] dark:bg-[var(--bg-surface)] dark:text-emerald-400";
+        return "rounded-full bg-[var(--mint-soft)] text-mint";
       case "repaired":
-        return "rounded-full bg-[var(--accent-soft)] text-accent dark:rounded-md dark:border dark:border-[var(--accent-border)]";
+        return "rounded-full bg-[var(--accent-soft)] text-accent";
       case "warning":
-        return "rounded-full bg-amber-500/15 text-amber-800 dark:rounded-md dark:border dark:border-amber-500/35 dark:bg-amber-500/12 dark:text-amber-300";
+        return "rounded-full bg-amber-500/15 text-amber-800 dark:text-amber-300";
       case "error":
-        return "neu-badge-coral rounded-full dark:rounded-md";
+        return "neu-badge-coral rounded-full";
     }
   };
 

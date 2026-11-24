@@ -82,17 +82,17 @@ export function ExportBar({ design }: ExportBarProps) {
 
   return (
     <div data-tour="export-bar" className="sticky bottom-4 z-30 pt-2">
-      <div className="neu-popover px-5 py-3.5 sm:px-6 dark:bg-[var(--bg-surface-elevated)]/95 dark:backdrop-blur-md">
+      <div className="neu-popover px-5 py-3.5 sm:px-6">
         {errorMsg && (
-          <div className="neu-alert-coral mb-3 flex items-center gap-2 px-3.5 py-2 text-xs font-medium text-[#c93232] dark:text-rose-300">
-            <AlertCircle className="h-4 w-4 shrink-0 text-[#ff6b6b] dark:text-rose-400" />
+          <div className="neu-alert-coral mb-3 flex items-center gap-2 px-3.5 py-2 text-xs font-medium text-coral">
+            <AlertCircle className="h-4 w-4 shrink-0 text-[#ff6b6b]" />
             <span>{errorMsg}</span>
           </div>
         )}
 
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-wrap items-center gap-2.5 text-sm text-[var(--text-secondary)] shrink-0">
-            <span className="neu-recessed inline-flex items-center rounded-full dark:rounded-md px-3 py-1 font-mono-bio text-sm font-semibold text-accent whitespace-nowrap">
+            <span className="neu-recessed inline-flex items-center rounded-full px-3 py-1 font-mono-bio text-sm font-semibold text-accent whitespace-nowrap">
               Δ{design.locus.gene_name}
             </span>
             <span className="font-mono-bio text-xs font-medium text-[var(--text-muted)] whitespace-nowrap">
@@ -106,8 +106,8 @@ export function ExportBar({ design }: ExportBarProps) {
             </span>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2.5 dark:gap-2">
-            {/* Primary ZIP bundle — Tactile Blurple Neumorphism Light / Stark White Dark */}
+          <div className="flex flex-wrap items-center gap-2.5">
+            {/* Primary ZIP bundle — Raised Tactile Blurple Extrusion (Day & Night) */}
             <button
               type="button"
               disabled={loadingFmt !== null}
@@ -129,12 +129,12 @@ export function ExportBar({ design }: ExportBarProps) {
               type="button"
               disabled={loadingFmt !== null}
               onClick={() => handleDownload("primers_xlsx")}
-              className="btn-outline inline-flex items-center gap-1.5 whitespace-nowrap px-3.5 py-2 text-xs sm:text-sm font-medium dark:font-semibold cursor-pointer"
+              className="btn-outline inline-flex items-center gap-1.5 whitespace-nowrap px-3.5 py-2 text-xs sm:text-sm font-medium cursor-pointer"
             >
               {loadingFmt === "primers_xlsx" ? (
                 <Loader2 className="h-4 w-4 animate-spin" />
               ) : doneFmt === "primers_xlsx" ? (
-                <Check className="h-4 w-4 text-[#1c7c75] dark:text-emerald-400" />
+                <Check className="h-4 w-4 text-mint" />
               ) : (
                 <FileSpreadsheet className="h-4 w-4 text-[var(--accent-primary)]" />
               )}
@@ -147,7 +147,7 @@ export function ExportBar({ design }: ExportBarProps) {
                 type="button"
                 disabled={loadingFmt !== null}
                 onClick={() => setGbMenuOpen((v) => !v)}
-                className="btn-outline inline-flex items-center gap-1.5 whitespace-nowrap px-3.5 py-2 text-xs sm:text-sm font-medium dark:font-semibold cursor-pointer"
+                className="btn-outline inline-flex items-center gap-1.5 whitespace-nowrap px-3.5 py-2 text-xs sm:text-sm font-medium cursor-pointer"
               >
                 <Dna className="h-4 w-4 text-[var(--accent-primary)]" />
                 <span>SnapGene 图谱 (.gb)</span>
@@ -168,9 +168,9 @@ export function ExportBar({ design }: ExportBarProps) {
                       key={item.fmt}
                       type="button"
                       onClick={() => handleDownload(item.fmt)}
-                      className="flex w-full flex-col items-start rounded-2xl dark:rounded-lg px-3 py-2 text-left transition hover:bg-white/45 dark:hover:bg-[var(--bg-subtle)] cursor-pointer"
+                      className="bg-hover-tint flex w-full flex-col items-start rounded-2xl px-3 py-2 text-left transition cursor-pointer"
                     >
-                      <span className="text-sm font-medium dark:font-semibold text-[var(--text-primary)]">
+                      <span className="text-sm font-medium text-[var(--text-primary)]">
                         {item.label}
                       </span>
                       <span className="text-xs text-[var(--text-muted)]">
@@ -187,12 +187,12 @@ export function ExportBar({ design }: ExportBarProps) {
               type="button"
               disabled={loadingFmt !== null}
               onClick={() => handleDownload("sop_md")}
-              className="btn-outline inline-flex items-center gap-1.5 whitespace-nowrap px-3.5 py-2 text-xs sm:text-sm font-medium dark:font-semibold cursor-pointer"
+              className="btn-outline inline-flex items-center gap-1.5 whitespace-nowrap px-3.5 py-2 text-xs sm:text-sm font-medium cursor-pointer"
             >
               {loadingFmt === "sop_md" ? (
                 <Loader2 className="h-4 w-4 animate-spin" />
               ) : doneFmt === "sop_md" ? (
-                <Check className="h-4 w-4 text-[#1c7c75] dark:text-emerald-400" />
+                <Check className="h-4 w-4 text-mint" />
               ) : (
                 <FileText className="h-4 w-4 text-[var(--accent-primary)]" />
               )}

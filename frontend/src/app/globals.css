@@ -9,7 +9,7 @@
 }
 
 /* ============================================================================
-   LIGHT MODE — Tactile Neumorphism (Single #e0e5ec Surface + Dual Shadows)
+   LIGHT MODE — Day Tactile Neumorphism (#e0e5ec Clay + Dual Shadows)
    ============================================================================ */
 :root,
 :root[data-theme="light"] {
@@ -18,41 +18,56 @@
   --bg-surface-elevated: #e0e5ec;
   --bg-subtle: #e0e5ec;
   --bg-rail: #e0e5ec;
-  --border-hairline: rgba(184, 188, 194, 0.42);
+  --bg-topbar: rgba(224, 229, 236, 0.94);
+  --bg-hover-tint: rgba(255, 255, 255, 0.36);
+
+  --border-hairline: rgba(184, 188, 194, 0.44);
   --border-strong: rgba(163, 170, 182, 0.65);
 
-  --neu-shadow-dark: #b8bcc2;
-  --neu-shadow-light: #ffffff;
   --neu-raised: 8px 8px 16px #b8bcc2, -8px -8px 16px #ffffff;
   --neu-raised-sm: 5px 5px 10px #b8bcc2, -5px -5px 10px #ffffff;
   --neu-raised-xs: 3px 3px 6px #b8bcc2, -3px -3px 6px #ffffff;
   --neu-hover: 4px 4px 8px #b8bcc2, -4px -4px 8px #ffffff;
+  --neu-tile: 4px 4px 8px #b8bcc2, -4px -4px 8px #ffffff;
+  --neu-tile-hover: 2px 2px 5px #b8bcc2, -2px -2px 5px #ffffff;
   --neu-recessed: inset 8px 8px 16px #b8bcc2, inset -8px -8px 16px #ffffff;
   --neu-recessed-sm: inset 4px 4px 8px #b8bcc2, inset -4px -4px 8px #ffffff;
   --neu-pressed: inset 5px 5px 10px #b8bcc2, inset -5px -5px 10px #ffffff;
   --neu-focus: inset 8px 8px 16px rgba(109, 93, 252, 0.30), inset -8px -8px 16px #ffffff;
+  --neu-popover-shadow: 10px 10px 22px #b2b7be, -8px -8px 18px #ffffff;
+  --neu-topbar-shadow: 0 6px 14px -4px rgba(184, 188, 194, 0.55);
+  --neu-sidebar-shadow: 6px 0 16px -6px rgba(184, 188, 194, 0.45);
+  --neu-thumb-shadow: 4px 4px 8px rgba(109, 93, 252, 0.38), -3px -3px 7px #ffffff;
+  --neu-thumb-hover: 3px 3px 6px rgba(109, 93, 252, 0.48), -2px -2px 5px #ffffff;
+  --neu-coral-shadow: 3px 3px 7px rgba(255, 107, 107, 0.40), -2px -2px 5px #ffffff;
+  --neu-knob-off-shadow: 3px 3px 6px #b8bcc2, -3px -3px 6px #ffffff;
+  --neu-knob-on-shadow: 3px 3px 6px rgba(109, 93, 252, 0.42), -2px -2px 5px #ffffff;
+  --neu-dot-off: #b8bcc2;
 
   --text-primary: #3d4451;
   --text-secondary: #525b6a;
   --text-muted: #6b7280;
 
   --primary: #6d5dfc;
-  --primary-hover: #5b4be8;
+  --primary-hover: #5445db;
   --primary-fg: #ffffff;
 
   --accent-primary: #6d5dfc;
   --accent-text: #5445db;
-  --accent-soft: rgba(109, 93, 252, 0.11);
-  --accent-border: rgba(109, 93, 252, 0.28);
+  --accent-soft: rgba(109, 93, 252, 0.12);
+  --accent-border: rgba(109, 93, 252, 0.30);
 
   --mint: #4ecdc4;
   --mint-text: #1c7c75;
-  --mint-soft: rgba(78, 205, 196, 0.18);
+  --mint-soft: rgba(78, 205, 196, 0.20);
 
   --danger: #ff6b6b;
   --danger-text: #c93232;
   --danger-soft: rgba(255, 107, 107, 0.14);
   --danger-border: rgba(255, 107, 107, 0.48);
+
+  --scrollbar-thumb: #b8bcc2;
+  --scrollbar-thumb-hover: #9ca3af;
 
   /* Interactive SVG Genome Locus Palette (Light — Neumorphism Harmonized) */
   --svg-canvas-bg: #e0e5ec;
@@ -89,75 +104,99 @@
 }
 
 /* ============================================================================
-   DARK MODE (100% PRESERVED) — Obsidian Lab Dark-First Flagship
+   DARK MODE — Night Tactile Soft-UI (#1e222b Matte Charcoal + Dual Shadows)
+   Unified tactile physics, radii, and editorial typography with Light Mode!
    ============================================================================ */
 :root[data-theme="dark"],
 .dark {
-  --bg-canvas: #0b0c0f;
-  --bg-surface: #13151a;
-  --bg-surface-elevated: #191c23;
-  --bg-subtle: #181b22;
-  --bg-rail: #0f1116;
-  --border-hairline: rgba(255, 255, 255, 0.09);
-  --border-strong: rgba(255, 255, 255, 0.16);
+  --bg-canvas: #1e222b;
+  --bg-surface: #1e222b;
+  --bg-surface-elevated: #1e222b;
+  --bg-subtle: #1e222b;
+  --bg-rail: #1e222b;
+  --bg-topbar: rgba(30, 34, 43, 0.94);
+  --bg-hover-tint: rgba(255, 255, 255, 0.045);
 
-  --text-primary: #f4f4f5;
-  --text-secondary: #d4d4d8;
-  --text-muted: #a1a1aa;
+  --border-hairline: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.15);
 
-  /* Stark White CTA on Obsidian Dark */
-  --primary: #fafafa;
-  --primary-hover: #e4e4e7;
-  --primary-fg: #09090b;
+  --neu-raised: 8px 8px 18px #11141b, -6px -6px 14px #2b3140;
+  --neu-raised-sm: 5px 5px 11px #11141b, -4px -4px 9px #2b3140;
+  --neu-raised-xs: 3px 3px 7px #11141b, -2px -2px 6px #2b3140;
+  --neu-hover: 4px 4px 9px #11141b, -3px -3px 7px #2b3140;
+  --neu-tile: 4px 4px 10px #11141b, -3px -3px 8px #292f3d;
+  --neu-tile-hover: 2px 2px 6px #11141b, -2px -2px 5px #292f3d;
+  --neu-recessed: inset 7px 7px 14px #11141b, inset -6px -6px 12px #2a303e;
+  --neu-recessed-sm: inset 4px 4px 9px #11141b, inset -4px -4px 8px #2a303e;
+  --neu-pressed: inset 5px 5px 11px #11141b, inset -5px -5px 10px #2a303e;
+  --neu-focus: inset 6px 6px 12px rgba(139, 125, 255, 0.34), inset -5px -5px 10px #2b3140, 0 0 0 1px rgba(139, 125, 255, 0.42);
+  --neu-popover-shadow: 12px 12px 26px #0d1016, -8px -8px 20px #2b3140;
+  --neu-topbar-shadow: 0 6px 16px -4px rgba(10, 12, 18, 0.72);
+  --neu-sidebar-shadow: 6px 0 18px -6px rgba(10, 12, 18, 0.65);
+  --neu-thumb-shadow: 4px 4px 10px rgba(139, 125, 255, 0.45), -2px -2px 6px #2b3140;
+  --neu-thumb-hover: 3px 3px 8px rgba(139, 125, 255, 0.60), -2px -2px 5px #2b3140;
+  --neu-coral-shadow: 3px 3px 8px rgba(255, 107, 107, 0.38), -2px -2px 6px #2b3140;
+  --neu-knob-off-shadow: 3px 3px 7px #11141b, -2px -2px 6px #2b3140;
+  --neu-knob-on-shadow: 3px 3px 8px rgba(139, 125, 255, 0.48), -2px -2px 5px #2b3140;
+  --neu-dot-off: #3f4759;
 
-  /* Ice Sky-Blue Scientific Focus Accent */
-  --accent-primary: #38bdf8;
-  --accent-text: #7dd3fc;
-  --accent-soft: rgba(56, 189, 248, 0.12);
-  --accent-border: rgba(56, 189, 248, 0.30);
+  --text-primary: #e7ebf3;
+  --text-secondary: #b6bfce;
+  --text-muted: #8892a6;
 
-  --mint: #34d399;
-  --mint-text: #6ee7b7;
-  --mint-soft: rgba(16, 185, 129, 0.15);
+  --primary: #8b7dff;
+  --primary-hover: #a59aff;
+  --primary-fg: #ffffff;
 
-  /* Preserved Vivid Rose/Crimson Alerts */
-  --danger: #fb7185;
-  --danger-text: #fda4af;
-  --danger-soft: rgba(225, 29, 72, 0.16);
-  --danger-border: rgba(251, 113, 133, 0.38);
+  --accent-primary: #8b7dff;
+  --accent-text: #a59aff;
+  --accent-soft: rgba(139, 125, 255, 0.16);
+  --accent-border: rgba(139, 125, 255, 0.36);
 
-  /* Interactive SVG Genome Locus Palette (Dark — Obsidian & Ice Sky) */
-  --svg-canvas-bg: #0e1015;
-  --svg-pill-mask: #0e1015;
-  --svg-grid-dot: rgba(255, 255, 255, 0.07);
-  --svg-axis: #3f3f46;
-  --svg-ruler: #71717a;
-  --svg-text: #f4f4f5;
-  --svg-text-muted: #a1a1aa;
-  --svg-target-fill: #38bdf8;
-  --svg-target-stroke: #7dd3fc;
-  --svg-target-text: #09090b;
-  --svg-neighbor-fill: #27272a;
-  --svg-neighbor-stroke: #71717a;
-  --svg-neighbor-text: #e4e4e7;
-  --svg-warn-fill: #451a03;
+  --mint: #4ecdc4;
+  --mint-text: #5eead4;
+  --mint-soft: rgba(78, 205, 196, 0.16);
+
+  --danger: #ff6b6b;
+  --danger-text: #ff8a8a;
+  --danger-soft: rgba(255, 107, 107, 0.16);
+  --danger-border: rgba(255, 107, 107, 0.48);
+
+  --scrollbar-thumb: #363d4d;
+  --scrollbar-thumb-hover: #4b556a;
+
+  /* Interactive SVG Genome Locus Palette (Dark — Tactile Matte & Luminous Blurple) */
+  --svg-canvas-bg: #191d26;
+  --svg-pill-mask: #191d26;
+  --svg-grid-dot: rgba(255, 255, 255, 0.065);
+  --svg-axis: #464e62;
+  --svg-ruler: #757f96;
+  --svg-text: #e7ebf3;
+  --svg-text-muted: #939db2;
+  --svg-target-fill: #8b7dff;
+  --svg-target-stroke: #a59aff;
+  --svg-target-text: #ffffff;
+  --svg-neighbor-fill: #272d3a;
+  --svg-neighbor-stroke: #636d84;
+  --svg-neighbor-text: #d7deeb;
+  --svg-warn-fill: #422608;
   --svg-warn-stroke: #f59e0b;
   --svg-warn-text: #fde68a;
-  --svg-la-fill: rgba(56, 189, 248, 0.13);
-  --svg-la-stroke: #38bdf8;
-  --svg-la-text: #bae6fd;
-  --svg-ra-fill: rgba(148, 163, 184, 0.13);
-  --svg-ra-stroke: #94a3b8;
-  --svg-ra-text: #e2e8f0;
-  --svg-amp-fill: rgba(56, 189, 248, 0.10);
-  --svg-amp-stroke: #0284c7;
-  --svg-amp-text: #7dd3fc;
-  --svg-cut-color: #e11d48;
-  --svg-cut-pill-fill: rgba(225, 29, 72, 0.22);
-  --svg-cut-pill-stroke: #fb7185;
-  --svg-cut-pill-text: #fecdd3;
-  --svg-del-label-text: #fda4af;
-  --svg-del-label-stroke: #fb7185;
+  --svg-la-fill: rgba(139, 125, 255, 0.18);
+  --svg-la-stroke: #8b7dff;
+  --svg-la-text: #c5beff;
+  --svg-ra-fill: rgba(78, 205, 196, 0.16);
+  --svg-ra-stroke: #4ecdc4;
+  --svg-ra-text: #86f0e8;
+  --svg-amp-fill: rgba(139, 125, 255, 0.14);
+  --svg-amp-stroke: rgba(139, 125, 255, 0.55);
+  --svg-amp-text: #c5beff;
+  --svg-cut-color: #ff6b6b;
+  --svg-cut-pill-fill: rgba(255, 107, 107, 0.22);
+  --svg-cut-pill-stroke: #ff6b6b;
+  --svg-cut-pill-text: #ffb4b4;
+  --svg-del-label-text: #ff9c9c;
+  --svg-del-label-stroke: #ff6b6b;
 }
 
 @layer base {
@@ -176,23 +215,15 @@
     background-color: var(--bg-canvas);
     color: var(--text-primary);
     min-height: 100vh;
-    transition: background-color 180ms ease-out, color 180ms ease-out;
+    transition: background-color 200ms ease-out, color 200ms ease-out;
   }
 
-  /* Refined weight ceiling in Light Neumorphism (400 / 500 / 600 — no heavy blocky 700) */
-  :root[data-theme="light"] h1,
-  :root[data-theme="light"] h2,
-  :root[data-theme="light"] h3,
-  :root[data-theme="light"] h4,
-  :root:not([data-theme="dark"]):not(.dark) h1,
-  :root:not([data-theme="dark"]):not(.dark) h2,
-  :root:not([data-theme="dark"]):not(.dark) h3,
-  :root:not([data-theme="dark"]):not(.dark) h4 {
-    font-weight: 600;
-  }
-
-  :root[data-theme="light"] .font-bold,
-  :root:not([data-theme="dark"]):not(.dark) .font-bold {
+  /* Unified refined weight ceiling (400 / 500 / 600) across BOTH Light & Dark */
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-bold {
     font-weight: 600;
   }
 
@@ -206,17 +237,11 @@
   }
 }
 
-/* Editorial Display Typography for Light Mode Headings & Brand */
+/* Unified Editorial Display Typography (Identical in Light & Dark!) */
 .font-display {
   font-family: var(--font-display);
   font-weight: 600;
   letter-spacing: -0.015em;
-}
-
-.dark .font-display {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  letter-spacing: -0.02em;
 }
 
 .font-mono-bio {
@@ -225,33 +250,26 @@
 }
 
 /* ============================================================================
-   DUAL-MODE SURFACE PRIMITIVES (Light: Neumorphism | Dark: Obsidian Lab)
+   UNIFIED TACTILE NEUMORPHISM PRIMITIVES (Token-Driven Day & Night Parity)
    ============================================================================ */
 
-/* Primary Raised Section Cards (24px radius, zero border in Light) */
+/* Primary Raised Section Cards (24px radius, zero harsh borders) */
 .bio-card,
 .surface-card {
   background-color: var(--bg-surface);
   border: none;
   border-radius: 24px;
   box-shadow: var(--neu-raised);
-  transition: box-shadow 200ms ease-out;
-}
-
-.dark .bio-card,
-.dark .surface-card {
-  border: 1px solid var(--border-hairline);
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset;
+  transition: box-shadow 200ms ease-out, background-color 200ms ease-out;
 }
 
 /* Interactive Raised Sub-Cards (2x2 Vector Selector, Provider Cards, sgRNA Cards) */
 .neu-card-interactive {
-  background-color: #e0e5ec;
+  background-color: var(--bg-surface);
   border: none;
   border-radius: 20px;
   box-shadow: var(--neu-raised);
-  transition: box-shadow 200ms ease-out, transform 200ms ease-out, color 200ms ease-out;
+  transition: box-shadow 200ms ease-out, transform 200ms ease-out, color 200ms ease-out, background-color 200ms ease-out;
 }
 
 .neu-card-interactive:hover {
@@ -264,103 +282,55 @@
   transform: translateY(0);
 }
 
-.dark .neu-card-interactive {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-hairline);
-  border-radius: 0.5rem;
-  box-shadow: none;
-}
-
-.dark .neu-card-interactive:hover {
-  border-color: var(--border-strong);
-  background-color: rgba(24, 27, 34, 0.6);
-  box-shadow: none;
-  transform: none;
-}
-
-.dark .neu-card-interactive[data-selected="true"] {
-  border-color: var(--accent-primary);
-  background-color: var(--accent-soft);
-  box-shadow: none;
-}
-
-/* Moderate-Depth Tile (12-Point Checks, Reaction Cards, 4-Day Timeline — prevents muddy shadow overlap) */
+/* Moderate-Depth Tile (12-Point Checks, Reaction Cards, 4-Day Timeline) */
 .neu-soft-tile {
-  background-color: #e0e5ec;
+  background-color: var(--bg-surface);
   border: none;
   border-radius: 18px;
-  box-shadow: 4px 4px 8px #b8bcc2, -4px -4px 8px #ffffff;
-  transition: box-shadow 200ms ease-out;
+  box-shadow: var(--neu-tile);
+  transition: box-shadow 200ms ease-out, background-color 200ms ease-out;
 }
 
 .neu-soft-tile-hover:hover {
-  box-shadow: 2px 2px 5px #b8bcc2, -2px -2px 5px #ffffff;
-}
-
-.dark .neu-soft-tile {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-hairline);
-  border-radius: 0.75rem;
-  box-shadow: none;
-}
-
-.dark .neu-soft-tile-hover:hover {
-  border-color: var(--border-strong);
-  box-shadow: none;
+  box-shadow: var(--neu-tile-hover);
 }
 
 /* Recessed Concave Wells (Segmented Tracks, Advanced Tray, Inspector HUD) */
 .neu-recessed {
-  background-color: #e0e5ec;
+  background-color: var(--bg-surface);
   border: none;
   box-shadow: var(--neu-recessed-sm);
-}
-
-.dark .neu-recessed {
-  background-color: var(--bg-subtle);
-  border: 1px solid var(--border-hairline);
-  box-shadow: none;
+  transition: box-shadow 200ms ease-out, background-color 200ms ease-out;
 }
 
 .neu-recessed-deep {
-  background-color: #e0e5ec;
+  background-color: var(--bg-surface);
   border: none;
   box-shadow: var(--neu-recessed);
-}
-
-.dark .neu-recessed-deep {
-  background-color: var(--bg-subtle);
-  border: 1px solid var(--border-hairline);
-  box-shadow: none;
+  transition: box-shadow 200ms ease-out, background-color 200ms ease-out;
 }
 
 /* Floating Raised Popovers, Modals & Sticky Export Dock */
 .neu-popover {
-  background-color: #e0e5ec;
+  background-color: var(--bg-surface-elevated);
   border: none;
   border-radius: 24px;
-  box-shadow: 10px 10px 22px #b2b7be, -8px -8px 18px #ffffff;
+  box-shadow: var(--neu-popover-shadow);
 }
 
-.dark .neu-popover {
-  background-color: var(--bg-surface-elevated);
-  border: 1px solid var(--border-hairline);
-  border-radius: 0.75rem;
-  box-shadow: 0 20px 50px -14px rgba(0, 0, 0, 0.65);
-}
-
-/* Tactile Concave Inputs (16px radius + Blurple 30% focus shadow in Light) */
+/* Tactile Concave Inputs (16px radius + Luminous Blurple focus shadow) */
 .neu-input {
-  background-color: #e0e5ec;
+  background-color: var(--bg-surface);
   border: none;
   border-radius: 16px;
   box-shadow: var(--neu-recessed-sm);
   color: var(--text-primary);
-  transition: box-shadow 200ms ease-out;
+  transition: box-shadow 200ms ease-out, background-color 200ms ease-out;
 }
 
 .neu-input::placeholder {
-  color: #848e9d;
+  color: var(--text-muted);
+  opacity: 0.85;
 }
 
 .neu-input:focus {
@@ -368,28 +338,16 @@
   box-shadow: var(--neu-focus);
 }
 
-.dark .neu-input {
-  background-color: var(--bg-subtle);
-  border: 1px solid var(--border-hairline);
-  border-radius: 0.5rem;
-  box-shadow: none;
-  color: var(--text-primary);
+/* Native select dropdown options readability in Dark Mode */
+.dark select.neu-input option {
+  background-color: #1e222b;
+  color: #e7ebf3;
 }
 
-.dark .neu-input::placeholder {
-  color: var(--text-muted);
-}
-
-.dark .neu-input:focus {
-  border-color: var(--accent-primary);
-  background-color: var(--bg-surface);
-  box-shadow: 0 0 0 2px var(--accent-soft);
-}
-
-/* Primary CTA Button: Raised Blurple-Text Neumorphism in Light, Stark White in Dark */
+/* Primary CTA Button: Raised Tactile Blurple-Text Extrusion (Day & Night) */
 .btn-primary {
-  background-color: #e0e5ec;
-  color: #6d5dfc;
+  background-color: var(--bg-surface);
+  color: var(--accent-text);
   border: none;
   border-radius: 16px;
   font-weight: 600;
@@ -399,7 +357,7 @@
 
 .btn-primary:hover:not(:disabled) {
   box-shadow: var(--neu-hover);
-  color: #5445db;
+  color: var(--primary-hover);
 }
 
 .btn-primary:active:not(:disabled) {
@@ -407,31 +365,13 @@
 }
 
 .btn-primary:disabled {
-  opacity: 0.52;
+  opacity: 0.48;
   cursor: not-allowed;
 }
 
-.dark .btn-primary {
-  background-color: var(--primary);
-  color: var(--primary-fg);
-  border: 1px solid transparent;
-  border-radius: 0.5rem;
-  box-shadow: none;
-}
-
-.dark .btn-primary:hover:not(:disabled) {
-  background-color: var(--primary-hover);
-  color: var(--primary-fg);
-  box-shadow: none;
-}
-
-.dark .btn-primary:active:not(:disabled) {
-  box-shadow: none;
-}
-
-/* Secondary Button: Soft Raised Neumorphic Button in Light, Crisp Outline in Dark */
+/* Secondary Button: Soft Raised Tactile Button (Day & Night) */
 .btn-outline {
-  background-color: #e0e5ec;
+  background-color: var(--bg-surface);
   color: var(--text-primary);
   border: none;
   border-radius: 16px;
@@ -441,7 +381,7 @@
 
 .btn-outline:hover:not(:disabled) {
   box-shadow: var(--neu-raised-xs);
-  color: #6d5dfc;
+  color: var(--accent-text);
 }
 
 .btn-outline:active:not(:disabled) {
@@ -449,32 +389,13 @@
 }
 
 .btn-outline:disabled {
-  opacity: 0.45;
+  opacity: 0.42;
   cursor: not-allowed;
-}
-
-.dark .btn-outline {
-  background-color: var(--bg-surface);
-  color: var(--text-primary);
-  border: 1px solid var(--border-hairline);
-  border-radius: 0.5rem;
-  box-shadow: none;
-}
-
-.dark .btn-outline:hover:not(:disabled) {
-  background-color: var(--bg-subtle);
-  border-color: var(--border-strong);
-  color: var(--text-primary);
-  box-shadow: none;
-}
-
-.dark .btn-outline:active:not(:disabled) {
-  box-shadow: none;
 }
 
 /* Tactile Pill Toggle / Nav Pill / Demo Chip */
 .neu-pill {
-  background-color: #e0e5ec;
+  background-color: var(--bg-surface);
   border: none;
   border-radius: 999px;
   color: var(--text-secondary);
@@ -490,90 +411,39 @@
 .neu-pill:active:not(:disabled),
 .neu-pill[data-active="true"] {
   box-shadow: var(--neu-recessed-sm);
-  color: #6d5dfc;
-}
-
-.dark .neu-pill {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-hairline);
-  border-radius: 0.5rem;
-  color: var(--text-secondary);
-  box-shadow: none;
-}
-
-.dark .neu-pill:hover:not(:disabled) {
-  border-color: var(--border-strong);
-  background-color: var(--bg-subtle);
-  color: var(--text-primary);
-  box-shadow: none;
-}
-
-.dark .neu-pill[data-active="true"] {
-  border-color: var(--accent-primary);
-  background-color: var(--accent-soft);
-  color: #7dd3fc;
-  box-shadow: none;
+  color: var(--accent-text);
 }
 
 /* Segmented Control Active Thumb inside a .neu-recessed Track */
 .neu-seg-active {
-  background-color: #e0e5ec;
-  color: #6d5dfc;
-  border-radius: 999px;
-  box-shadow: 4px 4px 8px #b8bcc2, -4px -4px 8px #ffffff;
-}
-
-.dark .neu-seg-active {
   background-color: var(--bg-surface);
-  color: var(--text-primary);
-  border-radius: 0.375rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  color: var(--accent-text);
+  border-radius: 999px;
+  box-shadow: var(--neu-hover);
 }
 
-/* Top Navigation Bar & Left Rail (Unified #e0e5ec in Light, Hairline in Dark) */
+/* Top Navigation Bar & Left Rail (Unified Surface in Day & Night) */
 .neu-topbar {
-  background-color: rgba(224, 229, 236, 0.94);
+  background-color: var(--bg-topbar);
   backdrop-filter: blur(12px);
-  box-shadow: 0 6px 14px -4px rgba(184, 188, 194, 0.55);
+  box-shadow: var(--neu-topbar-shadow);
   border-bottom: none;
 }
 
-.dark .neu-topbar {
-  background-color: rgba(19, 21, 26, 0.95);
-  backdrop-filter: blur(12px);
-  box-shadow: none;
-  border-bottom: 1px solid var(--border-hairline);
-}
-
 .neu-sidebar {
-  background-color: #e0e5ec;
-  border-right: none;
-  box-shadow: 6px 0 16px -6px rgba(184, 188, 194, 0.45);
-}
-
-.dark .neu-sidebar {
   background-color: var(--bg-rail);
-  border-right: 1px solid var(--border-hairline);
-  box-shadow: none;
+  border-right: none;
+  box-shadow: var(--neu-sidebar-shadow);
 }
 
-/* Coral Red Micro-Volume < 0.5 uL Safety Alert (High Readability, Recessed Well + 5px Bar) */
+/* Coral Red Micro-Volume < 0.5 uL Safety Alert (Recessed Well + 5px Vivid Coral Bar) */
 .neu-alert-coral {
-  background-color: #e0e5ec;
+  background-color: var(--bg-surface);
   border: none;
   border-left: 5px solid #ff6b6b;
   border-radius: 16px;
-  box-shadow: inset 5px 5px 10px #b8bcc2, inset -5px -5px 10px #ffffff;
-  color: #3d4451;
-}
-
-.dark .neu-alert-coral {
-  background-color: rgba(244, 63, 94, 0.15);
-  border: 1px solid rgba(244, 63, 94, 0.40);
-  border-left: 4px solid #f43f5e;
-  border-radius: 0.75rem;
-  box-shadow: none;
-  color: #fecdd3;
+  box-shadow: var(--neu-pressed);
+  color: var(--text-primary);
 }
 
 /* Vivid Coral Pill (!N Badge, FAIL Pill, Alert Counter) */
@@ -581,36 +451,33 @@
   background-color: #ff6b6b;
   color: #ffffff;
   border: none;
-  box-shadow: 3px 3px 7px rgba(255, 107, 107, 0.40), -2px -2px 5px #ffffff;
+  box-shadow: var(--neu-coral-shadow);
 }
 
-.dark .neu-badge-coral {
-  background-color: #f43f5e;
-  color: #ffffff;
-  border: 1px solid #f43f5e;
-  box-shadow: none;
-}
-
-/* Subtle Etched Divider in Light Mode (Zero harsh 1px borders) */
+/* Subtle Etched Divider */
 .neu-divider-b {
-  border-bottom: 1px solid rgba(184, 188, 194, 0.42);
-}
-
-.dark .neu-divider-b {
   border-bottom: 1px solid var(--border-hairline);
 }
 
 .neu-divider-t {
-  border-top: 1px solid rgba(184, 188, 194, 0.42);
-}
-
-.dark .neu-divider-t {
   border-top: 1px solid var(--border-hairline);
 }
 
-/* Accent Text Helper (Blurple in Light, Ice Sky in Dark) */
+/* Semantic Color Helpers */
 .text-accent {
   color: var(--accent-text);
+}
+
+.text-mint {
+  color: var(--mint-text);
+}
+
+.text-coral {
+  color: var(--danger-text);
+}
+
+.bg-hover-tint:hover {
+  background-color: var(--bg-hover-tint);
 }
 
 .bio-grid-bg {
@@ -620,19 +487,16 @@
 }
 
 /* ============================================================================
-   PRECISION RANGE SLIDER (Light: Tactile Recessed Track + Blurple Knob | Dark: Preserved)
+   TACTILE PRECISION RANGE SLIDER (Unified Recessed Track + Blurple Knob)
    ============================================================================ */
 input[type="range"].precision-range {
   -webkit-appearance: none;
   appearance: none;
   height: 10px;
   border-radius: 9999px;
+  background: var(--bg-surface) !important;
+  box-shadow: var(--neu-recessed-sm);
   outline: none;
-}
-
-:root:not(.dark):not([data-theme="dark"]) input[type="range"].precision-range {
-  background: #e0e5ec !important;
-  box-shadow: inset 4px 4px 8px #b8bcc2, inset -4px -4px 8px #ffffff;
 }
 
 input[type="range"].precision-range::-webkit-slider-thumb {
@@ -641,52 +505,26 @@ input[type="range"].precision-range::-webkit-slider-thumb {
   width: 22px;
   height: 22px;
   border-radius: 9999px;
-  background: #6d5dfc;
+  background: var(--accent-primary);
   border: none;
-  box-shadow: 4px 4px 8px rgba(109, 93, 252, 0.38), -3px -3px 7px #ffffff;
+  box-shadow: var(--neu-thumb-shadow);
   cursor: pointer;
   transition: transform 140ms ease-out, box-shadow 140ms ease-out;
 }
 
 input[type="range"].precision-range::-webkit-slider-thumb:hover {
   transform: scale(1.08);
-  box-shadow: 3px 3px 6px rgba(109, 93, 252, 0.48), -2px -2px 5px #ffffff;
+  box-shadow: var(--neu-thumb-hover);
 }
 
 input[type="range"].precision-range::-moz-range-thumb {
   width: 22px;
   height: 22px;
   border-radius: 9999px;
-  background: #6d5dfc;
+  background: var(--accent-primary);
   border: none;
-  box-shadow: 4px 4px 8px rgba(109, 93, 252, 0.38), -3px -3px 7px #ffffff;
+  box-shadow: var(--neu-thumb-shadow);
   cursor: pointer;
-}
-
-.dark input[type="range"].precision-range {
-  height: 5px;
-  box-shadow: none;
-}
-
-.dark input[type="range"].precision-range::-webkit-slider-thumb {
-  width: 16px;
-  height: 16px;
-  background: var(--bg-surface-elevated);
-  border: 2.5px solid var(--accent-primary);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
-}
-
-.dark input[type="range"].precision-range::-webkit-slider-thumb:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 0 4px var(--accent-soft);
-}
-
-.dark input[type="range"].precision-range::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  background: var(--bg-surface-elevated);
-  border: 2.5px solid var(--accent-primary);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
 }
 
 /* ============================================================================
@@ -753,22 +591,10 @@ input[type="range"].precision-range::-moz-range-thumb {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #b8bcc2;
+  background: var(--scrollbar-thumb);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9ca3af;
-}
-
-.dark ::-webkit-scrollbar-track {
-  background: var(--bg-subtle);
-}
-
-.dark ::-webkit-scrollbar-thumb {
-  background: var(--border-strong);
-}
-
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-muted);
+  background: var(--scrollbar-thumb-hover);
 }

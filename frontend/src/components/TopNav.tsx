@@ -82,10 +82,6 @@ export function TopNav({
 
   const hasByok = Boolean(byokConfig.apiKey.trim());
   const computedPx = ((16 * fontScalePct) / 100).toFixed(1);
-  const sliderPct =
-    ((fontScalePct - MIN_FONT_SCALE_PCT) /
-      (MAX_FONT_SCALE_PCT - MIN_FONT_SCALE_PCT)) *
-    100;
 
   const renderQuotaPill = () => {
     if (hasByok) {
@@ -93,13 +89,13 @@ export function TopNav({
         <button
           type="button"
           onClick={onOpenApiKeyModal}
-          className="btn-outline inline-flex items-center gap-2 rounded-2xl dark:rounded-lg px-3.5 py-2 text-xs font-medium dark:font-semibold cursor-pointer"
+          className="btn-outline inline-flex items-center gap-2 px-3.5 py-2 text-xs font-medium cursor-pointer"
           title="点击管理自带 API Key 设置"
         >
-          <span className="h-2 w-2 rounded-full bg-[#4ecdc4] dark:bg-sky-400" />
+          <span className="h-2 w-2 rounded-full bg-[#4ecdc4]" />
           <KeyRound className="h-3.5 w-3.5 text-[var(--accent-primary)]" />
           <span>BYOK 已连接</span>
-          <span className="hidden xl:inline neu-recessed rounded-full dark:rounded px-2 py-0.5 font-mono-bio text-xs text-[var(--text-secondary)]">
+          <span className="hidden xl:inline neu-recessed rounded-full px-2 py-0.5 font-mono-bio text-xs text-[var(--text-secondary)]">
             {byokConfig.model || "custom"}
           </span>
         </button>
@@ -112,14 +108,12 @@ export function TopNav({
         <button
           type="button"
           onClick={onOpenApiKeyModal}
-          className={`inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium dark:font-semibold transition cursor-pointer ${
-            low
-              ? "neu-badge-coral rounded-2xl dark:rounded-lg dark:border-rose-500/40 dark:bg-rose-500/15 dark:text-rose-300"
-              : "btn-outline rounded-2xl dark:rounded-lg"
+          className={`inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium transition cursor-pointer ${
+            low ? "neu-badge-coral rounded-2xl" : "btn-outline"
           }`}
           title="点击配置自带 API Key 解锁无限 AI 推理"
         >
-          <Sparkles className={`h-3.5 w-3.5 ${low ? "text-white dark:text-rose-300" : "text-[var(--accent-primary)]"}`} />
+          <Sparkles className={`h-3.5 w-3.5 ${low ? "text-white" : "text-[var(--accent-primary)]"}`} />
           <span>
             AI 额度{" "}
             <strong className="font-mono-bio">
@@ -134,7 +128,7 @@ export function TopNav({
       <button
         type="button"
         onClick={onOpenApiKeyModal}
-        className="btn-outline inline-flex items-center gap-1.5 rounded-2xl dark:rounded-lg px-3.5 py-2 text-xs font-medium dark:font-semibold cursor-pointer"
+        className="btn-outline inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium cursor-pointer"
         title="核心生物设计 100% 免费本地运行；点击可绑定 API Key 开启 AI 自然语言模式"
       >
         <Cpu className="h-3.5 w-3.5 text-[var(--accent-primary)]" />
@@ -145,28 +139,28 @@ export function TopNav({
   };
 
   return (
-    <header className="neu-topbar sticky top-0 z-40 h-[62px] dark:h-[56px]">
+    <header className="neu-topbar sticky top-0 z-40 h-[62px]">
       <div className="flex h-full items-center justify-between gap-3 px-4 sm:px-6">
         {/* Left: Tactile Brand Mark + Subtle Engine Dot */}
         <div className="flex items-center gap-3 min-w-0">
-          <div className="neu-pill flex h-9 w-9 shrink-0 items-center justify-center text-[var(--accent-primary)] dark:h-8 dark:w-8 dark:rounded-lg dark:border-0 dark:bg-[var(--primary)] dark:text-[var(--primary-fg)]">
+          <div className="neu-pill flex h-9 w-9 shrink-0 items-center justify-center text-[var(--accent-primary)]">
             <Dna className="h-4 w-4" />
           </div>
 
           <div className="flex items-center gap-2.5 min-w-0">
-            <span className="font-display whitespace-nowrap text-lg text-[var(--text-primary)] dark:text-base">
+            <span className="font-display whitespace-nowrap text-lg text-[var(--text-primary)]">
               CRISPR-Forge
             </span>
-            <span className="hidden lg:inline-block whitespace-nowrap neu-recessed rounded-full dark:rounded-md px-2.5 py-0.5 font-mono-bio text-xs font-medium text-[var(--text-muted)]">
+            <span className="hidden lg:inline-block whitespace-nowrap neu-recessed rounded-full px-2.5 py-0.5 font-mono-bio text-xs font-medium text-[var(--text-muted)]">
               Zero-Trust Workbench
             </span>
 
             {backendOnline !== null && (
               <div
-                className={`hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium ${
+                className={`hidden xl:inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium ${
                   backendOnline
-                    ? "neu-recessed rounded-full dark:rounded-md dark:bg-[var(--bg-surface)] text-[var(--text-secondary)]"
-                    : "neu-badge-coral rounded-full dark:rounded-md dark:border-rose-500/40 dark:bg-rose-500/15 dark:text-rose-300"
+                    ? "neu-recessed text-[var(--text-secondary)]"
+                    : "neu-badge-coral"
                 }`}
                 title={
                   backendOnline
@@ -176,9 +170,7 @@ export function TopNav({
               >
                 <span
                   className={`h-2 w-2 rounded-full ${
-                    backendOnline
-                      ? "bg-[#4ecdc4] dark:bg-emerald-500"
-                      : "bg-white dark:bg-rose-400"
+                    backendOnline ? "bg-[#4ecdc4]" : "bg-white"
                   }`}
                 />
                 <span>{backendOnline ? "引擎在线" : "后端离线"}</span>
@@ -195,7 +187,7 @@ export function TopNav({
           {/* Fine-Grained Continuous Font Size Adjuster: [ − ] [ 100% ] [ + ] */}
           <div ref={fontControlRef} className="relative hidden sm:block">
             <div
-              className="neu-recessed inline-flex items-center overflow-hidden rounded-full px-1 py-0.5 dark:rounded-lg dark:p-0"
+              className="neu-recessed inline-flex items-center overflow-hidden rounded-full px-1 py-0.5"
               role="group"
               aria-label="精细字号调节 (84%–120%)"
             >
@@ -205,7 +197,7 @@ export function TopNav({
                 onClick={() => onChangeFontScalePct(fontScalePct - 2)}
                 title="缩小字号 (-2%)"
                 aria-label="缩小字号 2%"
-                className="flex h-7 w-7 dark:h-8 items-center justify-center rounded-full dark:rounded-none text-[var(--text-secondary)] transition hover:text-[var(--accent-primary)] dark:hover:bg-[var(--bg-surface)] dark:hover:text-[var(--text-primary)] disabled:opacity-35 cursor-pointer"
+                className="flex h-7 w-7 items-center justify-center rounded-full text-[var(--text-secondary)] transition hover:text-[var(--accent-primary)] disabled:opacity-35 cursor-pointer"
               >
                 <Minus className="h-3.5 w-3.5" />
               </button>
@@ -214,10 +206,10 @@ export function TopNav({
                 type="button"
                 onClick={() => setFontPopoverOpen((v) => !v)}
                 title="点击展开 1% 连续字号滑块"
-                className={`flex h-7 dark:h-8 min-w-[52px] items-center justify-center dark:border-x dark:border-[var(--border-hairline)] px-2 font-mono-bio text-xs font-medium dark:font-semibold transition cursor-pointer ${
+                className={`flex h-7 min-w-[52px] items-center justify-center px-2 font-mono-bio text-xs font-medium transition cursor-pointer ${
                   fontPopoverOpen || fontScalePct !== DEFAULT_FONT_SCALE_PCT
-                    ? "text-accent dark:bg-[var(--bg-surface)]"
-                    : "text-[var(--text-primary)] hover:text-accent dark:bg-[var(--bg-surface)]"
+                    ? "text-accent"
+                    : "text-[var(--text-primary)] hover:text-accent"
                 }`}
               >
                 {fontScalePct}%
@@ -229,7 +221,7 @@ export function TopNav({
                 onClick={() => onChangeFontScalePct(fontScalePct + 2)}
                 title="放大字号 (+2%)"
                 aria-label="放大字号 2%"
-                className="flex h-7 w-7 dark:h-8 items-center justify-center rounded-full dark:rounded-none text-[var(--text-secondary)] transition hover:text-[var(--accent-primary)] dark:hover:bg-[var(--bg-surface)] dark:hover:text-[var(--text-primary)] disabled:opacity-35 cursor-pointer"
+                className="flex h-7 w-7 items-center justify-center rounded-full text-[var(--text-secondary)] transition hover:text-[var(--accent-primary)] disabled:opacity-35 cursor-pointer"
               >
                 <Plus className="h-3.5 w-3.5" />
               </button>
@@ -242,7 +234,7 @@ export function TopNav({
                   <span className="text-xs font-semibold text-[var(--text-primary)]">
                     全局界面字号微调
                   </span>
-                  <span className="neu-recessed rounded-full dark:rounded-md px-2.5 py-0.5 font-mono-bio text-xs font-medium text-accent">
+                  <span className="neu-recessed rounded-full px-2.5 py-0.5 font-mono-bio text-xs font-medium text-accent">
                     {fontScalePct}% · {computedPx} px
                   </span>
                 </div>
@@ -257,9 +249,6 @@ export function TopNav({
                     onChange={(e) =>
                       onChangeFontScalePct(Number(e.target.value))
                     }
-                    style={{
-                      background: `linear-gradient(to right, var(--accent-primary) 0%, var(--accent-primary) ${sliderPct}%, var(--border-strong) ${sliderPct}%, var(--border-strong) 100%)`,
-                    }}
                     className="precision-range w-full cursor-pointer"
                     aria-label="连续字号缩放百分比"
                   />
@@ -308,7 +297,7 @@ export function TopNav({
 
           {/* 3-State Theme Switcher: 浅色 | 深色 | 系统 */}
           <div
-            className="neu-recessed inline-flex items-center rounded-full p-1 gap-0.5 dark:rounded-lg dark:p-0.5 dark:gap-0"
+            className="neu-recessed inline-flex items-center rounded-full p-1 gap-0.5"
             role="group"
             aria-label="外观主题切换"
           >
@@ -320,10 +309,10 @@ export function TopNav({
                   type="button"
                   onClick={() => onChangeTheme(value)}
                   title={`切换至${label}外观`}
-                  className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium dark:font-semibold transition cursor-pointer ${
+                  className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium transition cursor-pointer ${
                     active
                       ? "neu-seg-active"
-                      : "rounded-full dark:rounded-md text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+                      : "rounded-full text-[var(--text-muted)] hover:text-[var(--text-primary)]"
                   }`}
                 >
                   <Icon className="h-3.5 w-3.5" />
@@ -337,7 +326,7 @@ export function TopNav({
             type="button"
             onClick={onOpenGuideModal}
             title="启动交互式聚光灯新手引导"
-            className="btn-outline inline-flex items-center gap-1.5 rounded-2xl dark:rounded-lg px-3 py-2 text-xs font-medium dark:font-semibold cursor-pointer"
+            className="btn-outline inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium cursor-pointer"
           >
             <Compass className="h-3.5 w-3.5 text-[var(--accent-primary)]" />
             <span className="hidden lg:inline">新手引导</span>

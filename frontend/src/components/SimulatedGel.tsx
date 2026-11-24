@@ -123,7 +123,7 @@ export function SimulatedGel({
   return (
     <div className="bio-card flex h-full flex-col overflow-hidden">
       {/* Header */}
-      <div className="neu-divider-b flex flex-wrap items-center justify-between gap-2 px-6 py-4 dark:px-5">
+      <div className="neu-divider-b flex flex-wrap items-center justify-between gap-2 px-6 py-4">
         <div>
           <div className="flex items-center gap-2">
             <FlaskConical className="h-4 w-4 text-[var(--accent-primary)]" />
@@ -139,17 +139,17 @@ export function SimulatedGel({
           </p>
         </div>
 
-        <span className="neu-recessed inline-flex items-center gap-1.5 rounded-full dark:rounded-md px-3 py-1 font-mono-bio text-xs font-semibold text-accent">
+        <span className="neu-recessed inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-mono-bio text-xs font-semibold text-accent">
           <Sparkles className="h-3.5 w-3.5" />
           KO 阳性 {verificationPrimers.ko_amplicon_bp} bp
         </span>
       </div>
 
-      {/* Light Mode: Recessed #e0e5ec Hardware Bezel wrapping 100%-preserved Dark UV Chamber */}
-      <div className="flex flex-1 flex-col p-4 sm:p-5 dark:p-0">
-        <div className="neu-recessed-deep flex flex-1 flex-col rounded-[22px] p-2.5 dark:rounded-none dark:border-0 dark:bg-transparent dark:p-0">
+      {/* Unified Recessed Hardware Bezel wrapping 100%-preserved Dark UV Chamber (Day & Night) */}
+      <div className="flex flex-1 flex-col p-4 sm:p-5">
+        <div className="neu-recessed-deep flex flex-1 flex-col rounded-[22px] p-2.5">
           {/* Obsidian UV Transilluminator Chamber (100% Preserved Optical Box) */}
-          <div className="gel-chamber relative flex flex-1 flex-col justify-between rounded-[15px] dark:rounded-none p-4 sm:p-5 text-zinc-100">
+          <div className="gel-chamber relative flex flex-1 flex-col justify-between rounded-[15px] p-4 sm:p-5 text-zinc-100">
         <div>
           <div className="mb-3 flex flex-wrap items-center justify-between gap-2 text-xs font-mono-bio text-zinc-300">
             <span className="inline-flex items-center gap-1.5">

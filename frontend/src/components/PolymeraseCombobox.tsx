@@ -237,10 +237,8 @@ export function PolymeraseCombobox({
                             onChange(cfg.name, cfg);
                             setOpen(false);
                           }}
-                          className={`group flex items-start justify-between gap-2 rounded-2xl dark:rounded-lg px-3 py-2.5 transition cursor-pointer ${
-                            isSelected
-                              ? "neu-recessed dark:bg-[var(--accent-soft)] dark:ring-1 dark:ring-[var(--accent-border)]"
-                              : "hover:bg-white/40 dark:hover:bg-[var(--bg-subtle)]"
+                          className={`group flex items-start justify-between gap-2 rounded-2xl px-3 py-2.5 transition cursor-pointer ${
+                            isSelected ? "neu-recessed" : "bg-hover-tint"
                           }`}
                         >
                           <div className="min-w-0 space-y-0.5">
@@ -303,10 +301,8 @@ export function PolymeraseCombobox({
                             onChange(item.id, null);
                             setOpen(false);
                           }}
-                          className={`flex w-full items-start justify-between gap-2 rounded-2xl dark:rounded-lg px-3 py-2.5 text-left transition cursor-pointer ${
-                            isSelected
-                              ? "neu-recessed dark:bg-[var(--accent-soft)] dark:ring-1 dark:ring-[var(--accent-border)]"
-                              : "hover:bg-white/40 dark:hover:bg-[var(--bg-subtle)]"
+                          className={`flex w-full items-start justify-between gap-2 rounded-2xl px-3 py-2.5 text-left transition cursor-pointer ${
+                            isSelected ? "neu-recessed" : "bg-hover-tint"
                           }`}
                         >
                           <div className="min-w-0 space-y-1">

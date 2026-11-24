@@ -52,7 +52,7 @@ export default function RootLayout({
         />
         <script dangerouslySetInnerHTML={{ __html: ANTI_FLASH_SCRIPT }} />
       </head>
-      <body className="min-h-screen antialiased selection:bg-[#6d5dfc]/20 selection:text-[#3d4451] dark:selection:bg-sky-500/30 dark:selection:text-sky-100">
+      <body className="min-h-screen antialiased selection:bg-[#6d5dfc]/20 selection:text-[#3d4451] dark:selection:bg-[#8b7dff]/30 dark:selection:text-[#e7ebf3]">
         {children}
       </body>
     </html>

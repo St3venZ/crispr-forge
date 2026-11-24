@@ -444,7 +444,7 @@ export function DesignComposer({
           className="bio-card flex flex-wrap md:flex-nowrap items-center justify-between gap-3 px-5 py-3.5"
         >
           <div className="flex items-center gap-3 min-w-0 flex-1">
-            <span className="neu-recessed inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl dark:h-8 dark:w-8 dark:rounded-lg text-[var(--accent-primary)]">
+            <span className="neu-recessed inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl text-[var(--accent-primary)]">
               <FlaskConical className="h-4 w-4" />
             </span>
 
@@ -455,7 +455,7 @@ export function DesignComposer({
               >
                 {design.locus.organism}
               </span>
-              <span className="neu-recessed rounded-full dark:rounded-md px-2.5 py-0.5 font-mono-bio text-xs font-semibold text-accent whitespace-nowrap shrink-0">
+              <span className="neu-recessed rounded-full px-2.5 py-0.5 font-mono-bio text-xs font-semibold text-accent whitespace-nowrap shrink-0">
                 Δ{design.locus.gene_name}
               </span>
               <span className="font-mono-bio text-xs font-medium text-[var(--text-secondary)] whitespace-nowrap shrink-0">
@@ -473,7 +473,7 @@ export function DesignComposer({
           <button
             type="button"
             onClick={() => setComposerExpanded(true)}
-            className="btn-outline inline-flex shrink-0 whitespace-nowrap items-center gap-1.5 px-4 py-2 text-xs font-medium dark:font-semibold cursor-pointer"
+            className="btn-outline inline-flex shrink-0 whitespace-nowrap items-center gap-1.5 px-4 py-2 text-xs font-medium cursor-pointer"
           >
             <Edit3 className="h-3.5 w-3.5 text-[var(--accent-primary)]" />
             修改参数 / 新建设计
@@ -488,7 +488,7 @@ export function DesignComposer({
       {/* Warm Human Editorial Header */}
       {!design ? (
         <div className="text-center max-w-3xl mx-auto space-y-3 pt-2">
-          <div className="neu-recessed inline-flex items-center gap-2 rounded-full dark:rounded-md dark:bg-[var(--bg-surface)] px-4 py-1.5 text-xs font-medium text-[var(--text-secondary)]">
+          <div className="neu-recessed inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium text-[var(--text-secondary)]">
             <FlaskConical className="h-3.5 w-3.5 text-[var(--accent-primary)]" />
             <span>
               大肠杆菌 · 枯草芽孢杆菌 · 谷氨酸棒状杆菌及任意自定义原核菌株
@@ -503,13 +503,13 @@ export function DesignComposer({
         </div>
       ) : (
         <div className="flex items-center justify-between">
-          <h2 className="font-display text-xl text-[var(--text-primary)] dark:text-lg">
+          <h2 className="font-display text-xl text-[var(--text-primary)]">
             新建设计或调整实验参数
           </h2>
           <button
             type="button"
             onClick={() => setComposerExpanded(false)}
-            className="btn-outline inline-flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium dark:font-semibold cursor-pointer"
+            className="btn-outline inline-flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium cursor-pointer"
           >
             <ChevronUp className="h-4 w-4" />
             收起配置面板
@@ -523,7 +523,7 @@ export function DesignComposer({
           <Zap className="h-3.5 w-3.5 text-amber-500" />
           <span>一键运行多物种经典实例（免配置即刻体验 12 点硅片验证与模拟电泳）：</span>
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-3 dark:gap-2">
+        <div className="flex flex-wrap items-center justify-center gap-3">
           {DEMO_CHIPS.map((chip) => {
             const isActive = activeChipId === chip.id;
             return (
@@ -535,7 +535,7 @@ export function DesignComposer({
                 onClick={() => handleRunDemoChip(chip)}
                 className="neu-pill inline-flex items-center gap-2 px-4 py-2 text-sm cursor-pointer disabled:opacity-55 disabled:cursor-not-allowed"
               >
-                <span className="font-medium dark:font-semibold text-[var(--text-primary)]">
+                <span className="font-medium text-[var(--text-primary)]">
                   {chip.label}
                 </span>
                 <span className="text-[var(--border-strong)]">·</span>
@@ -554,15 +554,15 @@ export function DesignComposer({
         className="bio-card overflow-hidden"
       >
         {/* Dual-Tab Switcher */}
-        <div className="neu-divider-b flex flex-wrap items-center justify-between gap-4 px-6 py-4 sm:px-8 dark:bg-[var(--bg-subtle)]/70 dark:px-5 dark:py-2.5">
-          <div className="neu-recessed inline-flex rounded-full p-1.5 gap-1 dark:rounded-lg dark:bg-[var(--bg-canvas)] dark:p-0.5 dark:gap-0">
+        <div className="neu-divider-b flex flex-wrap items-center justify-between gap-4 px-6 py-4 sm:px-8">
+          <div className="neu-recessed inline-flex rounded-full p-1.5 gap-1">
             <button
               type="button"
               onClick={() => setActiveTab("nl")}
-              className={`inline-flex items-center gap-2 px-4 py-2 dark:px-3.5 dark:py-1.5 text-sm font-medium dark:font-semibold transition cursor-pointer ${
+              className={`inline-flex items-center gap-2 px-4 py-2 text-sm font-medium transition cursor-pointer ${
                 activeTab === "nl"
                   ? "neu-seg-active"
-                  : "rounded-full dark:rounded-md text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+                  : "rounded-full text-[var(--text-muted)] hover:text-[var(--text-primary)]"
               }`}
             >
               <Sparkles className="h-4 w-4 text-[var(--accent-primary)]" />
@@ -571,10 +571,10 @@ export function DesignComposer({
             <button
               type="button"
               onClick={() => setActiveTab("guided")}
-              className={`inline-flex items-center gap-2 px-4 py-2 dark:px-3.5 dark:py-1.5 text-sm font-medium dark:font-semibold transition cursor-pointer ${
+              className={`inline-flex items-center gap-2 px-4 py-2 text-sm font-medium transition cursor-pointer ${
                 activeTab === "guided"
                   ? "neu-seg-active"
-                  : "rounded-full dark:rounded-md text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+                  : "rounded-full text-[var(--text-muted)] hover:text-[var(--text-primary)]"
               }`}
             >
               <SlidersHorizontal className="h-4 w-4 text-[var(--accent-primary)]" />
@@ -583,12 +583,12 @@ export function DesignComposer({
           </div>
 
           <div className="hidden md:flex items-center gap-2 text-xs font-medium text-[var(--text-muted)]">
-            <span className="inline-block h-2 w-2 rounded-full bg-[#4ecdc4] dark:bg-emerald-500" />
+            <span className="inline-block h-2 w-2 rounded-full bg-[#4ecdc4]" />
             <span>所有序列均来自真实 GenBank / 上传文件，零 LLM 幻觉拼凑</span>
           </div>
         </div>
 
-        <form onSubmit={handleFormSubmit} className="p-6 sm:p-8 space-y-6 dark:p-6 dark:space-y-5">
+        <form onSubmit={handleFormSubmit} className="p-6 sm:p-8 space-y-6">
           {activeTab === "nl" ? (
             /* TAB A: Natural Language Omnibox */
             <div className="space-y-4">
@@ -622,20 +622,20 @@ export function DesignComposer({
               <div className="space-y-3.5">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <label className="flex items-center gap-2.5 text-sm font-semibold text-[var(--text-primary)]">
-                    <span className="neu-recessed flex h-7 w-7 items-center justify-center rounded-full text-xs font-semibold text-accent font-mono-bio dark:h-6 dark:w-6 dark:rounded-md dark:bg-[var(--primary)] dark:text-[var(--primary-fg)]">
+                    <span className="neu-recessed flex h-7 w-7 items-center justify-center rounded-full text-xs font-semibold text-accent font-mono-bio">
                       1
                     </span>
                     菌株与基因组序列来源
                   </label>
 
-                  <div className="neu-recessed inline-flex rounded-full p-1 gap-1 text-xs font-medium dark:rounded-lg dark:p-0.5 dark:gap-0">
+                  <div className="neu-recessed inline-flex rounded-full p-1 gap-1 text-xs font-medium">
                     <button
                       type="button"
                       onClick={() => setSourceMode("ncbi")}
-                      className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 dark:px-3 dark:py-1 transition cursor-pointer ${
+                      className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 transition cursor-pointer ${
                         sourceMode === "ncbi"
                           ? "neu-seg-active"
-                          : "rounded-full dark:rounded-md text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+                          : "rounded-full text-[var(--text-muted)] hover:text-[var(--text-primary)]"
                       }`}
                     >
                       <Database className="h-3.5 w-3.5" />
@@ -644,10 +644,10 @@ export function DesignComposer({
                     <button
                       type="button"
                       onClick={() => setSourceMode("upload")}
-                      className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 dark:px-3 dark:py-1 transition cursor-pointer ${
+                      className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 transition cursor-pointer ${
                         sourceMode === "upload"
                           ? "neu-seg-active"
-                          : "rounded-full dark:rounded-md text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+                          : "rounded-full text-[var(--text-muted)] hover:text-[var(--text-primary)]"
                       }`}
                     >
                       <UploadCloud className="h-3.5 w-3.5" />
@@ -686,12 +686,12 @@ export function DesignComposer({
                       onDragLeave={() => setIsDragging(false)}
                       onDrop={handleDrop}
                       onClick={() => fileInputRef.current?.click()}
-                      className={`neu-recessed flex flex-col items-center justify-center rounded-[20px] dark:rounded-lg dark:border-2 dark:border-dashed p-6 text-center transition cursor-pointer ${
+                      className={`neu-recessed flex flex-col items-center justify-center rounded-[20px] p-6 text-center transition cursor-pointer ${
                         isDragging
-                          ? "ring-2 ring-[var(--accent-primary)] dark:border-[var(--accent-primary)] dark:bg-[var(--accent-soft)]"
+                          ? "ring-2 ring-[var(--accent-primary)]"
                           : uploadedFile
-                            ? "ring-1 ring-[var(--accent-border)] dark:border-[var(--accent-border)] dark:bg-[var(--accent-soft)]"
-                            : "dark:border-[var(--border-strong)] dark:bg-[var(--bg-subtle)]/40 dark:hover:border-[var(--accent-primary)]"
+                            ? "ring-1 ring-[var(--accent-border)]"
+                            : ""
                       }`}
                     >
                       <input
@@ -801,7 +801,7 @@ export function DesignComposer({
               {/* Step 2: Target Gene / Locus Tag */}
               <div className="space-y-3">
                 <label className="flex items-center gap-2.5 text-sm font-semibold text-[var(--text-primary)]">
-                  <span className="neu-recessed flex h-7 w-7 items-center justify-center rounded-full text-xs font-semibold text-accent font-mono-bio dark:h-6 dark:w-6 dark:rounded-md dark:bg-[var(--primary)] dark:text-[var(--primary-fg)]">
+                  <span className="neu-recessed flex h-7 w-7 items-center justify-center rounded-full text-xs font-semibold text-accent font-mono-bio">
                     2
                   </span>
                   目标基因名 / Locus Tag
@@ -835,16 +835,16 @@ export function DesignComposer({
                 </div>
               </div>
 
-              {/* Step 3: 2x2 Tactile Plasmid System Visual Selector (>= 24px gap) */}
+              {/* Step 3: 2x2 Tactile Plasmid System Visual Selector (>= 24px gap, Day & Night) */}
               <div className="space-y-4">
                 <label className="flex items-center gap-2.5 text-sm font-semibold text-[var(--text-primary)]">
-                  <span className="neu-recessed flex h-7 w-7 items-center justify-center rounded-full text-xs font-semibold text-accent font-mono-bio dark:h-6 dark:w-6 dark:rounded-md dark:bg-[var(--primary)] dark:text-[var(--primary-fg)]">
+                  <span className="neu-recessed flex h-7 w-7 items-center justify-center rounded-full text-xs font-semibold text-accent font-mono-bio">
                     3
                   </span>
                   CRISPR 质粒体系（自动适配粘性末端 / 反向 PCR 与消除流程）
                 </label>
 
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 dark:gap-3.5 dark:xl:grid-cols-4">
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   {plasmidList.map((p) => {
                     const active = plasmidSystem === p.id;
                     return (
@@ -859,9 +859,7 @@ export function DesignComposer({
                           <div className="flex items-center justify-between gap-2">
                             <span
                               className={`text-sm font-semibold ${
-                                active
-                                  ? "text-accent dark:text-[var(--text-primary)]"
-                                  : "text-[var(--text-primary)]"
+                                active ? "text-accent" : "text-[var(--text-primary)]"
                               }`}
                             >
                               {p.short_label}
@@ -871,11 +869,15 @@ export function DesignComposer({
                                 <Wrench className="h-4 w-4 text-[var(--accent-primary)] shrink-0" />
                               )}
                               <span
-                                className={`h-2.5 w-2.5 rounded-full transition dark:hidden ${
-                                  active
-                                    ? "bg-[#6d5dfc] shadow-[0_0_8px_rgba(109,93,252,0.55)]"
-                                    : "bg-[#b8bcc2]"
-                                }`}
+                                className="h-2.5 w-2.5 rounded-full transition"
+                                style={{
+                                  backgroundColor: active
+                                    ? "var(--accent-primary)"
+                                    : "var(--neu-dot-off)",
+                                  boxShadow: active
+                                    ? "0 0 8px var(--accent-primary)"
+                                    : "none",
+                                }}
                               />
                             </div>
                           </div>
@@ -883,8 +885,8 @@ export function DesignComposer({
                             {p.hosts}
                           </p>
                         </div>
-                        <div className="mt-4 pt-1 dark:mt-3 dark:border-t dark:border-[var(--border-hairline)] dark:pt-2.5">
-                          <span className="neu-recessed inline-block rounded-full dark:rounded px-3 py-1 font-mono-bio text-xs text-accent">
+                        <div className="mt-4 pt-1">
+                          <span className="neu-recessed inline-block rounded-full px-3 py-1 font-mono-bio text-xs text-accent">
                             {p.overhangs}
                           </span>
                         </div>
@@ -895,14 +897,14 @@ export function DesignComposer({
 
                 {/* Custom Plasmid Smooth Drawer + Blank .gb Auto-Parser + Saved Lab Vector Library */}
                 {plasmidSystem === "custom" && (
-                  <div className="neu-recessed rounded-[20px] p-5 space-y-5 dark:rounded-lg dark:border-[var(--accent-border)] dark:bg-[var(--bg-subtle)]/65">
+                  <div className="neu-recessed rounded-[20px] p-5 space-y-5">
                     {/* Header Row */}
                     <div className="flex flex-wrap items-center justify-between gap-3">
                       <span className="text-sm font-semibold text-[var(--text-primary)] flex items-center gap-1.5">
                         <Wrench className="h-4 w-4 text-[var(--accent-primary)]" />
                         自定义实验室载体规格
                       </span>
-                      <div className="neu-recessed inline-flex rounded-full p-1 gap-1 text-xs font-medium dark:rounded-lg dark:bg-[var(--bg-surface)] dark:p-0.5 dark:gap-0">
+                      <div className="neu-recessed inline-flex rounded-full p-1 gap-1 text-xs font-medium">
                         {(
                           [
                             ["golden_gate_oligo", "Golden Gate 退火 Oligo"],
@@ -918,10 +920,10 @@ export function DesignComposer({
                                 cloning_method: method,
                               }))
                             }
-                            className={`px-3.5 py-1.5 dark:px-3 dark:py-1 transition cursor-pointer ${
+                            className={`px-3.5 py-1.5 transition cursor-pointer ${
                               customPlasmid.cloning_method === method
-                                ? "neu-seg-active dark:bg-[var(--primary)] dark:text-[var(--primary-fg)]"
-                                : "rounded-full dark:rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                                ? "neu-seg-active"
+                                : "rounded-full text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
                             }`}
                           >
                             {label}
@@ -1337,11 +1339,11 @@ export function DesignComposer({
           )}
 
           {/* Collapsible Advanced Experimental Parameters */}
-          <div className="neu-recessed rounded-[20px] dark:rounded-lg dark:bg-[var(--bg-subtle)]/55">
+          <div className="neu-recessed rounded-[20px]">
             <button
               type="button"
               onClick={() => setShowAdvanced((v) => !v)}
-              className="flex w-full items-center justify-between px-5 py-3.5 text-sm font-medium dark:font-semibold text-[var(--text-primary)] cursor-pointer"
+              className="flex w-full items-center justify-between px-5 py-3.5 text-sm font-medium text-[var(--text-primary)] cursor-pointer"
             >
               <span className="inline-flex flex-wrap items-center gap-2">
                 <SlidersHorizontal className="h-4 w-4 text-[var(--accent-primary)]" />
@@ -1360,11 +1362,11 @@ export function DesignComposer({
             </button>
 
             {showAdvanced && (
-              <div className="neu-divider-t space-y-6 p-5 sm:p-6 dark:bg-[var(--bg-surface)] dark:rounded-b-lg">
+              <div className="neu-divider-t space-y-6 p-5 sm:p-6">
                 {/* Row 1 */}
                 <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
                   <div className="space-y-2">
-                    <label className="block text-sm font-medium dark:font-semibold text-[var(--text-primary)]">
+                    <label className="block text-sm font-medium text-[var(--text-primary)]">
                       高保真 DNA 聚合酶（15 款内置 + 自定义）
                     </label>
                     <PolymeraseCombobox
@@ -1379,7 +1381,7 @@ export function DesignComposer({
                   </div>
 
                   <div className="space-y-2">
-                    <label className="block text-sm font-medium dark:font-semibold text-[var(--text-primary)]">
+                    <label className="block text-sm font-medium text-[var(--text-primary)]">
                       敲除边界策略
                     </label>
                     <select
@@ -1405,7 +1407,7 @@ export function DesignComposer({
                   </div>
 
                   <div className="space-y-2">
-                    <label className="block text-sm font-medium dark:font-semibold text-[var(--text-primary)]">
+                    <label className="block text-sm font-medium text-[var(--text-primary)]">
                       Donor 供体构建方式
                     </label>
                     <select
@@ -1476,7 +1478,7 @@ export function DesignComposer({
                           自动按需抓取全基因组脱靶索引 (auto_fetch_whole_genome)
                         </span>
                         {cachedWholeGenomes.length > 0 && (
-                          <span className="neu-recessed rounded-full dark:rounded px-2.5 py-0.5 font-mono-bio text-xs font-medium text-accent">
+                          <span className="neu-recessed rounded-full px-2.5 py-0.5 font-mono-bio text-xs font-medium text-accent">
                             本地已缓存 {cachedWholeGenomes.length} 株完整染色体
                           </span>
                         )}
@@ -1492,18 +1494,21 @@ export function DesignComposer({
                     role="switch"
                     aria-checked={autoFetchWholeGenome}
                     onClick={() => setAutoFetchWholeGenome((v) => !v)}
-                    className={`neu-recessed relative inline-flex h-7 w-13 shrink-0 items-center rounded-full p-1 transition cursor-pointer dark:h-6 dark:w-11 dark:p-0 dark:border-0 ${
-                      autoFetchWholeGenome
-                        ? "dark:bg-[var(--accent-primary)]"
-                        : "dark:bg-zinc-700"
-                    }`}
+                    className="neu-recessed relative inline-flex h-7 w-13 shrink-0 items-center rounded-full p-1 transition cursor-pointer"
                   >
                     <span
-                      className={`inline-block h-5 w-5 dark:h-4 dark:w-4 transform rounded-full transition-all duration-200 ${
-                        autoFetchWholeGenome
-                          ? "translate-x-6 bg-[#6d5dfc] shadow-[3px_3px_6px_rgba(109,93,252,0.4),-2px_-2px_5px_#ffffff] dark:bg-white dark:shadow-xs"
-                          : "translate-x-0 bg-[#e0e5ec] shadow-[3px_3px_6px_#b8bcc2,-3px_-3px_6px_#ffffff] dark:translate-x-1 dark:bg-white dark:shadow-xs"
-                      }`}
+                      className="inline-block h-5 w-5 transform rounded-full transition-all duration-200"
+                      style={{
+                        transform: autoFetchWholeGenome
+                          ? "translateX(24px)"
+                          : "translateX(0px)",
+                        backgroundColor: autoFetchWholeGenome
+                          ? "var(--accent-primary)"
+                          : "var(--bg-surface)",
+                        boxShadow: autoFetchWholeGenome
+                          ? "var(--neu-knob-on-shadow)"
+                          : "var(--neu-knob-off-shadow)",
+                      }}
                     />
                   </button>
                 </div>
@@ -1524,7 +1529,7 @@ export function DesignComposer({
                 <button
                   type="button"
                   onClick={onCancel}
-                  className="neu-badge-coral inline-flex items-center gap-1.5 rounded-2xl dark:rounded-lg px-4 py-2.5 text-sm font-medium dark:font-semibold transition cursor-pointer"
+                  className="neu-badge-coral inline-flex items-center gap-1.5 rounded-2xl px-4 py-2.5 text-sm font-medium transition cursor-pointer"
                 >
                   <Square className="h-4 w-4 fill-current" />
                   停止

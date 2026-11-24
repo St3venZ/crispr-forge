@@ -208,15 +208,15 @@ export function SideOutlineNav({
   const badgeClass = (tone: NavItem["badgeTone"]) => {
     switch (tone) {
       case "emerald":
-        return "rounded-full bg-[#4ecdc4]/20 text-[#1a7871] dark:rounded-md dark:border dark:border-emerald-500/35 dark:bg-emerald-500/15 dark:text-emerald-300";
+        return "rounded-full bg-[var(--mint-soft)] text-mint";
       case "amber":
-        return "rounded-full bg-amber-500/15 text-amber-800 dark:rounded-md dark:border dark:border-amber-500/35 dark:bg-amber-500/15 dark:text-amber-300";
+        return "rounded-full bg-amber-500/15 text-amber-800 dark:text-amber-300";
       case "rose":
-        return "neu-badge-coral rounded-full font-semibold dark:rounded-md dark:font-bold";
+        return "neu-badge-coral rounded-full font-semibold";
       case "accent":
-        return "rounded-full bg-[var(--accent-soft)] text-accent dark:rounded-md dark:border dark:border-[var(--accent-border)]";
+        return "rounded-full bg-[var(--accent-soft)] text-accent";
       default:
-        return "neu-recessed rounded-full text-[var(--text-muted)] dark:rounded-md";
+        return "neu-recessed rounded-full text-[var(--text-muted)]";
     }
   };
 
@@ -225,12 +225,12 @@ export function SideOutlineNav({
       {/* Desktop Sticky Left Navigation Rail (lg+) */}
       <aside
         data-tour="sidebar-nav"
-        className={`neu-sidebar hidden lg:flex shrink-0 flex-col sticky top-[62px] dark:top-[56px] h-[calc(100vh-62px)] dark:h-[calc(100vh-56px)] transition-[width] duration-200 ${
+        className={`neu-sidebar hidden lg:flex shrink-0 flex-col sticky top-[62px] h-[calc(100vh-62px)] transition-[width] duration-200 ${
           collapsed ? "w-[68px]" : "w-[260px]"
         }`}
         aria-label="工作台大纲导航"
       >
-        <div className="flex-1 overflow-y-auto px-3 py-5 space-y-2 dark:space-y-1">
+        <div className="flex-1 overflow-y-auto px-3 py-5 space-y-2">
           {!collapsed && (
             <div className="px-3 pb-2 text-xs font-medium text-[var(--text-muted)]">
               工作台大纲
@@ -247,17 +247,12 @@ export function SideOutlineNav({
                 disabled={!item.enabled}
                 onClick={() => jumpTo(item.id)}
                 title={`${item.num} ${item.label}${item.badge ? ` (${item.badge})` : ""}`}
-                className={`group relative flex w-full items-center gap-2.5 rounded-2xl dark:rounded-lg px-3 py-2.5 dark:py-2 text-left transition cursor-pointer disabled:opacity-35 disabled:cursor-not-allowed ${
+                className={`group relative flex w-full items-center gap-2.5 rounded-2xl px-3 py-2.5 text-left transition cursor-pointer disabled:opacity-35 disabled:cursor-not-allowed ${
                   isActive
-                    ? "neu-recessed text-[var(--accent-primary)] dark:bg-[var(--bg-surface-elevated)] dark:text-[var(--text-primary)] dark:ring-1 dark:ring-[var(--border-hairline)]"
-                    : "text-[var(--text-secondary)] hover:bg-white/35 dark:hover:bg-[var(--bg-surface)]/70 hover:text-[var(--text-primary)]"
+                    ? "neu-recessed text-accent"
+                    : "text-[var(--text-secondary)] bg-hover-tint hover:text-[var(--text-primary)]"
                 } ${collapsed ? "justify-center" : "justify-between"}`}
               >
-                {/* Left Ice Sky Active Accent Bar (Dark Mode Only; Light uses Concave Inset) */}
-                {isActive && (
-                  <span className="hidden dark:block absolute left-0 top-1.5 bottom-1.5 w-[3px] rounded-r bg-[var(--accent-primary)]" />
-                )}
-
                 <div className="flex items-center gap-2.5 min-w-0">
                   <Icon
                     className={`h-4 w-4 shrink-0 ${
@@ -271,7 +266,7 @@ export function SideOutlineNav({
                       <span className="font-mono-bio text-xs text-[var(--text-muted)]">
                         {item.num}
                       </span>
-                      <span className="truncate text-sm font-medium dark:font-semibold">
+                      <span className="truncate text-sm font-medium">
                         {item.label}
                       </span>
                     </div>
@@ -289,7 +284,7 @@ export function SideOutlineNav({
                 )}
 
                 {collapsed && item.badgeTone === "rose" && item.badge && (
-                  <span className="absolute right-1.5 top-1.5 h-2.5 w-2.5 rounded-full bg-[#ff6b6b] dark:bg-rose-600 ring-2 ring-[var(--bg-rail)]" />
+                  <span className="absolute right-1.5 top-1.5 h-2.5 w-2.5 rounded-full bg-[#ff6b6b] ring-2 ring-[var(--bg-rail)]" />
                 )}
               </button>
             );
@@ -319,7 +314,7 @@ export function SideOutlineNav({
             type="button"
             onClick={onToggleCollapse}
             title={collapsed ? "展开侧边栏" : "收起侧边栏"}
-            className="btn-outline flex w-full items-center justify-center gap-2 px-3 py-2 text-xs font-medium dark:font-semibold cursor-pointer"
+            className="btn-outline flex w-full items-center justify-center gap-2 px-3 py-2 text-xs font-medium cursor-pointer"
           >
             {collapsed ? (
               <ChevronRight className="h-4 w-4" />
@@ -336,7 +331,7 @@ export function SideOutlineNav({
       {/* Mobile / Tablet Sticky Horizontal Rail (< lg) */}
       <div
         data-tour="sidebar-nav"
-        className="neu-topbar lg:hidden sticky top-[62px] dark:top-[56px] z-30"
+        className="neu-topbar lg:hidden sticky top-[62px] z-30"
       >
         <div className="flex items-center gap-2.5 overflow-x-auto px-4 py-2.5">
           {items
@@ -349,7 +344,7 @@ export function SideOutlineNav({
                   type="button"
                   data-active={isActive}
                   onClick={() => jumpTo(item.id)}
-                  className="neu-pill inline-flex shrink-0 items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium dark:font-semibold cursor-pointer"
+                  className="neu-pill inline-flex shrink-0 items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium cursor-pointer"
                 >
                   <span className="font-mono-bio opacity-65">{item.num}</span>
                   <span>{item.shortLabel}</span>

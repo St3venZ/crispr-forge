@@ -157,16 +157,16 @@ export function WetLabWorkbench({
         className="scroll-mt-20"
       >
         <div className="bio-card overflow-hidden">
-          <div className="neu-divider-b flex flex-wrap items-center justify-between gap-3 px-6 py-5 sm:px-8 dark:px-5 dark:py-4">
+          <div className="neu-divider-b flex flex-wrap items-center justify-between gap-3 px-6 py-5 sm:px-8">
             <div>
               <div className="flex flex-wrap items-center gap-3">
                 <Beaker className="h-5 w-5 text-[var(--accent-primary)]" />
-                <h3 className="font-display text-lg text-[var(--text-primary)] dark:text-base">
+                <h3 className="font-display text-lg text-[var(--text-primary)]">
                   实时 NanoDrop 实验台移液计算器 (Bench Pipetting Calculator)
                 </h3>
-                {/* PRESERVED Vivid Coral (Light) / Rose (Dark) Alert Badge */}
+                {/* PRESERVED Vivid Coral Alert Badge (Day & Night) */}
                 {totalAlerts > 0 && (
-                  <span className="neu-badge-coral inline-flex items-center gap-1.5 rounded-full dark:rounded-md px-3 py-1 text-xs font-semibold">
+                  <span className="neu-badge-coral inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold">
                     <AlertTriangle className="h-3.5 w-3.5" />
                     {totalAlerts} 项 &lt; 0.5 μL 预稀释警报
                   </span>
@@ -198,7 +198,7 @@ export function WetLabWorkbench({
           </div>
 
           {/* NanoDrop Inputs + Mode Switcher + 15-Polymerase Combobox */}
-          <div className="neu-divider-b space-y-5 p-6 sm:px-8 dark:bg-[var(--bg-subtle)]/55 dark:p-5">
+          <div className="neu-divider-b space-y-5 p-6 sm:px-8">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
               {[
                 {
@@ -232,10 +232,7 @@ export function WetLabWorkbench({
                   setter: setSgrnaPlasmidConc,
                 },
               ].map((field) => (
-                <div
-                  key={field.label}
-                  className="space-y-2 dark:rounded-lg dark:border dark:border-[var(--border-hairline)] dark:bg-[var(--bg-surface)] dark:p-3.5"
-                >
+                <div key={field.label} className="space-y-2">
                   <div className="flex items-center justify-between gap-1">
                     <label className="text-xs font-medium text-[var(--text-primary)]">
                       {field.label}
@@ -252,7 +249,7 @@ export function WetLabWorkbench({
                       step={5}
                       value={field.value}
                       onChange={(e) => field.setter(Number(e.target.value))}
-                      className="neu-input w-full px-3.5 py-2.5 dark:px-2.5 dark:py-1.5 font-mono-bio text-sm font-semibold"
+                      className="neu-input w-full px-3.5 py-2.5 font-mono-bio text-sm font-semibold"
                     />
                     <span className="shrink-0 font-mono-bio text-xs font-medium text-[var(--text-muted)]">
                       ng/μL
@@ -264,14 +261,14 @@ export function WetLabWorkbench({
 
             <div className="grid grid-cols-1 gap-4 pt-1 xl:grid-cols-12 xl:items-center">
               <div className="flex flex-wrap items-center gap-3.5 xl:col-span-7">
-                <div className="neu-recessed inline-flex rounded-full p-1 gap-1 text-xs font-medium dark:rounded-lg dark:bg-[var(--bg-surface)] dark:p-0.5 dark:gap-0">
+                <div className="neu-recessed inline-flex rounded-full p-1 gap-1 text-xs font-medium">
                   <button
                     type="button"
                     onClick={() => setRatioMode("molar_ratio")}
                     className={`px-3.5 py-1.5 transition cursor-pointer ${
                       ratioMode === "molar_ratio"
-                        ? "neu-seg-active dark:bg-[var(--primary)] dark:text-[var(--primary-fg)]"
-                        : "rounded-full dark:rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                        ? "neu-seg-active"
+                        : "rounded-full text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
                     }`}
                   >
                     等摩尔比模式 (推荐 1:1)
@@ -281,8 +278,8 @@ export function WetLabWorkbench({
                     onClick={() => setRatioMode("volume_ratio")}
                     className={`px-3.5 py-1.5 transition cursor-pointer ${
                       ratioMode === "volume_ratio"
-                        ? "neu-seg-active dark:bg-[var(--primary)] dark:text-[var(--primary-fg)]"
-                        : "rounded-full dark:rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                        ? "neu-seg-active"
+                        : "rounded-full text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
                     }`}
                   >
                     经验体积比模式 (μL)
@@ -354,7 +351,7 @@ export function WetLabWorkbench({
 
           {/* 5 Reaction Mix Cards (Clean borderless table cells — zero cell shadows!) */}
           <div
-            className={`grid grid-cols-1 gap-6 p-6 sm:p-8 xl:grid-cols-2 transition-opacity dark:gap-5 dark:p-5 ${
+            className={`grid grid-cols-1 gap-6 p-6 sm:p-8 xl:grid-cols-2 transition-opacity ${
               isRecalculating ? "opacity-65" : "opacity-100"
             }`}
           >
@@ -369,17 +366,15 @@ export function WetLabWorkbench({
                 <div
                   key={`${rxn.title}-${rIdx}`}
                   className={`neu-soft-tile flex flex-col justify-between overflow-hidden ${
-                    alerts.length > 0
-                      ? "ring-2 ring-[#ff6b6b]/45 dark:border-rose-500/55 dark:ring-rose-500/20"
-                      : ""
+                    alerts.length > 0 ? "ring-2 ring-[#ff6b6b]/45" : ""
                   }`}
                 >
                   <div>
                     {/* Reaction Header */}
-                    <div className="neu-divider-b flex items-start justify-between gap-2 px-5 py-4 dark:bg-[var(--bg-subtle)]/65">
+                    <div className="neu-divider-b flex items-start justify-between gap-2 px-5 py-4">
                       <div className="space-y-1">
                         <div className="flex items-center gap-2.5">
-                          <span className="neu-recessed flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-mono-bio text-xs font-semibold text-accent dark:h-6 dark:w-6 dark:rounded-md dark:bg-[var(--primary)] dark:text-[var(--primary-fg)]">
+                          <span className="neu-recessed flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-mono-bio text-xs font-semibold text-accent">
                             {rIdx + 1}
                           </span>
                           <h4 className="text-sm font-semibold text-[var(--text-primary)]">
@@ -387,22 +382,22 @@ export function WetLabWorkbench({
                           </h4>
                         </div>
                         {rxn.subtitle && (
-                          <p className="text-xs text-[var(--text-muted)] pl-9 dark:pl-8 leading-relaxed">
+                          <p className="text-xs text-[var(--text-muted)] pl-9 leading-relaxed">
                             {rxn.subtitle}
                           </p>
                         )}
                       </div>
-                      <span className="neu-recessed shrink-0 rounded-full dark:rounded-md px-3 py-1 font-mono-bio text-xs font-semibold text-accent">
+                      <span className="neu-recessed shrink-0 rounded-full px-3 py-1 font-mono-bio text-xs font-semibold text-accent">
                         总体系 {rxn.total_volume_ul.toFixed(1)} μL
                       </span>
                     </div>
 
-                    {/* PRESERVED Vivid Coral/Rose < 0.5 uL Pre-Dilution Alert Callout */}
+                    {/* PRESERVED Vivid Coral < 0.5 uL Pre-Dilution Alert Callout */}
                     {alerts.length > 0 && (
-                      <div className="px-4 pt-4 dark:p-0">
-                        <div className="neu-alert-coral px-4 py-3.5 space-y-1.5 dark:rounded-none dark:border-x-0 dark:border-t-0">
-                          <div className="flex items-center gap-1.5 text-xs font-semibold text-[#c93232] dark:font-bold dark:text-rose-200">
-                            <AlertTriangle className="h-4 w-4 text-[#ff6b6b] dark:text-rose-400 shrink-0" />
+                      <div className="px-4 pt-4">
+                        <div className="neu-alert-coral px-4 py-3.5 space-y-1.5">
+                          <div className="flex items-center gap-1.5 text-xs font-semibold text-coral">
+                            <AlertTriangle className="h-4 w-4 text-[#ff6b6b] shrink-0" />
                             <span>
                               微量移液误差警报 (&lt; 0.5 μL) · 请务必先做预稀释！
                             </span>
@@ -410,9 +405,9 @@ export function WetLabWorkbench({
                           {alerts.map((a, aIdx) => (
                             <p
                               key={aIdx}
-                              className="text-xs leading-relaxed text-[var(--text-primary)] dark:text-rose-200/95 pl-5"
+                              className="text-xs leading-relaxed text-[var(--text-primary)] pl-5"
                             >
-                              <strong className="font-mono-bio text-[#c93232] dark:text-rose-200">
+                              <strong className="font-mono-bio text-coral">
                                 {a.reagent}
                               </strong>{" "}
                               ({a.volume_ul.toFixed(2)} μL)：
@@ -449,14 +444,14 @@ export function WetLabWorkbench({
                                 key={cIdx}
                                 className={
                                   isLowVol
-                                    ? "bg-[#ff6b6b]/[0.07] dark:bg-rose-500/12"
-                                    : "hover:bg-white/25 dark:hover:bg-[var(--bg-subtle)]/40"
+                                    ? "bg-[#ff6b6b]/[0.08]"
+                                    : "bg-hover-tint"
                                 }
                               >
                                 <td className="py-3 pl-5 pr-2 font-medium text-[var(--text-primary)]">
                                   <span className="inline-flex items-center gap-1.5">
                                     {isLowVol && (
-                                      <Droplets className="h-3.5 w-3.5 text-[#ff6b6b] dark:text-rose-400 shrink-0" />
+                                      <Droplets className="h-3.5 w-3.5 text-[#ff6b6b] shrink-0" />
                                     )}
                                     {comp.reagent}
                                   </span>
@@ -468,7 +463,7 @@ export function WetLabWorkbench({
                                   <span
                                     className={
                                       isLowVol
-                                        ? "neu-badge-coral rounded-full dark:rounded px-2.5 py-0.5"
+                                        ? "neu-badge-coral rounded-full px-2.5 py-0.5"
                                         : "text-accent"
                                     }
                                   >
@@ -489,18 +484,18 @@ export function WetLabWorkbench({
                   {/* Thermocycler Program + Bench Notes */}
                   {(rxn.thermocycler_program.length > 0 ||
                     rxn.notes.length > 0) && (
-                    <div className="neu-divider-t px-5 py-4 space-y-2.5 dark:bg-[var(--bg-subtle)]/55">
+                    <div className="neu-divider-t px-5 py-4 space-y-2.5">
                       {rxn.thermocycler_program.length > 0 && (
                         <div className="space-y-2">
                           <div className="flex items-center gap-1.5 text-xs font-semibold text-[var(--text-secondary)]">
-                            <Flame className="h-3.5 w-3.5 text-amber-600 dark:text-amber-400" />
+                            <Flame className="h-3.5 w-3.5 text-amber-500" />
                             PCR 扩增 / 温控程序
                           </div>
                           <div className="flex flex-wrap gap-2">
                             {rxn.thermocycler_program.map((step, sIdx) => (
                               <span
                                 key={sIdx}
-                                className="neu-recessed rounded-full dark:rounded-md px-3 py-1 font-mono-bio text-xs text-[var(--text-secondary)]"
+                                className="neu-recessed rounded-full px-3 py-1 font-mono-bio text-xs text-[var(--text-secondary)]"
                               >
                                 {step}
                               </span>
@@ -517,9 +512,7 @@ export function WetLabWorkbench({
                               <li
                                 key={nIdx}
                                 className={
-                                  isWarningNote
-                                    ? "font-semibold text-[#c93232] dark:text-rose-300"
-                                    : ""
+                                  isWarningNote ? "font-semibold text-coral" : ""
                                 }
                               >
                                 {n}
@@ -544,27 +537,27 @@ export function WetLabWorkbench({
       >
         {/* 4-Day Timeline */}
         <div className="bio-card overflow-hidden xl:col-span-8">
-          <div className="neu-divider-b flex flex-wrap items-center justify-between gap-2 px-6 py-5 dark:px-5 dark:py-4">
+          <div className="neu-divider-b flex flex-wrap items-center justify-between gap-2 px-6 py-5">
             <div className="flex items-center gap-2">
               <CalendarDays className="h-5 w-5 text-[var(--accent-primary)]" />
-              <h3 className="font-display text-lg text-[var(--text-primary)] dark:text-base">
+              <h3 className="font-display text-lg text-[var(--text-primary)]">
                 4 天标准湿实验执行路线图 ({protocol.plasmid_system})
               </h3>
             </div>
-            <span className="neu-recessed rounded-full dark:rounded-md px-3 py-1 text-xs font-medium text-[var(--text-secondary)]">
+            <span className="neu-recessed rounded-full px-3 py-1 text-xs font-medium text-[var(--text-secondary)]">
               含每日质量控制检查点 (Checkpoint)
             </span>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 p-6 sm:grid-cols-2 dark:gap-4 dark:p-5">
+          <div className="grid grid-cols-1 gap-5 p-6 sm:grid-cols-2">
             {protocol.timeline.map((item, idx) => (
               <div
                 key={`${item.day}-${idx}`}
-                className="neu-soft-tile flex flex-col justify-between p-5 dark:bg-[var(--bg-subtle)]/45 dark:p-4"
+                className="neu-soft-tile flex flex-col justify-between p-5"
               >
                 <div className="space-y-3">
                   <div className="flex items-center gap-2.5">
-                    <span className="neu-recessed rounded-full dark:rounded-md px-3 py-0.5 font-mono-bio text-xs font-semibold text-accent dark:bg-[var(--primary)] dark:text-[var(--primary-fg)]">
+                    <span className="neu-recessed rounded-full px-3 py-0.5 font-mono-bio text-xs font-semibold text-accent">
                       {item.day}
                     </span>
                     <h4 className="text-sm font-semibold text-[var(--text-primary)]">
@@ -580,8 +573,8 @@ export function WetLabWorkbench({
                   </ol>
                 </div>
 
-                <div className="neu-recessed mt-4 flex items-start gap-2 rounded-2xl dark:rounded-lg border-l-[4px] border-l-[#4ecdc4] dark:border-l-[3px] dark:border-l-emerald-500 px-3.5 py-2.5 text-xs text-[var(--text-secondary)] dark:bg-[var(--bg-surface)]">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#1c7c75] dark:text-emerald-400" />
+                <div className="neu-recessed mt-4 flex items-start gap-2 rounded-2xl border-l-[4px] border-l-[#4ecdc4] px-3.5 py-2.5 text-xs text-[var(--text-secondary)]">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-mint" />
                   <span className="leading-relaxed">
                     <strong className="font-semibold text-[var(--text-primary)]">
                       质控节点：
@@ -596,14 +589,14 @@ export function WetLabWorkbench({
 
         {/* Colony PCR Interpretation Guide */}
         <div className="bio-card flex flex-col overflow-hidden xl:col-span-4">
-          <div className="neu-divider-b flex items-center gap-2 px-6 py-5 dark:px-5 dark:py-4">
+          <div className="neu-divider-b flex items-center gap-2 px-6 py-5">
             <TestTube className="h-5 w-5 text-[var(--accent-primary)]" />
-            <h3 className="font-display text-lg text-[var(--text-primary)] dark:text-base">
+            <h3 className="font-display text-lg text-[var(--text-primary)]">
               菌落 PCR 条带判读速查表
             </h3>
           </div>
 
-          <div className="flex-1 space-y-4 p-6 dark:space-y-3 dark:p-5">
+          <div className="flex-1 space-y-4 p-6">
             {Object.entries(protocol.colony_pcr_interpretation).map(
               ([key, desc]) => {
                 const displayTitle = COLONY_PCR_KEY_LABELS[key] || key;
@@ -619,10 +612,10 @@ export function WetLabWorkbench({
                     key={key}
                     className={`p-4 text-sm ${
                       isPositive
-                        ? "neu-recessed rounded-2xl border-l-[4px] border-l-[#6d5dfc] dark:rounded-lg dark:border-[var(--accent-border)] dark:border-l-[3px] dark:border-l-[var(--accent-primary)] dark:bg-[var(--accent-soft)]"
+                        ? "neu-recessed rounded-2xl border-l-[4px] border-l-[var(--accent-primary)]"
                         : isMixed
-                          ? "neu-recessed rounded-2xl border-l-[4px] border-l-amber-500 dark:rounded-lg dark:border-amber-500/35 dark:border-l-[3px] dark:bg-amber-500/10"
-                          : "neu-soft-tile dark:bg-[var(--bg-subtle)]/50"
+                          ? "neu-recessed rounded-2xl border-l-[4px] border-l-amber-500"
+                          : "neu-soft-tile"
                     }`}
                   >
                     <div className="flex items-center gap-2 font-semibold text-[var(--text-primary)]">
@@ -631,7 +624,7 @@ export function WetLabWorkbench({
                           isPositive
                             ? "text-[var(--accent-primary)]"
                             : isMixed
-                              ? "text-amber-600 dark:text-amber-400"
+                              ? "text-amber-500"
                               : "text-[var(--text-muted)]"
                         }`}
                       />

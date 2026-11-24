@@ -121,7 +121,7 @@ const TOUR_STEPS: TourStepConfig[] = [
     target: "top-controls",
     title: "精调字号、主题切换与一键交付",
     description:
-      "最后，顶栏可按 1%–2% 精调字号、自由切换浅色新拟物/深色曜石主题或绑定自己的模型 Key；页面底部可一键打包下载全部交付文件！",
+      "最后，顶栏可按 1%–2% 精调字号、自由切换日间/夜间新拟物主题或绑定自己的模型 Key；页面底部可一键打包下载全部交付文件！",
     preferredPlacement: "bottom",
     requiresDesign: false,
     scrollStrategy: "none",
@@ -494,7 +494,7 @@ export function ProductTour({
   };
 
   const arrowBaseClass =
-    "pointer-events-none absolute h-3 w-3 rotate-45 bg-[#e0e5ec] dark:h-2.5 dark:w-2.5 dark:border-[var(--border-strong)] dark:bg-[var(--bg-surface)]";
+    "pointer-events-none absolute h-3 w-3 rotate-45 bg-[var(--bg-surface-elevated)]";
 
   return (
     <div
@@ -593,7 +593,7 @@ export function ProductTour({
       {/* Anchored Floating Tooltip Card */}
       <div
         ref={cardRef}
-        className="neu-popover fixed z-[95] pointer-events-auto w-[360px] max-w-[calc(100vw-24px)] text-[var(--text-primary)] dark:border-[var(--border-strong)] dark:bg-[var(--bg-surface)]"
+        className="neu-popover fixed z-[95] pointer-events-auto w-[360px] max-w-[calc(100vw-24px)] text-[var(--text-primary)]"
         style={{
           left: popoverGeom.left,
           top: popoverGeom.top,
@@ -603,35 +603,35 @@ export function ProductTour({
         {popoverGeom.placement === "bottom" && (
           <span
             aria-hidden="true"
-            className={`${arrowBaseClass} -top-[6px] dark:border-l dark:border-t`}
+            className={`${arrowBaseClass} -top-[6px]`}
             style={{ left: popoverGeom.arrowOffset - 5 }}
           />
         )}
         {popoverGeom.placement === "top" && (
           <span
             aria-hidden="true"
-            className={`${arrowBaseClass} -bottom-[6px] dark:border-r dark:border-b`}
+            className={`${arrowBaseClass} -bottom-[6px]`}
             style={{ left: popoverGeom.arrowOffset - 5 }}
           />
         )}
         {popoverGeom.placement === "right" && (
           <span
             aria-hidden="true"
-            className={`${arrowBaseClass} -left-[6px] dark:border-l dark:border-b`}
+            className={`${arrowBaseClass} -left-[6px]`}
             style={{ top: popoverGeom.arrowOffset - 5 }}
           />
         )}
         {popoverGeom.placement === "left" && (
           <span
             aria-hidden="true"
-            className={`${arrowBaseClass} -right-[6px] dark:border-r dark:border-t`}
+            className={`${arrowBaseClass} -right-[6px]`}
             style={{ top: popoverGeom.arrowOffset - 5 }}
           />
         )}
 
         {/* Header */}
         <div className="neu-divider-b flex items-center justify-between gap-2 px-5 py-3.5">
-          <div className="neu-recessed inline-flex items-center gap-1.5 rounded-full dark:rounded-md px-2.5 py-1 text-xs font-semibold text-accent font-mono-bio">
+          <div className="neu-recessed inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold text-accent font-mono-bio">
             <Compass className="h-3.5 w-3.5 text-[var(--accent-primary)]" />
             <span>
               步骤 {stepIdx + 1} / {TOUR_STEPS.length}
@@ -651,7 +651,7 @@ export function ProductTour({
 
         {/* Body */}
         <div className="space-y-3 px-5 py-4">
-          <h3 className="font-display text-base text-[var(--text-primary)] dark:text-sm">
+          <h3 className="font-display text-base text-[var(--text-primary)]">
             {currentStep.title}
           </h3>
           <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
@@ -659,14 +659,14 @@ export function ProductTour({
           </p>
 
           {isStep1Loading && (
-            <div className="neu-recessed flex items-center gap-2 rounded-2xl dark:rounded-lg px-3.5 py-2.5 text-xs font-medium text-accent">
+            <div className="neu-recessed flex items-center gap-2 rounded-2xl px-3.5 py-2.5 text-xs font-medium text-accent">
               <Loader2 className="h-3.5 w-3.5 shrink-0 animate-spin text-[var(--accent-primary)]" />
               <span>正在运行内置经典示例，结果生成后将自动跳转至步骤 2…</span>
             </div>
           )}
 
           {isFirst && !isStep1Loading && demoError && (
-            <div className="neu-alert-coral px-3.5 py-2 text-xs font-medium text-[#c93232] dark:text-rose-200">
+            <div className="neu-alert-coral px-3.5 py-2 text-xs font-medium text-coral">
               示例运行未完成：{demoError}
             </div>
           )}
@@ -689,8 +689,8 @@ export function ProductTour({
                       isActive
                         ? "w-5 bg-[var(--accent-primary)]"
                         : locked
-                        ? "w-2 bg-[#c5cbd4] dark:bg-[var(--border-hairline)] opacity-55 cursor-not-allowed"
-                        : "w-2 bg-[#aeb5c0] dark:bg-[var(--border-strong)] hover:bg-[var(--accent-primary)]/70 cursor-pointer"
+                        ? "w-2 bg-[var(--border-hairline)] opacity-55 cursor-not-allowed"
+                        : "w-2 bg-[var(--border-strong)] hover:bg-[var(--accent-primary)]/70 cursor-pointer"
                     }`}
                   />
                 );
@@ -710,7 +710,7 @@ export function ProductTour({
         </div>
 
         {/* Action Footer */}
-        <div className="neu-divider-t flex items-center justify-between gap-2 px-5 py-3.5 dark:bg-[var(--bg-subtle)]/65 dark:rounded-b-xl">
+        <div className="neu-divider-t flex items-center justify-between gap-2 px-5 py-3.5">
           {!isFirst ? (
             <button
               type="button"

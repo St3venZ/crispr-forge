@@ -493,43 +493,43 @@ export const PRIMER_ROLE_META: Record<
     label: "sgRNA 克隆引物 / Oligo",
     shortLabel: "sgRNA 克隆",
     colorClass:
-      "bg-[#6d5dfc]/12 text-[#5445db] border-transparent dark:bg-sky-500/12 dark:text-sky-300 dark:border-sky-500/30",
+      "bg-[var(--accent-soft)] text-accent",
   },
   donor_left_arm: {
     label: "左同源臂 (LA) 扩增",
     shortLabel: "左同源臂 LA",
     colorClass:
-      "bg-[#6d5dfc]/10 text-[#4c42b8] border-transparent dark:bg-zinc-800 dark:text-zinc-200 dark:border-zinc-700",
+      "bg-[var(--accent-soft)] text-accent",
   },
   donor_right_arm: {
     label: "右同源臂 (RA) 扩增",
     shortLabel: "右同源臂 RA",
     colorClass:
-      "bg-[#4ecdc4]/18 text-[#1a7871] border-transparent dark:bg-zinc-800/80 dark:text-zinc-300 dark:border-zinc-700",
+      "bg-[var(--mint-soft)] text-mint",
   },
   verify_outer: {
     label: "菌落 PCR 外侧鉴定引物",
     shortLabel: "外侧鉴定 VF/VR",
     colorClass:
-      "bg-[#6d5dfc]/12 text-[#5445db] border-transparent dark:bg-sky-500/10 dark:text-sky-200 dark:border-sky-500/25",
+      "bg-[var(--accent-soft)] text-accent",
   },
   verify_wt_internal: {
     label: "野生型内部排假阴性引物",
     shortLabel: "WT 内引物",
     colorClass:
-      "bg-amber-500/14 text-amber-800 border-transparent dark:bg-amber-500/12 dark:text-amber-300 dark:border-amber-500/30",
+      "bg-amber-500/15 text-amber-800 dark:text-amber-300",
   },
   sanger_seq: {
     label: "Sanger 测序确认引物",
     shortLabel: "Sanger 测序",
     colorClass:
-      "bg-[#b8bcc2]/25 text-[#3d4451] border-transparent dark:bg-zinc-800 dark:text-zinc-200 dark:border-zinc-600",
+      "neu-recessed text-[var(--text-primary)]",
   },
   plasmid_verify: {
     label: "sgRNA 质粒构建验证引物",
     shortLabel: "质粒验证",
     colorClass:
-      "bg-[#b8bcc2]/20 text-[#525b6a] border-transparent dark:bg-zinc-900 dark:text-zinc-400 dark:border-zinc-700",
+      "neu-recessed text-[var(--text-secondary)]",
   },
 };
 

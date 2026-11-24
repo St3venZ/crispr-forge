@@ -86,13 +86,13 @@ export function ApiKeyModal({
         {/* Header */}
         <div className="neu-divider-b flex items-start justify-between px-6 py-5">
           <div className="flex items-center gap-3">
-            <div className="neu-recessed flex h-10 w-10 items-center justify-center rounded-2xl dark:h-9 dark:w-9 dark:rounded-lg text-[var(--accent-primary)]">
+            <div className="neu-recessed flex h-10 w-10 items-center justify-center rounded-2xl text-[var(--accent-primary)]">
               <KeyRound className="h-4 w-4" />
             </div>
             <div>
               <h2
                 id="byok-modal-title"
-                className="font-display text-lg text-[var(--text-primary)] dark:text-base"
+                className="font-display text-lg text-[var(--text-primary)]"
               >
                 AI 模型与自带 API Key (BYOK) 设置
               </h2>
@@ -113,7 +113,7 @@ export function ApiKeyModal({
 
         <form onSubmit={handleSave} className="space-y-5 px-6 py-6">
           {/* Clean Guarantee Banner */}
-          <div className="neu-recessed flex items-start gap-3 rounded-2xl dark:rounded-lg border-l-[4px] border-l-[var(--accent-primary)] p-4 text-sm text-[var(--text-primary)]">
+          <div className="neu-recessed flex items-start gap-3 rounded-2xl border-l-[4px] border-l-[var(--accent-primary)] p-4 text-sm text-[var(--text-primary)]">
             <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[var(--accent-primary)]" />
             <div className="space-y-1">
               <p className="font-semibold">
@@ -126,7 +126,7 @@ export function ApiKeyModal({
           </div>
 
           {quota && quota.free_trial_enabled && !config.apiKey && (
-            <div className="neu-recessed flex items-center justify-between rounded-2xl dark:rounded-lg px-4 py-3 text-sm text-[var(--text-primary)]">
+            <div className="neu-recessed flex items-center justify-between rounded-2xl px-4 py-3 text-sm text-[var(--text-primary)]">
               <span className="inline-flex items-center gap-2 font-medium">
                 <Sparkles className="h-4 w-4 text-[var(--accent-primary)]" />
                 当前已开启站内免费 AI 体验额度
@@ -141,7 +141,7 @@ export function ApiKeyModal({
             <label className="mb-3 block text-sm font-medium text-[var(--text-primary)]">
               1. 一键选择模型服务商预设
             </label>
-            <div className="grid grid-cols-2 gap-4 dark:gap-2.5">
+            <div className="grid grid-cols-2 gap-4">
               {BYOK_PROVIDERS.map((preset) => {
                 const selected = preset.id === providerId;
                 return (
@@ -155,9 +155,7 @@ export function ApiKeyModal({
                     <div className="flex w-full items-center justify-between gap-1">
                       <span
                         className={`text-sm font-semibold ${
-                          selected
-                            ? "text-accent dark:text-[var(--text-primary)]"
-                            : "text-[var(--text-primary)]"
+                          selected ? "text-accent" : "text-[var(--text-primary)]"
                         }`}
                       >
                         {preset.name}
@@ -166,7 +164,7 @@ export function ApiKeyModal({
                         <Check className="h-4 w-4 text-[var(--accent-primary)] shrink-0" />
                       )}
                     </div>
-                    <span className="mt-1.5 neu-recessed rounded-full dark:rounded px-2.5 py-0.5 text-xs font-medium text-[var(--text-muted)]">
+                    <span className="mt-1.5 neu-recessed rounded-full px-2.5 py-0.5 text-xs font-medium text-[var(--text-muted)]">
                       {preset.badge}
                     </span>
                   </button>

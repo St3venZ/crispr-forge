@@ -451,16 +451,16 @@ export function WorkbenchApp() {
               onCancel={handleCancelRun}
             />
 
-            {/* Preserved Vivid Coral (Light) / Rose (Dark) Error Alert Banner */}
+            {/* Preserved Vivid Coral Error Alert Banner (Day & Night) */}
             {errorMsg && (
               <div className="neu-alert-coral flex items-start justify-between gap-3 px-5 py-4 text-sm">
                 <div className="flex items-start gap-2.5">
-                  <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#ff6b6b] dark:text-rose-400" />
+                  <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#ff6b6b]" />
                   <div className="space-y-0.5">
-                    <p className="font-semibold text-[#c93232] dark:font-bold dark:text-rose-100">
+                    <p className="font-semibold text-coral">
                       请求未能完成
                     </p>
-                    <p className="leading-relaxed text-[var(--text-primary)] dark:text-rose-200">
+                    <p className="leading-relaxed text-[var(--text-primary)]">
                       {errorMsg}
                     </p>
                   </div>
@@ -468,7 +468,7 @@ export function WorkbenchApp() {
                 <button
                   type="button"
                   onClick={() => setErrorMsg(null)}
-                  className="rounded-xl p-1.5 text-[#c93232] hover:bg-[#ff6b6b]/15 dark:rounded-md dark:text-rose-300 dark:hover:bg-rose-500/20 cursor-pointer"
+                  className="rounded-xl p-1.5 text-coral hover:bg-[#ff6b6b]/15 cursor-pointer"
                   aria-label="关闭错误提示"
                 >
                   <X className="h-4 w-4" />
@@ -556,10 +556,10 @@ export function WorkbenchApp() {
                 /* Clean 3-Pillar Overview — Generous 28px gap for Neumorphic dual shadows */
                 <section className="grid grid-cols-1 gap-7 md:grid-cols-3 pt-2">
                   <div className="bio-card p-6 sm:p-7 space-y-3">
-                    <div className="neu-recessed flex h-11 w-11 items-center justify-center rounded-2xl text-[var(--accent-primary)] dark:h-9 dark:w-9 dark:rounded-lg">
+                    <div className="neu-recessed flex h-11 w-11 items-center justify-center rounded-2xl text-[var(--accent-primary)]">
                       <Dna className="h-5 w-5" />
                     </div>
-                    <h3 className="font-display text-lg text-[var(--text-primary)] dark:text-base">
+                    <h3 className="font-display text-lg text-[var(--text-primary)]">
                       真实 RefSeq / 本地序列零幻觉溯源
                     </h3>
                     <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
@@ -572,10 +572,10 @@ export function WorkbenchApp() {
                   </div>
 
                   <div className="bio-card p-6 sm:p-7 space-y-3">
-                    <div className="neu-recessed flex h-11 w-11 items-center justify-center rounded-2xl text-[var(--accent-primary)] dark:h-9 dark:w-9 dark:rounded-lg">
+                    <div className="neu-recessed flex h-11 w-11 items-center justify-center rounded-2xl text-[var(--accent-primary)]">
                       <ShieldCheck className="h-5 w-5" />
                     </div>
-                    <h3 className="font-display text-lg text-[var(--text-primary)] dark:text-base">
+                    <h3 className="font-display text-lg text-[var(--text-primary)]">
                       12 点硅片 PCR / 组装校验与自愈
                     </h3>
                     <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
@@ -584,15 +584,15 @@ export function WorkbenchApp() {
                   </div>
 
                   <div className="bio-card p-6 sm:p-7 space-y-3">
-                    <div className="neu-recessed flex h-11 w-11 items-center justify-center rounded-2xl text-[var(--accent-primary)] dark:h-9 dark:w-9 dark:rounded-lg">
+                    <div className="neu-recessed flex h-11 w-11 items-center justify-center rounded-2xl text-[var(--accent-primary)]">
                       <Beaker className="h-5 w-5" />
                     </div>
-                    <h3 className="font-display text-lg text-[var(--text-primary)] dark:text-base">
+                    <h3 className="font-display text-lg text-[var(--text-primary)]">
                       15 款聚合酶 + NanoDrop 移液与一键出包
                     </h3>
                     <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
                       内置 15 款主流高保真酶及自定义聚合酶，自动生成引物 Excel、4 份 SnapGene 图谱、4 天 SOP 及{" "}
-                      <span className="font-mono-bio font-semibold text-[#c93232] dark:font-bold dark:text-rose-400">
+                      <span className="font-mono-bio font-semibold text-coral">
                         &lt; 0.5 μL
                       </span>{" "}
                       预稀释警报。
@@ -603,7 +603,7 @@ export function WorkbenchApp() {
             )}
           </main>
 
-          <footer className="neu-divider-t bg-[var(--bg-canvas)] dark:bg-[var(--bg-surface)] py-6 text-center text-xs text-[var(--text-muted)]">
+          <footer className="neu-divider-t bg-[var(--bg-canvas)] py-6 text-center text-xs text-[var(--text-muted)]">
             <div className="mx-auto max-w-[1440px] px-4">
               CRISPR-Forge · 零信任原核 CRISPR/Cas9 全自动设计与硅片验证平台 · 核心确定性生信引擎永久开源免费
             </div>
