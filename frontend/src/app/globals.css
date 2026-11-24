@@ -1,0 +1,308 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", "PingFang SC", "HarmonyOS Sans SC", "Noto Sans SC", "Microsoft YaHei", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Code", "Fira Code", Consolas, ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+}
+
+/* ============================================================================
+   STYLE 2 (LIGHT) — Precision Cobalt Scientific Software (Carbon × Benchling × shadcn vega)
+   ============================================================================ */
+:root,
+:root[data-theme="light"] {
+  --bg-canvas: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --bg-rail: #f4f6fa;
+  --border-hairline: #dbe2ea;
+  --border-strong: #cbd5e1;
+
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-fg: #ffffff;
+
+  --accent-primary: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.08);
+  --accent-border: rgba(37, 99, 235, 0.24);
+
+  --danger: #e11d48;
+  --danger-soft: rgba(225, 29, 72, 0.08);
+  --danger-border: rgba(225, 29, 72, 0.28);
+
+  /* Interactive SVG Genome Locus Palette (Light — Cobalt Scientific) */
+  --svg-canvas-bg: #ffffff;
+  --svg-pill-mask: #ffffff;
+  --svg-grid-dot: #dce3ec;
+  --svg-axis: #cbd5e1;
+  --svg-ruler: #94a3b8;
+  --svg-text: #0f172a;
+  --svg-text-muted: #64748b;
+  --svg-target-fill: #2563eb;
+  --svg-target-stroke: #1d4ed8;
+  --svg-target-text: #ffffff;
+  --svg-neighbor-fill: #e2e8f0;
+  --svg-neighbor-stroke: #64748b;
+  --svg-neighbor-text: #334155;
+  --svg-warn-fill: #fef3c7;
+  --svg-warn-stroke: #d97706;
+  --svg-warn-text: #92400e;
+  --svg-la-fill: #eff6ff;
+  --svg-la-stroke: #2563eb;
+  --svg-la-text: #1e40af;
+  --svg-ra-fill: #f1f5f9;
+  --svg-ra-stroke: #475569;
+  --svg-ra-text: #1e293b;
+  --svg-amp-fill: #eff6ff;
+  --svg-amp-stroke: #93c5fd;
+  --svg-amp-text: #1e3a8a;
+  --svg-cut-pill-fill: #fff1f2;
+  --svg-cut-pill-stroke: #fda4af;
+  --svg-cut-pill-text: #be123c;
+  --svg-del-label-text: #be123c;
+  --svg-del-label-stroke: #fda4af;
+}
+
+/* ============================================================================
+   STYLE 4 (DARK) — Obsidian Lab Dark-First Flagship (Linear × Raycast × shadcn nova)
+   ============================================================================ */
+:root[data-theme="dark"],
+.dark {
+  --bg-canvas: #0b0c0f;
+  --bg-surface: #13151a;
+  --bg-surface-elevated: #191c23;
+  --bg-subtle: #181b22;
+  --bg-rail: #0f1116;
+  --border-hairline: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  --text-primary: #f4f4f5;
+  --text-secondary: #d4d4d8;
+  --text-muted: #a1a1aa;
+
+  /* Stark White CTA on Obsidian Dark */
+  --primary: #fafafa;
+  --primary-hover: #e4e4e7;
+  --primary-fg: #09090b;
+
+  /* Ice Sky-Blue Scientific Focus Accent */
+  --accent-primary: #38bdf8;
+  --accent-soft: rgba(56, 189, 248, 0.12);
+  --accent-border: rgba(56, 189, 248, 0.30);
+
+  /* Preserved Vivid Rose/Crimson Alerts */
+  --danger: #fb7185;
+  --danger-soft: rgba(225, 29, 72, 0.16);
+  --danger-border: rgba(251, 113, 133, 0.38);
+
+  /* Interactive SVG Genome Locus Palette (Dark — Obsidian & Ice Sky) */
+  --svg-canvas-bg: #0e1015;
+  --svg-pill-mask: #0e1015;
+  --svg-grid-dot: rgba(255, 255, 255, 0.07);
+  --svg-axis: #3f3f46;
+  --svg-ruler: #71717a;
+  --svg-text: #f4f4f5;
+  --svg-text-muted: #a1a1aa;
+  --svg-target-fill: #38bdf8;
+  --svg-target-stroke: #7dd3fc;
+  --svg-target-text: #09090b;
+  --svg-neighbor-fill: #27272a;
+  --svg-neighbor-stroke: #71717a;
+  --svg-neighbor-text: #e4e4e7;
+  --svg-warn-fill: #451a03;
+  --svg-warn-stroke: #f59e0b;
+  --svg-warn-text: #fde68a;
+  --svg-la-fill: rgba(56, 189, 248, 0.13);
+  --svg-la-stroke: #38bdf8;
+  --svg-la-text: #bae6fd;
+  --svg-ra-fill: rgba(148, 163, 184, 0.13);
+  --svg-ra-stroke: #94a3b8;
+  --svg-ra-text: #e2e8f0;
+  --svg-amp-fill: rgba(56, 189, 248, 0.10);
+  --svg-amp-stroke: #0284c7;
+  --svg-amp-text: #7dd3fc;
+  --svg-cut-pill-fill: rgba(225, 29, 72, 0.22);
+  --svg-cut-pill-stroke: #fb7185;
+  --svg-cut-pill-text: #fecdd3;
+  --svg-del-label-text: #fda4af;
+  --svg-del-label-stroke: #fb7185;
+}
+
+@layer base {
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    min-height: 100vh;
+    transition: background-color 140ms ease, color 140ms ease;
+  }
+}
+
+.font-mono-bio {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums slashed-zero;
+}
+
+/* Crisp Architectural Surface Cards (shadcn vega / nova discipline — zero bloated soft shadows) */
+.bio-card,
+.surface-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+}
+
+.dark .bio-card,
+.dark .surface-card {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset;
+}
+
+/* Primary CTA Button: Cobalt Blue in Light, Stark White on Obsidian in Dark */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-fg);
+  border: 1px solid transparent;
+  transition: background-color 140ms ease, opacity 140ms ease, transform 100ms ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+.btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Secondary Architectural Outline Button */
+.btn-outline {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-hairline);
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+
+.btn-outline:hover:not(:disabled) {
+  background-color: var(--bg-subtle);
+  border-color: var(--border-strong);
+}
+
+.btn-outline:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.bio-grid-bg {
+  background-color: var(--svg-canvas-bg);
+  background-image: radial-gradient(var(--svg-grid-dot) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* Precision Range Slider */
+input[type="range"].precision-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+  border-radius: 9999px;
+  outline: none;
+}
+
+input[type="range"].precision-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: var(--bg-surface-elevated);
+  border: 2.5px solid var(--accent-primary);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: transform 110ms ease, box-shadow 110ms ease;
+}
+
+input[type="range"].precision-range::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+input[type="range"].precision-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: var(--bg-surface-elevated);
+  border: 2.5px solid var(--accent-primary);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+}
+
+/* Obsidian UV Agarose Gel Imager Box */
+.gel-chamber {
+  background: linear-gradient(180deg, #0b0e14 0%, #07090d 100%);
+}
+
+.gel-band-glow {
+  box-shadow:
+    0 0 8px rgba(251, 191, 36, 0.8),
+    0 0 16px rgba(217, 119, 6, 0.4),
+    inset 0 0 3px rgba(255, 255, 255, 0.9);
+}
+
+/* Highlighted KO Positive Band — Ice Sky-Cyan Glow */
+.gel-band-ko {
+  box-shadow:
+    0 0 10px rgba(56, 189, 248, 0.95),
+    0 0 22px rgba(14, 165, 233, 0.55),
+    inset 0 0 4px rgba(255, 255, 255, 0.95);
+}
+
+.gel-band-marker {
+  box-shadow:
+    0 0 6px rgba(203, 213, 225, 0.55),
+    inset 0 0 2px rgba(248, 250, 252, 0.85);
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Thin architectural scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-subtle);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

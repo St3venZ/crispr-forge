@@ -1,0 +1,29 @@
+LOCUS       pLabCustom_BsaI          869 bp    DNA              UNK 01-JAN-1980
+DEFINITION  Demo empty Golden Gate BsaI vector for auto-parsing test.
+ACCESSION   pLabCustom_BsaI
+VERSION     pLabCustom_BsaI
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     CDS             21..260
+                     /gene="kanR"
+                     /product="Kanamycin resistance protein"
+ORIGIN
+        1 atgcgtacct ggaatcggct atgcgtacct ggaatcggct atgcgtacct ggaatcggct
+       61 atgcgtacct ggaatcggct atgcgtacct ggaatcggct atgcgtacct ggaatcggct
+      121 atgcgtacct ggaatcggct atgcgtacct ggaatcggct atgcgtacct ggaatcggct
+      181 atgcgtacct ggaatcggct atgcgtacct ggaatcggct atgcgtacct ggaatcggct
+      241 atgcgtacct ggaatcggct atgcgtacct ggaatcggct atgcgtacct ggaatcggct
+      301 atgcgtacct ggaatcggct ttgacagcta gctcagtcct aggtataata cgagagaccc
+      361 tagctagcta gctagctagc tagctagcta gctagctagc tagctagcta gctagctagc
+      421 tagctagcta gctagctagc tagctagcta gctagctagg gtctcagttt tagagctaga
+      481 aatagcaagt taaaataagg ctagtccgtt atcaacttga aaaagtggca ccgagtcggt
+      541 gctttttttc gtacgttaac cggattagcc gtacgttaac cggattagcc gtacgttaac
+      601 cggattagcc gtacgttaac cggattagcc gtacgttaac cggattagcc gtacgttaac
+      661 cggattagcc gtacgttaac cggattagcc gtacgttaac cggattagcc gtacgttaac
+      721 cggattagcc gtacgttaac cggattagcc gtacgttaac cggattagcc gtacgttaac
+      781 cggattagcc gtacgttaac cggattagcc gtacgttaac cggattagcc gtacgttaac
+      841 cggattagcc gtacgttaac cggattagc
+//

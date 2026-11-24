@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: crispr-forge-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile.backend
+    dockerContext: .
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: LLM_API_KEY
+        sync: false
+      - key: LLM_BASE_URL
+        value: https://api.deepseek.com/v1
+      - key: LLM_MODEL
+        value: deepseek-chat
+      - key: FREE_TRIAL_DAILY_LIMIT
+        value: "10"
+      - key: NCBI_EMAIL
+        value: crispr-forge@example.com
+      - key: CORS_ORIGINS
+        value: "*"

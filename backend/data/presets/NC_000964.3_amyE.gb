@@ -1,0 +1,515 @@
+LOCUS       NC_000964               7980 bp    DNA     linear   CON 12-FEB-2021
+DEFINITION  Bacillus subtilis subsp. subtilis str. 168 complete genome.
+ACCESSION   NC_000964
+VERSION     NC_000964.3
+DBLINK      BioProject: PRJNA76
+            BioSample: SAMEA3138188
+KEYWORDS    RefSeq; complete genome.
+SOURCE      Bacillus subtilis subsp. subtilis str. 168
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+            Bacteria; Bacillati; Bacillota; Bacilli; Caryophanales; Bacillaceae;
+            Bacillus.
+REFERENCE   1
+  AUTHORS   Borriss,R., Danchin,A., Harwood,C.R., Medigue,C., Rocha,E.P.C.,
+            Sekowska,A. and Vallenet,D.
+  TITLE     Bacillus subtilis, the model Gram-positive bacterium: 20 years of
+            annotation refinement
+  JOURNAL   Microb Biotechnol 11 (1), 3-17 (2018)
+   PUBMED   29280348
+REFERENCE   2  (bases 1 to 7980)
+  AUTHORS   Belda,E., Sekowska,A., Le Fevre,F., Morgat,A., Mornico,D.,
+            Ouzounis,C., Vallenet,D., Medigue,C. and Danchin,A.
+  TITLE     An updated metabolic view of the Bacillus subtilis 168 genome
+  JOURNAL   Microbiology (Reading, Engl.) 159 (Pt 4), 757-770 (2013)
+   PUBMED   23429746
+REFERENCE   3  (bases 1 to 7980)
+  AUTHORS   Barbe,V., Cruveiller,S., Kunst,F., Lenoble,P., Meurice,G.,
+            Sekowska,A., Vallenet,D., Wang,T., Moszer,I., Medigue,C. and
+            Danchin,A.
+  TITLE     From a consortium sequence to a unified sequence: the Bacillus
+            subtilis 168 reference genome a decade later
+  JOURNAL   Microbiology (Reading, Engl.) 155 (Pt 6), 1758-1775 (2009)
+   PUBMED   19383706
+REFERENCE   4  (bases 1 to 7980)
+  AUTHORS   Kunst,F., Ogasawara,N., Moszer,I., Albertini,A.M., Alloni,G.,
+            Azevedo,V., Bertero,M.G., Bessieres,P., Bolotin,A., Borchert,S.,
+            Borriss,R., Boursier,L., Brans,A., Braun,M., Brignell,S.C., Bron,S.,
+            Brouillet,S., Bruschi,C.V., Caldwell,B., Capuano,V., Carter,N.M.,
+            Choi,S.K., Cordani,J.J., Connerton,I.F., Cummings,N.J., Daniel,R.A.,
+            Denziot,F., Devine,K.M., Dusterhoft,A., Ehrlich,S.D., Emmerson,P.T.,
+            Entian,K.D., Errington,J., Fabret,C., Ferrari,E., Foulger,D.,
+            Fritz,C., Fujita,M., Fujita,Y., Fuma,S., Galizzi,A., Galleron,N.,
+            Ghim,S.Y., Glaser,P., Goffeau,A., Golightly,E.J., Grandi,G.,
+            Guiseppi,G., Guy,B.J., Haga,K., Haiech,J., Harwood,C.R., Henaut,A.,
+            Hilbert,H., Holsappel,S., Hosono,S., Hullo,M.F., Itaya,M., Jones,L.,
+            Joris,B., Karamata,D., Kasahara,Y., Klaerr-Blanchard,M., Klein,C.,
+            Kobayashi,Y., Koetter,P., Koningstein,G., Krogh,S., Kumano,M.,
+            Kurita,K., Lapidus,A., Lardinois,S., Lauber,J., Lazarevic,V.,
+            Lee,S.M., Levine,A., Liu,H., Masuda,S., Mauel,C., Medigue,C.,
+            Medina,N., Mellado,R.P., Mizuno,M., Moestl,D., Nakai,S., Noback,M.,
+            Noone,D., O'Reilly,M., Ogawa,K., Ogiwara,A., Oudega,B., Park,S.H.,
+            Parro,V., Pohl,T.M., Portelle,D., Porwollik,S., Prescott,A.M.,
+            Presecan,E., Pujic,P., Purnelle,B., Rapoport,G., Rey,M.,
+            Reynolds,S., Rieger,M., Rivolta,C., Rocha,E., Roche,B., Rose,M.,
+            Sadaie,Y., Sato,T., Scanlan,E., Schleich,S., Schroeter,R.,
+            Scoffone,F., Sekiguchi,J., Sekowska,A., Seror,S.J., Serror,P.,
+            Shin,B.S., Soldo,B., Sorokin,A., Tacconi,E., Takagi,T.,
+            Takahashi,H., Takemaru,K., Takeuchi,M., Tamakoshi,A., Tanaka,T.,
+            Terpstra,P., Togoni,A., Tosato,V., Uchiyama,S., Vandebol,M.,
+            Vannier,F., Vassarotti,A., Viari,A., Wambutt,R., Wedler,H.,
+            Weitzenegger,T., Winters,P., Wipat,A., Yamamoto,H., Yamane,K.,
+            Yasumoto,K., Yata,K., Yoshida,K., Yoshikawa,H.F., Zumstein,E.,
+            Yoshikawa,H. and Danchin,A.
+  TITLE     The complete genome sequence of the gram-positive bacterium Bacillus
+            subtilis
+  JOURNAL   Nature 390 (6657), 249-256 (1997)
+   PUBMED   9384377
+REFERENCE   5  (bases 1 to 7980)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (17-SEP-2018) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   6  (bases 1 to 7980)
+  AUTHORS   Genoscope -,C.E.A.
+  CONSRTM   AMAbiotics and Genoscope
+  TITLE     Direct Submission
+  JOURNAL   Submitted (24-JAN-2013) A. Danchin, AMAbiotics, Bldg G1, 2, rue
+            Gaston Cremieux, 91000 EVRY antoine.danchin@normalesup.org Bldg G1
+            Genoscope / CEA (Commissariat a l'energie atomique et aux energies
+            alternatives): BP 191 91006 EVRY cedex - FRANCE (E-mail:
+            seqref@genoscope.cns.fr - Web: www.genoscope.cns.fr)
+REFERENCE   7  (bases 1 to 7980)
+  AUTHORS   Genoscope -,C.E.A.
+  CONSRTM   Institut Pasteur and Genoscope
+  TITLE     Direct Submission
+  JOURNAL   Submitted (29-JAN-2009) Genoscope - Centre National de Sequencage :
+            BP 191 91006 EVRY cedex - FRANCE (E-mail : seqref@genoscope.cns.fr -
+            Web : www.genoscope.cns.fr)
+REFERENCE   8  (bases 1 to 7980)
+  AUTHORS   Kunst,F., Ogasawara,N., Yoshikawa,H. and Danchin,A.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (18-NOV-1997) I. Moszer, A. Danchin, Genetique des Genomes
+            Bacteriens, Institut Pasteur, 28 rue du Docteur Roux, 75724 Paris
+            Cedex 15, FRANCE. E-mail: moszer@pasteur.fr,
+            antoine.danchin@normalesup.org Phone: +33 (0)1 45 68 84 41, Fax: +33
+            (0)1 45 68 89 48
+COMMENT     CRISPR_FORGE_SLICE_START=324618; SOURCE_ACCESSION=NC_000964.3
+            PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to AL009126.
+            On Aug 12, 2009 this sequence version replaced NC_000964.2.
+            On or before Mar 17, 2009 this sequence version replaced
+            gi:32468687, gi:32468690, gi:32468695, gi:32468704, gi:32468715,
+            gi:32468723, gi:32468738, gi:32468743, gi:32468745, gi:32468758,
+            gi:32468767, gi:32468778, gi:32468787, gi:32468796, gi:32468802,
+            gi:32468809, gi:32468813, gi:32468825, gi:32468830, gi:32468833,
+            gi:32468840, gi:38680335.
+            Annotation results relative to BLAST similarities, COG
+            assignations, enzymatic function prediction (PRIAM software), TMHMM
+            and SignalP predictions, and synteny conservation (Syntonizer
+            software) are available in the MicroScope annotation platform
+            http://www.genoscope.cns.fr/agc/microscope.
+            The large cluster comprising the i, h and g rDNA regions could not
+            be properly resolved, we therefore incorporated the original
+            sequence of rRNAihg in the final assembly.
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..7980
+                     /organism="Bacillus subtilis subsp. subtilis str. 168"
+                     /mol_type="genomic DNA"
+                     /strain="168"
+                     /type_material="type strain of Bacillus subtilis"
+                     /db_xref="taxon:224308"
+     gene            complement(<1..572)
+                     /gene="amhX"
+                     /locus_tag="BSU_03010"
+                     /old_locus_tag="BSU03010"
+                     /db_xref="GeneID:938351"
+     CDS             complement(<1..572)
+                     /gene="amhX"
+                     /locus_tag="BSU_03010"
+                     /old_locus_tag="BSU03010"
+                     /EC_number="3.5.1.-"
+                     /function="16.11: Scavenge (Catabolism)"
+                     /inference="ab initio prediction:AMIGene:2.0"
+                     /note="Evidence 3: Putative function from multiple
+                     computational evidences; PubMedId: 8768514; Product type e:
+                     enzyme"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="putative amidohydrolase"
+                     /protein_id="NP_388183.2"
+                     /db_xref="EnsemblGenomes-Gn:BSU03010"
+                     /db_xref="EnsemblGenomes-Tr:CAB12095"
+                     /db_xref="GOA:P54983"
+                     /db_xref="InterPro:IPR002933"
+                     /db_xref="InterPro:IPR011650"
+                     /db_xref="InterPro:IPR017439"
+                     /db_xref="InterPro:IPR036264"
+                     /db_xref="SubtiList:BG11789"
+                     /db_xref="UniProtKB/Swiss-Prot:P54983"
+                     /db_xref="GeneID:938351"
+                     /translation="MQKLSEEMKQTIMDIFEHLHANPEVSWKEYETTSFLKQKLEDLGC
+                     RTRTFSDCTGVVGEIGSGSPVVAVRADIDALWQEVNGTFRANHSCGHDSHMTMALGTLM
+                     LLKKQPELPKGTIRFIFQPAEEKGGGALKMIEEGVLDDIDYLYGVHVRPIQETQNGRCA
+                     PSILHGSSQHIEGTIIGEEAHGARPHLGKNSIEIAAFLVHKLGLIHIDPQIPHTVKMTK
+                     LQAGGESSNIIPGKASFSLDLRAQTNEAMEALIAETERACEAAAAAFGAKIELHKEHSL
+                     PAATQNKEAEAIMAEAITEIIGAERLDDPLVTTGGEDFHFYAVKVPNLKTTMLGLGCGL
+                     QPGLHHPHMTFDRNAMFTGIHILANAVLKTFQKAESLAAANAS"
+     gene            722..2155
+                     /gene="ycgA"
+                     /locus_tag="BSU_03020"
+                     /old_locus_tag="BSU03020"
+                     /db_xref="GeneID:938359"
+     CDS             722..2155
+                     /gene="ycgA"
+                     /locus_tag="BSU_03020"
+                     /old_locus_tag="BSU03020"
+                     /inference="ab initio prediction:AMIGene:2.0"
+                     /note="Evidence 3: Putative function from multiple
+                     computational evidences; PubMedId: 15849754, 16850406,
+                     21747963, 21764931; Product type t: transporter"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="putative branched chain amino acid permease"
+                     /protein_id="NP_388184.2"
+                     /db_xref="EnsemblGenomes-Gn:BSU03020"
+                     /db_xref="EnsemblGenomes-Tr:CAB12096"
+                     /db_xref="GOA:P55908"
+                     /db_xref="InterPro:IPR018385"
+                     /db_xref="SubtiList:BG11999"
+                     /db_xref="UniProtKB/Swiss-Prot:P55908"
+                     /db_xref="GeneID:938359"
+                     /translation="MSMPAAETQPKKKRMTFKMPDAYVLLFMIAFICAIASYIVPAGEF
+                     DRVTKGDVTTAVPGSYHSIEQSPVRLISFFTSLQDGMVGSAPIIFLILFTGGTIAILEK
+                     TGAINGLIYNVISKFRTKQLLFICIVGALFSILGTTGIVVNSVIGFIPIGLIVARSLKW
+                     DAVAGAAVIYIGCYAGFNSTILSPSPLGLSQSIAELPLFSGIGLRVVIYICFLLSSIIY
+                     IYLYTRKLKKSKDASVLGTDWFPAAGMGEAGKEEDQSVPFTVRHKLILAVAGLSLVGFL
+                     YGALKLGWSDSQMAATFIFISVLAGLIGGLAANDIAKTFITGCQSLVYGALIVGMARSI
+                     SVILENGKLLDTVVNALASLLDGFSPIAGAIGMYIASALLHFLISSGSGEAVVFIPILA
+                     PLADLMGITRQVAVEAVMLGEGVVNCVNPTSGVLMAVLAASGIPYVKWLRFMVPLALIW
+                     FLIGLVFIVIGVMINWGPF"
+     gene            2271..2852
+                     /gene="ycgB"
+                     /locus_tag="BSU_03030"
+                     /old_locus_tag="BSU03030"
+                     /db_xref="GeneID:938355"
+     CDS             2271..2852
+                     /gene="ycgB"
+                     /locus_tag="BSU_03030"
+                     /old_locus_tag="BSU03030"
+                     /inference="ab initio prediction:AMIGene:2.0"
+                     /note="Evidence 4: Unknown function but conserved in other
+                     organisms; PubMedId: 15849754, 16850406, 22720735; Product
+                     type m: membrane component"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="putative integral inner membrane protein of
+                     unknown function"
+                     /protein_id="NP_388185.2"
+                     /db_xref="EnsemblGenomes-Gn:BSU03030"
+                     /db_xref="EnsemblGenomes-Tr:CAB12097"
+                     /db_xref="SubtiList:BG12000"
+                     /db_xref="UniProtKB/Swiss-Prot:P55909"
+                     /db_xref="GeneID:938355"
+                     /translation="MNNLRNRLSGVNGKNKRVKEKEQKIWSEIGMIAGAFALLDVIIRG
+                     IMFEFPFKEWAASLVFLFIIILYYCIRAAASGMLMPRIDTKEELQKRVKQQRIESIAVA
+                     FAVVVLTMYDRGIPHTFFAWLKMILLFIVCGGVLFLLRYVIVKLAYRRAVKEEIKKKSS
+                     FLFGKRGKRSQFRAAFFIGTLICIHSAKLF"
+     gene            3001..4980
+                     /gene="amyE"
+                     /locus_tag="BSU_03040"
+                     /old_locus_tag="BSU03040"
+                     /db_xref="GeneID:938356"
+     CDS             3001..4980
+                     /gene="amyE"
+                     /locus_tag="BSU_03040"
+                     /old_locus_tag="BSU03040"
+                     /EC_number="3.2.1.1"
+                     /function="16.11: Scavenge (Catabolism)"
+                     /experiment="publication(s) with functional evidences,
+                     PMID:3117969, 9353930"
+                     /note="Evidence 1a: Function from experimental evidences in
+                     the studied strain; PubMedId: 3117969, 9353930; Product
+                     type e: enzyme"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="alpha-amylase"
+                     /protein_id="NP_388186.2"
+                     /db_xref="EnsemblGenomes-Gn:BSU03040"
+                     /db_xref="EnsemblGenomes-Tr:CAB12098"
+                     /db_xref="GOA:P00691"
+                     /db_xref="InterPro:IPR006046"
+                     /db_xref="InterPro:IPR006047"
+                     /db_xref="InterPro:IPR013783"
+                     /db_xref="InterPro:IPR017853"
+                     /db_xref="InterPro:IPR031319"
+                     /db_xref="InterPro:IPR031965"
+                     /db_xref="PDB:1BAG"
+                     /db_xref="PDB:1UA7"
+                     /db_xref="SubtiList:BG10473"
+                     /db_xref="UniProtKB/Swiss-Prot:P00691"
+                     /db_xref="GeneID:938356"
+                     /translation="MFAKRFKTSLLPLFAGFLLLFHLVLAGPAAASAETANKSNELTAP
+                     SIKSGTILHAWNWSFNTLKHNMKDIHDAGYTAIQTSPINQVKEGNQGDKSMSNWYWLYQ
+                     PTSYQIGNRYLGTEQEFKEMCAAAEEYGIKVIVDAVINHTTSDYAAISNEVKSIPNWTH
+                     GNTQIKNWSDRWDVTQNSLLGLYDWNTQNTQVQSYLKRFLDRALNDGADGFRFDAAKHI
+                     ELPDDGSYGSQFWPNITNTSAEFQYGEILQDSASRDAAYANYMDVTASNYGHSIRSALK
+                     NRNLGVSNISHYASDVSADKLVTWVESHDTYANDDEESTWMSDDDIRLGWAVIASRSGS
+                     TPLFFSRPEGGGNGVRFPGKSQIGDRGSALFEDQAITAVNRFHNVMAGQPEELSNPNGN
+                     NQIFMNQRGSHGVVLANAGSSSVSINTATKLPDGRYDNKAGAGSFQVNDGKLTGTINAR
+                     SVAVLYPDDIAKAPHVFLENYKTGVTHSFNDQLTITLRADANTTKAVYQINNGPETAFK
+                     DGDQFTIGKGDPFGKTYTIMLKGTNSDGVTRTEKYSFVKRDPASAKTIGYQNPNHWSQV
+                     NAYIYKHDGSRVIELTGSWPGKPMTKNADGIYTLTLPADTDTTNAKVIFNNGSAQVPGQ
+                     NQPGFDYVLNGLYNDSGLSGSLPH"
+     gene            5157..6122
+                     /gene="lctE"
+                     /locus_tag="BSU_03050"
+                     /old_locus_tag="BSU03050"
+                     /db_xref="GeneID:938348"
+     CDS             5157..6122
+                     /gene="lctE"
+                     /locus_tag="BSU_03050"
+                     /old_locus_tag="BSU03050"
+                     /EC_number="1.1.1.27"
+                     /function="16.10: Respire"
+                     /experiment="publication(s) with functional evidences,
+                     PMID:10809684, 16207915, 19383131"
+                     /note="Evidence 1a: Function from experimental evidences in
+                     the studied strain; PubMedId: 10809684, 16207915, 19383131;
+                     Product type e: enzyme"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="L-lactate dehydrogenase"
+                     /protein_id="NP_388187.2"
+                     /db_xref="EnsemblGenomes-Gn:BSU03050"
+                     /db_xref="EnsemblGenomes-Tr:CAB12099"
+                     /db_xref="GOA:P13714"
+                     /db_xref="InterPro:IPR001236"
+                     /db_xref="InterPro:IPR001557"
+                     /db_xref="InterPro:IPR011304"
+                     /db_xref="InterPro:IPR015955"
+                     /db_xref="InterPro:IPR018177"
+                     /db_xref="InterPro:IPR022383"
+                     /db_xref="InterPro:IPR036291"
+                     /db_xref="PDB:3PQD"
+                     /db_xref="PDB:3PQE"
+                     /db_xref="PDB:3PQF"
+                     /db_xref="SubtiList:BG19003"
+                     /db_xref="UniProtKB/Swiss-Prot:P13714"
+                     /db_xref="GeneID:938348"
+                     /translation="MMNKHVNKVALIGAGFVGSSYAFALINQGITDELVVIDVNKEKAM
+                     GDVMDLNHGKAFAPQPVKTSYGTYEDCKDADIVCICAGANQKPGETRLELVEKNLKIFK
+                     GIVSEVMASGFDGIFLVATNPVDILTYATWKFSGLPKERVIGSGTTLDSARFRFMLSEY
+                     FGAAPQNVHAHIIGEHGDTELPVWSHANVGGVPVSELVEKNDAYKQEELDQIVDDVKNA
+                     AYHIIEKKGATYYGVAMSLARITKAILHNENSILTVSTYLDGQYGADDVYIGVPAVVNR
+                     GGIAGITELNLNEKEKEQFLHSAGVLKNILKPHFAEQKVN"
+     gene            6154..7779
+                     /gene="lctP"
+                     /locus_tag="BSU_03060"
+                     /old_locus_tag="BSU03060"
+                     /db_xref="GeneID:938353"
+     CDS             6154..7779
+                     /gene="lctP"
+                     /locus_tag="BSU_03060"
+                     /old_locus_tag="BSU03060"
+                     /function="16.1: Circulate"
+                     /experiment="publication(s) with functional evidences,
+                     PMID:10809684, 15849754, 16428414, 16850406"
+                     /note="Evidence 1a: Function from experimental evidences in
+                     the studied strain; PubMedId: 10809684, 15849754, 16428414,
+                     16850406; Product type t: transporter"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="L-lactate permease"
+                     /protein_id="NP_388188.2"
+                     /db_xref="EnsemblGenomes-Gn:BSU03060"
+                     /db_xref="EnsemblGenomes-Tr:CAB12100"
+                     /db_xref="GOA:P55910"
+                     /db_xref="InterPro:IPR003804"
+                     /db_xref="SubtiList:BG12001"
+                     /db_xref="UniProtKB/Swiss-Prot:P55910"
+                     /db_xref="GeneID:938353"
+                     /translation="MWEQLYDPFGNEYVSALVALTPILFFLLALTVLKMKGILAAFLTL
+                     AVSFFVSVWAFHMPVEKAISSVLLGIGSGLWPIGYIVLMAVWLYKIAVKTGKFTIIRSS
+                     IAGISPDQRLQLLLIGFCFNAFLEGAAGFGVPIAISAALLVELGFKPLKAAALCLIANA
+                     ASGAFGAIGIPVITGAQIGDLSALELSRTLMWTLPMISFLIPFLLVFLLDRMKGIKQTW
+                     PALLVVSGGYTAVQTLTMAVLGPELANILAALFSMGGLALFLRKWQPKEIYREEGAGDA
+                     GEKKAYRAADIAKAWSPFYILTAAITIWSLPAFKALFQEGGLLYQSTLLFKMPFLHQQI
+                     MKMPPIAPSAMPLDAVFKVDLLSATGTAILAAVIVTGLFSKKFSSRDAFASLKETGKEL
+                     WVPIMTICFVMGFANLANFAGLSSSIGLALAKTGDLFPFVSPVLGWIGVFITGSVVSNN
+                     ALFGHLQVVTGAQIGAGSDLLLAANTAGGVMAKLVSPQSIAIAAAAVGQTGKESKLFKR
+                     TVAYSLILLLIICIWTFILARLGV"
+     gene            complement(7824..>7980)
+                     /gene="mdr"
+                     /locus_tag="BSU_03070"
+                     /old_locus_tag="BSU03070"
+                     /db_xref="GeneID:938345"
+     CDS             complement(7824..>7980)
+                     /gene="mdr"
+                     /locus_tag="BSU_03070"
+                     /old_locus_tag="BSU03070"
+                     /function="16.1: Circulate"
+                     /function="16.8: Protect"
+                     /experiment="publication(s) with functional evidences,
+                     PMID:9023234, 15489457, 15849754, 16850406, 21690368"
+                     /note="Evidence 1a: Function from experimental evidences in
+                     the studied strain; PubMedId: 9023234, 15489457, 15849754,
+                     16850406, 21690368; Product type t : transporter"
+                     /codon_start=2
+                     /transl_table=11
+                     /product="multidrug-efflux transporter"
+                     /protein_id="NP_388189.2"
+                     /db_xref="EnsemblGenomes-Gn:BSU03070"
+                     /db_xref="EnsemblGenomes-Tr:CAB12101"
+                     /db_xref="GOA:P96712"
+                     /db_xref="InterPro:IPR004638"
+                     /db_xref="InterPro:IPR011701"
+                     /db_xref="InterPro:IPR020846"
+                     /db_xref="InterPro:IPR036259"
+                     /db_xref="SubtiList:BG12002"
+                     /db_xref="UniProtKB/Swiss-Prot:P96712"
+                     /db_xref="GeneID:938345"
+                     /translation="MDTTTAKQASTKFVVLGLLLGILMSAMDNTIVATAMGNIVADLGS
+                     FDKFAWVTASYMVAVMAGMPIYGKLSDMYGRKRFFLFGLIFFLIGSALCGIAQTMNQLI
+                     IFRAIQGIGGGALLPIAFTIIFDLFPPEKRGKMSGMFGAVFGLSSVLGPLLGAIITDSI
+                     SWHWVFYINVPIGALSLFFIIRYYKESLEHRKQKIDWGGAITLVVSIVCLMFALELGGK
+                     TYDWNSIQIIGLFIVFAVFFIAFFIVERKAEEPIISFWMFKNRLFATAQILAFLYGGTF
+                     IILAVFIPIFVQAVYGSSATSAGFILTPMMIGSVIGSMIGGIFQTKASFRNLMLISVIA
+                     FFIGMLLLSNMTPDTARVWLTVFMMISGFGVGFNFSLLPAASMNDLEPRFRGTANSTNS
+                     FLRSFGMTLGVTIFGTVQTNVFTNKLNDAFSGMKGSAGSGAAQNIGDPQEIFQAGTRSQ
+                     IPDAILNRIIDAMSSSITYVFLLALIPIVLAAVTILFMGKARVKTTAEMTKKAN"
+ORIGIN
+        1 ccgaggtgcg gacgggcgcc atgagcctct tccccgatga tcgttccctc aatgtgctgg
+       61 cttgatccgt gcagaataga aggagcgcag cggccgttct gtgtttcctg gatcggacgg
+      121 acgtgaacgc catacaaata gtcgatatca tcaagcacgc cttcttctat cattttcaag
+      181 gcgccgccgc ctttttcttc tgccggctga aagataaaac ggattgtgcc cttcggaagc
+      241 tcaggttgtt tttttagcag cattaacgtg cccaatgcca ttgtcatatg tgaatcgtgt
+      301 ccgcaggaat ggttggcgcg aaatgtgccg ttaacctcct gccacagcgc gtcaatatca
+      361 gcgcgtaccg ctacaacagg tgagcctgag ccgatttcgc cgacaacccc ggtgcagtct
+      421 gaaaacgtgc gcgtccggca ccctaaatcc tcaagctttt gtttcaaaaa tgaagttgtc
+      481 tcatattcct tccagctgac ttcagggttc gcgtgcagat gctcgaagat gtccataatg
+      541 gtttgtttca tttcttctga aagcttttgc atggtaagaa atacctcctt ctatcagaat
+      601 gaatttttac cttctttact ttatttatat tgaaacagga agataggctg tatataatat
+      661 agcacatatt gctactattc agaataatta atattttcaa acagagggga tggatcgaaa
+      721 tatgagtatg ccagcagccg aaacacagcc taagaaaaaa cgtatgacat ttaaaatgcc
+      781 tgacgcctat gtcctcttat ttatgattgc tttcatttgc gcaatcgctt catatattgt
+      841 gccggcaggt gaatttgacc gcgtgacaaa gggggatgtc acgaccgctg ttccgggaag
+      901 ctatcattca attgaacagt ctccggtcag attgatcagc ttttttactt ctctacagga
+      961 tggaatggtt ggatcagcac ccatcatctt tctgatttta ttcacaggcg gcaccattgc
+     1021 tattctagaa aaaacgggtg ccatcaatgg cctgatttac aatgtcatca gcaaattccg
+     1081 cacaaagcaa ttattattta tttgtattgt cggcgcattg ttctccattc tcggaacaac
+     1141 cgggattgtc gtgaattcag ttatcggttt tatccccatc ggcctcattg tggcacgatc
+     1201 cttaaaatgg gacgcagtcg cgggagccgc tgttatatac atcggctgct acgctggatt
+     1261 taactccacc atattatcac cgtcaccgct cggtttatca caatcaatcg cggagctccc
+     1321 tcttttctca ggaatcggcc tgcgagttgt gatatacata tgctttttgc tgtcttctat
+     1381 tatttatatc tatttgtata cgagaaaatt aaaaaaatca aaagatgcca gtgtgttagg
+     1441 aacagattgg ttccctgcgg caggaatggg cgaagccggt aaagaagaag atcagtcagt
+     1501 gccgtttacc gttcgccata agctgatttt ggctgtggcg ggactctcac ttgtcggatt
+     1561 tttatacggc gctttgaagc ttggctggtc agattcccaa atggctgcga catttatttt
+     1621 tatttctgtc cttgccggtt taataggcgg gcttgcggcg aacgatattg ccaaaacctt
+     1681 cattacgggc tgccaaagtc ttgtatacgg ggcgctgatt gtcgggatgg cacgaagcat
+     1741 ttccgttatc cttgaaaatg gaaagcttct cgatactgtc gtcaatgctt tggcttcact
+     1801 tttggatgga ttcagcccga ttgctggggc aatcggcatg tatatcgcca gtgcgctgct
+     1861 tcattttctc atctcttcag gttctggcga agccgttgta tttattccaa tcctggcgcc
+     1921 gctcgctgat ttgatgggaa tcacgagaca ggttgcggtt gaagcggtta tgcttggaga
+     1981 aggggtcgtc aactgtgtga acccgacatc cggcgttctc atggcggtgc ttgccgccag
+     2041 cggtattccg tatgtcaagt ggctgcggtt tatggtgccg cttgctctga tttggttctt
+     2101 gatcgggctt gtctttatcg tgatcggagt catgatcaat tgggggccgt tttaacgatt
+     2161 gctgcccgcc ggcttgtacg gcgggctttt gagttattca ttgcagaagc gcaggctgtt
+     2221 attgtaacat gtaagccata agccattcgt aaaagtgcgg gaggaaggtc atgaataatc
+     2281 tgcgtaatag actttcaggc gtgaatggga aaaataagag agtaaaagaa aaagaacaaa
+     2341 aaatctggtc ggagattggg atgatagcgg gagcatttgc gctgcttgat gtgatcatcc
+     2401 gcggcattat gtttgaattt ccgtttaaag aatgggctgc aagccttgtg tttttgttca
+     2461 tcattatctt atattactgc atcagggctg cggcatccgg aatgctcatg ccgagaatag
+     2521 acaccaaaga agaactgcaa aaacgggtga agcagcagcg aatagaatca attgcggtcg
+     2581 cctttgcggt agtggtgctt acgatgtacg acagggggat tccccataca ttcttcgctt
+     2641 ggctgaaaat gattcttctt tttatcgtct gcggcggcgt tctgtttctg cttcggtatg
+     2701 tgattgtgaa gctggcttac agaagagcgg taaaagaaga aataaaaaag aaatcatctt
+     2761 ttttgtttgg aaagcgaggg aagcgttcac agtttcgggc agcttttttt ataggaacat
+     2821 tgatttgtat tcactctgcc aagttgtttt gatagagtga ttgtgataat tttaaatgta
+     2881 agcgttaaca aaattctcca gtcttcacat cggtttgaaa ggaggaagcg gaagaatgaa
+     2941 gtaagaggga tttttgactc cgaagtaagt cttcaaaaaa tcaaataagg agtgtcaaga
+     3001 atgtttgcaa aacgattcaa aacctcttta ctgccgttat tcgctggatt tttattgctg
+     3061 tttcatttgg ttctggcagg accggcggct gcgagtgctg aaacggcgaa caaatcgaat
+     3121 gagcttacag caccgtcgat caaaagcgga accattcttc atgcatggaa ttggtcgttc
+     3181 aatacgttaa aacacaatat gaaggatatt catgatgcag gatatacagc cattcagaca
+     3241 tctccgatta accaagtaaa ggaagggaat caaggagata aaagcatgtc gaactggtac
+     3301 tggctgtatc agccgacatc gtatcaaatt ggcaaccgtt acttaggtac tgaacaagaa
+     3361 tttaaagaaa tgtgtgcagc cgctgaagaa tatggcataa aggtcattgt tgacgcggtc
+     3421 atcaatcata ccaccagtga ttatgccgcg atttccaatg aggttaagag tattccaaac
+     3481 tggacacatg gaaacacaca aattaaaaac tggtctgatc gatgggatgt cacgcagaat
+     3541 tcattgctcg ggctgtatga ctggaataca caaaatacac aagtacagtc ctatctgaaa
+     3601 cggttcttag acagggcatt gaatgacggg gcagacggtt ttcgatttga tgccgccaaa
+     3661 catatagagc ttccagatga tggcagttac ggcagtcaat tttggccgaa tatcacaaat
+     3721 acatctgcag agttccaata cggagaaatc ctgcaggata gtgcctccag agatgctgca
+     3781 tatgcgaatt atatggatgt gacagcgtct aactatgggc attccataag gtccgcttta
+     3841 aagaatcgta atctgggcgt gtcgaatatc tcccactatg catctgatgt gtctgcggac
+     3901 aagctagtga catgggtaga gtcgcatgat acgtatgcca atgatgatga agagtcgaca
+     3961 tggatgagcg atgatgatat ccgtttaggc tgggcggtga tagcttctcg ttcaggcagt
+     4021 acgcctcttt tcttttccag acctgaggga ggcggaaatg gtgtgaggtt cccggggaaa
+     4081 agccaaatag gcgatcgcgg gagtgcttta tttgaagatc aggctatcac tgcggtcaat
+     4141 agatttcaca atgtgatggc tggacagcct gaggaactct cgaacccgaa tggaaacaac
+     4201 cagatattta tgaatcagcg cggctcacat ggcgttgtgc tggcaaatgc aggttcatcc
+     4261 tctgtctcta tcaatacggc aacaaaattg cctgatggca ggtatgacaa taaagctgga
+     4321 gcgggttcat ttcaagtgaa cgatggtaaa ctgacaggca cgatcaatgc caggtctgta
+     4381 gctgtgcttt atcctgatga tattgcaaaa gcgcctcatg ttttccttga gaattacaaa
+     4441 acaggtgtaa cacattcttt caatgatcaa ctgacgatta ccttgcgtgc agatgcgaat
+     4501 acaacaaaag ccgtttatca aatcaataat ggaccagaga cggcgtttaa ggatggagat
+     4561 caattcacaa tcggaaaagg agatccattt ggcaaaacat acaccatcat gttaaaagga
+     4621 acgaacagtg atggtgtaac gaggaccgag aaatacagtt ttgttaaaag agatccagcg
+     4681 tcggccaaaa ccatcggcta tcaaaatccg aatcattgga gccaggtaaa tgcttatatc
+     4741 tataaacatg atgggagccg agtaattgaa ttgaccggat cttggcctgg aaaaccaatg
+     4801 actaaaaatg cagacggaat ttacacgctg acgctgcctg cggacacgga tacaaccaac
+     4861 gcaaaagtga tttttaataa tggcagcgcc caagtgcccg gtcagaatca gcctggcttt
+     4921 gattacgtgc taaatggttt atataatgac tcgggcttaa gcggttctct tccccattga
+     4981 gggcaaggct agacgggact taccgaaaga aaccatcaat gatggtttct tttttgttca
+     5041 taaatcagac aaaacttttc tcttgcaaaa gtttgtgaag tgttgcacaa tataaatgtg
+     5101 aaatacttca caaacaaaaa gacatcaaag agaaacatac cctggaagga tgattaatga
+     5161 tgaacaaaca tgtaaataaa gtagctttaa tcggagcggg ttttgttgga agcagttatg
+     5221 catttgcgtt aattaaccaa ggaatcacag atgagcttgt ggtcattgat gtaaataaag
+     5281 aaaaagcaat gggcgatgtg atggatttaa accacggaaa ggcgtttgcg ccacaaccgg
+     5341 tcaaaacatc ttacggaaca tatgaagact gcaaggatgc tgatattgtc tgcatttgcg
+     5401 ccggagcaaa ccaaaaacct ggtgagacac gccttgaatt agtagaaaag aacttgaaga
+     5461 ttttcaaagg catcgttagt gaagtcatgg cgagcggatt tgacggcatt ttcttagtcg
+     5521 cgacaaatcc ggttgatatc ctgacttacg caacatggaa attcagcggc ctgccaaaag
+     5581 agcgggtgat tggaagcggc acaacacttg attctgcgag attccgtttc atgctgagcg
+     5641 aatactttgg cgcagcgcct caaaacgtac acgcgcatat tatcggagag cacggcgaca
+     5701 cagagcttcc tgtttggagc cacgcgaatg tcggcggtgt gccggtcagt gaactcgttg
+     5761 agaaaaacga tgcgtacaaa caagaggagc tggaccaaat tgtagatgat gtgaaaaacg
+     5821 cagcttacca tatcattgag aaaaaaggcg cgacttatta tggggttgcg atgagtcttg
+     5881 ctcgcattac aaaagccatt cttcataatg aaaacagcat attaactgtc agcacatatt
+     5941 tggacgggca atacggtgca gatgacgtgt acatcggtgt gccggctgtc gtgaatcgcg
+     6001 gagggatcgc aggtatcact gagctgaact taaatgagaa agaaaaagaa cagttccttc
+     6061 acagcgccgg cgtccttaaa aacattttaa aacctcattt tgcagaacaa aaagtcaact
+     6121 aaccgcaact ttagagtaaa gggctgattg tcaatgtggg agcagttgta tgatccgttt
+     6181 ggaaacgagt atgtgagcgc acttgtggcg ctcactccga ttctcttttt tcttttggct
+     6241 ttaactgttt tgaaaatgaa aggcattctt gcggcatttc ttaccctagc cgtcagtttc
+     6301 ttcgtctccg tttgggcatt tcatatgccg gttgaaaaag cgatttcttc tgttttgtta
+     6361 ggaatcggga gcgggctgtg gcccattggc tacatcgtcc tgatggcggt gtggctgtat
+     6421 aaaatcgccg tgaaaaccgg gaaatttacc attattcggt ccagcattgc cggcatttcg
+     6481 cctgaccaac gattacagct attattaatt ggtttttgtt ttaacgcgtt tttagaaggc
+     6541 gcggccggtt ttggtgttcc gattgcgatt agtgcggcgc tgctcgtcga acttggtttt
+     6601 aaaccgttaa aagcggcggc gctctgcttg attgcaaacg ctgcctccgg agcctttggg
+     6661 gcgattggga ttcctgtcat cacaggggcg cagattggtg atttgtctgc tcttgagctg
+     6721 tctcggacat taatgtggac actgccgatg atctcatttt taataccatt cctgcttgta
+     6781 ttcttattag accgaatgaa aggaatcaaa cagacatggc ccgctcttct ggttgtgagc
+     6841 ggtgggtata cagcggttca gacactgaca atggcggtgc tcgggccgga attagcaaac
+     6901 attttggcgg ccttattcag catgggcggg cttgccctct tcctccgcaa atggcagccg
+     6961 aaagagattt accgcgagga aggggccggc gatgctggtg agaaaaaggc ataccgtgcc
+     7021 gctgacattg cgaaagcgtg gtctcctttc tacattttaa ctgcggcgat caccatctgg
+     7081 agccttcctg ccttcaaagc gcttttccaa gaaggcgggc tgttatatca atcaacgctc
+     7141 ctgttcaaaa tgccttttct gcatcagcaa attatgaaaa tgccgccgat tgcgccatct
+     7201 gccatgccgt tagatgcagt ctttaaagtt gatctgctgt cagcgactgg tacagcgatt
+     7261 ttagcggcgg tcatcgtgac agggctgttc agcaaaaagt tctcctctcg ggatgccttt
+     7321 gcttccttga aggagacggg aaaagagctg tgggtgccga ttatgacgat ctgcttcgtg
+     7381 atggggtttg ccaatctggc caacttcgca gggctcagct cttcaattgg gttagcattg
+     7441 gcgaaaacag gagacctgtt cccgtttgtc agtcctgttc tcggctggat tggcgtgttc
+     7501 atcaccggtt ctgttgtcag caataatgct ttgttcggcc atttgcaggt tgtcacggga
+     7561 gcgcagatcg gtgcgggttc agatttgctg ttagccgcaa atacggcggg cggtgtcatg
+     7621 gcgaaacttg tttctcctca atctatcgcc atcgctgccg cagcggtcgg ccaaacaggc
+     7681 aaggaatcta aactgtttaa aaggacagtg gcgtacagcc tgattctgtt attgatcatt
+     7741 tgtatatgga cgtttattct tgcaagatta ggagtgtaat agaaaaaagc agtacatgcc
+     7801 cagcatgtac tgcttttttt atgttaattt gctttctttg tcatttcggc tgttgttttc
+     7861 actctggctt ttcccataaa taaaatggta accgccgcga ggacaattgg aatcaaagcg
+     7921 agcaaaaaga catacgtgat acttgatgac atcgcgtcaa taatgcgatt caggatcgca
+//

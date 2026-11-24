@@ -1,0 +1,345 @@
+LOCUS       NC_003450               6945 bp    DNA     linear   CON 12-DEC-2025
+DEFINITION  Corynebacterium glutamicum ATCC 13032, complete sequence.
+ACCESSION   NC_003450
+VERSION     NC_003450.3
+DBLINK      BioProject: PRJNA224116
+            BioSample: SAMD00061105
+            Assembly: GCF_000011325.1
+KEYWORDS    RefSeq.
+SOURCE      Corynebacterium glutamicum ATCC 13032
+  ORGANISM  Corynebacterium glutamicum ATCC 13032
+            Bacteria; Bacillati; Actinomycetota; Actinomycetes; Mycobacteriales;
+            Corynebacteriaceae; Corynebacterium.
+REFERENCE   1
+  AUTHORS   Nakagawa,S.
+  TITLE     Complete genomic sequence of Corynebacterium glutamicum ATCC 13032
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 6945)
+  AUTHORS   Nakagawa,S.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (24-MAY-2002) Contact:Satoshi Nakagawa Kyowa Hakko Kogyo
+            Co. Ltd., Tokyo Research Laboratories; 3-6-6, Asahi-machi, Machida,
+            Tokyo 194-8533, Japan
+COMMENT     ##Genome-Annotation-Data-START##
+            Annotation Provider               :: NCBI RefSeq
+            Annotation Name                   :: GCF_000011325.1-RS_2025_12_12
+            Annotation Date                   :: 12/12/2025 08:54:49
+            Annotation Pipeline :: NCBI Prokaryotic Genome Annotation Pipeline
+            (PGAP)
+            Annotation Method :: Best-placed reference protein set; GeneMarkS-2+
+            Annotation Software revision      :: 6.10
+            Features Annotated                :: Gene; CDS; rRNA; tRNA; ncRNA
+            Genes (total)                     :: 3,079
+            CDSs (total)                      :: 2,999
+            Genes (coding)                    :: 2,945
+            CDSs (with protein)               :: 2,945
+            Genes (RNA)                       :: 80
+            rRNAs                             :: 6, 6, 6 (5S, 16S, 23S)
+            complete rRNAs                    :: 6, 6, 6 (5S, 16S, 23S)
+            tRNAs                             :: 59
+            ncRNAs                            :: 3
+            Pseudo Genes (total)              :: 54
+            CDSs (without protein)            :: 54
+            Pseudo Genes (ambiguous residues) :: 0 of 54
+            Pseudo Genes (frameshifted)       :: 26 of 54
+            Pseudo Genes (incomplete)         :: 33 of 54
+            Pseudo Genes (internal stop)      :: 16 of 54
+            Pseudo Genes (multiple problems)  :: 16 of 54
+            ##Genome-Annotation-Data-END##
+            CRISPR_FORGE_SLICE_START=3109447; SOURCE_ACCESSION=NC_003450.3
+            REFSEQ INFORMATION: The reference sequence is identical to
+            BA000036.3.
+            On Jan 21, 2005 this sequence version replaced NC_003450.2.
+            The annotation was added by the NCBI Prokaryotic Genome Annotation
+            Pipeline (PGAP). Information about PGAP can be found here:
+            https://www.ncbi.nlm.nih.gov/genome/annotation_prok/
+            This sequence is conducted by collaboration of Kyowa Hakko Kogyo
+            Co. Ltd. And Kitasato University.
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..6945
+                     /organism="Corynebacterium glutamicum ATCC 13032"
+                     /mol_type="genomic DNA"
+                     /strain="ATCC 13032"
+                     /type_material="type strain of Corynebacterium glutamicum"
+                     /db_xref="taxon:196627"
+     gene            <1..77
+                     /locus_tag="CGL_RS14480"
+                     /old_locus_tag="NCgl2808"
+                     /db_xref="GeneID:1020851"
+     CDS             <1..77
+                     /locus_tag="CGL_RS14480"
+                     /old_locus_tag="NCgl2808"
+                     /inference="COORDINATES: similar to AA
+                     sequence:RefSeq:WP_011015481.1"
+                     /GO_function="GO:0022857 - transmembrane transporter
+                     activity [Evidence IEA]"
+                     /GO_process="GO:0055085 - transmembrane transport [Evidence
+                     IEA]"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Protein Homology."
+                     /codon_start=3
+                     /transl_table=11
+                     /product="GntP family permease"
+                     /protein_id="WP_011015481.1"
+                     /db_xref="GeneID:1020851"
+                     /translation="MDTWEQTLGTGPLLGIAAGAIALILVLVIVFKLHAFLTLILVSIV
+                     TALAAGIPVTAVVDTLLDGFGKTLASVALLVGLGAMLGRLVETSGGAKSLADTMVRIFG
+                     EKRAAFALGVASLIMGFPIFFDAGLVVMLPVIFAVARRLNGSVLTFGIPAAGAFSVMHV
+                     FVPPHPGPIAASEFFGAQVGYVLIAGIIVALPTWYLTGYLLGKFLGRKFPLPVPDLLSG
+                     GAQEDDQPQNPANAVSIIVILLIPMLLIFGNTGTSMAVSAGLLDAESTMVKILGFLGET
+                     PVALLITLIIALFFLGNRRGINGSALEKTIEGALGPICSVVLITGAGGMFGGVLRTSGI
+                     GGALADSMADLGLPVIAGCFIVAAVLRVAQGSATVALTTAAALMAPAVAAADFNEFQLA
+                     AIVISTAAGSVIASHVNDSGFWLVGRLMNADVPTTLKTWTVNQTCIAIVGFVMAYAMFG
+                     LASLA"
+     gene            complement(1016..2875)
+                     /locus_tag="CGL_RS14485"
+                     /old_locus_tag="NCgl2809"
+                     /db_xref="GeneID:1020852"
+     CDS             complement(1016..2875)
+                     /locus_tag="CGL_RS14485"
+                     /old_locus_tag="NCgl2809"
+                     /inference="COORDINATES: similar to AA
+                     sequence:RefSeq:WP_011015482.1"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Protein Homology."
+                     /codon_start=1
+                     /transl_table=11
+                     /product="pyruvate kinase"
+                     /protein_id="WP_011015482.1"
+                     /db_xref="GeneID:1020852"
+                     /translation="MNEFDQDILQEIKTELDELILELDEVTQTHSEAIGQVSPTHYVGA
+                     RNLMHYAHLRTKDLRGLQQRLSSVGATRLTTTEPAVQARLKAARNVIGAFAGEGPLYPP
+                     SDVVDAFEDADEILDEHAEILLGEPLPDTPSCIMVTLPTEAATDIELVRGFAKSGMNLA
+                     RINCAHDDETVWKQMIDNVHTVAEEVGREIRVSMDLAGPKVRTGEIAPGAEVGRARVTR
+                     DETGKVLTPAKLWITAHGSEPVPAPESLPGRPALPIEVTPEWFDKLEIGSVINVPDTRG
+                     SRRAFTVTRVFDGAVLAEGPQKAYISNGTLLEHNYDRSRVYGIPAVVQRINLKVGDRLI
+                     LTDEELTYDPSLGSGRTPRISCTLPQAVDAIKVGHRVLFDDGAIAAVCIDKTSTADGHN
+                     DVELEVTHARPQGVNLAAYKGINLPDSELPLPSLTEEDLQHLRFVVKYADIAAISFIRN
+                     VADVEYLLQALADIGDPVAVERLGLVLKIETIPGYEGLAQILLTGMRHENFGIMIARGD
+                     LAVELGFDRMAEVPQLIMALAEAAHVPTILATQVLENMAKNGLPSRAEITDAAMALRAE
+                     CVMLNKGPHINDAIKVLTEMSRKLGASQRKSRLLLRKVKSWEE"
+     gene            complement(3001..3945)
+                     /locus_tag="CGL_RS14490"
+                     /old_locus_tag="NCgl2810"
+                     /db_xref="GeneID:1020853"
+     CDS             complement(3001..3945)
+                     /locus_tag="CGL_RS14490"
+                     /old_locus_tag="NCgl2810"
+                     /EC_number="1.1.1.27"
+                     /inference="COORDINATES: similar to AA
+                     sequence:RefSeq:WP_011015483.1"
+                     /GO_component="GO:0005737 - cytoplasm [Evidence IEA]"
+                     /GO_function="GO:0004459 - L-lactate dehydrogenase (NAD+)
+                     activity [Evidence IEA]"
+                     /GO_process="GO:0006096 - glycolytic process [Evidence
+                     IEA]"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Protein Homology."
+                     /codon_start=1
+                     /transl_table=11
+                     /product="L-lactate dehydrogenase"
+                     /protein_id="WP_011015483.1"
+                     /db_xref="GeneID:1020853"
+                     /translation="MKETVGNKIVLIGAGDVGVAYAYALINQGMADHLAIIDIDEKKLE
+                     GNVMDLNHGVVWADSRTRVTKGTYADCEDAAMVVICAGAAQKPGETRLQLVDKNVKIMK
+                     SIVGDVMDSGFDGIFLVASNPVDILTYAVWKFSGLEWNRVIGSGTVLDSARFRYMLGEL
+                     YEVAPSSVHAYIIGEHGDTELPVLSSATIAGVSLSRMLDKDPELEGRLEKIFEDTRDAA
+                     YHIIDAKGSTSYGIGMGLARITRAILQNQDVAVPVSALLHGEYGEEDIYIGTPAVVNRR
+                     GIRRVVELEITDHEMERFKHSANTLREIQKQFF"
+     gene            4174..5952
+                     /locus_tag="CGL_RS14495"
+                     /old_locus_tag="NCgl2811"
+                     /db_xref="GeneID:1020854"
+     CDS             4174..5952
+                     /locus_tag="CGL_RS14495"
+                     /old_locus_tag="NCgl2811"
+                     /inference="COORDINATES: similar to AA
+                     sequence:RefSeq:WP_003857762.1"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Protein Homology."
+                     /codon_start=1
+                     /transl_table=11
+                     /product="alpha/beta-hydrolase family protein"
+                     /protein_id="WP_011015484.1"
+                     /db_xref="GeneID:1020854"
+                     /translation="MVSLPRLASLLTTRLATLKPALKPATHLASLGAQVIAELVPGIRM
+                     SPNRRRILPANMGAGFIGAEIAMWWALSPSLLPKPWWVTAANLAVLQAVGHAAATGIHS
+                     ILPRTNRRVSRKIYNATHIATGAITLTTTVVGLIRHRTQIRLIGQKNFGPKETIAGISV
+                     GTLGYGALLITGELTQHSINEVKLLIERFLPPWISFIAAVSVITLTTLTLADRVLLRRI
+                     LHNSAIQAAHLNRMVFPGTEQPWEPERSGSPWSYEKWGAVGSQGRAVLSGGPRKDDIIT
+                     VTRLSDTETHEPIRIFIGMVPGRSLSDQVDLVIHEMRRTGALRRDHIVINNSTGTGWIT
+                     DWSAHTFEFLTGGNCVTISMQYSYLPSALSWYKDNDGPINAARMLIDAVLHELDQLPTG
+                     SRPKLFLAGESLGAYGLAEVWGDVEKLLGTADGVLLSGAPRFSDAMNALRTRRDASSSE
+                     RLPVIDSGRHIRFAGEPEHLDMPATWQFPRMIVAQHASDPIVWWNAELFIRRPEWLKTP
+                     KQDHQDVFPRLRWMPFVTGWQVALDLFTSTSVPGGHGHNYHEEFIDYWAALLDREVTPE
+                     LRHSIAYWIRANHIKR"
+     gene            5962..6600
+                     /locus_tag="CGL_RS14500"
+                     /old_locus_tag="NCgl2812"
+                     /db_xref="GeneID:1020855"
+     CDS             5962..6600
+                     /locus_tag="CGL_RS14500"
+                     /old_locus_tag="NCgl2812"
+                     /EC_number="3.-.-.-"
+                     /inference="COORDINATES: similar to AA
+                     sequence:RefSeq:WP_003857760.1"
+                     /GO_function="GO:0016787 - hydrolase activity [Evidence
+                     IEA]"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Protein Homology."
+                     /codon_start=1
+                     /transl_table=11
+                     /product="HAD family hydrolase"
+                     /protein_id="WP_011015485.1"
+                     /db_xref="GeneID:1020855"
+                     /translation="MTHAILFDLDGTLVDHASAARAALHAWSPTVGVDTDVERWIELDK
+                     WGFARFERGETTHLGQRRDRIRAYLNRELDDATCDDIYSGYLKAYEQNWTAYPDAKGVL
+                     DRAVATGAPVGILTNGAAPMQQDKLDRTGLGLPELVMLAASTLDSAKPRPEMYARALTH
+                     LGARTATIIGDDWTNDVAAPRELGWNALYLDRSGTDPRADIHSLDELFH"
+     gene            6634..>6945
+                     /locus_tag="CGL_RS14505"
+                     /old_locus_tag="NCgl2813"
+                     /db_xref="GeneID:1020856"
+     CDS             6634..>6945
+                     /locus_tag="CGL_RS14505"
+                     /old_locus_tag="NCgl2813"
+                     /EC_number="1.-.-.-"
+                     /inference="COORDINATES: similar to AA
+                     sequence:RefSeq:WP_003862578.1"
+                     /GO_function="GO:0010181 - FMN binding [Evidence IEA];
+                     GO:0052873 - FMN reductase (NADPH) activity [Evidence IEA];
+                     GO:0008752 - FMN reductase [NAD(P)H] activity [Evidence
+                     IEA]; GO:0050136 - NADH dehydrogenase (quinone)
+                     (non-electrogenic) activity [Evidence IEA]; GO:0008753 -
+                     NADPH dehydrogenase (quinone) activity [Evidence IEA];
+                     GO:0016491 - oxidoreductase activity [Evidence IEA]"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Protein Homology."
+                     /codon_start=1
+                     /transl_table=11
+                     /product="NADPH-dependent FMN reductase"
+                     /protein_id="WP_011015486.1"
+                     /db_xref="GeneID:1020856"
+                     /translation="MKIGVILGSIREGRFGQGVADWVMEQIGAYDAPDVEFELIDLKAF
+                     NVPLLESATVPGSADKQYDDPRVTAWSQAIDACDAFLFITPEYNHGVPGAFKNAYDILG
+                     NEWLNKTVGFISYGAVEGIRVVEQWRQIVATFNMYDIRSQLSFSTFTENNNGTFAPNDR
+                     RPGELIRLLDSLLTAVRD"
+ORIGIN
+        1 ccgtaaacca aacctgcatt gcgattgtgg gatttgtgat ggcctatgca atgttcggat
+       61 tggcatcgct tgcatagtcc gctgacccca ttgattcaca ggctttaagt tcgagacctt
+      121 aactgcgatt tcttattacc gagaccggtc gatttcgggt gataatccga ctgaaatcgg
+      181 tgttaagaaa ttgagcttga ggtcttagta atgtggtatc gaacttaaga aatcgccctc
+      241 tgtcgtcaac gtactcagag cccttctaag gcgtcgaaaa tctgcgatga gcataggtat
+      301 ggatagggcc aataaagagg cttagaagca attctggagc ctcatgtttt ttggggtcgg
+      361 gctccaaaaa tctctccacc cagtcgaaac caaacatacg tgacaaaaat actgaaaacc
+      421 ctgcaatttt ggtacctatg tttggtttat ctcgccctca accagccctc aaccagacag
+      481 ggaggacaag aatctgggaa aacccaaatc cttgtcaccc atgtttggtg cgagccgaac
+      541 cagggtgccc gcaatccttg aagatccaaa tgttgggcat ctgtttccga ccccaagccg
+      601 aaaccgtcct atatggccaa gcagagatga gtttgaagtt cgttggtcac ctggtttggt
+      661 cgaggagcaa agaatgaaaa atggctttag gctcacaaaa agggacctca cagaatcgct
+      721 cctaagggtt tttaatgtga ggtcaatacc aaaaagctcc ctccagattt acaagacttt
+      781 aaaagcactc tgaggggctt agggatttgg gagttgttaa gggcgatttc ttaagttcga
+      841 tttcgtataa ccgctacctt gattccaata ccttccgctc aatttctcat ttccaatttc
+      901 agtcggaaaa gcgctcaaaa ctgactggta tctaacctga gaaattgagc gctcgaaact
+      961 gtaaacgtga aatcgctgtt aagatctcga agttaacgcc aatcgccttt gtgagttact
+     1021 cttcccagct cttcaccttg cgcagcagca gcctactctt tcgttgggat gcaccaagtt
+     1081 tgcggctcat ttcggtgagg accttgatgg cgtcgttgat gtgtggtccc ttgttcagca
+     1141 tgacgcattc agcgcgaagt gccattgctg cgtcggtgat ttctgcgcga gatgggagtc
+     1201 cgtttttggc catgttttcc aggacttggg tggccaagat ggttgggacg tgggcggctt
+     1261 cggcaagggc catgatcagt tgggggactt ctgccatgcg gtcgaagccg agttcgacgg
+     1321 cgaggtctcc gcgggcgatc atgatgccga agttttcgtg gcgcatgccg gtcaggagga
+     1381 tttgggcgag gccttcgtag cctgggatgg tctcgatttt aaggacgagg ccaaggcgtt
+     1441 cgacggctac tggatctccg atgtcggcga gtgcttggag gaggtattcc acgtcggcga
+     1501 cgtttcggat gaaggagatg gctgcgatgt cggcgtattt gacgacaaag cgcaggtgtt
+     1561 ggaggtcttc ttcagtgagg cttgggagtg gaagttcgga gtctgggagg ttgattccct
+     1621 tgtatgcggc caggtttacg ccttgtgggc gggcgtgggt gacttccaat tctacgtcgt
+     1681 tgtggccgtc ggcagtggag gtcttgtcga tgcagactgc ggcgatggct ccgtcgtcga
+     1741 aaagcacgcg gtgcccgact ttaattgcat cgactgcttg tggaagggtg cagctgatgc
+     1801 gtggtgtgcg gccggatccg agggatggat cgtaggtgag ttcttcgtcg gtaaggatga
+     1861 ggcggtcgcc gactttgagg ttgatgcgct gaactacggc ggggatgccg tagacccggg
+     1921 agcggtcgta gttgtgttcc aggagggtgc cgttggagat gtaggctttt tgtgggcctt
+     1981 cggcgaggac cgcgccatca aaaaccctgg tcacggtgaa tgctcggcgg gatccgcggg
+     2041 tgtctgggac gttgatgacg ctgccgattt ctagtttgtc gaaccattct ggggtgactt
+     2101 caatcggcag agcggggcga ccgggcaggc tttcgggggc tgggactggt tcggagccgt
+     2161 gggcggtgat ccacagtttt gcgggcgtca gtacttttcc ggtttcgtcg cgggttactc
+     2221 gtgcgcgacc tacttctgcg cctggggcga tttcgccggt gcgtactttt ggtccggcga
+     2281 ggtccatgct gacgcggatt tcccggccaa cttcttctgc aacggtgtgg acgttgtcga
+     2341 tcatctgctt ccagacggtt tcatcgtcgt gtgcacagtt gatgcgagct agattcatgc
+     2401 cgcttttggc gaagccacgg acaagttcaa tgtcggtggc ggcttcggtg ggcagggtga
+     2461 ccatgatgca ggatggagta tccggtaggg gttcgccaag gagaatttcg gcgtgctcgt
+     2521 cgagaatctc atcggcatct tcgaaggcat cgacgacatc tgagggtgga taaagtgggc
+     2581 cttcacctgc gaaagctccg ataacattgc gggcggcctt gaggcgggcc tgcactgctg
+     2641 gttcggtggt agtcaagcgg gtagctccca cagaggagag gcgttgctgc aggccacgga
+     2701 ggtctttggt gcgaagatgc gcgtaatgca tgaggttgcg ggcaccaacg taatgggttg
+     2761 gggagacctg cccgatggcc tcgctgtgag tttgtgtcac ctcatcaagt tctagaatta
+     2821 actcgtcgag ttcagtcttg atctcctgga gaatgtcctg gtcaaactca ttcatttgag
+     2881 ctccttaagc tacaaacact ctaaattcca tccaacagtt tcattgtgcc cgtaaaccaa
+     2941 aaagttggca gcgcaagtgt tccaatgaaa cacttgcgtc gccaactagg cgccaaagat
+     3001 ttagaagaac tgcttctgaa tttcgcgcag ggtatttgcg gaatgcttga agcgttccat
+     3061 ctcgtggtcg gtgatttcta gttcgacaac gcggcggatg cctcggcggt tcaccacagc
+     3121 tggggtgccg atgtagatgt cttcctcacc gtattcaccg tggagcagtg cagagactgg
+     3181 gactgcaacg tcttggttct gcaggattgc gcgggtgatg cgagcaagac ccatgccgat
+     3241 gccgtaggaa gtggagccct tggcgtcgat aatgtgatag gcagcgtcgc gggtgtcttc
+     3301 gaaaattttc tctagacggc cctcaagctc tgggtctttg tccagcattc ggctaagcga
+     3361 tacgcctgcg atggtcgcgg aggacaggac tggaagttca gtgtcgccgt gttcgccgat
+     3421 gatgtaggcg tggacggagc ttggtgccac ttcgtagagt tcgcccagca tgtagcggaa
+     3481 tcgagcggag tccaggacag ttccggagcc gatcacgcgg ttccattcca agccggagaa
+     3541 tttccacact gcgtaggtca ggatatccac tgggttggac gccacgagga agatgccgtc
+     3601 gaatccgctg tccatgacat cgccgacgat ggatttcata atcttgacgt ttttgtccac
+     3661 cagctggagg cgggtctcgc ctggcttttg ggctgcgccg gcacaaatga caaccatggc
+     3721 tgcgtcttcg cagtcagcgt aggtgccctt ggtgacgcgg gtgcgggaat cggcccacac
+     3781 aacaccatgg tttaagtcca tgacgttgcc ttcgagtttc ttttcatcga tgtcgatgat
+     3841 cgcaaggtga tctgccatgc cctggttgat cagtgcgtat gcgtatgcaa ctccaacatc
+     3901 tcctgcgcca atgaggacaa tcttgttacc gacggtttct ttcattttcg atcccacttc
+     3961 ctgatttccc taaccggaca acccacaaag cagctcagaa aatcagcaag agcttgtgcc
+     4021 cggattcctt tgttacacct ttaattatgc ccgattatgt ccgaaaatgt ggtcagacca
+     4081 agtgttattt ttgttgaaaa aatcacattg taaatcgagc aaaaccaacc tatgccctgc
+     4141 agaattgtgc atgctctgcc aagatgactc aatatggttt cgctccccag actagcgtct
+     4201 ctgctcacca ctcgcctggc aacgcttaaa cccgcactaa aacctgccac ccacctcgcc
+     4261 tccctcggcg cgcaggtcat tgcagagcta gttccgggga tccgaatgtc gccaaaccgc
+     4321 aggcgaatcc tccctgcaaa tatgggcgct ggctttatcg gagcggaaat cgcaatgtgg
+     4381 tgggctctct cgccgtcatt gttgccgaaa ccgtggtggg ttacggctgc taacctggct
+     4441 gttttacaag cggtggggca tgcggcagcg acgggaatcc actcgatcct ccccagaacc
+     4501 aaccggcggg tatccaggaa aatttacaac gccacccaca tcgcaactgg tgccatcacg
+     4561 ttgaccacca cggttgtggg attgatcagg catcgcaccc aaatccggct gattgggcag
+     4621 aagaattttg gaccgaagga gacgatcgcg ggcattagtg tcggcacctt ggggtacggc
+     4681 gcgctgctga tcaccggcga attaacccag cacagtatta atgaggtcaa gctcctaatt
+     4741 gagaggtttt taccgccgtg gataagtttc atcgcagcgg tttcggtcat tacattgacc
+     4801 actttgacct tggccgatcg cgttttgttg cggcgcatct tgcataattc tgcaattcaa
+     4861 gcagcgcacc ttaatcgcat ggtgttccca ggaactgagc agccgtggga gccggagcgt
+     4921 tcgggtagcc cgtggtcgta tgaaaaatgg ggtgcggtgg gttcgcaggg ccgtgcagtg
+     4981 ttgtcgggag gcccacgcaa agatgacatc atcacggtaa ccaggctttc tgacacggaa
+     5041 acacatgaac cgattcgtat ttttatcggt atggttccgg gacgatcctt aagcgatcag
+     5101 gtggatcttg tcattcatga aatgcgccgc acgggagccc tgcgccgcga ccacatcgtg
+     5161 atcaacaatt ccacgggcac cggctggatc accgattggt ccgcccacac ctttgagttc
+     5221 ctcaccggcg gaaactgcgt gacaatttcc atgcaatatt cttatcttcc cagtgcactg
+     5281 agctggtaca aggacaacga cggccccatt aatgcggcga gaatgcttat cgacgccgtc
+     5341 ctccacgagc tagaccagct tcccaccggg agtcgcccaa agctgttcct cgcgggagag
+     5401 tcactggggg cgtatgggtt ggctgaggtg tggggagacg tcgaaaagct tcttggaacc
+     5461 gctgacggcg tgctgctcag tggggcgccg cgtttttcgg acgccatgaa tgcgttgcgc
+     5521 acccggcgcg atgcgagcag ctccgagcgg ctgcccgtga ttgatagcgg gcggcacatc
+     5581 cgttttgcgg gcgagcctga gcaccttgat atgccggcta cctggcagtt tccgcgcatg
+     5641 atcgtggcgc agcacgcctc tgatccaatt gtgtggtgga acgcggagct gtttattcgg
+     5701 cggccggaat ggttgaaaac tcccaagcaa gaccaccaag atgtctttcc ccgcttgcga
+     5761 tggatgccgt ttgtaaccgg ctggcaggtg gctttggatt tgttcacttc aacctccgtt
+     5821 cccggcgggc acgggcacaa ttatcacgag gagtttattg attattgggc agctcttttg
+     5881 gaccgcgaag tcacccccga gctgcgccac agcattgctt attggatccg cgcgaaccac
+     5941 atcaaacgct agagtgattc catgacgcat gcgatcctct ttgacctcga cggcaccctc
+     6001 gttgatcacg cttccgccgc ccgcgccgcc ctgcacgcct ggtcgccgac cgtgggcgtc
+     6061 gacacggatg ttgagcgctg gattgagctg gataagtggg gttttgcccg ttttgagcgc
+     6121 ggcgaaacca cgcatttagg tcagcggcgc gaccgcatca gggcgtacct caacagagag
+     6181 cttgacgacg ccacctgcga tgatatttac tccggctacc ttaaagcata tgagcaaaac
+     6241 tggactgcct accccgatgc caagggcgtt ctcgatcgcg cggtagccac cggtgcccct
+     6301 gtgggaatcc tgaccaatgg cgcagccccc atgcagcaag acaagcttga tcgcaccggc
+     6361 cttggcctgc cagaactcgt catgttggcg gcgtccactc tggattctgc gaagcctcgc
+     6421 cccgaaatgt atgcccgagc gctcacccat ttgggtgccc gaaccgcaac aattatcggc
+     6481 gatgattgga ccaacgatgt cgcagctccc cgcgaacttg gctggaatgc tctctattta
+     6541 gatcgttccg gaaccgatcc acgcgccgat atccactccc tggatgaact ctttcactag
+     6601 gctggccttt attgtttccg gaaaggggtt gctatgaaaa ttggtgtcat cctgggcagt
+     6661 atccgcgaag gccgcttcgg ccaaggcgtt gccgattggg tcatggaaca aatcggggct
+     6721 tatgacgcac ccgatgtgga atttgaactc atcgacctca aagctttcaa cgtgcccctg
+     6781 ttggaatccg cgacagttcc aggttccgcg gataaacagt acgacgaccc gcgcgtaact
+     6841 gcctggtcac aggccattga tgcctgcgat gccttccttt tcatcacccc ggaatacaac
+     6901 cacggtgtgc ccggcgcgtt caaaaatgcg tatgacatcc tgggc
+//
