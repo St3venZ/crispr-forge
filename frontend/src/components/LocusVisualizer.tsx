@@ -157,7 +157,7 @@ export function LocusVisualizer({
       relStart: vfStart,
       relEnd: vfEnd,
       strand: vf.strand || "+",
-      color: "#2563EB",
+      color: "#6d5dfc",
     });
 
     const vr = verificationPrimers.outer_reverse;
@@ -173,7 +173,7 @@ export function LocusVisualizer({
       relStart: vrStart,
       relEnd: vrEnd,
       strand: vr.strand || "-",
-      color: "#2563EB",
+      color: "#6d5dfc",
     });
 
     if (verificationPrimers.wt_internal_primer) {
@@ -453,13 +453,13 @@ export function LocusVisualizer({
   const mmWinW = Math.max(4, (span / seqLen) * 100);
 
   return (
-    <div className="bio-card flex h-full flex-col overflow-hidden rounded-xl">
+    <div className="bio-card flex h-full flex-col overflow-hidden">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--border-hairline)] px-5 py-4">
+      <div className="neu-divider-b flex flex-wrap items-center justify-between gap-3 px-6 py-4 dark:px-5">
         <div>
           <div className="flex items-center gap-2">
             <Crosshair className="h-4 w-4 text-[var(--accent-primary)]" />
-            <h3 className="text-base font-bold text-[var(--text-primary)]">
+            <h3 className="font-display text-base text-[var(--text-primary)]">
               交互式可缩放基因组图谱 (Genome Locus Map)
             </h3>
           </div>
@@ -473,29 +473,26 @@ export function LocusVisualizer({
         </div>
 
         {/* Quick Jump Presets */}
-        <div className="inline-flex flex-wrap items-center gap-1.5">
+        <div className="inline-flex flex-wrap items-center gap-2">
           <button
             type="button"
+            data-active={zoomLevel <= 1.05}
             onClick={handleJumpFull}
-            className={`rounded-md border px-2.5 py-1.5 text-xs font-semibold transition cursor-pointer ${
-              zoomLevel <= 1.05
-                ? "border-[var(--accent-primary)] bg-[var(--accent-soft)] text-blue-700 dark:text-sky-300"
-                : "border-[var(--border-hairline)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:bg-[var(--bg-subtle)]"
-            }`}
+            className="neu-pill px-3 py-1.5 text-xs font-medium cursor-pointer"
           >
             全景 1×
           </button>
           <button
             type="button"
             onClick={handleJumpDeletion}
-            className="btn-outline rounded-md px-2.5 py-1.5 text-xs font-semibold cursor-pointer"
+            className="neu-pill px-3 py-1.5 text-xs font-medium cursor-pointer"
           >
             聚焦敲除区
           </button>
           <button
             type="button"
             onClick={handleJumpCutSite}
-            className="rounded-md border border-rose-300 bg-rose-50 px-2.5 py-1.5 text-xs font-semibold text-rose-700 transition hover:bg-rose-100 dark:border-rose-500/40 dark:bg-rose-500/15 dark:text-rose-300 cursor-pointer"
+            className="neu-pill px-3 py-1.5 text-xs font-medium text-[#c93232] dark:border-rose-500/40 dark:bg-rose-500/15 dark:text-rose-300 cursor-pointer"
           >
             聚焦 Cas9 切点
           </button>
@@ -503,13 +500,13 @@ export function LocusVisualizer({
       </div>
 
       {/* Continuous Zoom & Pan Toolbar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--border-hairline)] bg-[var(--bg-subtle)]/65 px-5 py-2.5">
+      <div className="neu-divider-b flex flex-wrap items-center justify-between gap-3 px-6 py-3 dark:bg-[var(--bg-subtle)]/65 dark:px-5 dark:py-2.5">
         <div className="flex flex-wrap items-center gap-2.5">
           <button
             type="button"
             onClick={() => zoomAround(zoomLevel / 1.4, 0.5)}
             disabled={zoomLevel <= 1.01}
-            className="btn-outline flex h-7 w-7 items-center justify-center rounded-md cursor-pointer"
+            className="btn-outline flex h-8 w-8 dark:h-7 dark:w-7 items-center justify-center rounded-full dark:rounded-md cursor-pointer"
             title="缩小视野"
             aria-label="缩小视野"
           >
@@ -534,25 +531,25 @@ export function LocusVisualizer({
             type="button"
             onClick={() => zoomAround(zoomLevel * 1.4, 0.5)}
             disabled={zoomLevel >= MAX_ZOOM - 0.05}
-            className="btn-outline flex h-7 w-7 items-center justify-center rounded-md cursor-pointer"
+            className="btn-outline flex h-8 w-8 dark:h-7 dark:w-7 items-center justify-center rounded-full dark:rounded-md cursor-pointer"
             title="放大视野"
             aria-label="放大视野"
           >
             <ZoomIn className="h-3.5 w-3.5" />
           </button>
 
-          <span className="rounded-md border border-[var(--border-hairline)] bg-[var(--bg-surface)] px-2.5 py-1 font-mono-bio text-xs font-bold text-blue-700 dark:text-sky-300">
+          <span className="neu-recessed rounded-full dark:rounded-md px-3 py-1 font-mono-bio text-xs font-semibold text-accent">
             {zoomLevel.toFixed(1)}× · {Math.round(span).toLocaleString()} bp
           </span>
         </div>
 
         <div className="flex flex-wrap items-center gap-3 text-xs text-[var(--text-secondary)]">
-          <label className="inline-flex items-center gap-1.5 font-semibold cursor-pointer select-none">
+          <label className="inline-flex items-center gap-1.5 font-medium cursor-pointer select-none">
             <input
               type="checkbox"
               checked={directWheelZoom}
               onChange={(e) => setDirectWheelZoom(e.target.checked)}
-              className="h-3.5 w-3.5 rounded accent-blue-600 dark:accent-sky-400 cursor-pointer"
+              className="h-3.5 w-3.5 rounded accent-[#6d5dfc] dark:accent-sky-400 cursor-pointer"
             />
             <span>滚轮直接缩放</span>
           </label>
@@ -563,12 +560,12 @@ export function LocusVisualizer({
         </div>
       </div>
 
-      {/* Interactive SVG Canvas */}
+      {/* Interactive SVG Canvas (Recessed Viewport Well in Light Mode) */}
       <div
         ref={svgWrapRef}
-        className="relative flex-1 bio-grid-bg px-3 py-4 sm:px-4"
+        className="relative flex-1 p-4 sm:p-5 dark:bio-grid-bg dark:px-4 dark:py-4"
       >
-        <div className="w-full overflow-hidden">
+        <div className="neu-recessed-deep bio-grid-bg w-full overflow-hidden rounded-[20px] p-2 dark:rounded-none dark:border-0 dark:p-0">
           <svg
             ref={svgRef}
             viewBox={`0 0 ${SVG_W} ${SVG_H}`}
@@ -747,7 +744,7 @@ export function LocusVisualizer({
                     title: `目标基因 ${locus.gene_name} (${locus.locus_tag})`,
                     badge: "目标敲除 ORF",
                     badgeClass:
-                      "bg-[var(--accent-soft)] text-blue-700 dark:text-sky-300",
+                      "bg-[var(--accent-soft)] text-accent",
                     coords: `${formatCoord(locus.genome_start)} .. ${formatCoord(locus.genome_end)} bp`,
                     lengthLabel: `全长 ${locus.orf_length_bp.toLocaleString()} bp`,
                     strand: `${locus.strand} 链`,
@@ -846,14 +843,14 @@ export function LocusVisualizer({
                   height={60}
                   rx={6}
                   fill="url(#delHatchV3)"
-                  stroke="#E11D48"
+                  stroke="var(--svg-cut-color)"
                   strokeWidth="1.6"
                   strokeDasharray="6 3"
                 />
               </g>
             )}
 
-            {/* CAS9 CUT SITE (Preserved Vivid Rose/Red, two non-colliding segments) */}
+            {/* CAS9 CUT SITE (Preserved Vivid Coral/Rose, two non-colliding segments) */}
             {cutInView && (
               <g
                 className="cursor-pointer"
@@ -862,7 +859,7 @@ export function LocusVisualizer({
                     title: `Cas9 切割位点 · ${selectedSgRNA.id}`,
                     badge: `PAM: ${selectedSgRNA.pam} · 评分 ${selectedSgRNA.on_target_score.toFixed(1)}`,
                     badgeClass:
-                      "bg-rose-100 text-rose-700 dark:bg-rose-500/20 dark:text-rose-300",
+                      "bg-[#ff6b6b]/18 text-[#c93232] dark:bg-rose-500/20 dark:text-rose-300",
                     coords: `基因组第 ${formatCoord(selectedSgRNA.cut_site_genome)} bp`,
                     lengthLabel: `距离 ORF 起始 ${selectedSgRNA.distance_from_orf_start_pct.toFixed(1)}% · GC ${selectedSgRNA.gc_percent.toFixed(1)}%`,
                     strand: `${selectedSgRNA.strand} 链`,
@@ -877,7 +874,7 @@ export function LocusVisualizer({
                   y1={64}
                   x2={cutX}
                   y2={96}
-                  stroke="#E11D48"
+                  stroke="var(--svg-cut-color)"
                   strokeWidth="2"
                   strokeDasharray="3 2"
                 />
@@ -886,7 +883,7 @@ export function LocusVisualizer({
                   y1={105}
                   x2={cutX}
                   y2={176}
-                  stroke="#E11D48"
+                  stroke="var(--svg-cut-color)"
                   strokeWidth="2"
                   strokeDasharray="3 2"
                 />
@@ -894,7 +891,7 @@ export function LocusVisualizer({
                   cx={cutX}
                   cy={56}
                   r={10}
-                  fill="#E11D48"
+                  fill="var(--svg-cut-color)"
                   stroke="var(--svg-pill-mask)"
                   strokeWidth="2"
                 />
@@ -965,7 +962,7 @@ export function LocusVisualizer({
                     title: "左同源臂 Left Homology Arm (LA)",
                     badge: `${donor.left_arm_len} bp`,
                     badgeClass:
-                      "bg-[var(--accent-soft)] text-blue-700 dark:text-sky-300",
+                      "bg-[var(--accent-soft)] text-accent",
                     coords: `${formatCoord(locus.slice_genome_start + laStart)} .. ${formatCoord(locus.slice_genome_start + laEnd - 1)} bp`,
                     lengthLabel: `纯同源臂 ${donor.left_arm_len} bp · OE-PCR 扩增子 ${donor.la_amplicon_bp} bp`,
                     seqPreview: `${donor.left_arm_seq.slice(0, 24)}...${donor.left_arm_seq.slice(-16)}`,
@@ -1129,7 +1126,7 @@ export function LocusVisualizer({
                       title: `${p.spec.name} (${p.shortLabel})`,
                       badge: `Tm ${p.spec.tm_binding_c.toFixed(1)}°C · ${p.spec.length_nt} nt`,
                       badgeClass:
-                        "bg-[var(--accent-soft)] text-blue-700 dark:text-sky-300",
+                        "bg-[var(--accent-soft)] text-accent",
                       coords: `${formatCoord(locus.slice_genome_start + p.relStart)} .. ${formatCoord(locus.slice_genome_start + p.relEnd)} bp`,
                       lengthLabel: `GC ${p.spec.gc_percent.toFixed(1)}% · 纯化 ${p.spec.purification_method}`,
                       strand: `${p.strand} 链结合`,
@@ -1200,42 +1197,42 @@ export function LocusVisualizer({
                 e.currentTarget.releasePointerCapture(e.pointerId);
               }
             }}
-            className="relative h-6 w-full overflow-hidden rounded-md border border-[var(--border-hairline)] bg-[var(--bg-subtle)] cursor-pointer select-none"
+            className="neu-recessed relative h-6 w-full overflow-hidden rounded-full dark:rounded-md cursor-pointer select-none"
           >
             <div className="absolute inset-x-0 top-1/2 h-[2px] -translate-y-1/2 bg-[var(--border-strong)]" />
             <div
               style={{ left: `${mmTargetL}%`, width: `${mmTargetW}%` }}
-              className="absolute top-1.5 bottom-1.5 rounded-xs bg-blue-600/80 dark:bg-sky-400/85"
+              className="absolute top-1.5 bottom-1.5 rounded-xs bg-[#6d5dfc]/85 dark:bg-sky-400/85"
             />
             <div
               style={{ left: `${mmDelL}%`, width: `${mmDelW}%` }}
-              className="absolute top-2 bottom-2 rounded-xs bg-rose-600/85"
+              className="absolute top-2 bottom-2 rounded-xs bg-[#ff6b6b]/90 dark:bg-rose-600/85"
             />
             <div
               style={{ left: `${mmCutL}%` }}
-              className="absolute top-0.5 bottom-0.5 w-[2px] bg-rose-600"
+              className="absolute top-0.5 bottom-0.5 w-[2px] bg-[#ff6b6b] dark:bg-rose-600"
             />
             <div
               style={{
                 left: `${mmWinL}%`,
                 width: `${Math.min(100 - mmWinL, mmWinW)}%`,
               }}
-              className="absolute inset-y-0 rounded border-2 border-[var(--accent-primary)] bg-[var(--accent-soft)]"
+              className="absolute inset-y-0 rounded-full dark:rounded border-2 border-[var(--accent-primary)] bg-[var(--accent-soft)]"
             />
           </div>
         </div>
 
         {/* Bottom Inspector HUD */}
-        <div className="mt-3 min-h-[72px] rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] px-4 py-3">
+        <div className="neu-recessed mt-4 min-h-[72px] rounded-2xl dark:rounded-lg dark:bg-[var(--bg-surface)] px-4 py-3">
           {hovered ? (
             <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:justify-between">
               <div className="space-y-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-sm font-bold text-[var(--text-primary)]">
+                  <span className="text-sm font-semibold text-[var(--text-primary)]">
                     {hovered.title}
                   </span>
                   <span
-                    className={`rounded-md px-2 py-0.5 font-mono-bio text-xs font-semibold ${hovered.badgeClass}`}
+                    className={`rounded-full dark:rounded-md px-2.5 py-0.5 font-mono-bio text-xs font-medium ${hovered.badgeClass}`}
                   >
                     {hovered.badge}
                   </span>
@@ -1258,7 +1255,7 @@ export function LocusVisualizer({
                 )}
               </div>
               {hovered.seqPreview && (
-                <code className="shrink-0 rounded-md border border-[var(--border-hairline)] bg-[var(--bg-subtle)] px-3 py-1.5 font-mono-bio text-xs text-blue-700 dark:text-sky-300 max-w-full overflow-x-auto">
+                <code className="neu-soft-tile shrink-0 px-3 py-1.5 font-mono-bio text-xs text-accent max-w-full overflow-x-auto">
                   {hovered.seqPreview}
                 </code>
               )}
@@ -1266,10 +1263,10 @@ export function LocusVisualizer({
           ) : (
             <div className="flex flex-wrap items-center justify-between gap-2 py-1 text-xs text-[var(--text-secondary)]">
               <span className="inline-flex items-center gap-1.5">
-                <Scissors className="h-4 w-4 text-rose-600 dark:text-rose-400 shrink-0" />
+                <Scissors className="h-4 w-4 text-[#ff6b6b] dark:text-rose-400 shrink-0" />
                 悬停基因、RBS 保护区、LA/RA、Cas9 切点或引物查看精确坐标与序列；支持 1×–20× 无级缩放与拖拽平移
               </span>
-              <span className="inline-flex items-center gap-1 font-semibold text-blue-700 dark:text-sky-300">
+              <span className="inline-flex items-center gap-1 font-medium text-accent">
                 <ShieldCheck className="h-4 w-4" />
                 外侧引物距同源臂外缘 +{verificationPrimers.distance_outside_la_bp} / +
                 {verificationPrimers.distance_outside_ra_bp} bp
@@ -1280,9 +1277,9 @@ export function LocusVisualizer({
       </div>
 
       {/* Legend Footer */}
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-[var(--border-hairline)] bg-[var(--bg-subtle)]/70 px-5 py-3 text-xs text-[var(--text-secondary)]">
+      <div className="neu-divider-t flex flex-wrap items-center gap-x-4 gap-y-2 px-6 py-3.5 text-xs text-[var(--text-secondary)] dark:bg-[var(--bg-subtle)]/70 dark:px-5 dark:py-3">
         <span className="inline-flex items-center gap-1.5">
-          <span className="h-3 w-4 rounded-xs bg-blue-600 dark:bg-sky-400" />
+          <span className="h-3 w-4 rounded-xs bg-[#6d5dfc] dark:bg-sky-400" />
           目标基因 ORF
         </span>
         <span className="inline-flex items-center gap-1.5">
@@ -1290,19 +1287,23 @@ export function LocusVisualizer({
           RBS / 安全保护区
         </span>
         <span className="inline-flex items-center gap-1.5">
-          <span className="h-3 w-4 rounded-xs border border-dashed border-rose-600 bg-rose-50 dark:bg-rose-500/20" />
+          <span className="h-3 w-4 rounded-xs border border-dashed border-[#ff6b6b] bg-[#ff6b6b]/15 dark:border-rose-600 dark:bg-rose-500/20" />
           敲除缺失区间
         </span>
         <span className="inline-flex items-center gap-1.5">
-          <span className="h-3 w-4 rounded-xs border border-blue-600 bg-blue-50 dark:border-sky-400 dark:bg-sky-500/15" />
-          左/右同源臂 (LA/RA)
+          <span className="h-3 w-4 rounded-xs border border-[#6d5dfc] bg-[#6d5dfc]/15 dark:border-sky-400 dark:bg-sky-500/15" />
+          左同源臂 (LA)
         </span>
         <span className="inline-flex items-center gap-1.5">
-          <span className="h-3 w-3 rounded-full bg-rose-600" />
+          <span className="h-3 w-4 rounded-xs border border-[#2ea89f] bg-[#4ecdc4]/20 dark:border-slate-400 dark:bg-slate-400/15" />
+          右同源臂 (RA)
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <span className="h-3 w-3 rounded-full bg-[#ff6b6b] dark:bg-rose-600" />
           Cas9 切点
         </span>
         <span className="inline-flex items-center gap-1.5">
-          <span className="h-1.5 w-4 rounded-full bg-blue-600 dark:bg-sky-400" />
+          <span className="h-1.5 w-4 rounded-full bg-[#6d5dfc] dark:bg-sky-400" />
           外侧鉴定引物 (VF/VR)
         </span>
       </div>

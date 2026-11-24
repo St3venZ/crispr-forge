@@ -45,23 +45,23 @@ export function PrecisionSliderInput({
       : [min, Math.round(((min + max) / 2) / step) * step, max];
 
   return (
-    <div className="space-y-2.5 rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)]/55 p-3.5">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <label className="text-sm font-semibold text-[var(--text-primary)]">
+    <div className="neu-recessed space-y-3 rounded-[20px] p-4 dark:rounded-lg dark:bg-[var(--bg-subtle)]/55">
+      <div className="flex items-center justify-between gap-2">
+        <label className="text-xs sm:text-[13px] font-medium dark:font-semibold text-[var(--text-primary)] whitespace-nowrap">
           {label}
         </label>
 
-        <div className="inline-flex items-center overflow-hidden rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)]">
+        <div className="neu-recessed inline-flex shrink-0 items-center overflow-hidden rounded-full px-1 py-0.5 dark:rounded-lg dark:bg-[var(--bg-surface)] dark:p-0">
           <button
             type="button"
             onClick={() => onChange(clamp(value - step))}
             disabled={value <= min}
-            className="flex h-8 w-8 items-center justify-center text-[var(--text-secondary)] transition hover:bg-[var(--bg-subtle)] hover:text-[var(--text-primary)] disabled:opacity-35 cursor-pointer"
+            className="flex h-7 w-6 dark:h-8 dark:w-7 items-center justify-center rounded-full dark:rounded-none text-[var(--text-secondary)] transition hover:text-[var(--accent-primary)] dark:hover:bg-[var(--bg-subtle)] dark:hover:text-[var(--text-primary)] disabled:opacity-35 cursor-pointer"
             aria-label={`减少${label}`}
           >
             <Minus className="h-3.5 w-3.5" />
           </button>
-          <div className="flex items-center border-x border-[var(--border-hairline)] px-2">
+          <div className="flex items-center dark:border-x dark:border-[var(--border-hairline)] px-1.5">
             <input
               type="number"
               min={min}
@@ -75,7 +75,7 @@ export function PrecisionSliderInput({
                 }
               }}
               onBlur={() => onChange(clamp(value))}
-              className="w-16 bg-transparent py-1 text-right font-mono-bio text-sm font-bold text-[var(--text-primary)] focus:outline-none"
+              className="w-12 bg-transparent py-1 text-right font-mono-bio text-xs sm:text-sm font-semibold text-accent dark:font-bold dark:text-[var(--text-primary)] focus:outline-none"
             />
             <span className="ml-1 font-mono-bio text-xs font-medium text-[var(--text-muted)]">
               {unit}
@@ -85,7 +85,7 @@ export function PrecisionSliderInput({
             type="button"
             onClick={() => onChange(clamp(value + step))}
             disabled={value >= max}
-            className="flex h-8 w-8 items-center justify-center text-[var(--text-secondary)] transition hover:bg-[var(--bg-subtle)] hover:text-[var(--text-primary)] disabled:opacity-35 cursor-pointer"
+            className="flex h-7 w-6 dark:h-8 dark:w-7 items-center justify-center rounded-full dark:rounded-none text-[var(--text-secondary)] transition hover:text-[var(--accent-primary)] dark:hover:bg-[var(--bg-subtle)] dark:hover:text-[var(--text-primary)] disabled:opacity-35 cursor-pointer"
             aria-label={`增加${label}`}
           >
             <Plus className="h-3.5 w-3.5" />
@@ -106,20 +106,17 @@ export function PrecisionSliderInput({
         className="precision-range w-full cursor-pointer"
       />
 
-      <div className="flex flex-wrap items-center justify-between gap-1.5">
-        <div className="flex flex-wrap items-center gap-1.5">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           {tickPresets.map((preset) => {
             const active = Math.abs(value - preset) < step / 2;
             return (
               <button
                 key={preset}
                 type="button"
+                data-active={active}
                 onClick={() => onChange(preset)}
-                className={`rounded-md border px-2 py-0.5 font-mono-bio text-xs font-medium transition cursor-pointer ${
-                  active
-                    ? "border-[var(--accent-primary)] bg-[var(--accent-soft)] text-blue-700 dark:text-sky-300"
-                    : "border-[var(--border-hairline)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:border-[var(--border-strong)]"
-                }`}
+                className="neu-pill px-2.5 py-0.5 font-mono-bio text-xs font-medium cursor-pointer"
               >
                 {decimals > 0 ? preset.toFixed(decimals) : preset} {unit}
               </button>

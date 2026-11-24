@@ -36,7 +36,7 @@ function renderColoredSequence(primer: PrimerSpec) {
     return (
       <span className="font-mono-bio text-sm tracking-tight break-all">
         <span
-          className="rounded-xs bg-[var(--accent-soft)] px-0.5 font-bold text-blue-700 border-b-2 border-blue-500 dark:text-sky-300 dark:border-sky-400"
+          className="rounded-xs bg-[var(--accent-soft)] px-0.5 font-semibold text-accent border-b-2 border-[#6d5dfc] dark:border-sky-400"
           title="5' 保护碱基 / 粘性末端 / 同源重叠臂 (Overhang)"
         >
           {overhang}
@@ -56,7 +56,7 @@ function renderColoredSequence(primer: PrimerSpec) {
     return (
       <span className="font-mono-bio text-sm tracking-tight break-all">
         <span
-          className="rounded-xs bg-[var(--accent-soft)] px-0.5 font-bold text-blue-700 border-b-2 border-blue-500 dark:text-sky-300 dark:border-sky-400"
+          className="rounded-xs bg-[var(--accent-soft)] px-0.5 font-semibold text-accent border-b-2 border-[#6d5dfc] dark:border-sky-400"
           title="5' 粘性末端 / 重叠区 (Overhang)"
         >
           {prefix}
@@ -132,26 +132,26 @@ export function PrimerStudio({
   };
 
   return (
-    <section id="section-primers" className="space-y-6 scroll-mt-20">
+    <section id="section-primers" className="space-y-8 scroll-mt-20">
       {/* PART 1: Top-5 Interactive sgRNA Selector */}
-      <div className="bio-card overflow-hidden rounded-xl">
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--border-hairline)] px-5 py-4">
+      <div className="bio-card overflow-hidden">
+        <div className="neu-divider-b flex flex-wrap items-center justify-between gap-3 px-6 py-5 dark:px-5 dark:py-4">
           <div>
             <div className="flex items-center gap-2">
               <Scissors className="h-4 w-4 text-[var(--accent-primary)]" />
-              <h3 className="text-base font-bold text-[var(--text-primary)]">
+              <h3 className="font-display text-lg text-[var(--text-primary)] dark:text-base">
                 Top-{allSgRNAs.length} 候选 sgRNA 靶点优选与即时重验
               </h3>
             </div>
             <p className="mt-0.5 text-sm text-[var(--text-secondary)]">
               切换任意备选 sgRNA 将实时调用{" "}
-              <code className="font-mono-bio text-blue-700 dark:text-sky-300">
+              <code className="font-mono-bio text-accent">
                 POST /api/verify
               </code>{" "}
               重新执行 12 点零信任校验并联动更新图谱与克隆引物
             </p>
           </div>
-          <span className="rounded-md border border-[var(--border-hairline)] bg-[var(--bg-subtle)] px-3 py-1 font-mono-bio text-xs font-semibold text-[var(--text-secondary)]">
+          <span className="neu-recessed rounded-full dark:rounded-md px-3.5 py-1 font-mono-bio text-xs font-medium text-[var(--text-secondary)]">
             克隆方式：
             {selectedSgRNA.cloning_method === "golden_gate_oligo"
               ? "Golden Gate 退火 Oligo"
@@ -159,7 +159,7 @@ export function PrimerStudio({
           </span>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 p-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 p-6 sm:p-7 md:grid-cols-2 xl:grid-cols-3 dark:gap-4 dark:p-5">
           {allSgRNAs.map((cand) => {
             const isSelected = cand.id === selectedSgRNA.id;
             const isBusy = isReverifying && reverifyingId === cand.id;
@@ -171,35 +171,32 @@ export function PrimerStudio({
             return (
               <div
                 key={cand.id}
-                className={`relative flex flex-col justify-between rounded-lg border p-4 transition ${
-                  isSelected
-                    ? "border-[var(--accent-primary)] bg-[var(--accent-soft)]"
-                    : "border-[var(--border-hairline)] bg-[var(--bg-surface)] hover:border-[var(--border-strong)]"
-                }`}
+                data-selected={isSelected}
+                className="neu-card-interactive relative flex flex-col justify-between p-5"
               >
-                <div className="space-y-3">
+                <div className="space-y-3.5">
                   {/* Top row */}
                   <div className="flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2">
                       <span
-                        className={`flex h-6 w-6 items-center justify-center rounded-md font-mono-bio text-xs font-bold ${
+                        className={`flex h-6 w-6 items-center justify-center rounded-full dark:rounded-md font-mono-bio text-xs font-semibold ${
                           isSelected
                             ? "bg-[var(--primary)] text-[var(--primary-fg)]"
-                            : "bg-[var(--bg-subtle)] text-[var(--text-secondary)]"
+                            : "neu-recessed text-[var(--text-secondary)]"
                         }`}
                       >
                         #{cand.rank}
                       </span>
-                      <span className="font-mono-bio text-sm font-bold text-[var(--text-primary)]">
+                      <span className="font-mono-bio text-sm font-semibold text-[var(--text-primary)]">
                         {cand.id}
                       </span>
-                      <span className="rounded bg-[var(--bg-subtle)] px-2 py-0.5 font-mono-bio text-xs font-semibold text-[var(--text-secondary)]">
+                      <span className="neu-recessed rounded-full dark:rounded px-2 py-0.5 font-mono-bio text-xs font-medium text-[var(--text-secondary)]">
                         {cand.strand} 链
                       </span>
                     </div>
 
                     {isSelected && (
-                      <span className="inline-flex items-center gap-1 rounded-md border border-[var(--accent-border)] bg-[var(--bg-surface)] px-2 py-0.5 text-xs font-bold text-blue-700 dark:text-sky-300">
+                      <span className="inline-flex items-center gap-1 rounded-full dark:rounded-md bg-[var(--accent-soft)] px-2.5 py-0.5 text-xs font-semibold text-accent dark:border dark:border-[var(--accent-border)] dark:bg-[var(--bg-surface)]">
                         <CheckCircle2 className="h-3.5 w-3.5" />
                         当前采用
                       </span>
@@ -207,12 +204,12 @@ export function PrimerStudio({
                   </div>
 
                   {/* Spacer 20nt + PAM */}
-                  <div className="rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] px-3 py-2.5">
+                  <div className="neu-recessed rounded-2xl dark:rounded-lg dark:bg-[var(--bg-surface)] px-3.5 py-2.5">
                     <div className="flex items-center justify-between gap-2">
-                      <span className="font-mono-bio text-sm font-bold tracking-wide text-[var(--text-primary)] break-all">
+                      <span className="font-mono-bio text-sm font-semibold tracking-wide text-[var(--text-primary)] break-all">
                         {cand.spacer_20nt}
                       </span>
-                      <span className="shrink-0 rounded bg-rose-50 px-2 py-0.5 font-mono-bio text-xs font-bold text-rose-700 border border-rose-300 dark:bg-rose-500/15 dark:text-rose-300 dark:border-rose-500/40">
+                      <span className="shrink-0 rounded-full dark:rounded bg-[#ff6b6b]/18 px-2 py-0.5 font-mono-bio text-xs font-semibold text-[#c93232] dark:border dark:border-rose-500/40 dark:bg-rose-500/15 dark:text-rose-300">
                         {cand.pam}
                       </span>
                     </div>
@@ -227,11 +224,11 @@ export function PrimerStudio({
                   {/* On-target Score Bar + GC */}
                   <div className="space-y-1.5">
                     <div className="flex items-center justify-between text-xs">
-                      <span className="font-semibold text-[var(--text-secondary)]">
+                      <span className="font-medium text-[var(--text-secondary)]">
                         On-Target 活性评分
                       </span>
                       <div className="flex items-center gap-2 font-mono-bio">
-                        <span className="font-bold text-blue-700 dark:text-sky-300">
+                        <span className="font-semibold text-accent">
                           {cand.on_target_score.toFixed(1)}
                         </span>
                         <span className="text-[var(--border-strong)]">|</span>
@@ -240,14 +237,14 @@ export function PrimerStudio({
                         </span>
                       </div>
                     </div>
-                    <div className="h-2 w-full overflow-hidden rounded-full bg-[var(--bg-subtle)]">
+                    <div className="neu-recessed h-2.5 dark:h-2 w-full overflow-hidden rounded-full">
                       <div
                         className={`h-full rounded-full transition-all ${
                           scorePct >= 70
-                            ? "bg-blue-600 dark:bg-sky-400"
+                            ? "bg-[#6d5dfc] dark:bg-sky-400"
                             : scorePct >= 50
                               ? "bg-amber-500"
-                              : "bg-rose-600"
+                              : "bg-[#ff6b6b] dark:bg-rose-600"
                         }`}
                         style={{ width: `${scorePct}%` }}
                       />
@@ -257,15 +254,15 @@ export function PrimerStudio({
                   {/* Safety Chips */}
                   <div className="flex flex-wrap gap-1.5 text-xs">
                     <span
-                      className={`inline-flex items-center gap-1 rounded-md border px-2 py-0.5 font-semibold ${
+                      className={`inline-flex items-center gap-1 rounded-full dark:rounded-md px-2.5 py-0.5 font-medium ${
                         cleanOffTarget
-                          ? "border-[var(--border-hairline)] bg-[var(--bg-surface)] text-[var(--text-secondary)]"
-                          : "border-amber-300 bg-amber-50 text-amber-800 dark:border-amber-500/40 dark:bg-amber-500/15 dark:text-amber-300"
+                          ? "neu-recessed text-[var(--text-secondary)]"
+                          : "bg-amber-500/15 text-amber-800 dark:border dark:border-amber-500/40 dark:bg-amber-500/15 dark:text-amber-300"
                       }`}
                       title={cand.off_target_summary}
                     >
                       {cleanOffTarget ? (
-                        <ShieldCheck className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
+                        <ShieldCheck className="h-3.5 w-3.5 text-[#1c7c75] dark:text-emerald-400" />
                       ) : (
                         <AlertTriangle className="h-3.5 w-3.5" />
                       )}
@@ -277,10 +274,10 @@ export function PrimerStudio({
                     </span>
 
                     <span
-                      className={`inline-flex items-center gap-1 rounded-md border px-2 py-0.5 font-medium ${
+                      className={`inline-flex items-center gap-1 rounded-full dark:rounded-md px-2.5 py-0.5 font-medium ${
                         cand.has_enzyme_conflict
-                          ? "border-rose-300 bg-rose-50 text-rose-700 dark:border-rose-500/40 dark:bg-rose-500/15 dark:text-rose-300"
-                          : "border-[var(--border-hairline)] bg-[var(--bg-surface)] text-[var(--text-secondary)]"
+                          ? "bg-[#ff6b6b]/18 text-[#c93232] dark:border dark:border-rose-500/40 dark:bg-rose-500/15 dark:text-rose-300"
+                          : "neu-recessed text-[var(--text-secondary)]"
                       }`}
                       title={cand.enzyme_conflict_detail || "无克隆限制酶切冲突"}
                     >
@@ -291,14 +288,14 @@ export function PrimerStudio({
                         </>
                       ) : (
                         <>
-                          <Check className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
+                          <Check className="h-3.5 w-3.5 text-[#1c7c75] dark:text-emerald-400" />
                           无酶切冲突
                         </>
                       )}
                     </span>
 
                     {cand.has_poly_t && (
-                      <span className="inline-flex items-center gap-1 rounded-md border border-amber-300 bg-amber-50 px-2 py-0.5 font-medium text-amber-800 dark:border-amber-500/40 dark:bg-amber-500/15 dark:text-amber-300">
+                      <span className="inline-flex items-center gap-1 rounded-full dark:rounded-md bg-amber-500/15 px-2.5 py-0.5 font-medium text-amber-800 dark:border dark:border-amber-500/40 dark:bg-amber-500/15 dark:text-amber-300">
                         含 TTTT 风险
                       </span>
                     )}
@@ -306,10 +303,10 @@ export function PrimerStudio({
                 </div>
 
                 {/* Footer Action */}
-                <div className="mt-4 pt-3 border-t border-[var(--border-hairline)]">
+                <div className="neu-divider-t mt-4 pt-3">
                   {isSelected ? (
-                    <div className="flex items-center justify-between text-xs text-blue-700 dark:text-sky-300">
-                      <span className="font-semibold">
+                    <div className="flex items-center justify-between text-xs text-accent">
+                      <span className="font-medium">
                         已同步至图谱、电泳与引物表
                       </span>
                       <span className="font-mono-bio text-[var(--text-muted)]">
@@ -321,7 +318,7 @@ export function PrimerStudio({
                       type="button"
                       disabled={isReverifying}
                       onClick={() => onSelectSgRNA(cand)}
-                      className="btn-outline flex w-full items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-sm font-semibold text-blue-700 dark:text-sky-300 cursor-pointer"
+                      className="btn-outline flex w-full items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-accent cursor-pointer"
                     >
                       {isBusy ? (
                         <>
@@ -343,20 +340,20 @@ export function PrimerStudio({
         </div>
       </div>
 
-      {/* PART 2: Comprehensive Primer & Oligo Table */}
-      <div className="bio-card overflow-hidden rounded-xl">
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--border-hairline)] px-5 py-4">
+      {/* PART 2: Comprehensive Primer & Oligo Table (Clean Borderless Monospace Cells — Zero Cell Shadows) */}
+      <div className="bio-card overflow-hidden">
+        <div className="neu-divider-b flex flex-wrap items-center justify-between gap-3 px-6 py-5 dark:px-5 dark:py-4">
           <div>
             <div className="flex items-center gap-2">
               <Dna className="h-4 w-4 text-[var(--accent-primary)]" />
-              <h3 className="text-base font-bold text-[var(--text-primary)]">
+              <h3 className="font-display text-lg text-[var(--text-primary)] dark:text-base">
                 全套引物与 Oligo 订购清单 ({allPrimers.length} 条)
               </h3>
             </div>
             <p className="mt-0.5 text-sm text-[var(--text-secondary)]">
               序列中{" "}
-              <span className="rounded bg-[var(--accent-soft)] px-1.5 font-mono-bio font-bold text-blue-700 border-b-2 border-blue-500 dark:text-sky-300 dark:border-sky-400">
-                蓝色下划线
+              <span className="rounded bg-[var(--accent-soft)] px-1.5 font-mono-bio font-semibold text-accent border-b-2 border-[#6d5dfc] dark:border-sky-400">
+                下划线区段
               </span>{" "}
               为 5&apos; 粘性末端/同源重叠区，主体为 3&apos; 模板特异性结合区；＞50 nt 自动标记 PAGE 纯化
             </p>
@@ -365,11 +362,11 @@ export function PrimerStudio({
           <button
             type="button"
             onClick={handleCopyAllTsv}
-            className="btn-outline inline-flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-semibold cursor-pointer"
+            className="btn-outline inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium cursor-pointer"
           >
             {copiedAll ? (
               <>
-                <Check className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                <Check className="h-4 w-4 text-[#1c7c75] dark:text-emerald-400" />
                 已复制全部引物 (可直接粘贴生工/Excel)
               </>
             ) : (
@@ -382,15 +379,12 @@ export function PrimerStudio({
         </div>
 
         {/* Role Filter Chips */}
-        <div className="flex flex-wrap items-center gap-1.5 border-b border-[var(--border-hairline)] bg-[var(--bg-subtle)]/65 px-5 py-2.5">
+        <div className="neu-divider-b flex flex-wrap items-center gap-2.5 px-6 py-3.5 dark:bg-[var(--bg-subtle)]/65 dark:gap-1.5 dark:px-5 dark:py-2.5">
           <button
             type="button"
+            data-active={roleFilter === "all"}
             onClick={() => setRoleFilter("all")}
-            className={`rounded-md px-3 py-1 text-xs font-semibold transition cursor-pointer ${
-              roleFilter === "all"
-                ? "bg-[var(--primary)] text-[var(--primary-fg)]"
-                : "border border-[var(--border-hairline)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:bg-[var(--bg-subtle)]"
-            }`}
+            className="neu-pill px-3.5 py-1.5 text-xs font-medium cursor-pointer"
           >
             全部 ({allPrimers.length})
           </button>
@@ -402,12 +396,9 @@ export function PrimerStudio({
               <button
                 key={role}
                 type="button"
+                data-active={active}
                 onClick={() => setRoleFilter(role)}
-                className={`rounded-md px-3 py-1 text-xs font-semibold transition cursor-pointer ${
-                  active
-                    ? "bg-[var(--primary)] text-[var(--primary-fg)]"
-                    : "border border-[var(--border-hairline)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:bg-[var(--bg-subtle)]"
-                }`}
+                className="neu-pill px-3.5 py-1.5 text-xs font-medium cursor-pointer"
               >
                 {meta?.shortLabel || role} ({count})
               </button>
@@ -415,18 +406,18 @@ export function PrimerStudio({
           })}
         </div>
 
-        {/* Primer Table */}
+        {/* Primer Table (Clean borderless scannable cells — zero cell shadows) */}
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="border-b border-[var(--border-hairline)] bg-[var(--bg-subtle)]/80 text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">
-                <th className="py-3.5 pl-5 pr-3">引物名称 / 用途</th>
+              <tr className="neu-divider-b text-xs font-medium text-[var(--text-muted)] dark:bg-[var(--bg-subtle)]/80">
+                <th className="py-3.5 pl-6 pr-3">引物名称 / 用途</th>
                 <th className="py-3.5 px-3">序列 (5&apos; → 3&apos;)</th>
                 <th className="py-3.5 px-3 text-right">长度</th>
                 <th className="py-3.5 px-3 text-right">Tm (°C)</th>
                 <th className="py-3.5 px-3 text-right">GC%</th>
                 <th className="py-3.5 px-3 text-right">发夹 / 二聚体 ΔG</th>
-                <th className="py-3.5 pl-3 pr-5 text-center">纯化方式</th>
+                <th className="py-3.5 pl-3 pr-6 text-center">纯化方式</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[var(--border-hairline)] text-sm">
@@ -439,17 +430,17 @@ export function PrimerStudio({
                 return (
                   <tr
                     key={copyId}
-                    className="transition hover:bg-[var(--bg-subtle)]/45 align-top"
+                    className="transition hover:bg-white/25 dark:hover:bg-[var(--bg-subtle)]/45 align-top"
                   >
-                    <td className="py-4 pl-5 pr-3 whitespace-nowrap">
-                      <div className="font-mono-bio font-bold text-[var(--text-primary)]">
+                    <td className="py-4 pl-6 pr-3 whitespace-nowrap">
+                      <div className="font-mono-bio font-semibold text-[var(--text-primary)]">
                         {p.name}
                       </div>
                       <div className="mt-1.5 flex items-center gap-1.5">
                         <span
-                          className={`inline-block rounded border px-2 py-0.5 text-xs font-semibold ${
+                          className={`inline-block rounded-full dark:rounded dark:border px-2.5 py-0.5 text-xs font-medium ${
                             roleMeta?.colorClass ||
-                            "bg-[var(--bg-subtle)] text-[var(--text-secondary)] border-[var(--border-hairline)]"
+                            "bg-[#b8bcc2]/20 text-[var(--text-secondary)] dark:bg-[var(--bg-subtle)] dark:border-[var(--border-hairline)]"
                           }`}
                         >
                           {roleMeta?.shortLabel || p.role}
@@ -475,10 +466,10 @@ export function PrimerStudio({
                         <button
                           type="button"
                           onClick={() => handleCopySeq(copyId, p.sequence)}
-                          className={`shrink-0 rounded-md border p-2 transition cursor-pointer ${
+                          className={`shrink-0 rounded-xl dark:rounded-md p-2 transition cursor-pointer ${
                             isCopied
-                              ? "border-emerald-400 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"
-                              : "border-[var(--border-hairline)] bg-[var(--bg-surface)] text-[var(--text-muted)] hover:border-[var(--border-strong)] hover:text-[var(--text-primary)]"
+                              ? "bg-[#4ecdc4]/20 text-[#1a7871] dark:border dark:border-emerald-400 dark:bg-emerald-500/10 dark:text-emerald-300"
+                              : "btn-outline text-[var(--text-muted)]"
                           }`}
                           title="复制该条引物序列"
                         >
@@ -491,12 +482,12 @@ export function PrimerStudio({
                       </div>
                     </td>
 
-                    <td className="py-4 px-3 text-right font-mono-bio font-bold text-[var(--text-primary)] whitespace-nowrap">
+                    <td className="py-4 px-3 text-right font-mono-bio font-semibold text-[var(--text-primary)] whitespace-nowrap">
                       {p.length_nt} nt
                     </td>
 
                     <td className="py-4 px-3 text-right font-mono-bio whitespace-nowrap">
-                      <div className="font-bold text-[var(--text-primary)]">
+                      <div className="font-semibold text-[var(--text-primary)]">
                         {p.tm_binding_c.toFixed(1)}°C
                       </div>
                       {Math.abs(p.tm_full_c - p.tm_binding_c) >= 1.0 && (
@@ -517,7 +508,7 @@ export function PrimerStudio({
                       <span
                         className={
                           thermoWarn
-                            ? "font-bold text-amber-700 dark:text-amber-400"
+                            ? "font-semibold text-amber-700 dark:text-amber-400"
                             : "text-[var(--text-secondary)]"
                         }
                       >
@@ -528,14 +519,14 @@ export function PrimerStudio({
                       </div>
                     </td>
 
-                    <td className="py-4 pl-3 pr-5 text-center whitespace-nowrap">
+                    <td className="py-4 pl-3 pr-6 text-center whitespace-nowrap">
                       <span
-                        className={`inline-block rounded-md border px-2.5 py-0.5 font-mono-bio text-xs font-bold ${
+                        className={`inline-block rounded-full dark:rounded-md px-2.5 py-0.5 font-mono-bio text-xs font-semibold ${
                           p.purification_method === "PAGE"
-                            ? "border-amber-300 bg-amber-50 text-amber-800 dark:border-amber-500/40 dark:bg-amber-500/15 dark:text-amber-300"
+                            ? "bg-amber-500/15 text-amber-800 dark:border dark:border-amber-500/40 dark:bg-amber-500/15 dark:text-amber-300"
                             : p.purification_method === "HPLC"
-                              ? "border-[var(--accent-border)] bg-[var(--accent-soft)] text-blue-700 dark:text-sky-300"
-                              : "border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--text-secondary)]"
+                              ? "bg-[var(--accent-soft)] text-accent dark:border dark:border-[var(--accent-border)]"
+                              : "neu-recessed text-[var(--text-secondary)]"
                         }`}
                       >
                         {p.purification_method}

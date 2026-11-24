@@ -93,13 +93,13 @@ export function TopNav({
         <button
           type="button"
           onClick={onOpenApiKeyModal}
-          className="btn-outline inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-xs font-semibold cursor-pointer"
+          className="btn-outline inline-flex items-center gap-2 rounded-2xl dark:rounded-lg px-3.5 py-2 text-xs font-medium dark:font-semibold cursor-pointer"
           title="点击管理自带 API Key 设置"
         >
-          <span className="h-2 w-2 rounded-full bg-blue-600 dark:bg-sky-400" />
-          <KeyRound className="h-3.5 w-3.5 text-blue-600 dark:text-sky-400" />
+          <span className="h-2 w-2 rounded-full bg-[#4ecdc4] dark:bg-sky-400" />
+          <KeyRound className="h-3.5 w-3.5 text-[var(--accent-primary)]" />
           <span>BYOK 已连接</span>
-          <span className="hidden xl:inline rounded bg-[var(--bg-subtle)] px-1.5 py-0.5 font-mono-bio text-xs text-[var(--text-secondary)]">
+          <span className="hidden xl:inline neu-recessed rounded-full dark:rounded px-2 py-0.5 font-mono-bio text-xs text-[var(--text-secondary)]">
             {byokConfig.model || "custom"}
           </span>
         </button>
@@ -112,14 +112,14 @@ export function TopNav({
         <button
           type="button"
           onClick={onOpenApiKeyModal}
-          className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-semibold transition cursor-pointer ${
+          className={`inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium dark:font-semibold transition cursor-pointer ${
             low
-              ? "border-rose-300 bg-rose-50 text-rose-700 hover:bg-rose-100 dark:border-rose-500/40 dark:bg-rose-500/15 dark:text-rose-300"
-              : "border-[var(--border-hairline)] bg-[var(--bg-surface)] text-[var(--text-primary)] hover:bg-[var(--bg-subtle)]"
+              ? "neu-badge-coral rounded-2xl dark:rounded-lg dark:border-rose-500/40 dark:bg-rose-500/15 dark:text-rose-300"
+              : "btn-outline rounded-2xl dark:rounded-lg"
           }`}
           title="点击配置自带 API Key 解锁无限 AI 推理"
         >
-          <Sparkles className="h-3.5 w-3.5 text-blue-600 dark:text-sky-400" />
+          <Sparkles className={`h-3.5 w-3.5 ${low ? "text-white dark:text-rose-300" : "text-[var(--accent-primary)]"}`} />
           <span>
             AI 额度{" "}
             <strong className="font-mono-bio">
@@ -134,10 +134,10 @@ export function TopNav({
       <button
         type="button"
         onClick={onOpenApiKeyModal}
-        className="btn-outline inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold cursor-pointer"
+        className="btn-outline inline-flex items-center gap-1.5 rounded-2xl dark:rounded-lg px-3.5 py-2 text-xs font-medium dark:font-semibold cursor-pointer"
         title="核心生物设计 100% 免费本地运行；点击可绑定 API Key 开启 AI 自然语言模式"
       >
-        <Cpu className="h-3.5 w-3.5 text-blue-600 dark:text-sky-400" />
+        <Cpu className="h-3.5 w-3.5 text-[var(--accent-primary)]" />
         <span className="hidden sm:inline">本地引擎 · 模型设置</span>
         <span className="sm:hidden">模型</span>
       </button>
@@ -145,28 +145,28 @@ export function TopNav({
   };
 
   return (
-    <header className="sticky top-0 z-40 h-[56px] border-b border-[var(--border-hairline)] bg-[var(--bg-surface)]/95 backdrop-blur-md">
+    <header className="neu-topbar sticky top-0 z-40 h-[62px] dark:h-[56px]">
       <div className="flex h-full items-center justify-between gap-3 px-4 sm:px-6">
-        {/* Left: Precision Brand Mark + Subtle Engine Dot */}
+        {/* Left: Tactile Brand Mark + Subtle Engine Dot */}
         <div className="flex items-center gap-3 min-w-0">
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[var(--primary)] text-[var(--primary-fg)]">
+          <div className="neu-pill flex h-9 w-9 shrink-0 items-center justify-center text-[var(--accent-primary)] dark:h-8 dark:w-8 dark:rounded-lg dark:border-0 dark:bg-[var(--primary)] dark:text-[var(--primary-fg)]">
             <Dna className="h-4 w-4" />
           </div>
 
           <div className="flex items-center gap-2.5 min-w-0">
-            <span className="text-base font-bold tracking-tight text-[var(--text-primary)]">
+            <span className="font-display whitespace-nowrap text-lg text-[var(--text-primary)] dark:text-base">
               CRISPR-Forge
             </span>
-            <span className="hidden md:inline-block rounded-md border border-[var(--border-hairline)] bg-[var(--bg-subtle)] px-2 py-0.5 font-mono-bio text-xs font-medium text-[var(--text-muted)]">
+            <span className="hidden lg:inline-block whitespace-nowrap neu-recessed rounded-full dark:rounded-md px-2.5 py-0.5 font-mono-bio text-xs font-medium text-[var(--text-muted)]">
               Zero-Trust Workbench
             </span>
 
             {backendOnline !== null && (
               <div
-                className={`hidden xl:inline-flex items-center gap-1.5 rounded-md border px-2 py-0.5 text-xs font-medium ${
+                className={`hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium ${
                   backendOnline
-                    ? "border-[var(--border-hairline)] bg-[var(--bg-surface)] text-[var(--text-secondary)]"
-                    : "border-rose-300 bg-rose-50 text-rose-700 dark:border-rose-500/40 dark:bg-rose-500/15 dark:text-rose-300"
+                    ? "neu-recessed rounded-full dark:rounded-md dark:bg-[var(--bg-surface)] text-[var(--text-secondary)]"
+                    : "neu-badge-coral rounded-full dark:rounded-md dark:border-rose-500/40 dark:bg-rose-500/15 dark:text-rose-300"
                 }`}
                 title={
                   backendOnline
@@ -177,8 +177,8 @@ export function TopNav({
                 <span
                   className={`h-2 w-2 rounded-full ${
                     backendOnline
-                      ? "bg-emerald-500"
-                      : "bg-rose-600 dark:bg-rose-400"
+                      ? "bg-[#4ecdc4] dark:bg-emerald-500"
+                      : "bg-white dark:bg-rose-400"
                   }`}
                 />
                 <span>{backendOnline ? "引擎在线" : "后端离线"}</span>
@@ -190,12 +190,12 @@ export function TopNav({
         {/* Right: Fine-Grained Font Scale (84%–120%) + 3-State Theme + Tour + Quota */}
         <div
           data-tour="top-controls"
-          className="flex items-center gap-2 sm:gap-2.5 shrink-0"
+          className="flex items-center gap-2.5 sm:gap-3 shrink-0"
         >
           {/* Fine-Grained Continuous Font Size Adjuster: [ − ] [ 100% ] [ + ] */}
           <div ref={fontControlRef} className="relative hidden sm:block">
             <div
-              className="inline-flex items-center overflow-hidden rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)]"
+              className="neu-recessed inline-flex items-center overflow-hidden rounded-full px-1 py-0.5 dark:rounded-lg dark:p-0"
               role="group"
               aria-label="精细字号调节 (84%–120%)"
             >
@@ -205,7 +205,7 @@ export function TopNav({
                 onClick={() => onChangeFontScalePct(fontScalePct - 2)}
                 title="缩小字号 (-2%)"
                 aria-label="缩小字号 2%"
-                className="flex h-8 w-7 items-center justify-center text-[var(--text-secondary)] transition hover:bg-[var(--bg-surface)] hover:text-[var(--text-primary)] disabled:opacity-35 cursor-pointer"
+                className="flex h-7 w-7 dark:h-8 items-center justify-center rounded-full dark:rounded-none text-[var(--text-secondary)] transition hover:text-[var(--accent-primary)] dark:hover:bg-[var(--bg-surface)] dark:hover:text-[var(--text-primary)] disabled:opacity-35 cursor-pointer"
               >
                 <Minus className="h-3.5 w-3.5" />
               </button>
@@ -214,10 +214,10 @@ export function TopNav({
                 type="button"
                 onClick={() => setFontPopoverOpen((v) => !v)}
                 title="点击展开 1% 连续字号滑块"
-                className={`flex h-8 min-w-[54px] items-center justify-center border-x border-[var(--border-hairline)] px-2 font-mono-bio text-xs font-semibold transition cursor-pointer ${
+                className={`flex h-7 dark:h-8 min-w-[52px] items-center justify-center dark:border-x dark:border-[var(--border-hairline)] px-2 font-mono-bio text-xs font-medium dark:font-semibold transition cursor-pointer ${
                   fontPopoverOpen || fontScalePct !== DEFAULT_FONT_SCALE_PCT
-                    ? "bg-[var(--bg-surface)] text-blue-600 dark:text-sky-400"
-                    : "bg-[var(--bg-surface)] text-[var(--text-primary)] hover:text-blue-600 dark:hover:text-sky-400"
+                    ? "text-accent dark:bg-[var(--bg-surface)]"
+                    : "text-[var(--text-primary)] hover:text-accent dark:bg-[var(--bg-surface)]"
                 }`}
               >
                 {fontScalePct}%
@@ -229,7 +229,7 @@ export function TopNav({
                 onClick={() => onChangeFontScalePct(fontScalePct + 2)}
                 title="放大字号 (+2%)"
                 aria-label="放大字号 2%"
-                className="flex h-8 w-7 items-center justify-center text-[var(--text-secondary)] transition hover:bg-[var(--bg-surface)] hover:text-[var(--text-primary)] disabled:opacity-35 cursor-pointer"
+                className="flex h-7 w-7 dark:h-8 items-center justify-center rounded-full dark:rounded-none text-[var(--text-secondary)] transition hover:text-[var(--accent-primary)] dark:hover:bg-[var(--bg-surface)] dark:hover:text-[var(--text-primary)] disabled:opacity-35 cursor-pointer"
               >
                 <Plus className="h-3.5 w-3.5" />
               </button>
@@ -237,17 +237,17 @@ export function TopNav({
 
             {/* Compact Popover with 1% Continuous Slider + Exact px Readout + Reset */}
             {fontPopoverOpen && (
-              <div className="absolute right-0 top-full z-50 mt-2 w-72 rounded-xl border border-[var(--border-hairline)] bg-[var(--bg-surface-elevated)] p-4 shadow-xl dark:shadow-black/50 space-y-3.5">
+              <div className="neu-popover absolute left-1/2 -translate-x-1/2 lg:left-auto lg:right-0 lg:translate-x-0 top-full z-50 mt-3 w-72 max-w-[calc(100vw-2rem)] p-5 space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-[var(--text-primary)]">
+                  <span className="text-xs font-semibold text-[var(--text-primary)]">
                     全局界面字号微调
                   </span>
-                  <span className="rounded-md bg-[var(--bg-subtle)] px-2 py-0.5 font-mono-bio text-xs font-semibold text-blue-600 dark:text-sky-400">
+                  <span className="neu-recessed rounded-full dark:rounded-md px-2.5 py-0.5 font-mono-bio text-xs font-medium text-accent">
                     {fontScalePct}% · {computedPx} px
                   </span>
                 </div>
 
-                <div className="space-y-1.5">
+                <div className="space-y-2">
                   <input
                     type="range"
                     min={MIN_FONT_SCALE_PCT}
@@ -270,19 +270,16 @@ export function TopNav({
                   </div>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-1.5">
+                <div className="flex flex-wrap items-center gap-2">
                   {FONT_QUICK_PRESETS.map((preset) => {
                     const active = fontScalePct === preset;
                     return (
                       <button
                         key={preset}
                         type="button"
+                        data-active={active}
                         onClick={() => onChangeFontScalePct(preset)}
-                        className={`rounded-md border px-2 py-1 font-mono-bio text-xs font-semibold transition cursor-pointer ${
-                          active
-                            ? "border-[var(--accent-primary)] bg-[var(--accent-soft)] text-blue-700 dark:text-sky-300"
-                            : "border-[var(--border-hairline)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:bg-[var(--bg-subtle)]"
-                        }`}
+                        className="neu-pill px-2.5 py-1 font-mono-bio text-xs font-medium cursor-pointer"
                       >
                         {preset}%
                       </button>
@@ -290,7 +287,7 @@ export function TopNav({
                   })}
                 </div>
 
-                <div className="flex items-center justify-between border-t border-[var(--border-hairline)] pt-2.5">
+                <div className="neu-divider-t flex items-center justify-between pt-3">
                   <span className="text-xs text-[var(--text-muted)]">
                     ± 键步进 2%，滑块步进 1%
                   </span>
@@ -299,7 +296,7 @@ export function TopNav({
                     onClick={() =>
                       onChangeFontScalePct(DEFAULT_FONT_SCALE_PCT)
                     }
-                    className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-semibold text-blue-600 hover:bg-[var(--accent-soft)] dark:text-sky-400 cursor-pointer"
+                    className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium text-accent hover:bg-[var(--accent-soft)] cursor-pointer"
                   >
                     <RotateCcw className="h-3 w-3" />
                     重置 100%
@@ -311,7 +308,7 @@ export function TopNav({
 
           {/* 3-State Theme Switcher: 浅色 | 深色 | 系统 */}
           <div
-            className="inline-flex items-center rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)] p-0.5"
+            className="neu-recessed inline-flex items-center rounded-full p-1 gap-0.5 dark:rounded-lg dark:p-0.5 dark:gap-0"
             role="group"
             aria-label="外观主题切换"
           >
@@ -323,10 +320,10 @@ export function TopNav({
                   type="button"
                   onClick={() => onChangeTheme(value)}
                   title={`切换至${label}外观`}
-                  className={`inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-semibold transition cursor-pointer ${
+                  className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium dark:font-semibold transition cursor-pointer ${
                     active
-                      ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-2xs"
-                      : "text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+                      ? "neu-seg-active"
+                      : "rounded-full dark:rounded-md text-[var(--text-muted)] hover:text-[var(--text-primary)]"
                   }`}
                 >
                   <Icon className="h-3.5 w-3.5" />
@@ -340,7 +337,7 @@ export function TopNav({
             type="button"
             onClick={onOpenGuideModal}
             title="启动交互式聚光灯新手引导"
-            className="btn-outline inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-xs font-semibold cursor-pointer"
+            className="btn-outline inline-flex items-center gap-1.5 rounded-2xl dark:rounded-lg px-3 py-2 text-xs font-medium dark:font-semibold cursor-pointer"
           >
             <Compass className="h-3.5 w-3.5 text-[var(--accent-primary)]" />
             <span className="hidden lg:inline">新手引导</span>

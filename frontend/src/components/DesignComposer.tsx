@@ -441,24 +441,24 @@ export function DesignComposer({
       <section id="section-composer" className="scroll-mt-20">
         <div
           data-tour="composer-panel"
-          className="bio-card flex flex-wrap md:flex-nowrap items-center justify-between gap-3 rounded-xl px-4 py-3"
+          className="bio-card flex flex-wrap md:flex-nowrap items-center justify-between gap-3 px-5 py-3.5"
         >
-          <div className="flex items-center gap-2.5 min-w-0 flex-1">
-            <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)]">
+          <div className="flex items-center gap-3 min-w-0 flex-1">
+            <span className="neu-recessed inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl dark:h-8 dark:w-8 dark:rounded-lg text-[var(--accent-primary)]">
               <FlaskConical className="h-4 w-4" />
             </span>
 
-            <div className="flex flex-wrap xl:flex-nowrap items-center gap-x-2 gap-y-1 text-sm min-w-0">
+            <div className="flex flex-wrap xl:flex-nowrap items-center gap-x-2.5 gap-y-1 text-sm min-w-0">
               <span
-                className="font-bold text-[var(--text-primary)] truncate max-w-[165px] 2xl:max-w-[260px]"
+                className="font-semibold text-[var(--text-primary)] truncate max-w-[165px] 2xl:max-w-[260px]"
                 title={design.locus.organism}
               >
                 {design.locus.organism}
               </span>
-              <span className="rounded-md border border-[var(--accent-border)] bg-[var(--accent-soft)] px-2 py-0.5 font-mono-bio text-xs font-bold text-blue-700 dark:text-sky-300 whitespace-nowrap shrink-0">
+              <span className="neu-recessed rounded-full dark:rounded-md px-2.5 py-0.5 font-mono-bio text-xs font-semibold text-accent whitespace-nowrap shrink-0">
                 Δ{design.locus.gene_name}
               </span>
-              <span className="font-mono-bio text-xs font-semibold text-[var(--text-secondary)] whitespace-nowrap shrink-0">
+              <span className="font-mono-bio text-xs font-medium text-[var(--text-secondary)] whitespace-nowrap shrink-0">
                 {design.plasmid_system}
               </span>
               <span className="hidden sm:inline font-mono-bio text-xs text-[var(--text-muted)] whitespace-nowrap shrink-0">
@@ -473,7 +473,7 @@ export function DesignComposer({
           <button
             type="button"
             onClick={() => setComposerExpanded(true)}
-            className="btn-outline inline-flex shrink-0 whitespace-nowrap items-center gap-1.5 rounded-lg px-3.5 py-2 text-xs font-semibold cursor-pointer"
+            className="btn-outline inline-flex shrink-0 whitespace-nowrap items-center gap-1.5 px-4 py-2 text-xs font-medium dark:font-semibold cursor-pointer"
           >
             <Edit3 className="h-3.5 w-3.5 text-[var(--accent-primary)]" />
             修改参数 / 新建设计
@@ -484,32 +484,32 @@ export function DesignComposer({
   }
 
   return (
-    <section id="section-composer" className="space-y-5 scroll-mt-20">
-      {/* Clean Editorial Header */}
+    <section id="section-composer" className="space-y-7 scroll-mt-20">
+      {/* Warm Human Editorial Header */}
       {!design ? (
-        <div className="text-center max-w-3xl mx-auto space-y-2.5 pt-2">
-          <div className="inline-flex items-center gap-2 rounded-md border border-[var(--border-hairline)] bg-[var(--bg-surface)] px-3 py-1 text-xs font-semibold text-[var(--text-secondary)]">
+        <div className="text-center max-w-3xl mx-auto space-y-3 pt-2">
+          <div className="neu-recessed inline-flex items-center gap-2 rounded-full dark:rounded-md dark:bg-[var(--bg-surface)] px-4 py-1.5 text-xs font-medium text-[var(--text-secondary)]">
             <FlaskConical className="h-3.5 w-3.5 text-[var(--accent-primary)]" />
             <span>
               大肠杆菌 · 枯草芽孢杆菌 · 谷氨酸棒状杆菌及任意自定义原核菌株
             </span>
           </div>
-          <h1 className="text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl lg:text-4xl">
+          <h1 className="font-display text-2xl sm:text-3xl lg:text-[2.35rem] leading-tight text-[var(--text-primary)]">
             零信任原核 CRISPR/Cas9 全自动设计工作台
           </h1>
-          <p className="text-base text-[var(--text-secondary)]">
+          <p className="text-base leading-relaxed text-[var(--text-secondary)]">
             从真实 RefSeq / 本地序列到 12 点硅片仿真校验与实验台移液表，告别假高效与手工核对
           </p>
         </div>
       ) : (
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-bold text-[var(--text-primary)]">
+          <h2 className="font-display text-xl text-[var(--text-primary)] dark:text-lg">
             新建设计或调整实验参数
           </h2>
           <button
             type="button"
             onClick={() => setComposerExpanded(false)}
-            className="btn-outline inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-semibold cursor-pointer"
+            className="btn-outline inline-flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium dark:font-semibold cursor-pointer"
           >
             <ChevronUp className="h-4 w-4" />
             收起配置面板
@@ -518,12 +518,12 @@ export function DesignComposer({
       )}
 
       {/* 1-Click Multi-Species Instant Demo Chips */}
-      <div data-tour="demo-chips" className="space-y-2 rounded-xl p-1">
-        <div className="flex items-center justify-center gap-1.5 text-xs font-semibold text-[var(--text-muted)]">
+      <div data-tour="demo-chips" className="space-y-3 rounded-2xl p-1">
+        <div className="flex items-center justify-center gap-1.5 text-xs font-medium text-[var(--text-muted)]">
           <Zap className="h-3.5 w-3.5 text-amber-500" />
           <span>一键运行多物种经典实例（免配置即刻体验 12 点硅片验证与模拟电泳）：</span>
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-2">
+        <div className="flex flex-wrap items-center justify-center gap-3 dark:gap-2">
           {DEMO_CHIPS.map((chip) => {
             const isActive = activeChipId === chip.id;
             return (
@@ -531,18 +531,15 @@ export function DesignComposer({
                 key={chip.id}
                 type="button"
                 disabled={isRunning}
+                data-active={isActive}
                 onClick={() => handleRunDemoChip(chip)}
-                className={`inline-flex items-center gap-2 rounded-lg border px-3.5 py-1.5 text-sm transition cursor-pointer disabled:opacity-55 disabled:cursor-not-allowed ${
-                  isActive
-                    ? "border-[var(--accent-primary)] bg-[var(--accent-soft)] text-[var(--text-primary)]"
-                    : "border-[var(--border-hairline)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:border-[var(--border-strong)] hover:bg-[var(--bg-subtle)]"
-                }`}
+                className="neu-pill inline-flex items-center gap-2 px-4 py-2 text-sm cursor-pointer disabled:opacity-55 disabled:cursor-not-allowed"
               >
-                <span className="font-semibold text-[var(--text-primary)]">
+                <span className="font-medium dark:font-semibold text-[var(--text-primary)]">
                   {chip.label}
                 </span>
                 <span className="text-[var(--border-strong)]">·</span>
-                <span className="font-mono-bio text-xs font-semibold text-blue-600 dark:text-sky-400">
+                <span className="font-mono-bio text-xs font-medium text-accent">
                   {chip.sublabel}
                 </span>
               </button>
@@ -551,21 +548,21 @@ export function DesignComposer({
         </div>
       </div>
 
-      {/* Main Architectural Composer Card */}
+      {/* Main Tactile Neumorphic Composer Card (24px radius, 28-32px padding) */}
       <div
         data-tour="composer-panel"
-        className="bio-card overflow-hidden rounded-xl"
+        className="bio-card overflow-hidden"
       >
         {/* Dual-Tab Switcher */}
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--border-hairline)] bg-[var(--bg-subtle)]/70 px-5 py-2.5">
-          <div className="inline-flex rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-canvas)] p-0.5">
+        <div className="neu-divider-b flex flex-wrap items-center justify-between gap-4 px-6 py-4 sm:px-8 dark:bg-[var(--bg-subtle)]/70 dark:px-5 dark:py-2.5">
+          <div className="neu-recessed inline-flex rounded-full p-1.5 gap-1 dark:rounded-lg dark:bg-[var(--bg-canvas)] dark:p-0.5 dark:gap-0">
             <button
               type="button"
               onClick={() => setActiveTab("nl")}
-              className={`inline-flex items-center gap-2 rounded-md px-3.5 py-1.5 text-sm font-semibold transition cursor-pointer ${
+              className={`inline-flex items-center gap-2 px-4 py-2 dark:px-3.5 dark:py-1.5 text-sm font-medium dark:font-semibold transition cursor-pointer ${
                 activeTab === "nl"
-                  ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-2xs ring-1 ring-[var(--border-hairline)]"
-                  : "text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+                  ? "neu-seg-active"
+                  : "rounded-full dark:rounded-md text-[var(--text-muted)] hover:text-[var(--text-primary)]"
               }`}
             >
               <Sparkles className="h-4 w-4 text-[var(--accent-primary)]" />
@@ -574,10 +571,10 @@ export function DesignComposer({
             <button
               type="button"
               onClick={() => setActiveTab("guided")}
-              className={`inline-flex items-center gap-2 rounded-md px-3.5 py-1.5 text-sm font-semibold transition cursor-pointer ${
+              className={`inline-flex items-center gap-2 px-4 py-2 dark:px-3.5 dark:py-1.5 text-sm font-medium dark:font-semibold transition cursor-pointer ${
                 activeTab === "guided"
-                  ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-2xs ring-1 ring-[var(--border-hairline)]"
-                  : "text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+                  ? "neu-seg-active"
+                  : "rounded-full dark:rounded-md text-[var(--text-muted)] hover:text-[var(--text-primary)]"
               }`}
             >
               <SlidersHorizontal className="h-4 w-4 text-[var(--accent-primary)]" />
@@ -586,24 +583,24 @@ export function DesignComposer({
           </div>
 
           <div className="hidden md:flex items-center gap-2 text-xs font-medium text-[var(--text-muted)]">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            <span className="inline-block h-2 w-2 rounded-full bg-[#4ecdc4] dark:bg-emerald-500" />
             <span>所有序列均来自真实 GenBank / 上传文件，零 LLM 幻觉拼凑</span>
           </div>
         </div>
 
-        <form onSubmit={handleFormSubmit} className="p-5 sm:p-6 space-y-5">
+        <form onSubmit={handleFormSubmit} className="p-6 sm:p-8 space-y-6 dark:p-6 dark:space-y-5">
           {activeTab === "nl" ? (
             /* TAB A: Natural Language Omnibox */
-            <div className="space-y-3">
+            <div className="space-y-4">
               <textarea
                 rows={3}
                 value={nlPrompt}
                 onChange={(e) => setNlPrompt(e.target.value)}
                 placeholder="例：帮我用 pCas/pTargetF 敲除大肠杆菌 MG1655 的 lacZ 基因，用 KOD One，左右同源臂 500 bp"
-                className="w-full resize-none rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)]/45 p-4 text-[0.95rem] leading-relaxed text-[var(--text-primary)] placeholder:text-[var(--text-muted)] transition focus:border-[var(--accent-primary)] focus:bg-[var(--bg-surface)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-soft)]"
+                className="neu-input w-full resize-none p-4 text-[0.95rem] leading-relaxed"
               />
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="text-xs font-semibold text-[var(--text-muted)]">
+              <div className="flex flex-wrap items-center gap-2.5">
+                <span className="text-xs font-medium text-[var(--text-muted)]">
                   快速填入示例：
                 </span>
                 {NL_PROMPT_PILLS.map((pill, idx) => (
@@ -611,7 +608,7 @@ export function DesignComposer({
                     key={idx}
                     type="button"
                     onClick={() => setNlPrompt(pill)}
-                    className="rounded-md border border-[var(--border-hairline)] bg-[var(--bg-subtle)]/70 px-2.5 py-1 text-xs font-medium text-[var(--text-secondary)] transition hover:border-[var(--accent-border)] hover:bg-[var(--accent-soft)] hover:text-blue-700 dark:hover:text-sky-300 cursor-pointer"
+                    className="neu-pill px-3 py-1.5 text-xs font-medium cursor-pointer"
                   >
                     {pill}
                   </button>
@@ -620,25 +617,25 @@ export function DesignComposer({
             </div>
           ) : (
             /* TAB B: 3-Step Guided Configuration & File Upload */
-            <div className="space-y-6">
+            <div className="space-y-8">
               {/* Step 1: Strain / Sequence Source */}
-              <div className="space-y-3">
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <label className="flex items-center gap-2 text-sm font-bold text-[var(--text-primary)]">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[var(--primary)] text-xs font-bold text-[var(--primary-fg)] font-mono-bio">
+              <div className="space-y-3.5">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <label className="flex items-center gap-2.5 text-sm font-semibold text-[var(--text-primary)]">
+                    <span className="neu-recessed flex h-7 w-7 items-center justify-center rounded-full text-xs font-semibold text-accent font-mono-bio dark:h-6 dark:w-6 dark:rounded-md dark:bg-[var(--primary)] dark:text-[var(--primary-fg)]">
                       1
                     </span>
                     菌株与基因组序列来源
                   </label>
 
-                  <div className="inline-flex rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)] p-0.5 text-xs font-semibold">
+                  <div className="neu-recessed inline-flex rounded-full p-1 gap-1 text-xs font-medium dark:rounded-lg dark:p-0.5 dark:gap-0">
                     <button
                       type="button"
                       onClick={() => setSourceMode("ncbi")}
-                      className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1 transition cursor-pointer ${
+                      className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 dark:px-3 dark:py-1 transition cursor-pointer ${
                         sourceMode === "ncbi"
-                          ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-2xs"
-                          : "text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+                          ? "neu-seg-active"
+                          : "rounded-full dark:rounded-md text-[var(--text-muted)] hover:text-[var(--text-primary)]"
                       }`}
                     >
                       <Database className="h-3.5 w-3.5" />
@@ -647,10 +644,10 @@ export function DesignComposer({
                     <button
                       type="button"
                       onClick={() => setSourceMode("upload")}
-                      className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1 transition cursor-pointer ${
+                      className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 dark:px-3 dark:py-1 transition cursor-pointer ${
                         sourceMode === "upload"
-                          ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-2xs"
-                          : "text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+                          ? "neu-seg-active"
+                          : "rounded-full dark:rounded-md text-[var(--text-muted)] hover:text-[var(--text-primary)]"
                       }`}
                     >
                       <UploadCloud className="h-3.5 w-3.5" />
@@ -689,12 +686,12 @@ export function DesignComposer({
                       onDragLeave={() => setIsDragging(false)}
                       onDrop={handleDrop}
                       onClick={() => fileInputRef.current?.click()}
-                      className={`flex flex-col items-center justify-center rounded-lg border-2 border-dashed p-6 text-center transition cursor-pointer ${
+                      className={`neu-recessed flex flex-col items-center justify-center rounded-[20px] dark:rounded-lg dark:border-2 dark:border-dashed p-6 text-center transition cursor-pointer ${
                         isDragging
-                          ? "border-[var(--accent-primary)] bg-[var(--accent-soft)]"
+                          ? "ring-2 ring-[var(--accent-primary)] dark:border-[var(--accent-primary)] dark:bg-[var(--accent-soft)]"
                           : uploadedFile
-                            ? "border-[var(--accent-border)] bg-[var(--accent-soft)]"
-                            : "border-[var(--border-strong)] bg-[var(--bg-subtle)]/40 hover:border-[var(--accent-primary)]"
+                            ? "ring-1 ring-[var(--accent-border)] dark:border-[var(--accent-border)] dark:bg-[var(--accent-soft)]"
+                            : "dark:border-[var(--border-strong)] dark:bg-[var(--bg-subtle)]/40 dark:hover:border-[var(--accent-primary)]"
                       }`}
                     >
                       <input
@@ -711,7 +708,7 @@ export function DesignComposer({
                       {uploadedFile ? (
                         <div className="flex w-full items-center justify-between gap-3 px-2">
                           <div className="flex items-center gap-3 text-left min-w-0">
-                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[var(--accent-border)] bg-[var(--bg-surface)] text-[var(--accent-primary)]">
+                            <div className="neu-pill flex h-10 w-10 shrink-0 items-center justify-center text-[var(--accent-primary)]">
                               <FileCode2 className="h-5 w-5" />
                             </div>
                             <div className="min-w-0">
@@ -734,7 +731,7 @@ export function DesignComposer({
                               setFastaStart("");
                               setFastaEnd("");
                             }}
-                            className="rounded-lg p-1.5 text-[var(--text-muted)] hover:bg-[var(--bg-surface)] hover:text-rose-600 cursor-pointer"
+                            className="rounded-full p-1.5 text-[var(--text-muted)] hover:text-[#c93232] dark:hover:text-rose-400 cursor-pointer"
                             title="移除已上传文件"
                           >
                             <X className="h-4 w-4" />
@@ -743,13 +740,13 @@ export function DesignComposer({
                       ) : (
                         <>
                           <UploadCloud className="h-7 w-7 text-[var(--accent-primary)] mb-2" />
-                          <p className="text-sm font-semibold text-[var(--text-primary)]">
+                          <p className="text-sm font-medium text-[var(--text-primary)]">
                             拖拽或点击上传本地{" "}
-                            <span className="font-mono-bio text-blue-600 dark:text-sky-400">
+                            <span className="font-mono-bio text-accent">
                               .gb / .gbk
                             </span>{" "}
                             或{" "}
-                            <span className="font-mono-bio text-blue-600 dark:text-sky-400">
+                            <span className="font-mono-bio text-accent">
                               .fasta / .fa
                             </span>{" "}
                             文件
@@ -762,15 +759,15 @@ export function DesignComposer({
                     </div>
 
                     {uploadError && (
-                      <p className="text-sm font-medium text-rose-600 dark:text-rose-400">
+                      <p className="text-sm font-medium text-[#c93232] dark:text-rose-400">
                         {uploadError}
                       </p>
                     )}
 
                     {uploadedFile?.kind === "fasta" && (
-                      <div className="grid grid-cols-1 gap-3 rounded-lg border border-amber-300/80 bg-amber-50/60 p-4 sm:grid-cols-2 dark:border-amber-500/35 dark:bg-amber-500/10">
+                      <div className="neu-recessed grid grid-cols-1 gap-4 rounded-[18px] p-4 sm:grid-cols-2 dark:rounded-lg dark:border-amber-500/35 dark:bg-amber-500/10">
                         <div>
-                          <label className="mb-1 block text-xs font-semibold text-amber-900 dark:text-amber-200">
+                          <label className="mb-1.5 block text-xs font-medium text-amber-800 dark:text-amber-200">
                             目标基因起点 (1-based，可选)
                           </label>
                           <input
@@ -779,11 +776,11 @@ export function DesignComposer({
                             value={fastaStart}
                             onChange={(e) => setFastaStart(e.target.value)}
                             placeholder="留空则自动识别最长 ORF"
-                            className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] px-3 py-2 font-mono-bio text-sm text-[var(--text-primary)] focus:border-[var(--accent-primary)] focus:outline-none"
+                            className="neu-input w-full px-3.5 py-2 font-mono-bio text-sm"
                           />
                         </div>
                         <div>
-                          <label className="mb-1 block text-xs font-semibold text-amber-900 dark:text-amber-200">
+                          <label className="mb-1.5 block text-xs font-medium text-amber-800 dark:text-amber-200">
                             目标基因终点 (1-based 含，可选)
                           </label>
                           <input
@@ -792,7 +789,7 @@ export function DesignComposer({
                             value={fastaEnd}
                             onChange={(e) => setFastaEnd(e.target.value)}
                             placeholder="例：3200"
-                            className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] px-3 py-2 font-mono-bio text-sm text-[var(--text-primary)] focus:border-[var(--accent-primary)] focus:outline-none"
+                            className="neu-input w-full px-3.5 py-2 font-mono-bio text-sm"
                           />
                         </div>
                       </div>
@@ -802,23 +799,23 @@ export function DesignComposer({
               </div>
 
               {/* Step 2: Target Gene / Locus Tag */}
-              <div className="space-y-2.5">
-                <label className="flex items-center gap-2 text-sm font-bold text-[var(--text-primary)]">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[var(--primary)] text-xs font-bold text-[var(--primary-fg)] font-mono-bio">
+              <div className="space-y-3">
+                <label className="flex items-center gap-2.5 text-sm font-semibold text-[var(--text-primary)]">
+                  <span className="neu-recessed flex h-7 w-7 items-center justify-center rounded-full text-xs font-semibold text-accent font-mono-bio dark:h-6 dark:w-6 dark:rounded-md dark:bg-[var(--primary)] dark:text-[var(--primary-fg)]">
                     2
                   </span>
                   目标基因名 / Locus Tag
                 </label>
-                <div className="flex flex-wrap items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3.5">
                   <input
                     type="text"
                     value={geneName}
                     onChange={(e) => setGeneName(e.target.value)}
                     placeholder="如 lacZ, ackA, b0344, amyE, ldhA"
-                    className="w-full sm:w-72 rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)]/50 px-3.5 py-2.5 font-mono-bio text-sm font-semibold text-[var(--text-primary)] focus:border-[var(--accent-primary)] focus:bg-[var(--bg-surface)] focus:outline-none"
+                    className="neu-input w-full sm:w-72 px-4 py-3 font-mono-bio text-sm font-medium"
                   />
                   {sourceMode === "ncbi" && selectedStrain && (
-                    <div className="flex flex-wrap items-center gap-1.5">
+                    <div className="flex flex-wrap items-center gap-2">
                       <span className="text-xs font-medium text-[var(--text-muted)]">
                         常用靶点：
                       </span>
@@ -826,12 +823,9 @@ export function DesignComposer({
                         <button
                           key={g}
                           type="button"
+                          data-active={geneName.toLowerCase() === g.toLowerCase()}
                           onClick={() => setGeneName(g)}
-                          className={`rounded-md border px-2.5 py-1 font-mono-bio text-xs font-semibold transition cursor-pointer ${
-                            geneName.toLowerCase() === g.toLowerCase()
-                              ? "border-[var(--accent-primary)] bg-[var(--accent-soft)] text-blue-700 dark:text-sky-300"
-                              : "border-[var(--border-hairline)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:border-[var(--border-strong)]"
-                          }`}
+                          className="neu-pill px-3 py-1.5 font-mono-bio text-xs font-medium cursor-pointer"
                         >
                           {g}
                         </button>
@@ -841,44 +835,56 @@ export function DesignComposer({
                 </div>
               </div>
 
-              {/* Step 3: Plasmid System Visual Selector */}
-              <div className="space-y-3">
-                <label className="flex items-center gap-2 text-sm font-bold text-[var(--text-primary)]">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[var(--primary)] text-xs font-bold text-[var(--primary-fg)] font-mono-bio">
+              {/* Step 3: 2x2 Tactile Plasmid System Visual Selector (>= 24px gap) */}
+              <div className="space-y-4">
+                <label className="flex items-center gap-2.5 text-sm font-semibold text-[var(--text-primary)]">
+                  <span className="neu-recessed flex h-7 w-7 items-center justify-center rounded-full text-xs font-semibold text-accent font-mono-bio dark:h-6 dark:w-6 dark:rounded-md dark:bg-[var(--primary)] dark:text-[var(--primary-fg)]">
                     3
                   </span>
                   CRISPR 质粒体系（自动适配粘性末端 / 反向 PCR 与消除流程）
                 </label>
 
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 dark:gap-3.5 dark:xl:grid-cols-4">
                   {plasmidList.map((p) => {
                     const active = plasmidSystem === p.id;
                     return (
                       <button
                         key={p.id}
                         type="button"
+                        data-selected={active}
                         onClick={() => setPlasmidSystem(p.id)}
-                        className={`flex flex-col justify-between rounded-lg border p-4 text-left transition cursor-pointer ${
-                          active
-                            ? "border-[var(--accent-primary)] bg-[var(--accent-soft)]"
-                            : "border-[var(--border-hairline)] bg-[var(--bg-surface)] hover:border-[var(--border-strong)] hover:bg-[var(--bg-subtle)]/50"
-                        }`}
+                        className="neu-card-interactive flex flex-col justify-between p-5 text-left cursor-pointer"
                       >
                         <div className="space-y-1.5">
-                          <div className="flex items-center justify-between gap-1.5">
-                            <span className="text-sm font-bold text-[var(--text-primary)]">
+                          <div className="flex items-center justify-between gap-2">
+                            <span
+                              className={`text-sm font-semibold ${
+                                active
+                                  ? "text-accent dark:text-[var(--text-primary)]"
+                                  : "text-[var(--text-primary)]"
+                              }`}
+                            >
                               {p.short_label}
                             </span>
-                            {p.id === "custom" && (
-                              <Wrench className="h-4 w-4 text-[var(--accent-primary)] shrink-0" />
-                            )}
+                            <div className="flex items-center gap-2">
+                              {p.id === "custom" && (
+                                <Wrench className="h-4 w-4 text-[var(--accent-primary)] shrink-0" />
+                              )}
+                              <span
+                                className={`h-2.5 w-2.5 rounded-full transition dark:hidden ${
+                                  active
+                                    ? "bg-[#6d5dfc] shadow-[0_0_8px_rgba(109,93,252,0.55)]"
+                                    : "bg-[#b8bcc2]"
+                                }`}
+                              />
+                            </div>
                           </div>
                           <p className="text-xs leading-relaxed text-[var(--text-muted)] line-clamp-2">
                             {p.hosts}
                           </p>
                         </div>
-                        <div className="mt-3 border-t border-[var(--border-hairline)] pt-2.5">
-                          <span className="inline-block rounded bg-[var(--bg-subtle)] px-2 py-0.5 font-mono-bio text-xs text-blue-700 dark:text-sky-300">
+                        <div className="mt-4 pt-1 dark:mt-3 dark:border-t dark:border-[var(--border-hairline)] dark:pt-2.5">
+                          <span className="neu-recessed inline-block rounded-full dark:rounded px-3 py-1 font-mono-bio text-xs text-accent">
                             {p.overhangs}
                           </span>
                         </div>
@@ -889,14 +895,14 @@ export function DesignComposer({
 
                 {/* Custom Plasmid Smooth Drawer + Blank .gb Auto-Parser + Saved Lab Vector Library */}
                 {plasmidSystem === "custom" && (
-                  <div className="rounded-lg border border-[var(--accent-border)] bg-[var(--bg-subtle)]/65 p-4 space-y-4">
+                  <div className="neu-recessed rounded-[20px] p-5 space-y-5 dark:rounded-lg dark:border-[var(--accent-border)] dark:bg-[var(--bg-subtle)]/65">
                     {/* Header Row */}
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="text-sm font-bold text-[var(--text-primary)] flex items-center gap-1.5">
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <span className="text-sm font-semibold text-[var(--text-primary)] flex items-center gap-1.5">
                         <Wrench className="h-4 w-4 text-[var(--accent-primary)]" />
                         自定义实验室载体规格
                       </span>
-                      <div className="inline-flex rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] p-0.5 text-xs font-semibold">
+                      <div className="neu-recessed inline-flex rounded-full p-1 gap-1 text-xs font-medium dark:rounded-lg dark:bg-[var(--bg-surface)] dark:p-0.5 dark:gap-0">
                         {(
                           [
                             ["golden_gate_oligo", "Golden Gate 退火 Oligo"],
@@ -912,10 +918,10 @@ export function DesignComposer({
                                 cloning_method: method,
                               }))
                             }
-                            className={`rounded-md px-3 py-1 transition cursor-pointer ${
+                            className={`px-3.5 py-1.5 dark:px-3 dark:py-1 transition cursor-pointer ${
                               customPlasmid.cloning_method === method
-                                ? "bg-[var(--primary)] text-[var(--primary-fg)]"
-                                : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                                ? "neu-seg-active dark:bg-[var(--primary)] dark:text-[var(--primary-fg)]"
+                                : "rounded-full dark:rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
                             }`}
                           >
                             {label}
@@ -926,8 +932,8 @@ export function DesignComposer({
 
                     {/* Saved Custom Vector Library (我的常用载体) */}
                     {savedCustomPlasmids.length > 0 && (
-                      <div className="space-y-2 rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] p-3">
-                        <div className="flex items-center justify-between text-xs font-bold text-[var(--text-secondary)]">
+                      <div className="neu-soft-tile space-y-2.5 p-4">
+                        <div className="flex items-center justify-between text-xs font-semibold text-[var(--text-secondary)]">
                           <span>
                             我的常用载体 ({savedCustomPlasmids.length})
                           </span>
@@ -935,7 +941,7 @@ export function DesignComposer({
                             1 键载入，永久保存在本机浏览器
                           </span>
                         </div>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-2.5">
                           {savedCustomPlasmids.map((vec) => {
                             const isActive =
                               customPlasmid.name.trim().toLowerCase() ===
@@ -943,11 +949,8 @@ export function DesignComposer({
                             return (
                               <div
                                 key={vec.name}
-                                className={`inline-flex items-center overflow-hidden rounded-md border text-xs transition ${
-                                  isActive
-                                    ? "border-[var(--accent-primary)] bg-[var(--accent-soft)] text-blue-700 dark:text-sky-300"
-                                    : "border-[var(--border-hairline)] bg-[var(--bg-subtle)]/60 text-[var(--text-primary)] hover:border-[var(--border-strong)]"
-                                }`}
+                                data-active={isActive}
+                                className="neu-pill inline-flex items-center overflow-hidden text-xs"
                               >
                                 <button
                                   type="button"
@@ -956,10 +959,10 @@ export function DesignComposer({
                                     setPlasmidParseResult(null);
                                     setPlasmidParseError(null);
                                   }}
-                                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 font-semibold cursor-pointer"
+                                  className="inline-flex items-center gap-1.5 px-3 py-1.5 font-medium cursor-pointer"
                                 >
                                   <span>{vec.name}</span>
-                                  <span className="rounded bg-[var(--bg-surface)] px-1.5 py-0.5 font-mono-bio text-xs text-[var(--text-muted)]">
+                                  <span className="font-mono-bio text-xs text-[var(--text-muted)]">
                                     {vec.cloning_method === "golden_gate_oligo"
                                       ? vec.restriction_enzyme || "GG"
                                       : "反向PCR"}
@@ -970,7 +973,7 @@ export function DesignComposer({
                                   onClick={() =>
                                     handleDeleteSavedPlasmid(vec.name)
                                   }
-                                  className="border-l border-[var(--border-hairline)] px-2 py-1.5 text-[var(--text-muted)] hover:bg-rose-50 hover:text-rose-600 dark:hover:bg-rose-500/15 dark:hover:text-rose-400 cursor-pointer"
+                                  className="px-2 py-1.5 text-[var(--text-muted)] hover:text-[#c93232] dark:border-l dark:border-[var(--border-hairline)] dark:hover:bg-rose-500/15 dark:hover:text-rose-400 cursor-pointer"
                                   title={`删除已保存载体 ${vec.name}`}
                                   aria-label={`删除已保存载体 ${vec.name}`}
                                 >
@@ -984,7 +987,7 @@ export function DesignComposer({
                     )}
 
                     {/* Empty Vector .gb Auto-Parser Upload / Drop Bar */}
-                    <div className="space-y-2.5">
+                    <div className="space-y-3">
                       <div
                         onDragOver={(e) => {
                           e.preventDefault();
@@ -998,10 +1001,10 @@ export function DesignComposer({
                           if (f) handleParsePlasmidGbFile(f);
                         }}
                         onClick={() => plasmidGbInputRef.current?.click()}
-                        className={`flex flex-wrap items-center justify-between gap-3 rounded-lg border-2 border-dashed px-4 py-3 transition cursor-pointer ${
+                        className={`neu-soft-tile flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 transition cursor-pointer dark:border-2 dark:border-dashed ${
                           plasmidDragging
-                            ? "border-[var(--accent-primary)] bg-[var(--accent-soft)]"
-                            : "border-[var(--border-strong)] bg-[var(--bg-surface)] hover:border-[var(--accent-primary)]"
+                            ? "ring-2 ring-[var(--accent-primary)] dark:border-[var(--accent-primary)] dark:bg-[var(--accent-soft)]"
+                            : "dark:border-[var(--border-strong)] dark:bg-[var(--bg-surface)] dark:hover:border-[var(--accent-primary)]"
                         }`}
                       >
                         <input
@@ -1017,7 +1020,7 @@ export function DesignComposer({
                         />
 
                         <div className="flex items-center gap-3 min-w-0">
-                          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--accent-border)] bg-[var(--accent-soft)] text-[var(--accent-primary)]">
+                          <div className="neu-recessed flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl dark:rounded-lg text-[var(--accent-primary)]">
                             {plasmidParsing ? (
                               <Loader2 className="h-4 w-4 animate-spin" />
                             ) : (
@@ -1025,7 +1028,7 @@ export function DesignComposer({
                             )}
                           </div>
                           <div className="min-w-0">
-                            <p className="text-sm font-bold text-[var(--text-primary)]">
+                            <p className="text-sm font-semibold text-[var(--text-primary)]">
                               {plasmidParsing
                                 ? "正在解析空白载体图谱与骨架验证引物..."
                                 : "上传空白载体图谱 (.gb / .gbk) 自动解析"}
@@ -1036,35 +1039,35 @@ export function DesignComposer({
                           </div>
                         </div>
 
-                        <span className="btn-outline shrink-0 rounded-md px-3 py-1.5 text-xs font-semibold">
+                        <span className="btn-outline shrink-0 px-3.5 py-1.5 text-xs font-medium">
                           选择 .gb / .gbk
                         </span>
                       </div>
 
                       {plasmidParseError && (
-                        <div className="rounded-lg border border-rose-300 border-l-[4px] border-l-rose-600 bg-rose-50 px-3.5 py-2.5 text-xs font-medium text-rose-700 dark:border-rose-500/40 dark:border-l-rose-500 dark:bg-rose-500/15 dark:text-rose-200">
+                        <div className="neu-alert-coral px-4 py-2.5 text-xs font-medium text-[#c93232] dark:text-rose-200">
                           {plasmidParseError}
                         </div>
                       )}
 
                       {plasmidParseResult && (
-                        <div className="rounded-lg border border-[var(--border-hairline)] border-l-[4px] border-l-emerald-600 bg-[var(--bg-surface)] px-4 py-3 space-y-2">
+                        <div className="neu-soft-tile border-l-[4px] border-l-[#4ecdc4] dark:border-l-emerald-600 px-4 py-3 space-y-2">
                           <div className="flex flex-wrap items-center gap-2">
-                            <CheckCircle2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                            <span className="text-xs font-bold text-[var(--text-primary)]">
+                            <CheckCircle2 className="h-4 w-4 text-[#1c7c75] dark:text-emerald-400 shrink-0" />
+                            <span className="text-xs font-semibold text-[var(--text-primary)]">
                               空白载体图谱自动解析完成
                             </span>
-                            <span className="rounded bg-[var(--bg-subtle)] px-2 py-0.5 font-mono-bio text-xs font-semibold text-[var(--text-secondary)]">
+                            <span className="neu-recessed rounded-full dark:rounded px-2.5 py-0.5 font-mono-bio text-xs font-medium text-[var(--text-secondary)]">
                               {plasmidParseResult.vector_length_bp.toLocaleString()}{" "}
                               bp
                             </span>
                             <span
-                              className={`rounded border px-2 py-0.5 text-xs font-semibold ${
+                              className={`rounded-full dark:rounded px-2.5 py-0.5 text-xs font-medium ${
                                 plasmidParseResult.confidence === "high"
-                                  ? "border-emerald-300/80 bg-emerald-500/10 text-emerald-700 dark:border-emerald-500/35 dark:text-emerald-300"
+                                  ? "bg-[#4ecdc4]/20 text-[#1a7871] dark:border dark:border-emerald-500/35 dark:bg-emerald-500/10 dark:text-emerald-300"
                                   : plasmidParseResult.confidence === "medium"
-                                    ? "border-amber-300 bg-amber-50 text-amber-800 dark:border-amber-500/40 dark:bg-amber-500/15 dark:text-amber-300"
-                                    : "border-rose-300 bg-rose-50 text-rose-700 dark:border-rose-500/40 dark:bg-rose-500/15 dark:text-rose-300"
+                                    ? "bg-amber-500/15 text-amber-800 dark:border dark:border-amber-500/40 dark:bg-amber-500/15 dark:text-amber-300"
+                                    : "bg-[#ff6b6b]/18 text-[#c93232] dark:border dark:border-rose-500/40 dark:bg-rose-500/15 dark:text-rose-300"
                               }`}
                             >
                               {plasmidParseResult.confidence === "high"
@@ -1076,7 +1079,7 @@ export function DesignComposer({
                             {plasmidParseResult.detected_features.map((feat) => (
                               <span
                                 key={feat}
-                                className="rounded border border-[var(--border-hairline)] bg-[var(--bg-subtle)] px-2 py-0.5 text-xs font-medium text-[var(--text-secondary)]"
+                                className="neu-recessed rounded-full dark:rounded px-2.5 py-0.5 text-xs font-medium text-[var(--text-secondary)]"
                               >
                                 {feat}
                               </span>
@@ -1095,9 +1098,9 @@ export function DesignComposer({
                       )}
                     </div>
 
-                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                       <div>
-                        <label className="mb-1 block text-xs font-semibold text-[var(--text-secondary)]">
+                        <label className="mb-1.5 block text-xs font-medium text-[var(--text-secondary)]">
                           质粒名称
                         </label>
                         <input
@@ -1109,17 +1112,17 @@ export function DesignComposer({
                               name: e.target.value,
                             }))
                           }
-                          className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] px-3 py-2 text-sm text-[var(--text-primary)] focus:border-[var(--accent-primary)] focus:outline-none"
+                          className="neu-input w-full px-3.5 py-2.5 text-sm"
                         />
                       </div>
 
                       {customPlasmid.cloning_method === "golden_gate_oligo" ? (
                         <>
                           <div>
-                            <label className="mb-1 block text-xs font-semibold text-[var(--text-secondary)]">
+                            <label className="mb-1.5 block text-xs font-medium text-[var(--text-secondary)]">
                               正向 / 反向 5&apos; 粘性末端
                             </label>
-                            <div className="grid grid-cols-2 gap-2">
+                            <div className="grid grid-cols-2 gap-2.5">
                               <input
                                 type="text"
                                 value={customPlasmid.overhang_forward}
@@ -1131,7 +1134,7 @@ export function DesignComposer({
                                   }))
                                 }
                                 placeholder="TAGT"
-                                className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] px-2.5 py-2 font-mono-bio text-sm uppercase text-[var(--text-primary)]"
+                                className="neu-input w-full px-3 py-2.5 font-mono-bio text-sm uppercase"
                               />
                               <input
                                 type="text"
@@ -1144,12 +1147,12 @@ export function DesignComposer({
                                   }))
                                 }
                                 placeholder="AAAC"
-                                className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] px-2.5 py-2 font-mono-bio text-sm uppercase text-[var(--text-primary)]"
+                                className="neu-input w-full px-3 py-2.5 font-mono-bio text-sm uppercase"
                               />
                             </div>
                           </div>
                           <div>
-                            <label className="mb-1 block text-xs font-semibold text-[var(--text-secondary)]">
+                            <label className="mb-1.5 block text-xs font-medium text-[var(--text-secondary)]">
                               排除的 Type IIS 内切酶
                             </label>
                             <select
@@ -1160,7 +1163,7 @@ export function DesignComposer({
                                   restriction_enzyme: e.target.value,
                                 }))
                               }
-                              className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] px-3 py-2 font-mono-bio text-sm text-[var(--text-primary)]"
+                              className="neu-input w-full px-3.5 py-2.5 font-mono-bio text-sm"
                             >
                               <option value="BsaI">BsaI (GGTCTC)</option>
                               <option value="BbsI">BbsI (GAAGAC)</option>
@@ -1173,7 +1176,7 @@ export function DesignComposer({
                       ) : (
                         <>
                           <div>
-                            <label className="mb-1 block text-xs font-semibold text-[var(--text-secondary)]">
+                            <label className="mb-1.5 block text-xs font-medium text-[var(--text-secondary)]">
                               正向引物 3&apos; Scaffold 锚点序列
                             </label>
                             <input
@@ -1186,11 +1189,11 @@ export function DesignComposer({
                                     e.target.value.toUpperCase(),
                                 }))
                               }
-                              className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] px-2.5 py-2 font-mono-bio text-sm uppercase text-[var(--text-primary)]"
+                              className="neu-input w-full px-3 py-2.5 font-mono-bio text-sm uppercase"
                             />
                           </div>
                           <div>
-                            <label className="mb-1 block text-xs font-semibold text-[var(--text-secondary)]">
+                            <label className="mb-1.5 block text-xs font-medium text-[var(--text-secondary)]">
                               通用反向引物序列 (5&apos;→3&apos;)
                             </label>
                             <input
@@ -1203,16 +1206,16 @@ export function DesignComposer({
                                     e.target.value.toUpperCase(),
                                 }))
                               }
-                              className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] px-2.5 py-2 font-mono-bio text-sm uppercase text-[var(--text-primary)]"
+                              className="neu-input w-full px-3 py-2.5 font-mono-bio text-sm uppercase"
                             />
                           </div>
                         </>
                       )}
                     </div>
 
-                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                       <div>
-                        <label className="mb-1 block text-xs font-semibold text-[var(--text-secondary)]">
+                        <label className="mb-1.5 block text-xs font-medium text-[var(--text-secondary)]">
                           筛选抗性标记
                         </label>
                         <input
@@ -1224,11 +1227,11 @@ export function DesignComposer({
                               antibiotics: e.target.value,
                             }))
                           }
-                          className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] px-3 py-2 text-sm text-[var(--text-primary)]"
+                          className="neu-input w-full px-3.5 py-2.5 text-sm"
                         />
                       </div>
                       <div>
-                        <label className="mb-1 block text-xs font-semibold text-[var(--text-secondary)]">
+                        <label className="mb-1.5 block text-xs font-medium text-[var(--text-secondary)]">
                           质粒消除说明 (写入 SOP)
                         </label>
                         <input
@@ -1240,7 +1243,7 @@ export function DesignComposer({
                               curing_note: e.target.value,
                             }))
                           }
-                          className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] px-3 py-2 text-sm text-[var(--text-primary)]"
+                          className="neu-input w-full px-3.5 py-2.5 text-sm"
                         />
                       </div>
                     </div>
@@ -1249,9 +1252,9 @@ export function DesignComposer({
                     {(customPlasmid.colony_pcr_backbone_f ||
                       customPlasmid.colony_pcr_backbone_r ||
                       customPlasmid.sanger_backbone_f) && (
-                      <div className="grid grid-cols-1 gap-3 rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] p-3 sm:grid-cols-3">
+                      <div className="neu-soft-tile grid grid-cols-1 gap-3 p-4 sm:grid-cols-3">
                         <div>
-                          <label className="mb-1 block text-xs font-semibold text-[var(--text-muted)]">
+                          <label className="mb-1 block text-xs font-medium text-[var(--text-muted)]">
                             骨架菌落 PCR 上游引物
                           </label>
                           <input
@@ -1264,11 +1267,11 @@ export function DesignComposer({
                                   e.target.value.toUpperCase() || null,
                               }))
                             }
-                            className="w-full rounded-md border border-[var(--border-hairline)] bg-[var(--bg-subtle)]/60 px-2.5 py-1.5 font-mono-bio text-xs text-[var(--text-primary)]"
+                            className="neu-input w-full px-3 py-2 font-mono-bio text-xs"
                           />
                         </div>
                         <div>
-                          <label className="mb-1 block text-xs font-semibold text-[var(--text-muted)]">
+                          <label className="mb-1 block text-xs font-medium text-[var(--text-muted)]">
                             骨架菌落 PCR 下游引物
                           </label>
                           <input
@@ -1281,11 +1284,11 @@ export function DesignComposer({
                                   e.target.value.toUpperCase() || null,
                               }))
                             }
-                            className="w-full rounded-md border border-[var(--border-hairline)] bg-[var(--bg-subtle)]/60 px-2.5 py-1.5 font-mono-bio text-xs text-[var(--text-primary)]"
+                            className="neu-input w-full px-3 py-2 font-mono-bio text-xs"
                           />
                         </div>
                         <div>
-                          <label className="mb-1 block text-xs font-semibold text-[var(--text-muted)]">
+                          <label className="mb-1 block text-xs font-medium text-[var(--text-muted)]">
                             骨架 Sanger 测序引物
                           </label>
                           <input
@@ -1298,25 +1301,25 @@ export function DesignComposer({
                                   e.target.value.toUpperCase() || null,
                               }))
                             }
-                            className="w-full rounded-md border border-[var(--border-hairline)] bg-[var(--bg-subtle)]/60 px-2.5 py-1.5 font-mono-bio text-xs text-[var(--text-primary)]"
+                            className="neu-input w-full px-3 py-2 font-mono-bio text-xs"
                           />
                         </div>
                       </div>
                     )}
 
                     {/* Save to Lab Vector Library Footer */}
-                    <div className="flex flex-wrap items-center justify-between gap-2 border-t border-[var(--border-hairline)] pt-3">
+                    <div className="neu-divider-t flex flex-wrap items-center justify-between gap-2 pt-3.5">
                       <span className="text-xs text-[var(--text-muted)]">
                         保存后下次无需重复上传或手动填写粘性末端与骨架引物
                       </span>
                       <button
                         type="button"
                         onClick={handleSaveCurrentCustomPlasmid}
-                        className="btn-outline inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-semibold text-blue-700 dark:text-sky-300 cursor-pointer"
+                        className="btn-outline inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium text-accent cursor-pointer"
                       >
                         {plasmidSavedToast ? (
                           <>
-                            <Check className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
+                            <Check className="h-3.5 w-3.5 text-[#1c7c75] dark:text-emerald-400" />
                             已保存至我的载体库
                           </>
                         ) : (
@@ -1334,11 +1337,11 @@ export function DesignComposer({
           )}
 
           {/* Collapsible Advanced Experimental Parameters */}
-          <div className="rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)]/55">
+          <div className="neu-recessed rounded-[20px] dark:rounded-lg dark:bg-[var(--bg-subtle)]/55">
             <button
               type="button"
               onClick={() => setShowAdvanced((v) => !v)}
-              className="flex w-full items-center justify-between px-4 py-3 text-sm font-semibold text-[var(--text-primary)] cursor-pointer"
+              className="flex w-full items-center justify-between px-5 py-3.5 text-sm font-medium dark:font-semibold text-[var(--text-primary)] cursor-pointer"
             >
               <span className="inline-flex flex-wrap items-center gap-2">
                 <SlidersHorizontal className="h-4 w-4 text-[var(--accent-primary)]" />
@@ -1357,11 +1360,11 @@ export function DesignComposer({
             </button>
 
             {showAdvanced && (
-              <div className="space-y-5 border-t border-[var(--border-hairline)] bg-[var(--bg-surface)] p-5 rounded-b-lg">
+              <div className="neu-divider-t space-y-6 p-5 sm:p-6 dark:bg-[var(--bg-surface)] dark:rounded-b-lg">
                 {/* Row 1 */}
-                <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-                  <div className="space-y-1.5">
-                    <label className="block text-sm font-semibold text-[var(--text-primary)]">
+                <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+                  <div className="space-y-2">
+                    <label className="block text-sm font-medium dark:font-semibold text-[var(--text-primary)]">
                       高保真 DNA 聚合酶（15 款内置 + 自定义）
                     </label>
                     <PolymeraseCombobox
@@ -1375,8 +1378,8 @@ export function DesignComposer({
                     />
                   </div>
 
-                  <div className="space-y-1.5">
-                    <label className="block text-sm font-semibold text-[var(--text-primary)]">
+                  <div className="space-y-2">
+                    <label className="block text-sm font-medium dark:font-semibold text-[var(--text-primary)]">
                       敲除边界策略
                     </label>
                     <select
@@ -1384,7 +1387,7 @@ export function DesignComposer({
                       onChange={(e) =>
                         setDeletionMode(e.target.value as DeletionMode)
                       }
-                      className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] px-3.5 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--accent-primary)] focus:outline-none"
+                      className="neu-input w-full px-4 py-3 text-sm"
                     >
                       {DELETION_MODE_OPTIONS.map((opt) => (
                         <option key={opt.value} value={opt.value}>
@@ -1401,8 +1404,8 @@ export function DesignComposer({
                     </p>
                   </div>
 
-                  <div className="space-y-1.5">
-                    <label className="block text-sm font-semibold text-[var(--text-primary)]">
+                  <div className="space-y-2">
+                    <label className="block text-sm font-medium dark:font-semibold text-[var(--text-primary)]">
                       Donor 供体构建方式
                     </label>
                     <select
@@ -1410,7 +1413,7 @@ export function DesignComposer({
                       onChange={(e) =>
                         setDonorMethod(e.target.value as DonorMethod)
                       }
-                      className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] px-3.5 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--accent-primary)] focus:outline-none"
+                      className="neu-input w-full px-4 py-3 text-sm"
                     >
                       {DONOR_METHOD_OPTIONS.map((opt) => (
                         <option key={opt.value} value={opt.value}>
@@ -1429,7 +1432,7 @@ export function DesignComposer({
                 </div>
 
                 {/* Row 2: Precision Sliders */}
-                <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+                <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
                   <PrecisionSliderInput
                     label="单侧同源臂长度"
                     value={homologyArmLength}
@@ -1464,16 +1467,16 @@ export function DesignComposer({
                 </div>
 
                 {/* Row 3: Autonomous Whole-Genome Off-Target Indexing Toggle */}
-                <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)]/55 px-4 py-3">
+                <div className="neu-soft-tile flex flex-wrap items-center justify-between gap-3 px-5 py-4">
                   <div className="flex items-start gap-3">
                     <Globe className="mt-0.5 h-4 w-4 shrink-0 text-[var(--accent-primary)]" />
                     <div className="space-y-0.5">
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-sm font-bold text-[var(--text-primary)]">
+                        <span className="text-sm font-semibold text-[var(--text-primary)]">
                           自动按需抓取全基因组脱靶索引 (auto_fetch_whole_genome)
                         </span>
                         {cachedWholeGenomes.length > 0 && (
-                          <span className="rounded border border-[var(--accent-border)] bg-[var(--accent-soft)] px-2 py-0.5 font-mono-bio text-xs font-semibold text-blue-700 dark:text-sky-300">
+                          <span className="neu-recessed rounded-full dark:rounded px-2.5 py-0.5 font-mono-bio text-xs font-medium text-accent">
                             本地已缓存 {cachedWholeGenomes.length} 株完整染色体
                           </span>
                         )}
@@ -1489,15 +1492,17 @@ export function DesignComposer({
                     role="switch"
                     aria-checked={autoFetchWholeGenome}
                     onClick={() => setAutoFetchWholeGenome((v) => !v)}
-                    className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition cursor-pointer ${
+                    className={`neu-recessed relative inline-flex h-7 w-13 shrink-0 items-center rounded-full p-1 transition cursor-pointer dark:h-6 dark:w-11 dark:p-0 dark:border-0 ${
                       autoFetchWholeGenome
-                        ? "bg-[var(--accent-primary)]"
-                        : "bg-slate-300 dark:bg-zinc-700"
+                        ? "dark:bg-[var(--accent-primary)]"
+                        : "dark:bg-zinc-700"
                     }`}
                   >
                     <span
-                      className={`inline-block h-4 w-4 transform rounded-full bg-white shadow-xs transition ${
-                        autoFetchWholeGenome ? "translate-x-6" : "translate-x-1"
+                      className={`inline-block h-5 w-5 dark:h-4 dark:w-4 transform rounded-full transition-all duration-200 ${
+                        autoFetchWholeGenome
+                          ? "translate-x-6 bg-[#6d5dfc] shadow-[3px_3px_6px_rgba(109,93,252,0.4),-2px_-2px_5px_#ffffff] dark:bg-white dark:shadow-xs"
+                          : "translate-x-0 bg-[#e0e5ec] shadow-[3px_3px_6px_#b8bcc2,-3px_-3px_6px_#ffffff] dark:translate-x-1 dark:bg-white dark:shadow-xs"
                       }`}
                     />
                   </button>
@@ -1507,19 +1512,19 @@ export function DesignComposer({
           </div>
 
           {/* Action Footer */}
-          <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-1">
             <div className="text-xs text-[var(--text-muted)]">
               {activeTab === "nl"
                 ? "自动解析菌株/基因/载体/聚合酶 → 确定性生信工具 → 12 点硅片校验与自动自愈"
                 : "直接进入确定性生信设计管线，自动完成邻近基因保护与 12 点零信任验证"}
             </div>
 
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-3">
               {isRunning && (
                 <button
                   type="button"
                   onClick={onCancel}
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-rose-300 bg-rose-50 px-4 py-2.5 text-sm font-semibold text-rose-700 transition hover:bg-rose-100 dark:border-rose-500/40 dark:bg-rose-500/15 dark:text-rose-300 cursor-pointer"
+                  className="neu-badge-coral inline-flex items-center gap-1.5 rounded-2xl dark:rounded-lg px-4 py-2.5 text-sm font-medium dark:font-semibold transition cursor-pointer"
                 >
                   <Square className="h-4 w-4 fill-current" />
                   停止
@@ -1529,7 +1534,7 @@ export function DesignComposer({
               <button
                 type="submit"
                 disabled={isRunning}
-                className="btn-primary inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold cursor-pointer"
+                className="btn-primary inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold cursor-pointer"
               >
                 {isRunning ? (
                   <>

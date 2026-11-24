@@ -3,74 +3,93 @@
 @custom-variant dark (&:is(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *));
 
 @theme {
-  --font-sans: "Plus Jakarta Sans", "Inter", "PingFang SC", "HarmonyOS Sans SC", "Noto Sans SC", "Microsoft YaHei", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", "Cascadia Code", "Fira Code", Consolas, ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  --font-display: "Newsreader", "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, serif;
+  --font-sans: "DM Sans", "Noto Sans SC", "PingFang SC", "HarmonyOS Sans SC", "Source Han Sans SC", "Segoe UI Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "Cascadia Code", Consolas, ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
 }
 
 /* ============================================================================
-   STYLE 2 (LIGHT) — Precision Cobalt Scientific Software (Carbon × Benchling × shadcn vega)
+   LIGHT MODE — Tactile Neumorphism (Single #e0e5ec Surface + Dual Shadows)
    ============================================================================ */
 :root,
 :root[data-theme="light"] {
-  --bg-canvas: #f8fafc;
-  --bg-surface: #ffffff;
-  --bg-surface-elevated: #ffffff;
-  --bg-subtle: #f1f5f9;
-  --bg-rail: #f4f6fa;
-  --border-hairline: #dbe2ea;
-  --border-strong: #cbd5e1;
+  --bg-canvas: #e0e5ec;
+  --bg-surface: #e0e5ec;
+  --bg-surface-elevated: #e0e5ec;
+  --bg-subtle: #e0e5ec;
+  --bg-rail: #e0e5ec;
+  --border-hairline: rgba(184, 188, 194, 0.42);
+  --border-strong: rgba(163, 170, 182, 0.65);
 
-  --text-primary: #0f172a;
-  --text-secondary: #334155;
-  --text-muted: #64748b;
+  --neu-shadow-dark: #b8bcc2;
+  --neu-shadow-light: #ffffff;
+  --neu-raised: 8px 8px 16px #b8bcc2, -8px -8px 16px #ffffff;
+  --neu-raised-sm: 5px 5px 10px #b8bcc2, -5px -5px 10px #ffffff;
+  --neu-raised-xs: 3px 3px 6px #b8bcc2, -3px -3px 6px #ffffff;
+  --neu-hover: 4px 4px 8px #b8bcc2, -4px -4px 8px #ffffff;
+  --neu-recessed: inset 8px 8px 16px #b8bcc2, inset -8px -8px 16px #ffffff;
+  --neu-recessed-sm: inset 4px 4px 8px #b8bcc2, inset -4px -4px 8px #ffffff;
+  --neu-pressed: inset 5px 5px 10px #b8bcc2, inset -5px -5px 10px #ffffff;
+  --neu-focus: inset 8px 8px 16px rgba(109, 93, 252, 0.30), inset -8px -8px 16px #ffffff;
 
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
+  --text-primary: #3d4451;
+  --text-secondary: #525b6a;
+  --text-muted: #6b7280;
+
+  --primary: #6d5dfc;
+  --primary-hover: #5b4be8;
   --primary-fg: #ffffff;
 
-  --accent-primary: #2563eb;
-  --accent-soft: rgba(37, 99, 235, 0.08);
-  --accent-border: rgba(37, 99, 235, 0.24);
+  --accent-primary: #6d5dfc;
+  --accent-text: #5445db;
+  --accent-soft: rgba(109, 93, 252, 0.11);
+  --accent-border: rgba(109, 93, 252, 0.28);
 
-  --danger: #e11d48;
-  --danger-soft: rgba(225, 29, 72, 0.08);
-  --danger-border: rgba(225, 29, 72, 0.28);
+  --mint: #4ecdc4;
+  --mint-text: #1c7c75;
+  --mint-soft: rgba(78, 205, 196, 0.18);
 
-  /* Interactive SVG Genome Locus Palette (Light — Cobalt Scientific) */
-  --svg-canvas-bg: #ffffff;
-  --svg-pill-mask: #ffffff;
-  --svg-grid-dot: #dce3ec;
-  --svg-axis: #cbd5e1;
-  --svg-ruler: #94a3b8;
-  --svg-text: #0f172a;
-  --svg-text-muted: #64748b;
-  --svg-target-fill: #2563eb;
-  --svg-target-stroke: #1d4ed8;
+  --danger: #ff6b6b;
+  --danger-text: #c93232;
+  --danger-soft: rgba(255, 107, 107, 0.14);
+  --danger-border: rgba(255, 107, 107, 0.48);
+
+  /* Interactive SVG Genome Locus Palette (Light — Neumorphism Harmonized) */
+  --svg-canvas-bg: #e0e5ec;
+  --svg-pill-mask: #e0e5ec;
+  --svg-grid-dot: rgba(140, 149, 163, 0.28);
+  --svg-axis: #aeb5c0;
+  --svg-ruler: #8c95a3;
+  --svg-text: #3d4451;
+  --svg-text-muted: #6b7280;
+  --svg-target-fill: #6d5dfc;
+  --svg-target-stroke: #5747e3;
   --svg-target-text: #ffffff;
-  --svg-neighbor-fill: #e2e8f0;
-  --svg-neighbor-stroke: #64748b;
-  --svg-neighbor-text: #334155;
+  --svg-neighbor-fill: #d4dbe5;
+  --svg-neighbor-stroke: #8c95a3;
+  --svg-neighbor-text: #3d4451;
   --svg-warn-fill: #fef3c7;
   --svg-warn-stroke: #d97706;
   --svg-warn-text: #92400e;
-  --svg-la-fill: #eff6ff;
-  --svg-la-stroke: #2563eb;
-  --svg-la-text: #1e40af;
-  --svg-ra-fill: #f1f5f9;
-  --svg-ra-stroke: #475569;
-  --svg-ra-text: #1e293b;
-  --svg-amp-fill: #eff6ff;
-  --svg-amp-stroke: #93c5fd;
-  --svg-amp-text: #1e3a8a;
-  --svg-cut-pill-fill: #fff1f2;
-  --svg-cut-pill-stroke: #fda4af;
-  --svg-cut-pill-text: #be123c;
-  --svg-del-label-text: #be123c;
-  --svg-del-label-stroke: #fda4af;
+  --svg-la-fill: rgba(109, 93, 252, 0.14);
+  --svg-la-stroke: #6d5dfc;
+  --svg-la-text: #5445db;
+  --svg-ra-fill: rgba(78, 205, 196, 0.20);
+  --svg-ra-stroke: #2ea89f;
+  --svg-ra-text: #1a7871;
+  --svg-amp-fill: rgba(109, 93, 252, 0.11);
+  --svg-amp-stroke: rgba(109, 93, 252, 0.52);
+  --svg-amp-text: #5445db;
+  --svg-cut-color: #ff6b6b;
+  --svg-cut-pill-fill: rgba(255, 107, 107, 0.16);
+  --svg-cut-pill-stroke: #ff6b6b;
+  --svg-cut-pill-text: #c93232;
+  --svg-del-label-text: #c93232;
+  --svg-del-label-stroke: #ff6b6b;
 }
 
 /* ============================================================================
-   STYLE 4 (DARK) — Obsidian Lab Dark-First Flagship (Linear × Raycast × shadcn nova)
+   DARK MODE (100% PRESERVED) — Obsidian Lab Dark-First Flagship
    ============================================================================ */
 :root[data-theme="dark"],
 .dark {
@@ -93,11 +112,17 @@
 
   /* Ice Sky-Blue Scientific Focus Accent */
   --accent-primary: #38bdf8;
+  --accent-text: #7dd3fc;
   --accent-soft: rgba(56, 189, 248, 0.12);
   --accent-border: rgba(56, 189, 248, 0.30);
 
+  --mint: #34d399;
+  --mint-text: #6ee7b7;
+  --mint-soft: rgba(16, 185, 129, 0.15);
+
   /* Preserved Vivid Rose/Crimson Alerts */
   --danger: #fb7185;
+  --danger-text: #fda4af;
   --danger-soft: rgba(225, 29, 72, 0.16);
   --danger-border: rgba(251, 113, 133, 0.38);
 
@@ -127,6 +152,7 @@
   --svg-amp-fill: rgba(56, 189, 248, 0.10);
   --svg-amp-stroke: #0284c7;
   --svg-amp-text: #7dd3fc;
+  --svg-cut-color: #e11d48;
   --svg-cut-pill-fill: rgba(225, 29, 72, 0.22);
   --svg-cut-pill-stroke: #fb7185;
   --svg-cut-pill-text: #fecdd3;
@@ -142,6 +168,7 @@
     color: var(--text-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
@@ -149,8 +176,47 @@
     background-color: var(--bg-canvas);
     color: var(--text-primary);
     min-height: 100vh;
-    transition: background-color 140ms ease, color 140ms ease;
+    transition: background-color 180ms ease-out, color 180ms ease-out;
   }
+
+  /* Refined weight ceiling in Light Neumorphism (400 / 500 / 600 — no heavy blocky 700) */
+  :root[data-theme="light"] h1,
+  :root[data-theme="light"] h2,
+  :root[data-theme="light"] h3,
+  :root[data-theme="light"] h4,
+  :root:not([data-theme="dark"]):not(.dark) h1,
+  :root:not([data-theme="dark"]):not(.dark) h2,
+  :root:not([data-theme="dark"]):not(.dark) h3,
+  :root:not([data-theme="dark"]):not(.dark) h4 {
+    font-weight: 600;
+  }
+
+  :root[data-theme="light"] .font-bold,
+  :root:not([data-theme="dark"]):not(.dark) .font-bold {
+    font-weight: 600;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 3px;
+  }
+}
+
+/* Editorial Display Typography for Light Mode Headings & Brand */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.dark .font-display {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .font-mono-bio {
@@ -158,52 +224,393 @@
   font-variant-numeric: tabular-nums slashed-zero;
 }
 
-/* Crisp Architectural Surface Cards (shadcn vega / nova discipline — zero bloated soft shadows) */
+/* ============================================================================
+   DUAL-MODE SURFACE PRIMITIVES (Light: Neumorphism | Dark: Obsidian Lab)
+   ============================================================================ */
+
+/* Primary Raised Section Cards (24px radius, zero border in Light) */
 .bio-card,
 .surface-card {
   background-color: var(--bg-surface);
-  border: 1px solid var(--border-hairline);
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+  border: none;
+  border-radius: 24px;
+  box-shadow: var(--neu-raised);
+  transition: box-shadow 200ms ease-out;
 }
 
 .dark .bio-card,
 .dark .surface-card {
+  border: 1px solid var(--border-hairline);
+  border-radius: 0.75rem;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset;
 }
 
-/* Primary CTA Button: Cobalt Blue in Light, Stark White on Obsidian in Dark */
+/* Interactive Raised Sub-Cards (2x2 Vector Selector, Provider Cards, sgRNA Cards) */
+.neu-card-interactive {
+  background-color: #e0e5ec;
+  border: none;
+  border-radius: 20px;
+  box-shadow: var(--neu-raised);
+  transition: box-shadow 200ms ease-out, transform 200ms ease-out, color 200ms ease-out;
+}
+
+.neu-card-interactive:hover {
+  box-shadow: var(--neu-hover);
+  transform: translateY(-1px);
+}
+
+.neu-card-interactive[data-selected="true"] {
+  box-shadow: var(--neu-pressed);
+  transform: translateY(0);
+}
+
+.dark .neu-card-interactive {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: 0.5rem;
+  box-shadow: none;
+}
+
+.dark .neu-card-interactive:hover {
+  border-color: var(--border-strong);
+  background-color: rgba(24, 27, 34, 0.6);
+  box-shadow: none;
+  transform: none;
+}
+
+.dark .neu-card-interactive[data-selected="true"] {
+  border-color: var(--accent-primary);
+  background-color: var(--accent-soft);
+  box-shadow: none;
+}
+
+/* Moderate-Depth Tile (12-Point Checks, Reaction Cards, 4-Day Timeline — prevents muddy shadow overlap) */
+.neu-soft-tile {
+  background-color: #e0e5ec;
+  border: none;
+  border-radius: 18px;
+  box-shadow: 4px 4px 8px #b8bcc2, -4px -4px 8px #ffffff;
+  transition: box-shadow 200ms ease-out;
+}
+
+.neu-soft-tile-hover:hover {
+  box-shadow: 2px 2px 5px #b8bcc2, -2px -2px 5px #ffffff;
+}
+
+.dark .neu-soft-tile {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: 0.75rem;
+  box-shadow: none;
+}
+
+.dark .neu-soft-tile-hover:hover {
+  border-color: var(--border-strong);
+  box-shadow: none;
+}
+
+/* Recessed Concave Wells (Segmented Tracks, Advanced Tray, Inspector HUD) */
+.neu-recessed {
+  background-color: #e0e5ec;
+  border: none;
+  box-shadow: var(--neu-recessed-sm);
+}
+
+.dark .neu-recessed {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-hairline);
+  box-shadow: none;
+}
+
+.neu-recessed-deep {
+  background-color: #e0e5ec;
+  border: none;
+  box-shadow: var(--neu-recessed);
+}
+
+.dark .neu-recessed-deep {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-hairline);
+  box-shadow: none;
+}
+
+/* Floating Raised Popovers, Modals & Sticky Export Dock */
+.neu-popover {
+  background-color: #e0e5ec;
+  border: none;
+  border-radius: 24px;
+  box-shadow: 10px 10px 22px #b2b7be, -8px -8px 18px #ffffff;
+}
+
+.dark .neu-popover {
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-hairline);
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 50px -14px rgba(0, 0, 0, 0.65);
+}
+
+/* Tactile Concave Inputs (16px radius + Blurple 30% focus shadow in Light) */
+.neu-input {
+  background-color: #e0e5ec;
+  border: none;
+  border-radius: 16px;
+  box-shadow: var(--neu-recessed-sm);
+  color: var(--text-primary);
+  transition: box-shadow 200ms ease-out;
+}
+
+.neu-input::placeholder {
+  color: #848e9d;
+}
+
+.neu-input:focus {
+  outline: none;
+  box-shadow: var(--neu-focus);
+}
+
+.dark .neu-input {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-hairline);
+  border-radius: 0.5rem;
+  box-shadow: none;
+  color: var(--text-primary);
+}
+
+.dark .neu-input::placeholder {
+  color: var(--text-muted);
+}
+
+.dark .neu-input:focus {
+  border-color: var(--accent-primary);
+  background-color: var(--bg-surface);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+/* Primary CTA Button: Raised Blurple-Text Neumorphism in Light, Stark White in Dark */
 .btn-primary {
-  background-color: var(--primary);
-  color: var(--primary-fg);
-  border: 1px solid transparent;
-  transition: background-color 140ms ease, opacity 140ms ease, transform 100ms ease;
+  background-color: #e0e5ec;
+  color: #6d5dfc;
+  border: none;
+  border-radius: 16px;
+  font-weight: 600;
+  box-shadow: var(--neu-raised);
+  transition: box-shadow 200ms ease-out, color 200ms ease-out, opacity 160ms ease;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background-color: var(--primary-hover);
+  box-shadow: var(--neu-hover);
+  color: #5445db;
+}
+
+.btn-primary:active:not(:disabled) {
+  box-shadow: var(--neu-pressed);
 }
 
 .btn-primary:disabled {
-  opacity: 0.55;
+  opacity: 0.52;
   cursor: not-allowed;
 }
 
-/* Secondary Architectural Outline Button */
+.dark .btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-fg);
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  box-shadow: none;
+}
+
+.dark .btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+  color: var(--primary-fg);
+  box-shadow: none;
+}
+
+.dark .btn-primary:active:not(:disabled) {
+  box-shadow: none;
+}
+
+/* Secondary Button: Soft Raised Neumorphic Button in Light, Crisp Outline in Dark */
 .btn-outline {
-  background-color: var(--bg-surface);
+  background-color: #e0e5ec;
   color: var(--text-primary);
-  border: 1px solid var(--border-hairline);
-  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+  border: none;
+  border-radius: 16px;
+  box-shadow: var(--neu-raised-sm);
+  transition: box-shadow 200ms ease-out, color 200ms ease-out;
 }
 
 .btn-outline:hover:not(:disabled) {
-  background-color: var(--bg-subtle);
-  border-color: var(--border-strong);
+  box-shadow: var(--neu-raised-xs);
+  color: #6d5dfc;
+}
+
+.btn-outline:active:not(:disabled) {
+  box-shadow: var(--neu-recessed-sm);
 }
 
 .btn-outline:disabled {
-  opacity: 0.5;
+  opacity: 0.45;
   cursor: not-allowed;
+}
+
+.dark .btn-outline {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-hairline);
+  border-radius: 0.5rem;
+  box-shadow: none;
+}
+
+.dark .btn-outline:hover:not(:disabled) {
+  background-color: var(--bg-subtle);
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+  box-shadow: none;
+}
+
+.dark .btn-outline:active:not(:disabled) {
+  box-shadow: none;
+}
+
+/* Tactile Pill Toggle / Nav Pill / Demo Chip */
+.neu-pill {
+  background-color: #e0e5ec;
+  border: none;
+  border-radius: 999px;
+  color: var(--text-secondary);
+  box-shadow: var(--neu-raised-sm);
+  transition: box-shadow 200ms ease-out, color 200ms ease-out;
+}
+
+.neu-pill:hover:not(:disabled) {
+  box-shadow: var(--neu-raised-xs);
+  color: var(--text-primary);
+}
+
+.neu-pill:active:not(:disabled),
+.neu-pill[data-active="true"] {
+  box-shadow: var(--neu-recessed-sm);
+  color: #6d5dfc;
+}
+
+.dark .neu-pill {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: 0.5rem;
+  color: var(--text-secondary);
+  box-shadow: none;
+}
+
+.dark .neu-pill:hover:not(:disabled) {
+  border-color: var(--border-strong);
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+  box-shadow: none;
+}
+
+.dark .neu-pill[data-active="true"] {
+  border-color: var(--accent-primary);
+  background-color: var(--accent-soft);
+  color: #7dd3fc;
+  box-shadow: none;
+}
+
+/* Segmented Control Active Thumb inside a .neu-recessed Track */
+.neu-seg-active {
+  background-color: #e0e5ec;
+  color: #6d5dfc;
+  border-radius: 999px;
+  box-shadow: 4px 4px 8px #b8bcc2, -4px -4px 8px #ffffff;
+}
+
+.dark .neu-seg-active {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Top Navigation Bar & Left Rail (Unified #e0e5ec in Light, Hairline in Dark) */
+.neu-topbar {
+  background-color: rgba(224, 229, 236, 0.94);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 14px -4px rgba(184, 188, 194, 0.55);
+  border-bottom: none;
+}
+
+.dark .neu-topbar {
+  background-color: rgba(19, 21, 26, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: none;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.neu-sidebar {
+  background-color: #e0e5ec;
+  border-right: none;
+  box-shadow: 6px 0 16px -6px rgba(184, 188, 194, 0.45);
+}
+
+.dark .neu-sidebar {
+  background-color: var(--bg-rail);
+  border-right: 1px solid var(--border-hairline);
+  box-shadow: none;
+}
+
+/* Coral Red Micro-Volume < 0.5 uL Safety Alert (High Readability, Recessed Well + 5px Bar) */
+.neu-alert-coral {
+  background-color: #e0e5ec;
+  border: none;
+  border-left: 5px solid #ff6b6b;
+  border-radius: 16px;
+  box-shadow: inset 5px 5px 10px #b8bcc2, inset -5px -5px 10px #ffffff;
+  color: #3d4451;
+}
+
+.dark .neu-alert-coral {
+  background-color: rgba(244, 63, 94, 0.15);
+  border: 1px solid rgba(244, 63, 94, 0.40);
+  border-left: 4px solid #f43f5e;
+  border-radius: 0.75rem;
+  box-shadow: none;
+  color: #fecdd3;
+}
+
+/* Vivid Coral Pill (!N Badge, FAIL Pill, Alert Counter) */
+.neu-badge-coral {
+  background-color: #ff6b6b;
+  color: #ffffff;
+  border: none;
+  box-shadow: 3px 3px 7px rgba(255, 107, 107, 0.40), -2px -2px 5px #ffffff;
+}
+
+.dark .neu-badge-coral {
+  background-color: #f43f5e;
+  color: #ffffff;
+  border: 1px solid #f43f5e;
+  box-shadow: none;
+}
+
+/* Subtle Etched Divider in Light Mode (Zero harsh 1px borders) */
+.neu-divider-b {
+  border-bottom: 1px solid rgba(184, 188, 194, 0.42);
+}
+
+.dark .neu-divider-b {
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.neu-divider-t {
+  border-top: 1px solid rgba(184, 188, 194, 0.42);
+}
+
+.dark .neu-divider-t {
+  border-top: 1px solid var(--border-hairline);
+}
+
+/* Accent Text Helper (Blurple in Light, Ice Sky in Dark) */
+.text-accent {
+  color: var(--accent-text);
 }
 
 .bio-grid-bg {
@@ -212,44 +619,79 @@
   background-size: 18px 18px;
 }
 
-/* Precision Range Slider */
+/* ============================================================================
+   PRECISION RANGE SLIDER (Light: Tactile Recessed Track + Blurple Knob | Dark: Preserved)
+   ============================================================================ */
 input[type="range"].precision-range {
   -webkit-appearance: none;
   appearance: none;
-  height: 5px;
+  height: 10px;
   border-radius: 9999px;
   outline: none;
+}
+
+:root:not(.dark):not([data-theme="dark"]) input[type="range"].precision-range {
+  background: #e0e5ec !important;
+  box-shadow: inset 4px 4px 8px #b8bcc2, inset -4px -4px 8px #ffffff;
 }
 
 input[type="range"].precision-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 16px;
-  height: 16px;
+  width: 22px;
+  height: 22px;
   border-radius: 9999px;
-  background: var(--bg-surface-elevated);
-  border: 2.5px solid var(--accent-primary);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+  background: #6d5dfc;
+  border: none;
+  box-shadow: 4px 4px 8px rgba(109, 93, 252, 0.38), -3px -3px 7px #ffffff;
   cursor: pointer;
-  transition: transform 110ms ease, box-shadow 110ms ease;
+  transition: transform 140ms ease-out, box-shadow 140ms ease-out;
 }
 
 input[type="range"].precision-range::-webkit-slider-thumb:hover {
+  transform: scale(1.08);
+  box-shadow: 3px 3px 6px rgba(109, 93, 252, 0.48), -2px -2px 5px #ffffff;
+}
+
+input[type="range"].precision-range::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  background: #6d5dfc;
+  border: none;
+  box-shadow: 4px 4px 8px rgba(109, 93, 252, 0.38), -3px -3px 7px #ffffff;
+  cursor: pointer;
+}
+
+.dark input[type="range"].precision-range {
+  height: 5px;
+  box-shadow: none;
+}
+
+.dark input[type="range"].precision-range::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+  background: var(--bg-surface-elevated);
+  border: 2.5px solid var(--accent-primary);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+}
+
+.dark input[type="range"].precision-range::-webkit-slider-thumb:hover {
   transform: scale(1.1);
   box-shadow: 0 0 0 4px var(--accent-soft);
 }
 
-input[type="range"].precision-range::-moz-range-thumb {
+.dark input[type="range"].precision-range::-moz-range-thumb {
   width: 16px;
   height: 16px;
-  border-radius: 9999px;
   background: var(--bg-surface-elevated);
   border: 2.5px solid var(--accent-primary);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
-  cursor: pointer;
 }
 
-/* Obsidian UV Agarose Gel Imager Box */
+/* ============================================================================
+   OBSIDIAN UV AGAROSE GEL IMAGER BOX (100% PRESERVED OPTICAL CHAMBER)
+   ============================================================================ */
 .gel-chamber {
   background: linear-gradient(180deg, #0b0e14 0%, #07090d 100%);
 }
@@ -288,21 +730,45 @@ input[type="range"].precision-range::-moz-range-thumb {
   animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Thin architectural scrollbars */
+/* Reduced Motion Respect */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Refined Scrollbars */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-subtle);
+  background: var(--bg-canvas);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border-strong);
+  background: #b8bcc2;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: var(--bg-subtle);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
 }

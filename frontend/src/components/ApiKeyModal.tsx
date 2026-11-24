@@ -77,22 +77,22 @@ export function ApiKeyModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-xs"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/45 dark:bg-black/60 p-4 backdrop-blur-xs"
       role="dialog"
       aria-modal="true"
       aria-labelledby="byok-modal-title"
     >
-      <div className="bio-card relative w-full max-w-xl overflow-hidden rounded-xl bg-[var(--bg-surface-elevated)] shadow-2xl">
+      <div className="neu-popover relative w-full max-w-xl overflow-hidden">
         {/* Header */}
-        <div className="flex items-start justify-between border-b border-[var(--border-hairline)] px-6 py-4">
+        <div className="neu-divider-b flex items-start justify-between px-6 py-5">
           <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)]">
+            <div className="neu-recessed flex h-10 w-10 items-center justify-center rounded-2xl dark:h-9 dark:w-9 dark:rounded-lg text-[var(--accent-primary)]">
               <KeyRound className="h-4 w-4" />
             </div>
             <div>
               <h2
                 id="byok-modal-title"
-                className="text-base font-bold text-[var(--text-primary)]"
+                className="font-display text-lg text-[var(--text-primary)] dark:text-base"
               >
                 AI 模型与自带 API Key (BYOK) 设置
               </h2>
@@ -104,19 +104,19 @@ export function ApiKeyModal({
           <button
             type="button"
             onClick={onClose}
-            className="rounded-lg p-1.5 text-[var(--text-muted)] transition hover:bg-[var(--bg-subtle)] hover:text-[var(--text-primary)] cursor-pointer"
+            className="neu-pill p-2 text-[var(--text-muted)] hover:text-[var(--text-primary)] cursor-pointer"
             aria-label="关闭弹窗"
           >
-            <X className="h-5 w-5" />
+            <X className="h-4 w-4" />
           </button>
         </div>
 
-        <form onSubmit={handleSave} className="space-y-5 px-6 py-5">
-          {/* Clean architectural guarantee banner (no pastel green wash) */}
-          <div className="flex items-start gap-3 rounded-lg border border-[var(--border-hairline)] border-l-[3px] border-l-[var(--accent-primary)] bg-[var(--bg-subtle)]/70 p-3.5 text-sm text-[var(--text-primary)]">
+        <form onSubmit={handleSave} className="space-y-5 px-6 py-6">
+          {/* Clean Guarantee Banner */}
+          <div className="neu-recessed flex items-start gap-3 rounded-2xl dark:rounded-lg border-l-[4px] border-l-[var(--accent-primary)] p-4 text-sm text-[var(--text-primary)]">
             <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[var(--accent-primary)]" />
             <div className="space-y-1">
-              <p className="font-bold">
+              <p className="font-semibold">
                 不填任何 API Key 也能 100% 免费使用全部核心生信设计
               </p>
               <p className="text-xs leading-relaxed text-[var(--text-secondary)]">
@@ -126,58 +126,61 @@ export function ApiKeyModal({
           </div>
 
           {quota && quota.free_trial_enabled && !config.apiKey && (
-            <div className="flex items-center justify-between rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)]/50 px-4 py-2.5 text-sm text-[var(--text-primary)]">
-              <span className="inline-flex items-center gap-2 font-semibold">
+            <div className="neu-recessed flex items-center justify-between rounded-2xl dark:rounded-lg px-4 py-3 text-sm text-[var(--text-primary)]">
+              <span className="inline-flex items-center gap-2 font-medium">
                 <Sparkles className="h-4 w-4 text-[var(--accent-primary)]" />
                 当前已开启站内免费 AI 体验额度
               </span>
-              <span className="font-mono-bio font-bold text-blue-700 dark:text-sky-300">
+              <span className="font-mono-bio font-semibold text-accent">
                 今日剩余 {quota.remaining_today} / {quota.daily_limit} 次
               </span>
             </div>
           )}
 
           <div>
-            <label className="mb-2 block text-sm font-semibold text-[var(--text-primary)]">
+            <label className="mb-3 block text-sm font-medium text-[var(--text-primary)]">
               1. 一键选择模型服务商预设
             </label>
-            <div className="grid grid-cols-2 gap-2.5">
+            <div className="grid grid-cols-2 gap-4 dark:gap-2.5">
               {BYOK_PROVIDERS.map((preset) => {
                 const selected = preset.id === providerId;
                 return (
                   <button
                     key={preset.id}
                     type="button"
+                    data-selected={selected}
                     onClick={() => handleSelectProvider(preset.id)}
-                    className={`flex flex-col items-start rounded-lg border p-3 text-left transition cursor-pointer ${
-                      selected
-                        ? "border-[var(--accent-primary)] bg-[var(--accent-soft)]"
-                        : "border-[var(--border-hairline)] bg-[var(--bg-surface)] hover:bg-[var(--bg-subtle)]"
-                    }`}
+                    className="neu-card-interactive flex flex-col items-start p-3.5 text-left cursor-pointer"
                   >
                     <div className="flex w-full items-center justify-between gap-1">
-                      <span className="text-sm font-bold text-[var(--text-primary)]">
+                      <span
+                        className={`text-sm font-semibold ${
+                          selected
+                            ? "text-accent dark:text-[var(--text-primary)]"
+                            : "text-[var(--text-primary)]"
+                        }`}
+                      >
                         {preset.name}
                       </span>
                       {selected && (
                         <Check className="h-4 w-4 text-[var(--accent-primary)] shrink-0" />
                       )}
                     </div>
-                    <span className="mt-1 rounded bg-[var(--bg-subtle)] px-2 py-0.5 text-xs font-medium text-[var(--text-muted)]">
+                    <span className="mt-1.5 neu-recessed rounded-full dark:rounded px-2.5 py-0.5 text-xs font-medium text-[var(--text-muted)]">
                       {preset.badge}
                     </span>
                   </button>
                 );
               })}
             </div>
-            <p className="mt-2 text-xs text-[var(--text-muted)]">
+            <p className="mt-2.5 text-xs text-[var(--text-muted)]">
               {activePreset.hint}
             </p>
           </div>
 
-          <div className="space-y-3.5">
+          <div className="space-y-4">
             <div>
-              <label className="mb-1.5 block text-sm font-semibold text-[var(--text-primary)]">
+              <label className="mb-1.5 block text-sm font-medium text-[var(--text-primary)]">
                 2. API Key
               </label>
               <div className="relative">
@@ -186,13 +189,13 @@ export function ApiKeyModal({
                   value={apiKey}
                   onChange={(e) => setApiKey(e.target.value)}
                   placeholder={activePreset.placeholder}
-                  className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)] py-2.5 pl-3.5 pr-10 font-mono-bio text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent-primary)] focus:bg-[var(--bg-surface)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-soft)]"
+                  className="neu-input w-full py-3 pl-4 pr-11 font-mono-bio text-sm"
                   autoComplete="off"
                 />
                 <button
                   type="button"
                   onClick={() => setShowKey((v) => !v)}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 rounded-md p-1.5 text-[var(--text-muted)] hover:bg-[var(--bg-surface)] hover:text-[var(--text-primary)] cursor-pointer"
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 rounded-full p-1.5 text-[var(--text-muted)] hover:text-[var(--text-primary)] cursor-pointer"
                   aria-label={showKey ? "隐藏 Key" : "显示 Key"}
                 >
                   {showKey ? (
@@ -204,9 +207,9 @@ export function ApiKeyModal({
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
-                <label className="mb-1.5 block text-xs font-semibold text-[var(--text-secondary)]">
+                <label className="mb-1.5 block text-xs font-medium text-[var(--text-secondary)]">
                   Base URL (OpenAI 兼容接口)
                 </label>
                 <input
@@ -214,11 +217,11 @@ export function ApiKeyModal({
                   value={baseUrl}
                   onChange={(e) => setBaseUrl(e.target.value)}
                   placeholder="https://api.deepseek.com/v1"
-                  className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)] px-3 py-2 font-mono-bio text-sm text-[var(--text-primary)] focus:border-[var(--accent-primary)] focus:bg-[var(--bg-surface)] focus:outline-none"
+                  className="neu-input w-full px-3.5 py-2.5 font-mono-bio text-sm"
                 />
               </div>
               <div>
-                <label className="mb-1.5 block text-xs font-semibold text-[var(--text-secondary)]">
+                <label className="mb-1.5 block text-xs font-medium text-[var(--text-secondary)]">
                   Model 模型标识
                 </label>
                 <input
@@ -226,13 +229,13 @@ export function ApiKeyModal({
                   value={model}
                   onChange={(e) => setModel(e.target.value)}
                   placeholder="deepseek-chat"
-                  className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)] px-3 py-2 font-mono-bio text-sm text-[var(--text-primary)] focus:border-[var(--accent-primary)] focus:bg-[var(--bg-surface)] focus:outline-none"
+                  className="neu-input w-full px-3.5 py-2.5 font-mono-bio text-sm"
                 />
               </div>
             </div>
           </div>
 
-          <div className="flex items-start gap-2.5 rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)]/60 px-3.5 py-2.5 text-xs text-[var(--text-secondary)]">
+          <div className="neu-recessed flex items-start gap-2.5 rounded-2xl dark:rounded-lg px-4 py-3 text-xs text-[var(--text-secondary)]">
             <Lock className="mt-0.5 h-4 w-4 shrink-0 text-[var(--text-muted)]" />
             <span className="leading-relaxed">
               隐私保障：密钥仅保存在您的浏览器{" "}
@@ -251,7 +254,7 @@ export function ApiKeyModal({
                   onClear();
                   onClose();
                 }}
-                className="inline-flex items-center gap-1.5 rounded-lg border border-rose-300 bg-rose-50 px-3.5 py-2 text-xs font-semibold text-rose-700 transition hover:bg-rose-100 dark:border-rose-500/40 dark:bg-rose-500/15 dark:text-rose-300 cursor-pointer"
+                className="neu-badge-coral inline-flex items-center gap-1.5 rounded-2xl dark:rounded-lg px-3.5 py-2 text-xs font-medium dark:font-semibold transition cursor-pointer"
               >
                 <Trash2 className="h-3.5 w-3.5" />
                 清除本地 Key
@@ -262,17 +265,17 @@ export function ApiKeyModal({
               </span>
             )}
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <button
                 type="button"
                 onClick={onClose}
-                className="btn-outline rounded-lg px-4 py-2 text-sm font-semibold cursor-pointer"
+                className="btn-outline px-4 py-2.5 text-sm font-medium cursor-pointer"
               >
                 取消
               </button>
               <button
                 type="submit"
-                className="btn-primary inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-semibold cursor-pointer"
+                className="btn-primary inline-flex items-center gap-1.5 px-5 py-2.5 text-sm font-semibold cursor-pointer"
               >
                 <Check className="h-4 w-4" />
                 保存至浏览器

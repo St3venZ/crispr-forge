@@ -40,9 +40,19 @@ export default function RootLayout({
   return (
     <html lang="zh-CN" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..600;1,9..40,400..600&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Noto+Sans+SC:wght@400;500;600&family=Noto+Serif+SC:wght@500;600&display=swap"
+        />
         <script dangerouslySetInnerHTML={{ __html: ANTI_FLASH_SCRIPT }} />
       </head>
-      <body className="min-h-screen antialiased selection:bg-blue-200/80 selection:text-slate-950 dark:selection:bg-sky-500/30 dark:selection:text-sky-100">
+      <body className="min-h-screen antialiased selection:bg-[#6d5dfc]/20 selection:text-[#3d4451] dark:selection:bg-sky-500/30 dark:selection:text-sky-100">
         {children}
       </body>
     </html>

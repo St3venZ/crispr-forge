@@ -208,15 +208,15 @@ export function SideOutlineNav({
   const badgeClass = (tone: NavItem["badgeTone"]) => {
     switch (tone) {
       case "emerald":
-        return "border-emerald-300/80 bg-emerald-500/10 text-emerald-700 dark:border-emerald-500/35 dark:bg-emerald-500/15 dark:text-emerald-300";
+        return "rounded-full bg-[#4ecdc4]/20 text-[#1a7871] dark:rounded-md dark:border dark:border-emerald-500/35 dark:bg-emerald-500/15 dark:text-emerald-300";
       case "amber":
-        return "border-amber-300/80 bg-amber-500/10 text-amber-800 dark:border-amber-500/35 dark:bg-amber-500/15 dark:text-amber-300";
+        return "rounded-full bg-amber-500/15 text-amber-800 dark:rounded-md dark:border dark:border-amber-500/35 dark:bg-amber-500/15 dark:text-amber-300";
       case "rose":
-        return "border-rose-400 bg-rose-600 text-white font-bold dark:border-rose-500 dark:bg-rose-500 dark:text-white";
+        return "neu-badge-coral rounded-full font-semibold dark:rounded-md dark:font-bold";
       case "accent":
-        return "border-[var(--accent-border)] bg-[var(--accent-soft)] text-blue-700 dark:text-sky-300";
+        return "rounded-full bg-[var(--accent-soft)] text-accent dark:rounded-md dark:border dark:border-[var(--accent-border)]";
       default:
-        return "border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--text-muted)]";
+        return "neu-recessed rounded-full text-[var(--text-muted)] dark:rounded-md";
     }
   };
 
@@ -225,14 +225,14 @@ export function SideOutlineNav({
       {/* Desktop Sticky Left Navigation Rail (lg+) */}
       <aside
         data-tour="sidebar-nav"
-        className={`hidden lg:flex shrink-0 flex-col sticky top-[56px] h-[calc(100vh-56px)] border-r border-[var(--border-hairline)] bg-[var(--bg-rail)] transition-[width] duration-200 ${
-          collapsed ? "w-[64px]" : "w-[236px]"
+        className={`neu-sidebar hidden lg:flex shrink-0 flex-col sticky top-[62px] dark:top-[56px] h-[calc(100vh-62px)] dark:h-[calc(100vh-56px)] transition-[width] duration-200 ${
+          collapsed ? "w-[68px]" : "w-[260px]"
         }`}
         aria-label="工作台大纲导航"
       >
-        <div className="flex-1 overflow-y-auto px-2.5 py-4 space-y-1">
+        <div className="flex-1 overflow-y-auto px-3 py-5 space-y-2 dark:space-y-1">
           {!collapsed && (
-            <div className="px-2.5 pb-2 text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
+            <div className="px-3 pb-2 text-xs font-medium text-[var(--text-muted)]">
               工作台大纲
             </div>
           )}
@@ -247,15 +247,15 @@ export function SideOutlineNav({
                 disabled={!item.enabled}
                 onClick={() => jumpTo(item.id)}
                 title={`${item.num} ${item.label}${item.badge ? ` (${item.badge})` : ""}`}
-                className={`group relative flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-left transition cursor-pointer disabled:opacity-35 disabled:cursor-not-allowed ${
+                className={`group relative flex w-full items-center gap-2.5 rounded-2xl dark:rounded-lg px-3 py-2.5 dark:py-2 text-left transition cursor-pointer disabled:opacity-35 disabled:cursor-not-allowed ${
                   isActive
-                    ? "bg-[var(--bg-surface-elevated)] text-[var(--text-primary)] ring-1 ring-[var(--border-hairline)]"
-                    : "text-[var(--text-secondary)] hover:bg-[var(--bg-surface)]/70 hover:text-[var(--text-primary)]"
+                    ? "neu-recessed text-[var(--accent-primary)] dark:bg-[var(--bg-surface-elevated)] dark:text-[var(--text-primary)] dark:ring-1 dark:ring-[var(--border-hairline)]"
+                    : "text-[var(--text-secondary)] hover:bg-white/35 dark:hover:bg-[var(--bg-surface)]/70 hover:text-[var(--text-primary)]"
                 } ${collapsed ? "justify-center" : "justify-between"}`}
               >
-                {/* Left Cobalt (Light) / Ice Sky (Dark) Active Accent Bar */}
+                {/* Left Ice Sky Active Accent Bar (Dark Mode Only; Light uses Concave Inset) */}
                 {isActive && (
-                  <span className="absolute left-0 top-1.5 bottom-1.5 w-[3px] rounded-r bg-[var(--accent-primary)]" />
+                  <span className="hidden dark:block absolute left-0 top-1.5 bottom-1.5 w-[3px] rounded-r bg-[var(--accent-primary)]" />
                 )}
 
                 <div className="flex items-center gap-2.5 min-w-0">
@@ -271,7 +271,7 @@ export function SideOutlineNav({
                       <span className="font-mono-bio text-xs text-[var(--text-muted)]">
                         {item.num}
                       </span>
-                      <span className="truncate text-sm font-semibold">
+                      <span className="truncate text-sm font-medium dark:font-semibold">
                         {item.label}
                       </span>
                     </div>
@@ -280,7 +280,7 @@ export function SideOutlineNav({
 
                 {!collapsed && item.badge && (
                   <span
-                    className={`shrink-0 rounded-md border px-1.5 py-0.5 font-mono-bio text-xs leading-none ${badgeClass(
+                    className={`shrink-0 px-2 py-0.5 font-mono-bio text-xs leading-none ${badgeClass(
                       item.badgeTone
                     )}`}
                   >
@@ -289,7 +289,7 @@ export function SideOutlineNav({
                 )}
 
                 {collapsed && item.badgeTone === "rose" && item.badge && (
-                  <span className="absolute right-1.5 top-1.5 h-2.5 w-2.5 rounded-full bg-rose-600 ring-2 ring-[var(--bg-rail)]" />
+                  <span className="absolute right-1.5 top-1.5 h-2.5 w-2.5 rounded-full bg-[#ff6b6b] dark:bg-rose-600 ring-2 ring-[var(--bg-rail)]" />
                 )}
               </button>
             );
@@ -297,14 +297,14 @@ export function SideOutlineNav({
         </div>
 
         {/* Bottom Actions: Primary .zip CTA + Collapse */}
-        <div className="border-t border-[var(--border-hairline)] p-2.5 space-y-2">
+        <div className="neu-divider-t p-3 space-y-2.5">
           {design && (
             <button
               type="button"
               disabled={downloadingZip}
               onClick={handleQuickZip}
               title="一键下载完整实验包 (.zip)"
-              className="btn-primary flex w-full items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold cursor-pointer"
+              className="btn-primary flex w-full items-center justify-center gap-2 px-3 py-2.5 text-sm font-semibold cursor-pointer"
             >
               {downloadingZip ? (
                 <Loader2 className="h-4 w-4 animate-spin shrink-0" />
@@ -319,7 +319,7 @@ export function SideOutlineNav({
             type="button"
             onClick={onToggleCollapse}
             title={collapsed ? "展开侧边栏" : "收起侧边栏"}
-            className="btn-outline flex w-full items-center justify-center gap-2 rounded-lg px-3 py-2 text-xs font-semibold cursor-pointer"
+            className="btn-outline flex w-full items-center justify-center gap-2 px-3 py-2 text-xs font-medium dark:font-semibold cursor-pointer"
           >
             {collapsed ? (
               <ChevronRight className="h-4 w-4" />
@@ -336,9 +336,9 @@ export function SideOutlineNav({
       {/* Mobile / Tablet Sticky Horizontal Rail (< lg) */}
       <div
         data-tour="sidebar-nav"
-        className="lg:hidden sticky top-[56px] z-30 border-b border-[var(--border-hairline)] bg-[var(--bg-surface)]/95 backdrop-blur-md"
+        className="neu-topbar lg:hidden sticky top-[62px] dark:top-[56px] z-30"
       >
-        <div className="flex items-center gap-1.5 overflow-x-auto px-4 py-2">
+        <div className="flex items-center gap-2.5 overflow-x-auto px-4 py-2.5">
           {items
             .filter((it) => it.enabled)
             .map((item) => {
@@ -347,18 +347,15 @@ export function SideOutlineNav({
                 <button
                   key={item.id}
                   type="button"
+                  data-active={isActive}
                   onClick={() => jumpTo(item.id)}
-                  className={`inline-flex shrink-0 items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-semibold transition cursor-pointer ${
-                    isActive
-                      ? "border-[var(--accent-primary)] bg-[var(--accent-soft)] text-blue-700 dark:text-sky-300"
-                      : "border-[var(--border-hairline)] bg-[var(--bg-surface)] text-[var(--text-secondary)]"
-                  }`}
+                  className="neu-pill inline-flex shrink-0 items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium dark:font-semibold cursor-pointer"
                 >
                   <span className="font-mono-bio opacity-65">{item.num}</span>
                   <span>{item.shortLabel}</span>
                   {item.badge && (
                     <span
-                      className={`rounded border px-1.5 py-0.5 font-mono-bio text-xs leading-none ${badgeClass(
+                      className={`px-1.5 py-0.5 font-mono-bio text-xs leading-none ${badgeClass(
                         item.badgeTone
                       )}`}
                     >

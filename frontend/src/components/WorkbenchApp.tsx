@@ -432,7 +432,7 @@ export function WorkbenchApp() {
         />
 
         <div className="flex flex-1 flex-col min-w-0">
-          <main className="mx-auto w-full max-w-[1440px] flex-1 space-y-7 px-4 py-6 sm:px-6 lg:px-8 pb-16">
+          <main className="mx-auto w-full max-w-[1440px] flex-1 space-y-9 px-5 py-8 sm:px-7 lg:px-10 pb-20">
             {/* 01 Composer */}
             <DesignComposer
               plasmids={plasmids}
@@ -451,22 +451,24 @@ export function WorkbenchApp() {
               onCancel={handleCancelRun}
             />
 
-            {/* Preserved Vivid Rose Error Alert Banner */}
+            {/* Preserved Vivid Coral (Light) / Rose (Dark) Error Alert Banner */}
             {errorMsg && (
-              <div className="flex items-start justify-between gap-3 rounded-xl border border-rose-300 border-l-[4px] border-l-rose-600 bg-rose-50 px-5 py-4 text-sm text-rose-800 dark:border-rose-500/40 dark:border-l-rose-500 dark:bg-rose-500/15 dark:text-rose-200">
+              <div className="neu-alert-coral flex items-start justify-between gap-3 px-5 py-4 text-sm">
                 <div className="flex items-start gap-2.5">
-                  <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-rose-600 dark:text-rose-400" />
+                  <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#ff6b6b] dark:text-rose-400" />
                   <div className="space-y-0.5">
-                    <p className="font-bold text-rose-900 dark:text-rose-100">
+                    <p className="font-semibold text-[#c93232] dark:font-bold dark:text-rose-100">
                       请求未能完成
                     </p>
-                    <p className="leading-relaxed">{errorMsg}</p>
+                    <p className="leading-relaxed text-[var(--text-primary)] dark:text-rose-200">
+                      {errorMsg}
+                    </p>
                   </div>
                 </div>
                 <button
                   type="button"
                   onClick={() => setErrorMsg(null)}
-                  className="rounded-md p-1 text-rose-600 hover:bg-rose-100 dark:text-rose-300 dark:hover:bg-rose-500/20 cursor-pointer"
+                  className="rounded-xl p-1.5 text-[#c93232] hover:bg-[#ff6b6b]/15 dark:rounded-md dark:text-rose-300 dark:hover:bg-rose-500/20 cursor-pointer"
                   aria-label="关闭错误提示"
                 >
                   <X className="h-4 w-4" />
@@ -485,7 +487,7 @@ export function WorkbenchApp() {
 
             {/* Results Workbench */}
             {design ? (
-              <div ref={resultAnchorRef} className="space-y-7 scroll-mt-20">
+              <div ref={resultAnchorRef} className="space-y-9 scroll-mt-20">
                 {/* 03 12-Point Zero-Trust Shield Certificate */}
                 <VerificationGate
                   report={design.verification_report}
@@ -500,7 +502,7 @@ export function WorkbenchApp() {
                 <section
                   id="section-visuals"
                   data-tour="visuals-section"
-                  className="grid grid-cols-1 gap-6 xl:grid-cols-12 scroll-mt-20 items-stretch"
+                  className="grid grid-cols-1 gap-8 xl:grid-cols-12 scroll-mt-20 items-stretch"
                 >
                   <div className="xl:col-span-7">
                     <LocusVisualizer
@@ -551,29 +553,29 @@ export function WorkbenchApp() {
               </div>
             ) : (
               !isRunning && (
-                /* Clean Architectural 3-Pillar Overview */
-                <section className="grid grid-cols-1 gap-4 md:grid-cols-3 pt-1">
-                  <div className="bio-card rounded-xl p-5 space-y-2.5">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)]">
+                /* Clean 3-Pillar Overview — Generous 28px gap for Neumorphic dual shadows */
+                <section className="grid grid-cols-1 gap-7 md:grid-cols-3 pt-2">
+                  <div className="bio-card p-6 sm:p-7 space-y-3">
+                    <div className="neu-recessed flex h-11 w-11 items-center justify-center rounded-2xl text-[var(--accent-primary)] dark:h-9 dark:w-9 dark:rounded-lg">
                       <Dna className="h-5 w-5" />
                     </div>
-                    <h3 className="text-base font-bold text-[var(--text-primary)]">
+                    <h3 className="font-display text-lg text-[var(--text-primary)] dark:text-base">
                       真实 RefSeq / 本地序列零幻觉溯源
                     </h3>
                     <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
                       严禁模型凭记忆编造 DNA。自动解析 NCBI RefSeq 或上传的{" "}
-                      <code className="font-mono-bio text-blue-700 dark:text-sky-300">
+                      <code className="font-mono-bio text-accent">
                         .gb/.fasta
                       </code>
                       ，绑定 SHA-256 指纹并按需拉取全基因组染色体索引。
                     </p>
                   </div>
 
-                  <div className="bio-card rounded-xl p-5 space-y-2.5">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)]">
+                  <div className="bio-card p-6 sm:p-7 space-y-3">
+                    <div className="neu-recessed flex h-11 w-11 items-center justify-center rounded-2xl text-[var(--accent-primary)] dark:h-9 dark:w-9 dark:rounded-lg">
                       <ShieldCheck className="h-5 w-5" />
                     </div>
-                    <h3 className="text-base font-bold text-[var(--text-primary)]">
+                    <h3 className="font-display text-lg text-[var(--text-primary)] dark:text-base">
                       12 点硅片 PCR / 组装校验与自愈
                     </h3>
                     <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
@@ -581,16 +583,16 @@ export function WorkbenchApp() {
                     </p>
                   </div>
 
-                  <div className="bio-card rounded-xl p-5 space-y-2.5">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)]">
+                  <div className="bio-card p-6 sm:p-7 space-y-3">
+                    <div className="neu-recessed flex h-11 w-11 items-center justify-center rounded-2xl text-[var(--accent-primary)] dark:h-9 dark:w-9 dark:rounded-lg">
                       <Beaker className="h-5 w-5" />
                     </div>
-                    <h3 className="text-base font-bold text-[var(--text-primary)]">
+                    <h3 className="font-display text-lg text-[var(--text-primary)] dark:text-base">
                       15 款聚合酶 + NanoDrop 移液与一键出包
                     </h3>
                     <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
                       内置 15 款主流高保真酶及自定义聚合酶，自动生成引物 Excel、4 份 SnapGene 图谱、4 天 SOP 及{" "}
-                      <span className="font-mono-bio font-bold text-rose-600 dark:text-rose-400">
+                      <span className="font-mono-bio font-semibold text-[#c93232] dark:font-bold dark:text-rose-400">
                         &lt; 0.5 μL
                       </span>{" "}
                       预稀释警报。
@@ -601,7 +603,7 @@ export function WorkbenchApp() {
             )}
           </main>
 
-          <footer className="border-t border-[var(--border-hairline)] bg-[var(--bg-surface)] py-5 text-center text-xs text-[var(--text-muted)]">
+          <footer className="neu-divider-t bg-[var(--bg-canvas)] dark:bg-[var(--bg-surface)] py-6 text-center text-xs text-[var(--text-muted)]">
             <div className="mx-auto max-w-[1440px] px-4">
               CRISPR-Forge · 零信任原核 CRISPR/Cas9 全自动设计与硅片验证平台 · 核心确定性生信引擎永久开源免费
             </div>

@@ -121,7 +121,7 @@ const TOUR_STEPS: TourStepConfig[] = [
     target: "top-controls",
     title: "精调字号、主题切换与一键交付",
     description:
-      "最后，顶栏可按 1%–2% 精调字号、自由切换浅色钴蓝/深色曜石主题或绑定自己的模型 Key；页面底部可一键打包下载全部交付文件！",
+      "最后，顶栏可按 1%–2% 精调字号、自由切换浅色新拟物/深色曜石主题或绑定自己的模型 Key；页面底部可一键打包下载全部交付文件！",
     preferredPlacement: "bottom",
     requiresDesign: false,
     scrollStrategy: "none",
@@ -494,7 +494,7 @@ export function ProductTour({
   };
 
   const arrowBaseClass =
-    "pointer-events-none absolute h-2.5 w-2.5 rotate-45 border-[var(--border-strong)] bg-[var(--bg-surface)]";
+    "pointer-events-none absolute h-3 w-3 rotate-45 bg-[#e0e5ec] dark:h-2.5 dark:w-2.5 dark:border-[var(--border-strong)] dark:bg-[var(--bg-surface)]";
 
   return (
     <div
@@ -593,7 +593,7 @@ export function ProductTour({
       {/* Anchored Floating Tooltip Card */}
       <div
         ref={cardRef}
-        className="fixed z-[95] pointer-events-auto w-[352px] max-w-[calc(100vw-24px)] rounded-xl border border-[var(--border-strong)] bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_20px_50px_-14px_rgba(2,6,23,0.48)]"
+        className="neu-popover fixed z-[95] pointer-events-auto w-[360px] max-w-[calc(100vw-24px)] text-[var(--text-primary)] dark:border-[var(--border-strong)] dark:bg-[var(--bg-surface)]"
         style={{
           left: popoverGeom.left,
           top: popoverGeom.top,
@@ -603,35 +603,35 @@ export function ProductTour({
         {popoverGeom.placement === "bottom" && (
           <span
             aria-hidden="true"
-            className={`${arrowBaseClass} -top-[6px] border-l border-t`}
+            className={`${arrowBaseClass} -top-[6px] dark:border-l dark:border-t`}
             style={{ left: popoverGeom.arrowOffset - 5 }}
           />
         )}
         {popoverGeom.placement === "top" && (
           <span
             aria-hidden="true"
-            className={`${arrowBaseClass} -bottom-[6px] border-r border-b`}
+            className={`${arrowBaseClass} -bottom-[6px] dark:border-r dark:border-b`}
             style={{ left: popoverGeom.arrowOffset - 5 }}
           />
         )}
         {popoverGeom.placement === "right" && (
           <span
             aria-hidden="true"
-            className={`${arrowBaseClass} -left-[6px] border-l border-b`}
+            className={`${arrowBaseClass} -left-[6px] dark:border-l dark:border-b`}
             style={{ top: popoverGeom.arrowOffset - 5 }}
           />
         )}
         {popoverGeom.placement === "left" && (
           <span
             aria-hidden="true"
-            className={`${arrowBaseClass} -right-[6px] border-r border-t`}
+            className={`${arrowBaseClass} -right-[6px] dark:border-r dark:border-t`}
             style={{ top: popoverGeom.arrowOffset - 5 }}
           />
         )}
 
         {/* Header */}
-        <div className="flex items-center justify-between gap-2 border-b border-[var(--border-hairline)] px-4 py-3">
-          <div className="inline-flex items-center gap-1.5 rounded-md border border-[var(--accent-border)] bg-[var(--accent-soft)] px-2 py-0.5 text-xs font-bold text-blue-700 dark:text-sky-300 font-mono-bio">
+        <div className="neu-divider-b flex items-center justify-between gap-2 px-5 py-3.5">
+          <div className="neu-recessed inline-flex items-center gap-1.5 rounded-full dark:rounded-md px-2.5 py-1 text-xs font-semibold text-accent font-mono-bio">
             <Compass className="h-3.5 w-3.5 text-[var(--accent-primary)]" />
             <span>
               步骤 {stepIdx + 1} / {TOUR_STEPS.length}
@@ -641,7 +641,7 @@ export function ProductTour({
           <button
             type="button"
             onClick={() => onClose(dontShowAgain)}
-            className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-semibold text-[var(--text-muted)] transition hover:bg-[var(--bg-subtle)] hover:text-[var(--text-primary)] cursor-pointer"
+            className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium text-[var(--text-muted)] transition hover:text-[var(--text-primary)] cursor-pointer"
             aria-label="跳过引导"
           >
             <span>跳过</span>
@@ -650,8 +650,8 @@ export function ProductTour({
         </div>
 
         {/* Body */}
-        <div className="space-y-3 px-4 py-3.5">
-          <h3 className="text-sm font-bold tracking-tight text-[var(--text-primary)]">
+        <div className="space-y-3 px-5 py-4">
+          <h3 className="font-display text-base text-[var(--text-primary)] dark:text-sm">
             {currentStep.title}
           </h3>
           <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
@@ -659,14 +659,14 @@ export function ProductTour({
           </p>
 
           {isStep1Loading && (
-            <div className="flex items-center gap-2 rounded-lg border border-[var(--accent-border)] bg-[var(--accent-soft)] px-3 py-2 text-xs font-semibold text-blue-700 dark:text-sky-300">
+            <div className="neu-recessed flex items-center gap-2 rounded-2xl dark:rounded-lg px-3.5 py-2.5 text-xs font-medium text-accent">
               <Loader2 className="h-3.5 w-3.5 shrink-0 animate-spin text-[var(--accent-primary)]" />
               <span>正在运行内置经典示例，结果生成后将自动跳转至步骤 2…</span>
             </div>
           )}
 
           {isFirst && !isStep1Loading && demoError && (
-            <div className="rounded-lg border border-rose-300 border-l-[3px] border-l-rose-600 bg-rose-50 px-3 py-2 text-xs font-medium text-rose-800 dark:border-rose-500/40 dark:border-l-rose-500 dark:bg-rose-500/15 dark:text-rose-200">
+            <div className="neu-alert-coral px-3.5 py-2 text-xs font-medium text-[#c93232] dark:text-rose-200">
               示例运行未完成：{demoError}
             </div>
           )}
@@ -689,8 +689,8 @@ export function ProductTour({
                       isActive
                         ? "w-5 bg-[var(--accent-primary)]"
                         : locked
-                        ? "w-2 bg-[var(--border-hairline)] opacity-50 cursor-not-allowed"
-                        : "w-2 bg-[var(--border-strong)] hover:bg-[var(--accent-primary)]/70 cursor-pointer"
+                        ? "w-2 bg-[#c5cbd4] dark:bg-[var(--border-hairline)] opacity-55 cursor-not-allowed"
+                        : "w-2 bg-[#aeb5c0] dark:bg-[var(--border-strong)] hover:bg-[var(--accent-primary)]/70 cursor-pointer"
                     }`}
                   />
                 );
@@ -702,7 +702,7 @@ export function ProductTour({
                 type="checkbox"
                 checked={dontShowAgain}
                 onChange={(e) => setDontShowAgain(e.target.checked)}
-                className="h-3.5 w-3.5 rounded border-[var(--border-strong)] accent-[var(--accent-primary)] cursor-pointer"
+                className="h-3.5 w-3.5 rounded accent-[var(--accent-primary)] cursor-pointer"
               />
               <span>不再自动弹出</span>
             </label>
@@ -710,20 +710,20 @@ export function ProductTour({
         </div>
 
         {/* Action Footer */}
-        <div className="flex items-center justify-between gap-2 border-t border-[var(--border-hairline)] bg-[var(--bg-subtle)]/65 px-4 py-2.5 rounded-b-xl">
+        <div className="neu-divider-t flex items-center justify-between gap-2 px-5 py-3.5 dark:bg-[var(--bg-subtle)]/65 dark:rounded-b-xl">
           {!isFirst ? (
             <button
               type="button"
               onClick={handlePrev}
               disabled={isStep1Loading}
-              className="btn-outline inline-flex items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-semibold cursor-pointer disabled:opacity-50"
+              className="btn-outline inline-flex items-center gap-1 px-3.5 py-2 text-xs font-medium cursor-pointer disabled:opacity-50"
             >
               <ArrowLeft className="h-3.5 w-3.5" />
               上一步
             </button>
           ) : (
             <span className="text-xs text-[var(--text-muted)]">
-              按 <kbd className="rounded border border-[var(--border-hairline)] bg-[var(--bg-surface)] px-1 py-0.5 font-mono-bio text-xs">Esc</kbd> 随时退出
+              按 <kbd className="neu-recessed rounded-md px-1.5 py-0.5 font-mono-bio text-xs">Esc</kbd> 随时退出
             </span>
           )}
 
@@ -731,7 +731,7 @@ export function ProductTour({
             type="button"
             onClick={handlePrimaryAction}
             disabled={isStep1Loading}
-            className="btn-primary inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-semibold cursor-pointer disabled:opacity-75 disabled:cursor-wait"
+            className="btn-primary inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold cursor-pointer disabled:opacity-75 disabled:cursor-wait"
           >
             {isFirst ? (
               isStep1Loading ? (

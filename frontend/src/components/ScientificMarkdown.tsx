@@ -33,7 +33,7 @@ function renderInline(text: string): React.ReactNode[] {
       nodes.push(
         <code
           key={`c-${keyIdx++}`}
-          className="mx-0.5 rounded border border-[var(--border-hairline)] bg-[var(--bg-subtle)] px-1.5 py-0.5 font-mono-bio text-[0.86em] font-semibold text-blue-700 dark:text-sky-300"
+          className="neu-recessed mx-0.5 rounded-md px-1.5 py-0.5 font-mono-bio text-[0.86em] font-medium text-accent"
         >
           {token.slice(1, -1)}
         </code>
@@ -72,10 +72,10 @@ export function ScientificMarkdown({
       const text = headingMatch[2];
       const headingClass =
         level === 1
-          ? "text-base font-bold text-[var(--text-primary)] pt-1"
+          ? "text-base font-semibold text-[var(--text-primary)] pt-1"
           : level === 2
-            ? "text-[0.98rem] font-bold text-[var(--text-primary)] pt-1"
-            : "text-sm font-bold text-blue-700 dark:text-sky-300 pt-0.5";
+            ? "text-[0.98rem] font-semibold text-[var(--text-primary)] pt-1"
+            : "text-sm font-semibold text-accent pt-0.5";
       elements.push(
         <h4 key={`h-${blockKey++}`} className={headingClass}>
           {renderInline(text)}

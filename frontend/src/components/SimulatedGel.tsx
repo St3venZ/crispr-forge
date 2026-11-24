@@ -121,32 +121,35 @@ export function SimulatedGel({
       : [];
 
   return (
-    <div className="bio-card flex h-full flex-col overflow-hidden rounded-xl">
+    <div className="bio-card flex h-full flex-col overflow-hidden">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--border-hairline)] px-5 py-4">
+      <div className="neu-divider-b flex flex-wrap items-center justify-between gap-2 px-6 py-4 dark:px-5">
         <div>
           <div className="flex items-center gap-2">
             <FlaskConical className="h-4 w-4 text-[var(--accent-primary)]" />
-            <h3 className="text-base font-bold text-[var(--text-primary)]">
+            <h3 className="font-display text-base text-[var(--text-primary)]">
               UV 模拟琼脂糖凝胶电泳 (In-Silico Gel)
             </h3>
           </div>
           <p className="mt-0.5 text-sm text-[var(--text-secondary)]">
             1.0% Agarose · 对数迁移模型 (log₁₀ bp) · WT/KO 条带差{" "}
-            <span className="font-mono-bio font-bold text-blue-700 dark:text-sky-300">
+            <span className="font-mono-bio font-semibold text-accent">
               Δ{verificationPrimers.band_diff_bp} bp
             </span>
           </p>
         </div>
 
-        <span className="inline-flex items-center gap-1.5 rounded-md border border-[var(--accent-border)] bg-[var(--accent-soft)] px-2.5 py-1 font-mono-bio text-xs font-bold text-blue-700 dark:text-sky-300">
+        <span className="neu-recessed inline-flex items-center gap-1.5 rounded-full dark:rounded-md px-3 py-1 font-mono-bio text-xs font-semibold text-accent">
           <Sparkles className="h-3.5 w-3.5" />
           KO 阳性 {verificationPrimers.ko_amplicon_bp} bp
         </span>
       </div>
 
-      {/* Obsidian UV Transilluminator Chamber */}
-      <div className="gel-chamber relative flex flex-1 flex-col justify-between p-4 sm:p-5 text-zinc-100">
+      {/* Light Mode: Recessed #e0e5ec Hardware Bezel wrapping 100%-preserved Dark UV Chamber */}
+      <div className="flex flex-1 flex-col p-4 sm:p-5 dark:p-0">
+        <div className="neu-recessed-deep flex flex-1 flex-col rounded-[22px] p-2.5 dark:rounded-none dark:border-0 dark:bg-transparent dark:p-0">
+          {/* Obsidian UV Transilluminator Chamber (100% Preserved Optical Box) */}
+          <div className="gel-chamber relative flex flex-1 flex-col justify-between rounded-[15px] dark:rounded-none p-4 sm:p-5 text-zinc-100">
         <div>
           <div className="mb-3 flex flex-wrap items-center justify-between gap-2 text-xs font-mono-bio text-zinc-300">
             <span className="inline-flex items-center gap-1.5">
@@ -405,6 +408,8 @@ export function SimulatedGel({
               </p>
             </div>
           )}
+        </div>
+      </div>
         </div>
       </div>
     </div>

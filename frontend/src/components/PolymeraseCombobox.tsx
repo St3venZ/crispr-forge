@@ -157,18 +157,18 @@ export function PolymeraseCombobox({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className={`flex w-full items-center justify-between gap-2 rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] text-left transition hover:border-[var(--border-strong)] focus:border-[var(--accent-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-soft)] cursor-pointer ${
-          compact ? "px-3 py-2" : "px-3.5 py-2.5"
+        className={`btn-outline flex w-full items-center justify-between gap-2 text-left cursor-pointer ${
+          compact ? "px-3.5 py-2.5" : "px-4 py-3"
         }`}
       >
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
             <FlaskConical className="h-4 w-4 shrink-0 text-[var(--accent-primary)]" />
-            <span className="truncate text-sm font-semibold text-[var(--text-primary)]">
+            <span className="truncate text-sm font-medium dark:font-semibold text-[var(--text-primary)]">
               {activeSpec.id}
             </span>
             {activeSpec.isCustom && (
-              <span className="rounded border border-[var(--accent-border)] bg-[var(--accent-soft)] px-1.5 py-0.5 text-xs font-semibold text-blue-700 dark:text-sky-300">
+              <span className="rounded-full dark:rounded bg-[var(--accent-soft)] px-2 py-0.5 text-xs font-medium text-accent dark:border dark:border-[var(--accent-border)]">
                 自定义
               </span>
             )}
@@ -177,7 +177,7 @@ export function PolymeraseCombobox({
             <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-[var(--text-muted)]">
               <span>{activeSpec.vendor}</span>
               <span>·</span>
-              <span className="font-mono-bio font-semibold text-blue-700 dark:text-sky-300">
+              <span className="font-mono-bio font-semibold text-accent">
                 {activeSpec.extension_sec_per_kb} s/kb
               </span>
               <span>·</span>
@@ -195,25 +195,25 @@ export function PolymeraseCombobox({
       </button>
 
       {open && (
-        <div className="absolute left-0 right-0 z-50 mt-2 min-w-[320px] max-w-[480px] overflow-hidden rounded-xl border border-[var(--border-hairline)] bg-[var(--bg-surface-elevated)] shadow-2xl dark:shadow-black/60">
+        <div className="neu-popover absolute left-0 right-0 z-50 mt-2.5 min-w-[320px] max-w-[480px] overflow-hidden">
           {!showCustomForm ? (
             <>
-              <div className="border-b border-[var(--border-hairline)] p-3">
+              <div className="neu-divider-b p-3.5">
                 <div className="relative">
-                  <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--text-muted)]" />
+                  <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--text-muted)]" />
                   <input
                     ref={searchRef}
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="搜索酶名、品牌、极速、高GC、诺唯赞、KOD、Q5..."
-                    className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)] py-2 pl-9 pr-8 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent-primary)] focus:bg-[var(--bg-surface)] focus:outline-none"
+                    className="neu-input w-full py-2.5 pl-10 pr-8 text-sm"
                   />
                   {query && (
                     <button
                       type="button"
                       onClick={() => setQuery("")}
-                      className="absolute right-2.5 top-1/2 -translate-y-1/2 rounded p-0.5 text-[var(--text-muted)] hover:text-[var(--text-primary)] cursor-pointer"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-0.5 text-[var(--text-muted)] hover:text-[var(--text-primary)] cursor-pointer"
                     >
                       <X className="h-3.5 w-3.5" />
                     </button>
@@ -221,10 +221,10 @@ export function PolymeraseCombobox({
                 </div>
               </div>
 
-              <div className="max-h-80 overflow-y-auto p-2 space-y-3">
+              <div className="max-h-80 overflow-y-auto p-2.5 space-y-3">
                 {filteredCustom.length > 0 && (
                   <div className="space-y-1">
-                    <div className="px-2.5 py-1 text-xs font-bold text-blue-700 dark:text-sky-300 flex items-center gap-1.5">
+                    <div className="px-2.5 py-1 text-xs font-semibold text-accent flex items-center gap-1.5">
                       <Sparkles className="h-3.5 w-3.5" />
                       我的自定义聚合酶 ({filteredCustom.length})
                     </div>
@@ -237,18 +237,18 @@ export function PolymeraseCombobox({
                             onChange(cfg.name, cfg);
                             setOpen(false);
                           }}
-                          className={`group flex items-start justify-between gap-2 rounded-lg px-3 py-2.5 transition cursor-pointer ${
+                          className={`group flex items-start justify-between gap-2 rounded-2xl dark:rounded-lg px-3 py-2.5 transition cursor-pointer ${
                             isSelected
-                              ? "bg-[var(--accent-soft)] ring-1 ring-[var(--accent-border)]"
-                              : "hover:bg-[var(--bg-subtle)]"
+                              ? "neu-recessed dark:bg-[var(--accent-soft)] dark:ring-1 dark:ring-[var(--accent-border)]"
+                              : "hover:bg-white/40 dark:hover:bg-[var(--bg-subtle)]"
                           }`}
                         >
                           <div className="min-w-0 space-y-0.5">
                             <div className="flex flex-wrap items-center gap-2">
-                              <span className="text-sm font-semibold text-[var(--text-primary)]">
+                              <span className="text-sm font-medium dark:font-semibold text-[var(--text-primary)]">
                                 {cfg.name}
                               </span>
-                              <span className="rounded border border-[var(--accent-border)] bg-[var(--accent-soft)] px-1.5 py-0.5 font-mono-bio text-xs font-semibold text-blue-700 dark:text-sky-300">
+                              <span className="rounded-full dark:rounded bg-[var(--accent-soft)] px-2 py-0.5 font-mono-bio text-xs font-medium text-accent dark:border dark:border-[var(--accent-border)]">
                                 {cfg.extension_sec_per_kb} s/kb
                               </span>
                               <span className="font-mono-bio text-xs text-[var(--text-muted)]">
@@ -276,7 +276,7 @@ export function PolymeraseCombobox({
                                   onChange(catalog[0].id, null);
                                 }
                               }}
-                              className="rounded-md p-1 text-[var(--text-muted)] hover:bg-rose-50 hover:text-rose-600 dark:hover:bg-rose-500/15 dark:hover:text-rose-400 cursor-pointer"
+                              className="rounded-xl dark:rounded-md p-1 text-[var(--text-muted)] hover:bg-[#ff6b6b]/15 hover:text-[#c93232] dark:hover:bg-rose-500/15 dark:hover:text-rose-400 cursor-pointer"
                               title="删除此自定义聚合酶"
                             >
                               <Trash2 className="h-3.5 w-3.5" />
@@ -290,7 +290,7 @@ export function PolymeraseCombobox({
 
                 {groupedBuiltIn.map(([vendor, items]) => (
                   <div key={vendor} className="space-y-1">
-                    <div className="px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">
+                    <div className="px-2.5 py-1 text-xs font-medium text-[var(--text-muted)]">
                       {vendor}
                     </div>
                     {items.map((item) => {
@@ -303,18 +303,18 @@ export function PolymeraseCombobox({
                             onChange(item.id, null);
                             setOpen(false);
                           }}
-                          className={`flex w-full items-start justify-between gap-2 rounded-lg px-3 py-2.5 text-left transition cursor-pointer ${
+                          className={`flex w-full items-start justify-between gap-2 rounded-2xl dark:rounded-lg px-3 py-2.5 text-left transition cursor-pointer ${
                             isSelected
-                              ? "bg-[var(--accent-soft)] ring-1 ring-[var(--accent-border)]"
-                              : "hover:bg-[var(--bg-subtle)]"
+                              ? "neu-recessed dark:bg-[var(--accent-soft)] dark:ring-1 dark:ring-[var(--accent-border)]"
+                              : "hover:bg-white/40 dark:hover:bg-[var(--bg-subtle)]"
                           }`}
                         >
                           <div className="min-w-0 space-y-1">
                             <div className="flex flex-wrap items-center gap-2">
-                              <span className="text-sm font-semibold text-[var(--text-primary)]">
+                              <span className="text-sm font-medium dark:font-semibold text-[var(--text-primary)]">
                                 {item.id}
                               </span>
-                              <span className="rounded border border-[var(--border-hairline)] bg-[var(--bg-subtle)] px-1.5 py-0.5 font-mono-bio text-xs font-semibold text-blue-700 dark:text-sky-300">
+                              <span className="neu-recessed rounded-full dark:rounded px-2 py-0.5 font-mono-bio text-xs font-medium text-accent">
                                 {item.extension_sec_per_kb} s/kb
                               </span>
                               <span className="font-mono-bio text-xs text-[var(--text-muted)]">
@@ -341,14 +341,14 @@ export function PolymeraseCombobox({
                 )}
               </div>
 
-              <div className="border-t border-[var(--border-hairline)] bg-[var(--bg-subtle)]/70 p-2.5">
+              <div className="neu-divider-t p-3 dark:bg-[var(--bg-subtle)]/70">
                 <button
                   type="button"
                   onClick={() => {
                     setDraft({ ...DEFAULT_CUSTOM_POLYMERASE });
                     setShowCustomForm(true);
                   }}
-                  className="btn-outline flex w-full items-center justify-center gap-2 rounded-lg border-dashed px-3 py-2 text-sm font-semibold text-blue-700 dark:text-sky-300 cursor-pointer"
+                  className="btn-outline flex w-full items-center justify-center gap-2 px-3 py-2.5 text-sm font-medium text-accent dark:border-dashed dark:font-semibold cursor-pointer"
                 >
                   <Plus className="h-4 w-4" />
                   自定义实验室聚合酶 (自动同步 PCR 程序)
@@ -356,15 +356,15 @@ export function PolymeraseCombobox({
               </div>
             </>
           ) : (
-            <form onSubmit={handleCreateCustom} className="p-4 space-y-3.5">
-              <div className="flex items-center justify-between border-b border-[var(--border-hairline)] pb-2.5">
-                <span className="text-sm font-bold text-[var(--text-primary)]">
+            <form onSubmit={handleCreateCustom} className="p-5 space-y-4">
+              <div className="neu-divider-b flex items-center justify-between pb-3">
+                <span className="text-sm font-semibold text-[var(--text-primary)]">
                   新增自定义实验室聚合酶
                 </span>
                 <button
                   type="button"
                   onClick={() => setShowCustomForm(false)}
-                  className="rounded-lg p-1 text-[var(--text-muted)] hover:bg-[var(--bg-subtle)] hover:text-[var(--text-primary)] cursor-pointer"
+                  className="rounded-full p-1 text-[var(--text-muted)] hover:text-[var(--text-primary)] cursor-pointer"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -372,7 +372,7 @@ export function PolymeraseCombobox({
 
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div>
-                  <label className="mb-1 block text-xs font-semibold text-[var(--text-secondary)]">
+                  <label className="mb-1.5 block text-xs font-medium text-[var(--text-secondary)]">
                     聚合酶名称 *
                   </label>
                   <input
@@ -383,11 +383,11 @@ export function PolymeraseCombobox({
                       setDraft((d) => ({ ...d, name: e.target.value }))
                     }
                     placeholder="如 ApexHF HS Master Mix"
-                    className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)] px-3 py-1.5 text-sm text-[var(--text-primary)] focus:border-[var(--accent-primary)] focus:bg-[var(--bg-surface)] focus:outline-none"
+                    className="neu-input w-full px-3.5 py-2 text-sm"
                   />
                 </div>
                 <div>
-                  <label className="mb-1 block text-xs font-semibold text-[var(--text-secondary)]">
+                  <label className="mb-1.5 block text-xs font-medium text-[var(--text-secondary)]">
                     品牌 / 厂商
                   </label>
                   <input
@@ -397,14 +397,14 @@ export function PolymeraseCombobox({
                       setDraft((d) => ({ ...d, vendor: e.target.value }))
                     }
                     placeholder="如 艾科瑞 / 诺唯赞 / 自制"
-                    className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)] px-3 py-1.5 text-sm text-[var(--text-primary)] focus:border-[var(--accent-primary)] focus:bg-[var(--bg-surface)] focus:outline-none"
+                    className="neu-input w-full px-3.5 py-2 text-sm"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                 <div>
-                  <label className="mb-1 block text-xs font-semibold text-[var(--text-secondary)]">
+                  <label className="mb-1.5 block text-xs font-medium text-[var(--text-secondary)]">
                     延伸速度 (s/kb)
                   </label>
                   <input
@@ -418,11 +418,11 @@ export function PolymeraseCombobox({
                         extension_sec_per_kb: Number(e.target.value) || 30,
                       }))
                     }
-                    className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)] px-2.5 py-1.5 font-mono-bio text-sm text-[var(--text-primary)]"
+                    className="neu-input w-full px-3 py-2 font-mono-bio text-sm"
                   />
                 </div>
                 <div>
-                  <label className="mb-1 block text-xs font-semibold text-[var(--text-secondary)]">
+                  <label className="mb-1.5 block text-xs font-medium text-[var(--text-secondary)]">
                     变性 (°C)
                   </label>
                   <input
@@ -437,11 +437,11 @@ export function PolymeraseCombobox({
                         denature_c: Number(e.target.value) || 98,
                       }))
                     }
-                    className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)] px-2.5 py-1.5 font-mono-bio text-sm text-[var(--text-primary)]"
+                    className="neu-input w-full px-3 py-2 font-mono-bio text-sm"
                   />
                 </div>
                 <div>
-                  <label className="mb-1 block text-xs font-semibold text-[var(--text-secondary)]">
+                  <label className="mb-1.5 block text-xs font-medium text-[var(--text-secondary)]">
                     延伸 (°C)
                   </label>
                   <input
@@ -456,11 +456,11 @@ export function PolymeraseCombobox({
                         ext_c: Number(e.target.value) || 72,
                       }))
                     }
-                    className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)] px-2.5 py-1.5 font-mono-bio text-sm text-[var(--text-primary)]"
+                    className="neu-input w-full px-3 py-2 font-mono-bio text-sm"
                   />
                 </div>
                 <div>
-                  <label className="mb-1 block text-xs font-semibold text-[var(--text-secondary)]">
+                  <label className="mb-1.5 block text-xs font-medium text-[var(--text-secondary)]">
                     退火偏移 (°C)
                   </label>
                   <input
@@ -475,22 +475,22 @@ export function PolymeraseCombobox({
                         anneal_offset_c: Number(e.target.value),
                       }))
                     }
-                    className="w-full rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-subtle)] px-2.5 py-1.5 font-mono-bio text-sm text-[var(--text-primary)]"
+                    className="neu-input w-full px-3 py-2 font-mono-bio text-sm"
                   />
                 </div>
               </div>
 
-              <div className="flex items-center justify-end gap-2 pt-1">
+              <div className="flex items-center justify-end gap-3 pt-1">
                 <button
                   type="button"
                   onClick={() => setShowCustomForm(false)}
-                  className="btn-outline rounded-lg px-3 py-1.5 text-xs font-semibold cursor-pointer"
+                  className="btn-outline px-3.5 py-2 text-xs font-medium cursor-pointer"
                 >
                   返回列表
                 </button>
                 <button
                   type="submit"
-                  className="btn-primary inline-flex items-center gap-1.5 rounded-lg px-4 py-1.5 text-xs font-semibold cursor-pointer"
+                  className="btn-primary inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold cursor-pointer"
                 >
                   <Check className="h-3.5 w-3.5" />
                   保存并使用
