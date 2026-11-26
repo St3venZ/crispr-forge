@@ -266,10 +266,10 @@ export function StrainSearchCombobox({
                     >
                       <div className="min-w-0 space-y-0.5">
                         <div className="flex flex-wrap items-center gap-2">
-                          <span className="neu-recessed rounded-full dark:rounded px-2 py-0.5 font-mono-bio text-xs font-semibold text-accent">
+                          <span className="neu-recessed rounded-full dark:rounded px-2 py-0.5 font-mono-bio text-xs font-bold text-accent">
                             {item.accession}
                           </span>
-                          <span className="text-sm font-semibold text-[var(--text-primary)] truncate">
+                          <span className="text-sm font-bold text-[var(--text-primary)] truncate">
                             {item.organism}
                           </span>
                           {mb && (

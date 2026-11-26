@@ -224,7 +224,7 @@ export function VerificationGate({
               </div>
               <div className="space-y-2 min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-sm font-semibold text-[var(--text-primary)]">
+                  <span className="text-sm font-bold text-[var(--text-primary)]">
                     科学专家设计解读与防坑摘要
                   </span>
                   <span className="neu-recessed rounded-full px-2.5 py-0.5 text-xs font-medium text-[var(--text-muted)]">
@@ -240,10 +240,10 @@ export function VerificationGate({
         {/* 12-Point Interactive Verification Grid (Low-radius tiles, airy 16px gap) */}
         <div className="p-6 sm:p-8">
           <div className="mb-5 flex flex-wrap items-center justify-between gap-2">
-            <h3 className="text-sm font-semibold text-[var(--text-primary)]">
+            <h3 className="text-sm font-bold text-[var(--text-primary)]">
               12 点零信任硅片核验明细（点击任意卡片查看“防范了什么湿实验坑”）
             </h3>
-            <div className="flex items-center gap-4 font-mono-bio text-xs font-semibold">
+            <div className="flex items-center gap-4 font-mono-bio text-xs font-bold">
               <span className="text-mint">
                 PASS {report.passed_count}
               </span>

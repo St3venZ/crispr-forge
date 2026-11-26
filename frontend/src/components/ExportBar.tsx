@@ -92,7 +92,7 @@ export function ExportBar({ design }: ExportBarProps) {
 
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-wrap items-center gap-2.5 text-sm text-[var(--text-secondary)] shrink-0">
-            <span className="neu-recessed inline-flex items-center rounded-full px-3 py-1 font-mono-bio text-sm font-semibold text-accent whitespace-nowrap">
+            <span className="neu-recessed inline-flex items-center rounded-full px-3 py-1 font-mono-bio text-sm font-bold text-accent whitespace-nowrap">
               Δ{design.locus.gene_name}
             </span>
             <span className="font-mono-bio text-xs font-medium text-[var(--text-muted)] whitespace-nowrap">
@@ -112,7 +112,7 @@ export function ExportBar({ design }: ExportBarProps) {
               type="button"
               disabled={loadingFmt !== null}
               onClick={() => handleDownload("bundle_zip")}
-              className="btn-primary inline-flex items-center gap-1.5 whitespace-nowrap px-4 py-2 text-xs sm:text-sm font-semibold cursor-pointer"
+              className="btn-primary inline-flex items-center gap-1.5 whitespace-nowrap px-4 py-2 text-xs sm:text-sm font-bold cursor-pointer"
             >
               {loadingFmt === "bundle_zip" ? (
                 <Loader2 className="h-4 w-4 animate-spin" />

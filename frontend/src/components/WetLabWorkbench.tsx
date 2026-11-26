@@ -166,7 +166,7 @@ export function WetLabWorkbench({
                 </h3>
                 {/* PRESERVED Vivid Coral Alert Badge (Day & Night) */}
                 {totalAlerts > 0 && (
-                  <span className="neu-badge-coral inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold">
+                  <span className="neu-badge-coral inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold">
                     <AlertTriangle className="h-3.5 w-3.5" />
                     {totalAlerts} 项 &lt; 0.5 μL 预稀释警报
                   </span>
@@ -181,7 +181,7 @@ export function WetLabWorkbench({
               type="button"
               disabled={isRecalculating}
               onClick={() => onRecalculate(buildCalcRequest())}
-              className="btn-primary inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold cursor-pointer"
+              className="btn-primary inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold cursor-pointer"
             >
               {isRecalculating ? (
                 <>
@@ -374,10 +374,10 @@ export function WetLabWorkbench({
                     <div className="neu-divider-b flex items-start justify-between gap-2 px-5 py-4">
                       <div className="space-y-1">
                         <div className="flex items-center gap-2.5">
-                          <span className="neu-recessed flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-mono-bio text-xs font-semibold text-accent">
+                          <span className="neu-recessed flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-mono-bio text-xs font-bold text-accent">
                             {rIdx + 1}
                           </span>
-                          <h4 className="text-sm font-semibold text-[var(--text-primary)]">
+                          <h4 className="text-sm font-bold text-[var(--text-primary)]">
                             {rxn.title}
                           </h4>
                         </div>
@@ -387,7 +387,7 @@ export function WetLabWorkbench({
                           </p>
                         )}
                       </div>
-                      <span className="neu-recessed shrink-0 rounded-full px-3 py-1 font-mono-bio text-xs font-semibold text-accent">
+                      <span className="neu-recessed shrink-0 rounded-full px-3 py-1 font-mono-bio text-xs font-bold text-accent">
                         总体系 {rxn.total_volume_ul.toFixed(1)} μL
                       </span>
                     </div>
@@ -396,7 +396,7 @@ export function WetLabWorkbench({
                     {alerts.length > 0 && (
                       <div className="px-4 pt-4">
                         <div className="neu-alert-coral px-4 py-3.5 space-y-1.5">
-                          <div className="flex items-center gap-1.5 text-xs font-semibold text-coral">
+                          <div className="flex items-center gap-1.5 text-xs font-bold text-coral">
                             <AlertTriangle className="h-4 w-4 text-[#ff6b6b] shrink-0" />
                             <span>
                               微量移液误差警报 (&lt; 0.5 μL) · 请务必先做预稀释！

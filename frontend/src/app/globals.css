@@ -3,8 +3,8 @@
 @custom-variant dark (&:is(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *));
 
 @theme {
-  --font-display: "Newsreader", "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, serif;
-  --font-sans: "DM Sans", "Noto Sans SC", "PingFang SC", "HarmonyOS Sans SC", "Source Han Sans SC", "Segoe UI Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Newsreader", "Noto Serif SC", "Source Han Serif SC", "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  --font-sans: "DM Sans", "Noto Sans SC", "PingFang SC", "HarmonyOS Sans SC", "Source Han Sans SC", "Microsoft YaHei UI", "Microsoft YaHei", "Segoe UI Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: "IBM Plex Mono", "Cascadia Code", Consolas, ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
 }
 
@@ -13,40 +13,43 @@
    ============================================================================ */
 :root,
 :root[data-theme="light"] {
-  --bg-canvas: #e0e5ec;
-  --bg-surface: #e0e5ec;
-  --bg-surface-elevated: #e0e5ec;
-  --bg-subtle: #e0e5ec;
-  --bg-rail: #e0e5ec;
-  --bg-topbar: rgba(224, 229, 236, 0.94);
-  --bg-hover-tint: rgba(255, 255, 255, 0.36);
+  --bg-canvas: #dce2eb;
+  --bg-surface: #edf1f7;
+  --bg-surface-elevated: #f3f6fb;
+  --bg-subtle: #d4dce7;
+  --bg-rail: #e1e6ef;
+  --bg-topbar: rgba(225, 230, 239, 0.94);
+  --bg-hover-tint: rgba(255, 255, 255, 0.48);
 
-  --border-hairline: rgba(184, 188, 194, 0.44);
-  --border-strong: rgba(163, 170, 182, 0.65);
+  --border-hairline: rgba(164, 174, 190, 0.42);
+  --border-strong: rgba(145, 156, 175, 0.65);
 
-  --neu-raised: 8px 8px 16px #b8bcc2, -8px -8px 16px #ffffff;
-  --neu-raised-sm: 5px 5px 10px #b8bcc2, -5px -5px 10px #ffffff;
-  --neu-raised-xs: 3px 3px 6px #b8bcc2, -3px -3px 6px #ffffff;
-  --neu-hover: 4px 4px 8px #b8bcc2, -4px -4px 8px #ffffff;
-  --neu-tile: 4px 4px 8px #b8bcc2, -4px -4px 8px #ffffff;
-  --neu-tile-hover: 2px 2px 5px #b8bcc2, -2px -2px 5px #ffffff;
-  --neu-recessed: inset 8px 8px 16px #b8bcc2, inset -8px -8px 16px #ffffff;
-  --neu-recessed-sm: inset 4px 4px 8px #b8bcc2, inset -4px -4px 8px #ffffff;
-  --neu-pressed: inset 5px 5px 10px #b8bcc2, inset -5px -5px 10px #ffffff;
-  --neu-focus: inset 8px 8px 16px rgba(109, 93, 252, 0.30), inset -8px -8px 16px #ffffff;
-  --neu-popover-shadow: 10px 10px 22px #b2b7be, -8px -8px 18px #ffffff;
-  --neu-topbar-shadow: 0 6px 14px -4px rgba(184, 188, 194, 0.55);
-  --neu-sidebar-shadow: 6px 0 16px -6px rgba(184, 188, 194, 0.45);
-  --neu-thumb-shadow: 4px 4px 8px rgba(109, 93, 252, 0.38), -3px -3px 7px #ffffff;
-  --neu-thumb-hover: 3px 3px 6px rgba(109, 93, 252, 0.48), -2px -2px 5px #ffffff;
-  --neu-coral-shadow: 3px 3px 7px rgba(255, 107, 107, 0.40), -2px -2px 5px #ffffff;
-  --neu-knob-off-shadow: 3px 3px 6px #b8bcc2, -3px -3px 6px #ffffff;
+  --neu-raised: 8px 8px 18px #b7c0ce, -7px -7px 16px #ffffff;
+  --neu-raised-sm: 5px 5px 11px #b7c0ce, -4px -4px 10px #ffffff;
+  --neu-raised-xs: 3px 3px 7px #b7c0ce, -2px -2px 6px #ffffff;
+  --neu-hover: 4px 4px 10px #b7c0ce, -4px -4px 10px #ffffff;
+  --neu-tile: 4px 4px 10px #b9c2cf, -4px -4px 10px #ffffff;
+  --neu-tile-hover: 2px 2px 6px #b9c2cf, -2px -2px 6px #ffffff;
+  --neu-recessed: inset 6px 6px 12px #b6bfcc, inset -6px -6px 12px #f6f8fc;
+  --neu-recessed-sm: inset 4px 4px 8px #b6bfcc, inset -4px -4px 8px #f6f8fc;
+  --neu-pressed: inset 5px 5px 10px #b6bfcc, inset -5px -5px 10px #f6f8fc;
+  --neu-focus: inset 6px 6px 12px rgba(109, 93, 252, 0.28), inset -6px -6px 12px #f6f8fc, 0 0 0 1.5px rgba(109, 93, 252, 0.35);
+  --neu-popover-shadow: 12px 12px 24px #b2bac7, -8px -8px 18px #ffffff;
+  --neu-topbar-shadow: 0 6px 14px -4px rgba(168, 178, 194, 0.55);
+  --neu-sidebar-shadow: 6px 0 16px -6px rgba(168, 178, 194, 0.48);
+  --neu-thumb-shadow: 4px 4px 8px rgba(109, 93, 252, 0.40), -3px -3px 7px #ffffff;
+  --neu-thumb-hover: 3px 3px 6px rgba(109, 93, 252, 0.50), -2px -2px 5px #ffffff;
+  --neu-coral-shadow: 3px 3px 8px rgba(255, 107, 107, 0.40), -2px -2px 5px #ffffff;
+  --neu-knob-off-shadow: 3px 3px 6px #b7c0ce, -3px -3px 6px #ffffff;
   --neu-knob-on-shadow: 3px 3px 6px rgba(109, 93, 252, 0.42), -2px -2px 5px #ffffff;
-  --neu-dot-off: #b8bcc2;
+  --neu-dot-off: #b8c1cf;
+  --neu-cta-shadow: 6px 6px 14px rgba(93, 76, 240, 0.34), -4px -4px 10px rgba(255, 255, 255, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  --neu-cta-hover: 4px 4px 12px rgba(93, 76, 240, 0.44), -3px -3px 8px rgba(255, 255, 255, 0.90), inset 0 1px 0 rgba(255, 255, 255, 0.32);
+  --neu-cta-pressed: inset 3px 3px 8px rgba(42, 31, 145, 0.45), 2px 2px 6px rgba(93, 76, 240, 0.25);
 
-  --text-primary: #3d4451;
-  --text-secondary: #525b6a;
-  --text-muted: #6b7280;
+  --text-primary: #333a46;
+  --text-secondary: #4a5362;
+  --text-muted: #5d6676;
 
   --primary: #6d5dfc;
   --primary-hover: #5445db;
@@ -109,36 +112,39 @@
    ============================================================================ */
 :root[data-theme="dark"],
 .dark {
-  --bg-canvas: #1e222b;
-  --bg-surface: #1e222b;
-  --bg-surface-elevated: #1e222b;
-  --bg-subtle: #1e222b;
-  --bg-rail: #1e222b;
-  --bg-topbar: rgba(30, 34, 43, 0.94);
-  --bg-hover-tint: rgba(255, 255, 255, 0.045);
+  --bg-canvas: #181b23;
+  --bg-surface: #222734;
+  --bg-surface-elevated: #282e3d;
+  --bg-subtle: #151820;
+  --bg-rail: #1b1f29;
+  --bg-topbar: rgba(27, 31, 41, 0.94);
+  --bg-hover-tint: rgba(255, 255, 255, 0.05);
 
-  --border-hairline: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.15);
+  --border-hairline: rgba(255, 255, 255, 0.085);
+  --border-strong: rgba(255, 255, 255, 0.16);
 
-  --neu-raised: 8px 8px 18px #11141b, -6px -6px 14px #2b3140;
-  --neu-raised-sm: 5px 5px 11px #11141b, -4px -4px 9px #2b3140;
-  --neu-raised-xs: 3px 3px 7px #11141b, -2px -2px 6px #2b3140;
-  --neu-hover: 4px 4px 9px #11141b, -3px -3px 7px #2b3140;
-  --neu-tile: 4px 4px 10px #11141b, -3px -3px 8px #292f3d;
-  --neu-tile-hover: 2px 2px 6px #11141b, -2px -2px 5px #292f3d;
-  --neu-recessed: inset 7px 7px 14px #11141b, inset -6px -6px 12px #2a303e;
-  --neu-recessed-sm: inset 4px 4px 9px #11141b, inset -4px -4px 8px #2a303e;
-  --neu-pressed: inset 5px 5px 11px #11141b, inset -5px -5px 10px #2a303e;
-  --neu-focus: inset 6px 6px 12px rgba(139, 125, 255, 0.34), inset -5px -5px 10px #2b3140, 0 0 0 1px rgba(139, 125, 255, 0.42);
-  --neu-popover-shadow: 12px 12px 26px #0d1016, -8px -8px 20px #2b3140;
-  --neu-topbar-shadow: 0 6px 16px -4px rgba(10, 12, 18, 0.72);
-  --neu-sidebar-shadow: 6px 0 18px -6px rgba(10, 12, 18, 0.65);
-  --neu-thumb-shadow: 4px 4px 10px rgba(139, 125, 255, 0.45), -2px -2px 6px #2b3140;
-  --neu-thumb-hover: 3px 3px 8px rgba(139, 125, 255, 0.60), -2px -2px 5px #2b3140;
-  --neu-coral-shadow: 3px 3px 8px rgba(255, 107, 107, 0.38), -2px -2px 6px #2b3140;
-  --neu-knob-off-shadow: 3px 3px 7px #11141b, -2px -2px 6px #2b3140;
-  --neu-knob-on-shadow: 3px 3px 8px rgba(139, 125, 255, 0.48), -2px -2px 5px #2b3140;
+  --neu-raised: 8px 8px 18px #0c0e14, -6px -6px 14px #2c3344;
+  --neu-raised-sm: 5px 5px 11px #0c0e14, -4px -4px 9px #2c3344;
+  --neu-raised-xs: 3px 3px 7px #0c0e14, -2px -2px 6px #2c3344;
+  --neu-hover: 4px 4px 10px #0c0e14, -3px -3px 8px #2c3344;
+  --neu-tile: 4px 4px 10px #0d1017, -3px -3px 8px #2a3141;
+  --neu-tile-hover: 2px 2px 6px #0d1017, -2px -2px 5px #2a3141;
+  --neu-recessed: inset 6px 6px 13px #0c0e14, inset -5px -5px 11px #272d3c;
+  --neu-recessed-sm: inset 4px 4px 9px #0c0e14, inset -3px -3px 7px #272d3c;
+  --neu-pressed: inset 5px 5px 11px #0c0e14, inset -4px -4px 9px #272d3c;
+  --neu-focus: inset 6px 6px 12px rgba(139, 125, 255, 0.34), inset -5px -5px 10px #272d3c, 0 0 0 1.5px rgba(139, 125, 255, 0.45);
+  --neu-popover-shadow: 12px 12px 26px #090b10, -8px -8px 20px #2c3344;
+  --neu-topbar-shadow: 0 6px 16px -4px rgba(9, 11, 16, 0.75);
+  --neu-sidebar-shadow: 6px 0 18px -6px rgba(9, 11, 16, 0.68);
+  --neu-thumb-shadow: 4px 4px 10px rgba(139, 125, 255, 0.45), -2px -2px 6px #2c3344;
+  --neu-thumb-hover: 3px 3px 8px rgba(139, 125, 255, 0.60), -2px -2px 5px #2c3344;
+  --neu-coral-shadow: 3px 3px 8px rgba(255, 107, 107, 0.38), -2px -2px 6px #2c3344;
+  --neu-knob-off-shadow: 3px 3px 7px #0c0e14, -2px -2px 6px #2c3344;
+  --neu-knob-on-shadow: 3px 3px 8px rgba(139, 125, 255, 0.48), -2px -2px 5px #2c3344;
   --neu-dot-off: #3f4759;
+  --neu-cta-shadow: 6px 6px 16px rgba(9, 11, 16, 0.72), -3px -3px 10px rgba(139, 125, 255, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  --neu-cta-hover: 4px 4px 14px rgba(139, 125, 255, 0.35), -3px -3px 10px rgba(139, 125, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.26);
+  --neu-cta-pressed: inset 3px 3px 9px rgba(15, 12, 56, 0.65), 2px 2px 8px rgba(139, 125, 255, 0.20);
 
   --text-primary: #e7ebf3;
   --text-secondary: #b6bfce;
@@ -218,13 +224,13 @@
     transition: background-color 200ms ease-out, color 200ms ease-out;
   }
 
-  /* Unified refined weight ceiling (400 / 500 / 600) across BOTH Light & Dark */
+  /* Crisp Bold Hierarchy across BOTH Light & Dark */
   h1,
   h2,
   h3,
   h4,
   .font-bold {
-    font-weight: 600;
+    font-weight: 700;
   }
 
   button:focus-visible,
@@ -240,7 +246,7 @@
 /* Unified Editorial Display Typography (Identical in Light & Dark!) */
 .font-display {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.015em;
 }
 
@@ -297,14 +303,14 @@
 
 /* Recessed Concave Wells (Segmented Tracks, Advanced Tray, Inspector HUD) */
 .neu-recessed {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-subtle);
   border: none;
   box-shadow: var(--neu-recessed-sm);
   transition: box-shadow 200ms ease-out, background-color 200ms ease-out;
 }
 
 .neu-recessed-deep {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-subtle);
   border: none;
   box-shadow: var(--neu-recessed);
   transition: box-shadow 200ms ease-out, background-color 200ms ease-out;
@@ -320,7 +326,7 @@
 
 /* Tactile Concave Inputs (16px radius + Luminous Blurple focus shadow) */
 .neu-input {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-subtle);
   border: none;
   border-radius: 16px;
   box-shadow: var(--neu-recessed-sm);
@@ -344,24 +350,26 @@
   color: #e7ebf3;
 }
 
-/* Primary CTA Button: Raised Tactile Blurple-Text Extrusion (Day & Night) */
+/* Primary CTA Button: High-Contrast Solid Tactile Blurple Button (Day & Night) */
 .btn-primary {
-  background-color: var(--bg-surface);
-  color: var(--accent-text);
+  background: linear-gradient(135deg, var(--accent-primary) 0%, #5847eb 100%);
+  color: #ffffff;
   border: none;
   border-radius: 16px;
-  font-weight: 600;
-  box-shadow: var(--neu-raised);
-  transition: box-shadow 200ms ease-out, color 200ms ease-out, opacity 160ms ease;
+  font-weight: 700;
+  box-shadow: var(--neu-cta-shadow);
+  transition: box-shadow 180ms ease-out, transform 180ms ease-out, filter 180ms ease-out, opacity 160ms ease;
 }
 
 .btn-primary:hover:not(:disabled) {
-  box-shadow: var(--neu-hover);
-  color: var(--primary-hover);
+  box-shadow: var(--neu-cta-hover);
+  transform: translateY(-1px);
+  filter: brightness(1.06);
 }
 
 .btn-primary:active:not(:disabled) {
-  box-shadow: var(--neu-pressed);
+  box-shadow: var(--neu-cta-pressed);
+  transform: translateY(0);
 }
 
 .btn-primary:disabled {
@@ -412,14 +420,16 @@
 .neu-pill[data-active="true"] {
   box-shadow: var(--neu-recessed-sm);
   color: var(--accent-text);
+  font-weight: 700;
 }
 
 /* Segmented Control Active Thumb inside a .neu-recessed Track */
 .neu-seg-active {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-surface-elevated);
   color: var(--accent-text);
   border-radius: 999px;
-  box-shadow: var(--neu-hover);
+  box-shadow: var(--neu-raised-xs);
+  font-weight: 700;
 }
 
 /* Top Navigation Bar & Left Rail (Unified Surface in Day & Night) */
@@ -492,9 +502,15 @@
 input[type="range"].precision-range {
   -webkit-appearance: none;
   appearance: none;
-  height: 10px;
+  height: 8px;
   border-radius: 9999px;
-  background: var(--bg-surface) !important;
+  background: linear-gradient(
+    to right,
+    var(--accent-primary) 0%,
+    var(--accent-primary) var(--range-pct, 50%),
+    var(--bg-subtle) var(--range-pct, 50%),
+    var(--bg-subtle) 100%
+  );
   box-shadow: var(--neu-recessed-sm);
   outline: none;
 }

@@ -232,7 +232,7 @@ export function SideOutlineNav({
       >
         <div className="flex-1 overflow-y-auto px-3 py-5 space-y-2">
           {!collapsed && (
-            <div className="px-3 pb-2 text-xs font-medium text-[var(--text-muted)]">
+            <div className="px-3 pb-2 text-xs font-bold text-[var(--text-muted)]">
               工作台大纲
             </div>
           )}
@@ -263,10 +263,14 @@ export function SideOutlineNav({
                   />
                   {!collapsed && (
                     <div className="flex items-baseline gap-1.5 min-w-0">
-                      <span className="font-mono-bio text-xs text-[var(--text-muted)]">
+                      <span className="font-mono-bio text-xs font-semibold text-[var(--text-muted)]">
                         {item.num}
                       </span>
-                      <span className="truncate text-sm font-medium">
+                      <span
+                        className={`truncate text-sm ${
+                          isActive ? "font-bold" : "font-semibold"
+                        }`}
+                      >
                         {item.label}
                       </span>
                     </div>
@@ -299,7 +303,7 @@ export function SideOutlineNav({
               disabled={downloadingZip}
               onClick={handleQuickZip}
               title="一键下载完整实验包 (.zip)"
-              className="btn-primary flex w-full items-center justify-center gap-2 px-3 py-2.5 text-sm font-semibold cursor-pointer"
+              className="btn-primary flex w-full items-center justify-center gap-2 px-3 py-2.5 text-sm font-bold cursor-pointer"
             >
               {downloadingZip ? (
                 <Loader2 className="h-4 w-4 animate-spin shrink-0" />

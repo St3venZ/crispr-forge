@@ -84,6 +84,62 @@ interface UploadedFileState {
   content: string;
 }
 
+interface PlasmidVisualTheme {
+  stripeColor: string;
+  dotColor: string;
+  selectedBorder: string;
+  selectedTint: string;
+  pillBg: string;
+  titleColorClass: string;
+  pillTextClass: string;
+}
+
+const PLASMID_VISUAL_THEMES: Record<string, PlasmidVisualTheme> = {
+  "pEcCas/pEcgRNA": {
+    stripeColor: "#6d5dfc",
+    dotColor: "#6d5dfc",
+    selectedBorder: "rgba(109, 93, 252, 0.52)",
+    selectedTint: "rgba(109, 93, 252, 0.08)",
+    pillBg: "rgba(109, 93, 252, 0.12)",
+    titleColorClass: "text-[#5445db] dark:text-[#a59aff]",
+    pillTextClass: "text-[#5445db] dark:text-[#c4bcff]",
+  },
+  "pCas/pTargetF": {
+    stripeColor: "#0ea5e9",
+    dotColor: "#0ea5e9",
+    selectedBorder: "rgba(14, 165, 233, 0.56)",
+    selectedTint: "rgba(14, 165, 233, 0.09)",
+    pillBg: "rgba(14, 165, 233, 0.13)",
+    titleColorClass: "text-[#0284c7] dark:text-[#38bdf8]",
+    pillTextClass: "text-[#0369a1] dark:text-[#7dd3fc]",
+  },
+  pJOE8999: {
+    stripeColor: "#d97706",
+    dotColor: "#f59e0b",
+    selectedBorder: "rgba(217, 119, 6, 0.55)",
+    selectedTint: "rgba(217, 119, 6, 0.09)",
+    pillBg: "rgba(217, 119, 6, 0.13)",
+    titleColorClass: "text-[#b45309] dark:text-[#fbbf24]",
+    pillTextClass: "text-[#b45309] dark:text-[#fcd34d]",
+  },
+  custom: {
+    stripeColor: "#10b981",
+    dotColor: "#10b981",
+    selectedBorder: "rgba(16, 185, 129, 0.55)",
+    selectedTint: "rgba(16, 185, 129, 0.09)",
+    pillBg: "rgba(16, 185, 129, 0.13)",
+    titleColorClass: "text-[#047857] dark:text-[#34d399]",
+    pillTextClass: "text-[#047857] dark:text-[#6ee7b7]",
+  },
+};
+
+function getDemoChipDotColor(chip: DemoExampleChip): string {
+  if (chip.plasmid_system === "pJOE8999") return "#d97706";
+  if (chip.plasmid_system === "custom") return "#10b981";
+  if (chip.plasmid_system === "pCas/pTargetF") return "#0ea5e9";
+  return "#6d5dfc";
+}
+
 export function DesignComposer({
   plasmids,
   polymerases,
@@ -450,12 +506,12 @@ export function DesignComposer({
 
             <div className="flex flex-wrap xl:flex-nowrap items-center gap-x-2.5 gap-y-1 text-sm min-w-0">
               <span
-                className="font-semibold text-[var(--text-primary)] truncate max-w-[165px] 2xl:max-w-[260px]"
+                className="font-bold text-[var(--text-primary)] truncate max-w-[165px] 2xl:max-w-[260px]"
                 title={design.locus.organism}
               >
                 {design.locus.organism}
               </span>
-              <span className="neu-recessed rounded-full px-2.5 py-0.5 font-mono-bio text-xs font-semibold text-accent whitespace-nowrap shrink-0">
+              <span className="neu-recessed rounded-full px-2.5 py-0.5 font-mono-bio text-xs font-bold text-accent whitespace-nowrap shrink-0">
                 Δ{design.locus.gene_name}
               </span>
               <span className="font-mono-bio text-xs font-medium text-[var(--text-secondary)] whitespace-nowrap shrink-0">
@@ -526,6 +582,7 @@ export function DesignComposer({
         <div className="flex flex-wrap items-center justify-center gap-3">
           {DEMO_CHIPS.map((chip) => {
             const isActive = activeChipId === chip.id;
+            const dotColor = getDemoChipDotColor(chip);
             return (
               <button
                 key={chip.id}
@@ -535,11 +592,15 @@ export function DesignComposer({
                 onClick={() => handleRunDemoChip(chip)}
                 className="neu-pill inline-flex items-center gap-2 px-4 py-2 text-sm cursor-pointer disabled:opacity-55 disabled:cursor-not-allowed"
               >
-                <span className="font-medium text-[var(--text-primary)]">
+                <span
+                  className="h-2 w-2 rounded-full shrink-0"
+                  style={{ backgroundColor: dotColor }}
+                />
+                <span className="font-bold text-[var(--text-primary)]">
                   {chip.label}
                 </span>
                 <span className="text-[var(--border-strong)]">·</span>
-                <span className="font-mono-bio text-xs font-medium text-accent">
+                <span className="font-mono-bio text-xs font-semibold text-accent">
                   {chip.sublabel}
                 </span>
               </button>
@@ -621,8 +682,8 @@ export function DesignComposer({
               {/* Step 1: Strain / Sequence Source */}
               <div className="space-y-3.5">
                 <div className="flex flex-wrap items-center justify-between gap-3">
-                  <label className="flex items-center gap-2.5 text-sm font-semibold text-[var(--text-primary)]">
-                    <span className="neu-recessed flex h-7 w-7 items-center justify-center rounded-full text-xs font-semibold text-accent font-mono-bio">
+                  <label className="flex items-center gap-2.5 text-[15px] font-bold text-[var(--text-primary)]">
+                    <span className="neu-recessed flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold text-accent font-mono-bio">
                       1
                     </span>
                     菌株与基因组序列来源
@@ -800,8 +861,8 @@ export function DesignComposer({
 
               {/* Step 2: Target Gene / Locus Tag */}
               <div className="space-y-3">
-                <label className="flex items-center gap-2.5 text-sm font-semibold text-[var(--text-primary)]">
-                  <span className="neu-recessed flex h-7 w-7 items-center justify-center rounded-full text-xs font-semibold text-accent font-mono-bio">
+                <label className="flex items-center gap-2.5 text-[15px] font-bold text-[var(--text-primary)]">
+                  <span className="neu-recessed flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold text-accent font-mono-bio">
                     2
                   </span>
                   目标基因名 / Locus Tag
@@ -837,8 +898,8 @@ export function DesignComposer({
 
               {/* Step 3: 2x2 Tactile Plasmid System Visual Selector (>= 24px gap, Day & Night) */}
               <div className="space-y-4">
-                <label className="flex items-center gap-2.5 text-sm font-semibold text-[var(--text-primary)]">
-                  <span className="neu-recessed flex h-7 w-7 items-center justify-center rounded-full text-xs font-semibold text-accent font-mono-bio">
+                <label className="flex items-center gap-2.5 text-[15px] font-bold text-[var(--text-primary)]">
+                  <span className="neu-recessed flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold text-accent font-mono-bio">
                     3
                   </span>
                   CRISPR 质粒体系（自动适配粘性末端 / 反向 PCR 与消除流程）
@@ -847,35 +908,55 @@ export function DesignComposer({
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   {plasmidList.map((p) => {
                     const active = plasmidSystem === p.id;
+                    const theme =
+                      PLASMID_VISUAL_THEMES[p.id] ?? PLASMID_VISUAL_THEMES.custom;
                     return (
                       <button
                         key={p.id}
                         type="button"
                         data-selected={active}
                         onClick={() => setPlasmidSystem(p.id)}
-                        className="neu-card-interactive flex flex-col justify-between p-5 text-left cursor-pointer"
+                        style={{
+                          backgroundImage: active
+                            ? `linear-gradient(${theme.selectedTint}, ${theme.selectedTint})`
+                            : undefined,
+                          border: active
+                            ? `1.5px solid ${theme.selectedBorder}`
+                            : "1.5px solid transparent",
+                        }}
+                        className="neu-card-interactive relative flex flex-col justify-between overflow-hidden p-5 pl-6 text-left cursor-pointer"
                       >
+                        <span
+                          aria-hidden="true"
+                          className="absolute left-0 top-3.5 bottom-3.5 w-1 rounded-r-full"
+                          style={{ backgroundColor: theme.stripeColor }}
+                        />
                         <div className="space-y-1.5">
                           <div className="flex items-center justify-between gap-2">
                             <span
-                              className={`text-sm font-semibold ${
-                                active ? "text-accent" : "text-[var(--text-primary)]"
+                              className={`text-[15px] font-bold ${
+                                active
+                                  ? theme.titleColorClass
+                                  : "text-[var(--text-primary)]"
                               }`}
                             >
                               {p.short_label}
                             </span>
                             <div className="flex items-center gap-2">
                               {p.id === "custom" && (
-                                <Wrench className="h-4 w-4 text-[var(--accent-primary)] shrink-0" />
+                                <Wrench
+                                  className="h-4 w-4 shrink-0"
+                                  style={{ color: theme.stripeColor }}
+                                />
                               )}
                               <span
                                 className="h-2.5 w-2.5 rounded-full transition"
                                 style={{
                                   backgroundColor: active
-                                    ? "var(--accent-primary)"
+                                    ? theme.dotColor
                                     : "var(--neu-dot-off)",
                                   boxShadow: active
-                                    ? "0 0 8px var(--accent-primary)"
+                                    ? `0 0 9px ${theme.dotColor}`
                                     : "none",
                                 }}
                               />
@@ -886,7 +967,10 @@ export function DesignComposer({
                           </p>
                         </div>
                         <div className="mt-4 pt-1">
-                          <span className="neu-recessed inline-block rounded-full px-3 py-1 font-mono-bio text-xs text-accent">
+                          <span
+                            className={`inline-block rounded-full px-3 py-1 font-mono-bio text-xs font-semibold ${theme.pillTextClass}`}
+                            style={{ backgroundColor: theme.pillBg }}
+                          >
                             {p.overhangs}
                           </span>
                         </div>
@@ -900,7 +984,7 @@ export function DesignComposer({
                   <div className="neu-recessed rounded-[20px] p-5 space-y-5">
                     {/* Header Row */}
                     <div className="flex flex-wrap items-center justify-between gap-3">
-                      <span className="text-sm font-semibold text-[var(--text-primary)] flex items-center gap-1.5">
+                      <span className="text-sm font-bold text-[var(--text-primary)] flex items-center gap-1.5">
                         <Wrench className="h-4 w-4 text-[var(--accent-primary)]" />
                         自定义实验室载体规格
                       </span>
@@ -1030,7 +1114,7 @@ export function DesignComposer({
                             )}
                           </div>
                           <div className="min-w-0">
-                            <p className="text-sm font-semibold text-[var(--text-primary)]">
+                            <p className="text-sm font-bold text-[var(--text-primary)]">
                               {plasmidParsing
                                 ? "正在解析空白载体图谱与骨架验证引物..."
                                 : "上传空白载体图谱 (.gb / .gbk) 自动解析"}
@@ -1347,7 +1431,7 @@ export function DesignComposer({
             >
               <span className="inline-flex flex-wrap items-center gap-2">
                 <SlidersHorizontal className="h-4 w-4 text-[var(--accent-primary)]" />
-                <span>高级实验参数与聚合酶选择</span>
+                <span className="font-bold">高级实验参数与聚合酶选择</span>
                 <span className="hidden sm:inline font-normal text-xs text-[var(--text-muted)]">
                   （同源臂 {homologyArmLength} bp · {selectedPolymerase} · Tm{" "}
                   {targetTm.toFixed(1)}°C ·{" "}
@@ -1366,8 +1450,8 @@ export function DesignComposer({
                 {/* Row 1 */}
                 <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
                   <div className="space-y-2">
-                    <label className="block text-sm font-medium text-[var(--text-primary)]">
-                      高保真 DNA 聚合酶（15 款内置 + 自定义）
+                    <label className="block text-[13px] font-bold text-[var(--text-primary)] whitespace-nowrap">
+                      高保真 DNA 聚合酶（15 款 + 自定义）
                     </label>
                     <PolymeraseCombobox
                       polymerases={polymerases}
@@ -1381,7 +1465,7 @@ export function DesignComposer({
                   </div>
 
                   <div className="space-y-2">
-                    <label className="block text-sm font-medium text-[var(--text-primary)]">
+                    <label className="block text-[13px] font-bold text-[var(--text-primary)]">
                       敲除边界策略
                     </label>
                     <select
@@ -1389,7 +1473,7 @@ export function DesignComposer({
                       onChange={(e) =>
                         setDeletionMode(e.target.value as DeletionMode)
                       }
-                      className="neu-input w-full px-4 py-3 text-sm"
+                      className="neu-input w-full px-4 py-3 text-sm font-medium"
                     >
                       {DELETION_MODE_OPTIONS.map((opt) => (
                         <option key={opt.value} value={opt.value}>
@@ -1407,7 +1491,7 @@ export function DesignComposer({
                   </div>
 
                   <div className="space-y-2">
-                    <label className="block text-sm font-medium text-[var(--text-primary)]">
+                    <label className="block text-[13px] font-bold text-[var(--text-primary)]">
                       Donor 供体构建方式
                     </label>
                     <select
@@ -1474,7 +1558,7 @@ export function DesignComposer({
                     <Globe className="mt-0.5 h-4 w-4 shrink-0 text-[var(--accent-primary)]" />
                     <div className="space-y-0.5">
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-sm font-semibold text-[var(--text-primary)]">
+                        <span className="text-sm font-bold text-[var(--text-primary)]">
                           自动按需抓取全基因组脱靶索引 (auto_fetch_whole_genome)
                         </span>
                         {cachedWholeGenomes.length > 0 && (
@@ -1539,7 +1623,7 @@ export function DesignComposer({
               <button
                 type="submit"
                 disabled={isRunning}
-                className="btn-primary inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold cursor-pointer"
+                className="btn-primary inline-flex items-center gap-2 px-6 py-3 text-sm font-bold cursor-pointer"
               >
                 {isRunning ? (
                   <>

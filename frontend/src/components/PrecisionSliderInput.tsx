@@ -39,10 +39,14 @@ export function PrecisionSliderInput({
       ? presets
       : [min, Math.round(((min + max) / 2) / step) * step, max];
 
+  const rangePct =
+    max > min ? Math.max(0, Math.min(100, ((value - min) / (max - min)) * 100)) : 0;
+
   return (
-    <div className="neu-recessed space-y-3 rounded-[20px] p-4">
+    <div className="neu-soft-tile space-y-3 rounded-[20px] p-4">
+      {/* Header Row: Full Unclipped Parameter Label + Compact Stepper */}
       <div className="flex items-center justify-between gap-2">
-        <label className="text-xs sm:text-[13px] font-medium text-[var(--text-primary)] whitespace-nowrap">
+        <label className="text-[13px] font-bold text-[var(--text-primary)]">
           {label}
         </label>
 
@@ -51,36 +55,16 @@ export function PrecisionSliderInput({
             type="button"
             onClick={() => onChange(clamp(value - step))}
             disabled={value <= min}
-            className="flex h-7 w-6 items-center justify-center rounded-full text-[var(--text-secondary)] transition hover:text-[var(--accent-primary)] disabled:opacity-35 cursor-pointer"
+            className="flex h-6 w-6 items-center justify-center rounded-full text-[var(--text-secondary)] transition hover:text-[var(--accent-primary)] disabled:opacity-35 cursor-pointer"
             aria-label={`减少${label}`}
           >
             <Minus className="h-3.5 w-3.5" />
           </button>
-          <div className="flex items-center px-1.5">
-            <input
-              type="number"
-              min={min}
-              max={max}
-              step={step}
-              value={value}
-              onChange={(e) => {
-                const parsed = Number(e.target.value);
-                if (Number.isFinite(parsed)) {
-                  onChange(Math.max(min, Math.min(max, parsed)));
-                }
-              }}
-              onBlur={() => onChange(clamp(value))}
-              className="w-12 bg-transparent py-1 text-right font-mono-bio text-xs sm:text-sm font-semibold text-accent focus:outline-none"
-            />
-            <span className="ml-1 font-mono-bio text-xs font-medium text-[var(--text-muted)]">
-              {unit}
-            </span>
-          </div>
           <button
             type="button"
             onClick={() => onChange(clamp(value + step))}
             disabled={value >= max}
-            className="flex h-7 w-6 items-center justify-center rounded-full text-[var(--text-secondary)] transition hover:text-[var(--accent-primary)] disabled:opacity-35 cursor-pointer"
+            className="flex h-6 w-6 items-center justify-center rounded-full text-[var(--text-secondary)] transition hover:text-[var(--accent-primary)] disabled:opacity-35 cursor-pointer"
             aria-label={`增加${label}`}
           >
             <Plus className="h-3.5 w-3.5" />
@@ -88,18 +72,60 @@ export function PrecisionSliderInput({
         </div>
       </div>
 
-      <input
-        type="range"
-        min={min}
-        max={max}
-        step={step}
-        value={value}
-        onChange={(e) => onChange(Number(e.target.value))}
-        className="precision-range w-full cursor-pointer"
-      />
+      {/* Scientific Instrument Centered Mono Digital Readout */}
+      <div className="neu-recessed flex items-baseline justify-center gap-1.5 rounded-2xl px-3 py-2">
+        <input
+          type="number"
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+          onChange={(e) => {
+            const parsed = Number(e.target.value);
+            if (Number.isFinite(parsed)) {
+              onChange(Math.max(min, Math.min(max, parsed)));
+            }
+          }}
+          onBlur={() => onChange(clamp(value))}
+          aria-label={`${label}数值`}
+          className="w-20 bg-transparent text-right font-mono-bio text-2xl font-bold leading-none tracking-tight text-[var(--text-primary)] focus:outline-none"
+        />
+        <span className="font-mono-bio text-sm font-bold text-accent">
+          {unit}
+        </span>
+      </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <div className="flex flex-wrap items-center gap-2">
+      {/* Slider Track + Calibrated Instrument Tick Marks */}
+      <div className="space-y-1.5 pt-0.5">
+        <input
+          type="range"
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+          onChange={(e) => onChange(Number(e.target.value))}
+          style={{ "--range-pct": `${rangePct}%` } as React.CSSProperties}
+          className="precision-range w-full cursor-pointer"
+        />
+        <div
+          aria-hidden="true"
+          className="flex items-start justify-between px-2.5"
+        >
+          {Array.from({ length: 17 }).map((_, idx) => (
+            <span
+              key={idx}
+              className={`w-px rounded-full ${
+                idx % 4 === 0
+                  ? "h-2 bg-[var(--border-strong)]"
+                  : "h-1 bg-[var(--border-hairline)]"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="flex flex-wrap items-center justify-between gap-2 pt-0.5">
+        <div className="flex flex-wrap items-center gap-1.5">
           {tickPresets.map((preset) => {
             const active = Math.abs(value - preset) < step / 2;
             return (

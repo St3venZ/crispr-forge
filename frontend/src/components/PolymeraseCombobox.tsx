@@ -164,11 +164,11 @@ export function PolymeraseCombobox({
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
             <FlaskConical className="h-4 w-4 shrink-0 text-[var(--accent-primary)]" />
-            <span className="truncate text-sm font-medium dark:font-semibold text-[var(--text-primary)]">
+            <span className="truncate text-sm font-bold text-[var(--text-primary)]">
               {activeSpec.id}
             </span>
             {activeSpec.isCustom && (
-              <span className="rounded-full dark:rounded bg-[var(--accent-soft)] px-2 py-0.5 text-xs font-medium text-accent dark:border dark:border-[var(--accent-border)]">
+              <span className="rounded-full dark:rounded bg-[var(--accent-soft)] px-2 py-0.5 text-xs font-semibold text-accent dark:border dark:border-[var(--accent-border)]">
                 自定义
               </span>
             )}
@@ -177,7 +177,7 @@ export function PolymeraseCombobox({
             <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-[var(--text-muted)]">
               <span>{activeSpec.vendor}</span>
               <span>·</span>
-              <span className="font-mono-bio font-semibold text-accent">
+              <span className="font-mono-bio font-bold text-accent">
                 {activeSpec.extension_sec_per_kb} s/kb
               </span>
               <span>·</span>
